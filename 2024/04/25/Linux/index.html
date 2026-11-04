@@ -1,0 +1,572 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Linux | L1n</title><meta name="author" content="翎晗"><meta name="copyright" content="翎晗"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Linux基础命令Linux的目录结构  &#x2F;，根目录是最顶级的目录了 Linux只有一个顶级目录：&#x2F; 路径描述的层次关系同样适用&#x2F;来表示 &#x2F;home&#x2F;itheima&#x2F;a.txt，表示根目录下的home文件夹内有itheima文件夹，内有a.txt  ls命令功能：列出文件夹信息 语法：ls [-l -h -a] [参数]  参数：被查看的文件夹，不提供参数，表示查看当">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux">
+<meta property="og:url" content="https://raehp.github.io/2024/04/25/Linux/index.html">
+<meta property="og:site_name" content="L1n">
+<meta property="og:description" content="Linux基础命令Linux的目录结构  &#x2F;，根目录是最顶级的目录了 Linux只有一个顶级目录：&#x2F; 路径描述的层次关系同样适用&#x2F;来表示 &#x2F;home&#x2F;itheima&#x2F;a.txt，表示根目录下的home文件夹内有itheima文件夹，内有a.txt  ls命令功能：列出文件夹信息 语法：ls [-l -h -a] [参数]  参数：被查看的文件夹，不提供参数，表示查看当">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://raehp.github.io/img/avatar.jpg">
+<meta property="article:published_time" content="2024-04-25T05:21:32.000Z">
+<meta property="article:modified_time" content="2024-06-30T08:05:04.000Z">
+<meta property="article:author" content="翎晗">
+<meta property="article:tag" content="Java,后端,笔记">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raehp.github.io/img/avatar.jpg"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Linux",
+  "url": "https://raehp.github.io/2024/04/25/Linux/",
+  "image": "https://raehp.github.io/img/avatar.jpg",
+  "datePublished": "2024-04-25T05:21:32.000Z",
+  "dateModified": "2024-06-30T08:05:04.000Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "翎晗",
+      "url": "https://raehp.github.io"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://raehp.github.io/2024/04/25/Linux/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=5.7.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.3.1/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        const data = { value }
+
+        if (ttl != null) {
+          data.expiry = Date.now() + ttl * 86400000
+        }
+
+        localStorage.setItem(key, JSON.stringify(data))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return
+
+        try {
+          const data = JSON.parse(itemStr)
+
+          if (data.expiry && Date.now() > data.expiry) {
+            localStorage.removeItem(key)
+            return
+          }
+
+          return data.value
+        } catch {
+          localStorage.removeItem(key)
+        }
+      }
+    }
+
+    const scriptCache = new Map()
+    const cssCache = new Map()
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => {
+        if (scriptCache.has(url)) {
+          return scriptCache.get(url)
+        }
+
+        const promise = new Promise((resolve, reject) => {
+          const script = document.createElement('script')
+
+          script.src = url
+          script.async = true
+
+          for (const key in attr) {
+            script.setAttribute(key, attr[key])
+          }
+
+          script.onload = resolve
+          script.onerror = reject
+
+          document.head.appendChild(script)
+        })
+
+        scriptCache.set(url, promise)
+
+        return promise
+      },
+      getCSS: (url, id) => {
+        if (cssCache.has(url)) {
+          return cssCache.get(url)
+        }
+
+        const promise = new Promise((resolve, reject) => {
+          const link = document.createElement('link')
+
+          link.rel = 'stylesheet'
+          link.href = url
+
+          if (id) {
+            link.id = id
+          }
+
+          link.onload = resolve
+          link.onerror = reject
+
+          document.head.appendChild(link)
+        })
+
+        cssCache.set(url, promise)
+
+        return promise
+      },
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const metaThemeColor = document.querySelector('meta[name="theme-color"]')
+      const activateDarkMode = () => {
+        document.documentElement.dataset.theme = 'dark'
+        if (metaThemeColor !== null) {
+          metaThemeColor.setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.dataset.theme = 'light'
+        if (metaThemeColor !== null) {
+          metaThemeColor.setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.13.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Linux',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><link rel="stylesheet" href="/css/background.css"><meta name="generator" content="Hexo 7.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">29</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">15</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><span class="site-page group"><span> 博文</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> archives</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> categories</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> tags</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><span> 生活</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/photos/"><i class="fa-fw fas fa-images"></i><span> photos</span></a></li><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-film"></i><span> movies</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于笔者</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(/img/3.jpg);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">L1n</span></a><a class="nav-page-title" href="/"><span class="site-name">Linux</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  返回首页</span></span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><span class="site-page group"><span> 博文</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> archives</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> categories</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> tags</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><span> 生活</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/photos/"><i class="fa-fw fas fa-images"></i><span> photos</span></a></li><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-film"></i><span> movies</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于笔者</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">Linux</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-04-25T05:21:32.000Z" title="发表于 2024-04-25 13:21:32">2024-04-25</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-06-30T08:05:04.000Z" title="更新于 2024-06-30 16:05:04">2024-06-30</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/">服务器</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><h1 id="Linux基础命令"><a href="#Linux基础命令" class="headerlink" title="Linux基础命令"></a>Linux基础命令</h1><h2 id="Linux的目录结构"><a href="#Linux的目录结构" class="headerlink" title="Linux的目录结构"></a>Linux的目录结构</h2><p><img src="/image-20240514213712464.png" alt="image-20240514213712464"></p>
+<ul>
+<li><code>/</code>，根目录是最顶级的目录了</li>
+<li>Linux只有一个顶级目录：<code>/</code></li>
+<li>路径描述的层次关系同样适用<code>/</code>来表示</li>
+<li>&#x2F;home&#x2F;itheima&#x2F;a.txt，表示根目录下的home文件夹内有itheima文件夹，内有a.txt</li>
+</ul>
+<h2 id="ls命令"><a href="#ls命令" class="headerlink" title="ls命令"></a>ls命令</h2><p>功能：列出文件夹信息</p>
+<p>语法：<code>ls [-l -h -a] [参数]</code></p>
+<ul>
+<li>参数：被查看的文件夹，不提供参数，表示查看当前工作目录</li>
+<li>-l，以列表形式查看</li>
+<li>-h，配合-l，以更加人性化的方式显示文件大小</li>
+<li>-a，显示隐藏文件</li>
+</ul>
+<h3 id="隐藏文件、文件夹"><a href="#隐藏文件、文件夹" class="headerlink" title="隐藏文件、文件夹"></a>隐藏文件、文件夹</h3><p>在Linux中以<code>.</code>开头的，均是隐藏的。</p>
+<p>默认不显示出来，需要<code>-a</code>选项才可查看到。</p>
+<h2 id="pwd命令"><a href="#pwd命令" class="headerlink" title="pwd命令"></a>pwd命令</h2><p>功能：展示当前工作目录</p>
+<p>语法：<code>pwd</code></p>
+<p>作用是：输出当前所在的工作目录</p>
+<h2 id="cd命令"><a href="#cd命令" class="headerlink" title="cd命令"></a>cd命令</h2><p>功能：切换工作目录</p>
+<p>语法：<code>cd [目标目录]</code></p>
+<p>参数：目标目录，要切换去的地方，不提供默认切换到<code>当前登录用户HOME目录</code></p>
+<h2 id="HOME目录"><a href="#HOME目录" class="headerlink" title="HOME目录"></a>HOME目录</h2><p>每一个用户在Linux系统中都有自己的专属工作目录，称之为HOME目录。</p>
+<ul>
+<li><p>普通用户的HOME目录，默认在：<code>/home/用户名</code></p>
+</li>
+<li><p>root用户的HOME目录，在：<code>/root</code></p>
+</li>
+</ul>
+<p>FinalShell登陆终端后，默认的工作目录就是用户的HOME目录</p>
+<h2 id="相对路径、绝对路径"><a href="#相对路径、绝对路径" class="headerlink" title="相对路径、绝对路径"></a>相对路径、绝对路径</h2><ul>
+<li><p>相对路径，&#x3D;&#x3D;非&#x3D;&#x3D;<code>/</code>开头的称之为相对路径</p>
+<p>相对路径表示以<code>当前目录</code>作为起点，去描述路径，如<code>test/a.txt</code>，表示当前工作目录内的test文件夹内的a.txt文件</p>
+</li>
+<li><p>绝对路径，&#x3D;&#x3D;以&#x3D;&#x3D;<code>/</code>开头的称之为绝对路径</p>
+<p>绝对路径从<code>根</code>开始描述路径</p>
+</li>
+</ul>
+<h2 id="特殊路径符"><a href="#特殊路径符" class="headerlink" title="特殊路径符"></a>特殊路径符</h2><ul>
+<li><code>.</code>，表示当前，比如.&#x2F;a.txt，表示当前文件夹内的<code>a.txt</code>文件</li>
+<li><code>..</code>，表示上级目录，比如<code>../</code>表示上级目录，<code>../../</code>表示上级的上级目录</li>
+<li><code>~</code>，表示用户的HOME目录，比如<code>cd ~</code>，即可切回用户HOME目录</li>
+</ul>
+<h2 id="mkdir命令"><a href="#mkdir命令" class="headerlink" title="mkdir命令"></a>mkdir命令</h2><p>功能：创建文件夹</p>
+<p>语法：<code>mkdir [-p] 参数</code></p>
+<ul>
+<li>参数：被创建文件夹的路径</li>
+<li>选项：-p，可选，表示创建前置路径<ul>
+<li>自动创建不存在的父目录，适用于创建连续多层级的目录</li>
+</ul>
+</li>
+</ul>
+<h2 id="touch命令"><a href="#touch命令" class="headerlink" title="touch命令"></a>touch命令</h2><p>功能：创建文件</p>
+<p>语法：<code>touch 参数</code></p>
+<ul>
+<li>参数：参数必填，表示要创建的文件路径</li>
+</ul>
+<h2 id="cat命令"><a href="#cat命令" class="headerlink" title="cat命令"></a>cat命令</h2><p>功能：查看文件内容</p>
+<p>语法：<code>cat 参数</code></p>
+<ul>
+<li>参数：被查看的文件路径</li>
+</ul>
+<h2 id="more命令"><a href="#more命令" class="headerlink" title="more命令"></a>more命令</h2><p>功能：查看文件，可以支持翻页查看</p>
+<p>语法：<code>more 参数</code></p>
+<ul>
+<li>参数：被查看的文件路径</li>
+<li>在查看过程中：<ul>
+<li><code>空格</code>键翻页</li>
+<li><code>q</code>退出查看</li>
+</ul>
+</li>
+</ul>
+<h2 id="cp命令"><a href="#cp命令" class="headerlink" title="cp命令"></a>cp命令</h2><p>功能：复制文件、文件夹</p>
+<p>语法：<code>cp [-r] 参数1 参数2</code></p>
+<ul>
+<li>参数1，被复制的</li>
+<li>参数2，要复制去的地方</li>
+<li>选项：-r，可选，复制文件夹使用</li>
+</ul>
+<p>示例：</p>
+<ul>
+<li>cp a.txt b.txt，复制当前目录下a.txt为b.txt</li>
+<li>cp a.txt test&#x2F;，复制当前目录a.txt到test文件夹内</li>
+<li>cp -r test test2，复制文件夹test到当前文件夹内为test2存在</li>
+</ul>
+<h2 id="mv命令"><a href="#mv命令" class="headerlink" title="mv命令"></a>mv命令</h2><p>功能：移动文件、文件夹</p>
+<p>语法：<code>mv 参数1 参数2</code></p>
+<ul>
+<li>参数1：被移动的</li>
+<li>参数2：要移动去的地方，参数2如果不存在，则会进行改名</li>
+</ul>
+<h2 id="rm命令"><a href="#rm命令" class="headerlink" title="rm命令"></a>rm命令</h2><p>功能：删除文件、文件夹</p>
+<p>语法：<code>rm [-r -f] 参数...参数</code></p>
+<ul>
+<li><p>参数：支持多个，每一个表示被删除的，空格进行分隔</p>
+</li>
+<li><p>选项：-r，删除文件夹使用</p>
+</li>
+<li><p>选项：-f，强制删除，不会给出确认提示，一般root用户会用到</p>
+</li>
+<li><p>参数也支持通配符*，用以做模糊匹配</p>
+<ul>
+<li>text* 匹配以text开头的文件或文件夹</li>
+<li>*text 匹配text结尾的文件或文件夹</li>
+<li>*text * 匹配包含text的文件或文件夹</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>rm命令很危险，一定要注意，特别是切换到root用户的时候。</p>
+</blockquote>
+<h2 id="which命令"><a href="#which命令" class="headerlink" title="which命令"></a>which命令</h2><p>功能：查看命令的程序本体文件路径</p>
+<p>语法：<code>which 参数</code></p>
+<ul>
+<li>参数：被查看的命令</li>
+</ul>
+<h2 id="find命令"><a href="#find命令" class="headerlink" title="find命令"></a>find命令</h2><p>功能：搜索文件</p>
+<p>语法1按文件名搜索：<code>find 路径 -name 参数</code></p>
+<ul>
+<li><p>路径，搜索的起始路径</p>
+</li>
+<li><p>参数，搜索的关键字，支持通配符*， 比如：<code>*</code>test表示搜索任意以test结尾的文件</p>
+</li>
+<li><p>按文件大小查找：<code>find 起始路径 -size +|-n [KMG]</code></p>
+</li>
+<li><pre><code>查找小于10KB的文件：find / -size -10k
+查找小于100MB的文件：find / -size -100mb
+查找大于1GB的文件：find / -size +1GB
+1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071  ## grep命令功能：过滤关键字语法：`grep [-n] 关键字 文件路径`- 选项-n，可选，表示在结果中显示匹配的行的行号。- 参数，关键字，必填，表示过滤的关键字，带有空格或其它特殊符号，建议使用””将关键字包围起来- 参数，文件路径，必填，表示要过滤内容的文件路径，可作为内容输入端口&gt; 参数文件路径，可以作为管道符的输入## wc命令功能：统计语法：`wc [-c -m -l -w] 文件路径`- 选项，-c，统计bytes数量- 选项，-m，统计字符数量- 选项，-l，统计行数- 选项，-w，统计单词数量- 参数，文件路径，被统计的文件，可作为内容输入端口&gt; 参数文件路径，可作为管道符的输入## 管道符|写法：`|`功能：将符号左边的结果，作为符号右边的输入示例：`cat a.txt | grep itheima`，将cat a.txt的结果，作为grep命令的输入，用来过滤`itheima`关键字可以支持嵌套：`cat a.txt | grep itheima | grep itcast`## echo命令功能：输出内容语法：`echo 参数`- 参数：被输出的内容- 无需选择，只有一个参数，表示要输出的内容，复杂内容可以用“ &quot;包围  演示：  - 在终端上显示：Hello Linux
+  echo Hello Linux
+  123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101102103104105106107108109110111112113114115116117118119120121122123124125126127128129130131132133134135136137138139140141142143144145146147148149150151152153154155156157158159160161162163164165166167168169170171172173174175176177178179180181182183184185186187188189190191192193194195196197198199200201202203204205206207208209210211212213214215216217218219220221222223224225226227228229230231232233234235236237238239240241242243244245246247248249250251252253254255256257258259260261262263264265266267268269270271272273274275276277278279280281282283284285286287288289290291292293294295296297298299300301- 带有空格或\等特殊符号，建议使用双引号包围  - 因为不包围的话，空格很容易被识别为参数2，尽管echo不受影响## `反引号功能：被两个反引号包围的内容，会作为命令执行示例：- echo \`pwd\`，会输出当前工作目录## tail命令功能：查看文件尾部内容语法：`tail [-f] 参数`- 参数：被查看的文件- 选项：-f，持续跟踪文件修改## head命令功能：查看文件头部内容语法：`head [-n] 参数`- 参数：被查看的文件- 选项：-n，查看的行数## 重定向符功能：将符号左边的结果，输出到右边指定的文件中去- `&gt;`，表示覆盖输出  将左侧命令的结果，覆盖写入到符号右侧指定的文件中- `&gt;&gt;`，表示追加输出   将左侧命令的结果，追加写入到符号右侧指定的文件中## vi编辑器### 命令模式快捷键| 模式         | 命令  | 描述                              || ------------ | ----- | --------------------------------- || **命令模式** | `i`   | 在当前光标位置进入 `输入模式`     || **命令模式** | `a`   | 在当前光标位置之后进入 `输入模式` || **命令模式** | `I`   | 在当前行的开头进入 `输入模式`     || **命令模式** | `A`   | 在当前行的结尾进入 `输入模式`     || **命令模式** | `o`   | 在当前光标下一行进入 `输入模式`   || **命令模式** | `O`   | 在当前光标上一行进入 `输入模式`   || **输入模式** | `esc` | 任何情况下`esc` 都能回到命令模式  |****| 模式         | 命令             | 描述                   || ------------ | ---------------- | ---------------------- || **命令模式** | `键盘上、键盘k`  | 向上移动光标           || **命令模式** | `键盘下、键盘j`  | 向下移动光标           || **命令模式** | `键盘左、键盘h`  | 向左移动光标           || **命令模式** | `键盘右、键盘l`  | 向右移动光标           || **命令模式** | `0`              | 移动光标到当前行的开头 || **命令模式** | `$`              | 移动光标到当前行的结尾 || **命令模式** | `pageup(Pgup)`   | 向上翻页               || **命令模式** | `pagedown(PgDn)` | 向下翻页               || **命令模式** | `/`              | 进入搜索模式           || **命令模式** | `n`              | 向下继续搜索           || **命令模式** | `N`              | 向上继续搜索           || **模式**     | 命令       | 描述                             || ------------ | ---------- | -------------------------------- || **命令模式** | `dd`       | 删除光标所在行的内容             || **命令模式** | `ndd`      | n是数字，表示删除当前光标向下n行 || **命令模式** | `yy`       | 复制当前行                       || **命令模式** | `nyy`      | n是数字，复制当前行和下面的n行   || **命令模式** | `p`        | 粘贴复制的内容                   || **命令模式** | `u`        | 撤销修改                         || **命令模式** | `ctrl + r` | 反向撤销修改                     || **命令模式** | `gg`       | 跳到首行                         || **命令模式** | `G`        | 跳到行尾                         || **命令模式** | `dG`       | 从当前行开始，向下全部删除       || **命令模式** | `dgg`      | 从当前行开始，向上全部删除       || **命令模式** | `d$`       | 从当前光标开始，删除到本行的结尾 || **命令模式** | `d0`       | 从当前光标开始，删除到本行的开头 |### 底线命令快捷键![image-20240514212954898](./Linux/image-20240514212954898.png)## 命令的选项我们学习的一系列Linux命令，它们所拥有的选项都是非常多的。比如，简单的ls命令就有：-a -A -b -c -C -d -D -f -F -g -G -h -H -i -I -k -l -L -m -n -N -o -p -q -Q -r-R -s -S -t -T -u -U -v -w -x -X -1等选项，可以发现选项是极其多的。课程中， 并不会将全部的选项都进行讲解，否则，一个ls命令就可能讲解2小时之久。课程中，会对常见的选项进行讲解， 足够满足绝大多数的学习、工作场景。### 查看命令的帮助可以通过：`命令 --help`查看命令的帮助手册![image-20240514213545358](./Linux/image-20240514213545358.png)### 查看命令的详细手册可以通过：`man 命令`查看某命令的详细手册![image-20240514213539751](./Linux/image-20240514213539751.png)# Linux常用操作## 软件安装- CentOS系统使用：  - yum [install remove search] [-y] 软件名称    - install 安装    - remove 卸载    - search 搜索    - -y，自动确认- Ubuntu系统使用  - apt [install remove search] [-y] 软件名称    - install 安装    - remove 卸载    - search 搜索    - -y，自动确认&gt; yum 和 apt 均需要root权限## systemctl功能：控制系统服务的启动关闭等语法：`systemctl start | stop | restart | disable | enable | status 服务名`- start，启动- stop，停止- status，查看状态- disable，关闭开机自启- enable，开启开机自启- restart，重启## 软链接功能：创建文件、文件夹软链接（快捷方式）语法：`ln -s 参数1 参数2`- 参数1：被链接的- 参数2：要链接去的地方（快捷方式的名称和存放位置）## 日期语法：`date [-d] [+格式化字符串]`- -d 按照给定的字符串显示日期，一般用于日期计算- 格式化字符串：通过特定的字符串标记，来控制显示的日期格式  - %Y   年%y   年份后两位数字 (00..99)  - %m   月份 (01..12)  - %d   日 (01..31)  - %H   小时 (00..23)  - %M   分钟 (00..59)  - %S   秒 (00..60)  - %s   自 1970-01-01 00:00:00 UTC 到现在的秒数示例：- 按照2022-01-01的格式显示日期  ![image-20240514213528329](./Linux/image-20240514213528329.png)- 按照2022-01-01 10:00:00的格式显示日期  ![image-20240514213523029](./Linux/image-20240514213523029.png)- -d选项日期计算  ![image-20240514213518516](./Linux/image-20240514213518516.png)  - 支持的时间标记为：    ![image-20240514213514134](./Linux/image-20240514213514134.png)## 时区修改时区为中国时区![image-20221027220554654](https://image-set.oss-cn-zhangjiakou.aliyuncs.com/img-out/2022/10/27/20221027220554.png)## ntp功能：同步时间安装：`yum install -y ntp`启动管理：`systemctl start | stop | restart | status | disable | enable ntpd`手动校准时间：`ntpdate -u ntp.aliyun.com`## ip地址格式：a.b.c.d- abcd为0~255的数字特殊IP：- 127.0.0.1，表示本机- 0.0.0.0  - 可以表示本机  - 也可以表示任意IP（看使用场景）查看ip：`ifconfig`## 主机名功能：Linux系统的名称查看：`hostname`设置：`hostnamectl set-hostname 主机名`## 配置VMware固定IP1. 修改VMware网络，参阅PPT，图太多2. 设置Linux内部固定IP   修改文件：`/etc/sysconfig/network-scripts/ifcfg-ens33`   示例文件内容：   ```shell   TYPE=&quot;Ethernet&quot;   PROXY_METHOD=&quot;none&quot;   BROWSER_ONLY=&quot;no&quot;   BOOTPROTO=&quot;static&quot;            # 改为static，固定IP   DEFROUTE=&quot;yes&quot;   IPV4_FAILURE_FATAL=&quot;no&quot;   IPV6INIT=&quot;yes&quot;   IPV6_AUTOCONF=&quot;yes&quot;   IPV6_DEFROUTE=&quot;yes&quot;   IPV6_FAILURE_FATAL=&quot;no&quot;   IPV6_ADDR_GEN_MODE=&quot;stable-privacy&quot;   NAME=&quot;ens33&quot;   UUID=&quot;1b0011cb-0d2e-4eaa-8a11-af7d50ebc876&quot;   DEVICE=&quot;ens33&quot;   ONBOOT=&quot;yes&quot;   IPADDR=&quot;192.168.88.131&quot;        # IP地址，自己设置，要匹配网络范围   NETMASK=&quot;255.255.255.0&quot;        # 子网掩码，固定写法255.255.255.0   GATEWAY=&quot;192.168.88.2&quot;        # 网关，要和VMware中配置的一致   DNS1=&quot;192.168.88.2&quot;            # DNS1服务器，和网关一致即可
+</code></pre>
+</li>
+</ul>
+<h2 id="ps命令"><a href="#ps命令" class="headerlink" title="ps命令"></a>ps命令</h2><p>功能：查看进程信息</p>
+<p>语法：<code>ps -ef</code>，查看全部进程信息，可以搭配grep做过滤：<code>ps -ef | grep xxx</code></p>
+<h2 id="kill命令"><a href="#kill命令" class="headerlink" title="kill命令"></a>kill命令</h2><p><img src="/image-20240514213501448.png" alt="image-20240514213501448"></p>
+<h2 id="nmap命令"><a href="#nmap命令" class="headerlink" title="nmap命令"></a>nmap命令</h2><p><img src="/image-20240514213455076.png" alt="image-20240514213455076"></p>
+<h2 id="netstat命令"><a href="#netstat命令" class="headerlink" title="netstat命令"></a>netstat命令</h2><p>功能：查看端口占用</p>
+<p>用法：<code>netstat -anp | grep xxx</code></p>
+<h2 id="ping命令"><a href="#ping命令" class="headerlink" title="ping命令"></a>ping命令</h2><p>测试网络是否联通</p>
+<p>语法：<code>ping [-c num] 参数</code></p>
+<p><img src="/image-20240514213446601.png" alt="image-20240514213446601"></p>
+<h2 id="wget命令"><a href="#wget命令" class="headerlink" title="wget命令"></a>wget命令</h2><p><img src="/image-20240514213436429.png" alt="image-20240514213436429"></p>
+<h2 id="curl命令"><a href="#curl命令" class="headerlink" title="curl命令"></a>curl命令</h2><p><img src="/image-20240514213428349.png" alt="image-20240514213428349"></p>
+<p><img src="/image-20240514213422455.png" alt="image-20240514213422455"></p>
+<h2 id="top命令"><a href="#top命令" class="headerlink" title="top命令"></a>top命令</h2><p>功能：查看主机运行状态</p>
+<p>语法：<code>top</code>，查看基础信息</p>
+<p>可用选项：</p>
+<p><img src="/image-20240514213411146.png" alt="image-20240514213411146"></p>
+<p>交互式模式中，可用快捷键：</p>
+<p><img src="/image-20240514213405285.png" alt="image-20240514213405285"></p>
+<h2 id="df命令"><a href="#df命令" class="headerlink" title="df命令"></a>df命令</h2><p>查看磁盘占用</p>
+<p><img src="/image-20240514213350037.png" alt="image-20240514213350037"></p>
+<h2 id="iostat命令"><a href="#iostat命令" class="headerlink" title="iostat命令"></a>iostat命令</h2><p>查看CPU、磁盘的相关信息</p>
+<p><img src="/image-20240514213341010.png" alt="image-20240514213341010"></p>
+<p><img src="/image-20240514213334228.png" alt="image-20240514213334228"></p>
+<h2 id="sar命令"><a href="#sar命令" class="headerlink" title="sar命令"></a>sar命令</h2><p>查看网络统计</p>
+<p><img src="/image-20240514213316310.png" alt="image-20240514213316310"></p>
+<h2 id="环境变量"><a href="#环境变量" class="headerlink" title="环境变量"></a>环境变量</h2><ul>
+<li>临时设置：export 变量名&#x3D;变量值</li>
+<li>永久设置：<ul>
+<li>针对用户，设置用户HOME目录内：<code>.bashrc</code>文件</li>
+<li>针对全局，设置<code>/etc/profile</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="PATH变量"><a href="#PATH变量" class="headerlink" title="PATH变量"></a>PATH变量</h3><p>记录了执行程序的搜索路径</p>
+<p>可以将自定义路径加入PATH内，实现自定义命令在任意地方均可执行的效果</p>
+<h2 id="符号"><a href="#符号" class="headerlink" title="$符号"></a>$符号</h2><p>可以取出指定的环境变量的值</p>
+<p>语法：<code>$变量名</code></p>
+<p>示例：</p>
+<p><code>echo $PATH</code>，输出PATH环境变量的值</p>
+<p><code>echo $&#123;PATH&#125;ABC</code>，输出PATH环境变量的值以及ABC</p>
+<p>如果变量名和其它内容混淆在一起，可以使用${}</p>
+<h2 id="压缩解压"><a href="#压缩解压" class="headerlink" title="压缩解压"></a>压缩解压</h2><h3 id="压缩"><a href="#压缩" class="headerlink" title="压缩"></a>压缩</h3><p><code>tar -zcvf 压缩包 被压缩1...被压缩2...被压缩N</code></p>
+<ul>
+<li>-z表示使用gzip，可以不写</li>
+</ul>
+<p><code>zip [-r] 参数1 参数2 参数N</code></p>
+<p><img src="/image-20240514213306989.png" alt="image-20240514213306989"></p>
+<h3 id="解压"><a href="#解压" class="headerlink" title="解压"></a>解压</h3><p><code>tar -zxvf 被解压的文件 -C 要解压去的地方</code></p>
+<ul>
+<li>-z表示使用gzip，可以省略</li>
+<li>-C，可以省略，指定要解压去的地方，不写解压到当前目录</li>
+</ul>
+<p><code>unzip [-d] 参数</code></p>
+<p><img src="/image-20240514213259749.png" alt="image-20240514213259749"></p>
+<h2 id="su命令"><a href="#su命令" class="headerlink" title="su命令"></a>su命令</h2><p>切换用户</p>
+<p>语法：<code>su [-] [用户]</code></p>
+<p><img src="/image-20240514213251660.png" alt="image-20240514213251660"></p>
+<h2 id="sudo命令"><a href="#sudo命令" class="headerlink" title="sudo命令"></a>sudo命令</h2><p><img src="/image-20240514213246030.png" alt="image-20240514213246030"></p>
+<p>比如：</p>
+<table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">itheima ALL=(ALL)       NOPASSWD: ALL</span><br></pre></td></tr></tbody></table>
+
+<p>在visudo内配置如上内容，可以让itheima用户，无需密码直接使用<code>sudo</code></p>
+<h2 id="chmod命令"><a href="#chmod命令" class="headerlink" title="chmod命令"></a>chmod命令</h2><p>修改文件、文件夹权限</p>
+<p>语法：<code>chmod [-R] 权限 参数</code></p>
+<ul>
+<li><p>权限，要设置的权限，比如755，表示：<code>rwxr-xr-x</code></p>
+<p><img src="/image-20240514213237881.png" alt="image-20240514213237881"></p>
+</li>
+<li><p>参数，被修改的文件、文件夹</p>
+</li>
+<li><p>选项-R，设置文件夹和其内部全部内容一样生效</p>
+</li>
+</ul>
+<h2 id="chown命令"><a href="#chown命令" class="headerlink" title="chown命令"></a>chown命令</h2><p>修改文件、文件夹所属用户、组</p>
+<p>语法：<code>chown [-R] [用户][:][用户组] 文件或文件夹</code></p>
+<p><img src="/image-20240514213227133.png" alt="image-20240514213227133"></p>
+<h2 id="用户组管理"><a href="#用户组管理" class="headerlink" title="用户组管理"></a>用户组管理</h2><p><img src="/image-20240514213217206.png" alt="image-20240514213217206"></p>
+<h2 id="用户管理"><a href="#用户管理" class="headerlink" title="用户管理"></a>用户管理</h2><p><img src="/image-20240514213144475.png" alt="image-20240514213144475"></p>
+<h2 id="genenv命令"><a href="#genenv命令" class="headerlink" title="genenv命令"></a>genenv命令</h2><ul>
+<li><p><code>getenv group</code>，查看系统全部的用户组</p>
+<p><img src="/image-20240514213133464.png" alt="image-20240514213133464"></p>
+</li>
+<li><p><code>getenv passwd</code>，查看系统全部的用户</p>
+<p><img src="/image-20240514213126691.png" alt="image-20240514213126691"></p>
+</li>
+</ul>
+<h2 id="env命令"><a href="#env命令" class="headerlink" title="env命令"></a>env命令</h2><p>查看系统全部的环境变量</p>
+<p>语法：<code>env</code></p>
+<h1 id="Shell脚本编程"><a href="#Shell脚本编程" class="headerlink" title="Shell脚本编程"></a>Shell脚本编程</h1><h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p>Shell是什么？</p>
+<ul>
+<li>Shell是一个命令行解释器，它为用户提供了一个向Linux内核发送请求以便运行程序的界面系统级程序，用户可以用Shell来启动，挂起，停止甚至是编写一些程序。看一个示意图</li>
+</ul>
+<h2 id="入门案例"><a href="#入门案例" class="headerlink" title="入门案例"></a>入门案例</h2><ul>
+<li>脚本要求格式<ul>
+<li>脚本以 <code>#!bin/bash</code> 开头</li>
+<li>脚本执行需要权限</li>
+</ul>
+</li>
+<li>编写第一个Shell脚本<ul>
+<li>需求说明，新建一个Shell脚本，输出Hello world</li>
+</ul>
+</li>
+</ul>
+<table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">创建shell脚本，注意以sh结尾</span></span><br><span class="line">mkdir hello.sh</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">两种执行方式</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">1. (使用脚本的绝对路径和相对路径)默认root是没有执行权限的，我们要给shell脚本添加x运行权限</span></span><br><span class="line">chmod u+x hello.sh</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">运行</span></span><br><span class="line">./hello.sh</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">2. (sh+脚本)使用sh命令直接运行，不需要添加x权限</span></span><br><span class="line">sh hello.sh</span><br></pre></td></tr></tbody></table>
+
+<h2 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h2><ul>
+<li>Shell变量介绍<ul>
+<li>Linux Shell中的变量分为，系统变量和用户自定义变量</li>
+<li>系统变量：$HOME、$PWD、$SHELL、$USER等，比如：echo $HOME 等等</li>
+<li>显示当前shell中所有变量：set</li>
+</ul>
+</li>
+<li>shell变量的定义<ul>
+<li>定义变量：变量名&#x3D;值</li>
+<li>撤销变量：unset 变量</li>
+<li>声明静态变量：readonly变量，注意：不能unset</li>
+</ul>
+</li>
+</ul>
+<table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">案例</span></span><br><span class="line">1. 定义变量A</span><br><span class="line">	A=10</span><br><span class="line">	echo A=$A  =&gt; A=100</span><br><span class="line">2. 撤销变量A</span><br><span class="line">	unset A</span><br><span class="line">	echo A=$A   =&gt; A=</span><br><span class="line">3. 声明静态变量B=2，不能unset</span><br><span class="line">	readonly B=2</span><br><span class="line">	echo B=$B  =&gt; B=2</span><br><span class="line">4. 可把比那辆提升为全局环境变量，可供其他shell程序使用[该案例后面将]</span><br></pre></td></tr></tbody></table>
+
+<p>注意：</p>
+<p><img src="/image-20240515090101325.png" alt="image-20240515090101325"></p>
+<h2 id="设置环境变量"><a href="#设置环境变量" class="headerlink" title="设置环境变量"></a>设置环境变量</h2><ul>
+<li>基本语法<ul>
+<li><code>export 变量名=变量值</code>：将shell变量输出为环境变量&#x2F;全局变量</li>
+<li><code>source 配置文件</code>：让修改后的配置信息立即生效</li>
+<li><code>echo $变量名</code>：查询环境变量的值</li>
+</ul>
+</li>
+</ul>
+<p>案例：</p>
+<table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">1. 在/etc/profile文件中定义TOMCAT_HOME环境变量</span><br><span class="line"><span class="meta prompt_">	1&gt; </span><span class="language-bash">vim /etc/profile  进入vim编辑器</span></span><br><span class="line"><span class="meta prompt_">	2&gt; </span><span class="language-bash"><span class="built_in">export</span> TOMCAT_HOME=/opt/tomcat  定义环境变量</span></span><br><span class="line"><span class="meta prompt_">	3&gt; </span><span class="language-bash"><span class="built_in">source</span> /etc/profile  刷新</span></span><br><span class="line">2. 查看环境变量TOMCAT_HOME的值</span><br><span class="line">	echo $TOMCAT_HOME  输出</span><br><span class="line">3. 在另外一个shell程序中使用TOMCAT_HOME</span><br><span class="line">	进入另一个shell脚本</span><br><span class="line">	echo "tomcat_home=$TOMCAT_HOME"</span><br></pre></td></tr></tbody></table>
+
+<p>shell脚本多行注释： <code>:&lt;&lt;! 内容 !</code></p>
+<h2 id="位置参数变量"><a href="#位置参数变量" class="headerlink" title="位置参数变量"></a>位置参数变量</h2><ul>
+<li><p>介绍</p>
+<ul>
+<li>当我们执行一个shell脚本时，如果希望获取到命令行的参数信息，就可以使用到位置参数变量，比如: <code>./myshell.sh 100 200</code>，这个就是一个执行shell的命令行，可以在myshell 脚本中获取到参数信息</li>
+</ul>
+</li>
+<li><p>基本语法</p>
+<ul>
+<li><code>$n</code> ：n为数字，$0代表命令本身，$1-$9代表第一到第九个参数，十以上的参数，十以上的参数需要用大括号包含，如${10}</li>
+<li><code>$*</code> ：这个变量代表命令行中所有的参数，$* 把所有的参数堪称一个整体</li>
+<li><code>$@</code> ：这个变量代表命令行中所有的参数，不过$@ 把每个参数区分对待</li>
+<li><code>$#</code> ：这个变量代表命令行中所有参数的个数</li>
+</ul>
+</li>
+</ul>
+<p>案例：</p>
+<table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">编写一个shell脚本position.sh 在脚本中获取到命令行的各个参数信息</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">!/bin/bash</span></span><br><span class="line">echo "0=$0 1=$1 2=$2"</span><br><span class="line">echo "所有的参数=$*"</span><br><span class="line">echo "$@"</span><br><span class="line">echo "所有的参数个数=$#"</span><br></pre></td></tr></tbody></table>
+
+<h2 id="预定义变量"><a href="#预定义变量" class="headerlink" title="预定义变量"></a>预定义变量</h2><ul>
+<li><p>基本介绍</p>
+<ul>
+<li>就是shell设计者事先已经定义好的变量，可以直接在shell脚本中使用</li>
+</ul>
+</li>
+<li><p>基本语法</p>
+<ul>
+<li><code>$$</code> ：当前进程的进程号(PID)</li>
+<li><code>$!</code> ：后台运行的最后一个进程的进程号(PID)</li>
+<li><code>$?</code> ：最后一次执行的命令的返回状态，如果这个变量的职位0，证明上一个命令正确执行，如果这个变量的值为非0（具体是哪个数，由命令自己来决定），则证明上一个命令执行不正确了</li>
+</ul>
+</li>
+</ul>
+<p>案例：</p>
+<table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">在一个shell脚本中简单使用一下预定义变量preVar.sh</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">!/bin/bash</span></span><br><span class="line">echo "当前正在运行的进程号id=$$"</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">以后台的方式运行一个脚本，并获取他的进程号</span></span><br><span class="line">./myshell.sh &amp;</span><br><span class="line">echo "后台运行的最后一个进程号=$!"</span><br><span class="line">echo "最后一次执行的结果=$?"</span><br><span class="line"></span><br></pre></td></tr></tbody></table>
+
+<h2 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h2><ul>
+<li><p>基本介绍</p>
+<ul>
+<li>学习如何在shell中进行各种运算操作</li>
+</ul>
+</li>
+<li><p>基本语法</p>
+<ul>
+<li>“$((运算式))” 或 “$[运算式]” 或者 expr m + n</li>
+<li>注意expr 运算符间要有空格，如果希望将expr 的结果赋给某个变量，使用``</li>
+<li>expr m - n</li>
+<li>expr <code>\*</code>, <code>/</code>, <code>%</code> 乘、除、取余</li>
+</ul>
+</li>
+</ul>
+<p>案例：</p>
+<table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">计算(2+3)*4</span></span><br><span class="line"><span class="meta prompt_">	# </span><span class="language-bash">第一种方式</span></span><br><span class="line">		RES1=$(((2+3)*4))</span><br><span class="line"><span class="meta prompt_">	# </span><span class="language-bash">第二种方式</span></span><br><span class="line">		RES2=$[(2+3)*4]</span><br><span class="line"><span class="meta prompt_">	# </span><span class="language-bash">第三种方式</span></span><br><span class="line">		TEMP=`expr 2 + 3`</span><br><span class="line">		RES=`expr $TEMP \* 4`</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">请求出命令行的两个参数[整数] 和 20</span></span><br><span class="line">	SUM=$[$1+$2]</span><br><span class="line">	./oper.sh 20 50</span><br></pre></td></tr></tbody></table>
+
+<h2 id="条件判断"><a href="#条件判断" class="headerlink" title="条件判断"></a>条件判断</h2><p><img src="/image-20240515095940187.png" alt="image-20240515095940187"></p>
+<p><img src="/image-20240515100008957.png" alt="image-20240515100008957"></p>
+<p>案例：</p>
+<table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">案例1. <span class="string">"ok"</span> 是否等于 <span class="string">"ok"</span></span></span><br><span class="line">if [ "ok" = "ok" ]</span><br><span class="line">then</span><br><span class="line">	echo "equal"</span><br><span class="line">fi</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">案例2. 23是否大于等于22</span></span><br><span class="line">if [ 23 -ge 22 ]</span><br><span class="line">then</span><br><span class="line">	echo "大于"</span><br><span class="line">fi</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">案例3. /root/shcode/aaa.txt 目录中的文件是否存在</span></span><br><span class="line">if [ -f /root/shcode/aaa.txt ]</span><br><span class="line">then</span><br><span class="line">	echo "存在"</span><br><span class="line">fi</span><br></pre></td></tr></tbody></table>
+
+<h2 id="流程控制"><a href="#流程控制" class="headerlink" title="流程控制"></a>流程控制</h2><h3 id="if分支"><a href="#if分支" class="headerlink" title="if分支"></a>if分支</h3><p><img src="/image-20240515103100113.png" alt="image-20240515103100113"></p>
+<p>注意：[条件判断式] 中括号和条件判断式之间必须有空格</p>
+<p>案例：</p>
+<table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">请编写一个shell程序，如果输入的参数，大于等于60 则输出<span class="string">"及格了"</span> 如果小于60，则输出 <span class="string">"不及格"</span></span></span><br><span class="line">if [ $1 -ge 60 ]</span><br><span class="line">then</span><br><span class="line">	echo "及格了"</span><br><span class="line">elif [ $1 -lt 60 ]</span><br><span class="line">then</span><br><span class="line">	echo "不及格"</span><br><span class="line">fi</span><br></pre></td></tr></tbody></table>
+
+<h3 id="case语句"><a href="#case语句" class="headerlink" title="case语句"></a>case语句</h3><p><img src="/image-20240515103930040.png" alt="image-20240515103930040"></p>
+<p>案例：</p>
+<table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">当命令行参数是1时，输出<span class="string">"周一"</span>，是2时，就输出<span class="string">"周二"</span>，其他情况输出 <span class="string">"other"</span></span></span><br><span class="line">case $1 in</span><br><span class="line">"1")</span><br><span class="line">echo "周一"</span><br><span class="line">;;</span><br><span class="line">case $2 in</span><br><span class="line">"2")</span><br><span class="line">echo "周二"</span><br><span class="line">;;</span><br><span class="line">*)</span><br><span class="line">echo "other"</span><br><span class="line">;;</span><br><span class="line">esac</span><br></pre></td></tr></tbody></table>
+
+<h3 id="for循环"><a href="#for循环" class="headerlink" title="for循环"></a>for循环</h3><p><img src="/image-20240515104846827.png" alt="image-20240515104846827"></p>
+<p>案例：</p>
+<table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">打印命令行输入的参数[这里可以看出$* 和 <span class="variable">$@</span> 的区别]</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">$* 会把参数当成一个整体 所以只会输出一句话</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash"><span class="variable">$@</span> 会把参数区分，所以有几个参数 就输出几句话</span></span><br><span class="line">for i in "$*/$@"</span><br><span class="line">do</span><br><span class="line">	echo "i的值为$i"</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">从1加到100的值输出显示</span></span><br><span class="line">SUM=0</span><br><span class="line">for (( i=1; i&lt;=$1; i++ ))</span><br><span class="line">do</span><br><span class="line">	SUM=$[$SUM+$i]</span><br><span class="line">done</span><br><span class="line">	echo "SUM=$SUM"</span><br></pre></td></tr></tbody></table>
+
+<h3 id="while循环"><a href="#while循环" class="headerlink" title="while循环"></a>while循环</h3><p><img src="/image-20240515105936017.png" alt="image-20240515105936017"></p>
+<p>案例：</p>
+<table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">从命令中输入一个数n,求1+...+n的值是多少</span></span><br><span class="line">SUM=0</span><br><span class="line">i=0</span><br><span class="line">while [ $i -gt $1 ]</span><br><span class="line">do</span><br><span class="line">	SUM=$[$SUM+$i]</span><br><span class="line">	i=$[$i+1]</span><br><span class="line">done</span><br><span class="line">	echo "SUM的值=$SUM"</span><br></pre></td></tr></tbody></table>
+
+<h2 id="read读取控制台输入"><a href="#read读取控制台输入" class="headerlink" title="read读取控制台输入"></a>read读取控制台输入</h2><p><img src="/image-20240515110647470.png" alt="image-20240515110647470"></p>
+<p>案例：</p>
+<table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">案例1：读取控制台输入一个num值</span></span><br><span class="line">read -p "请输入一个数num1=" NUM1</span><br><span class="line">echo "你输入的num1=$NUM1"</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">案例2：读取控制台输入一个num值，在10s内输入</span></span><br><span class="line">read -t 10 -p "请输入一个数NUM1=" NUM1</span><br><span class="line">echo "你输入的num1="$NUM1</span><br></pre></td></tr></tbody></table>
+
+<h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><h3 id="basename"><a href="#basename" class="headerlink" title="basename"></a>basename</h3><ul>
+<li>函数介绍<ul>
+<li>shell编程和其他语言一样，有系统函数，也可以自定义函数，系统函数中，我们这里就介绍两个</li>
+</ul>
+</li>
+</ul>
+<p><img src="/image-20240515111138084.png" alt="image-20240515111138084"></p>
+<p>案例：</p>
+<table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">案例1：请返回/home/aaa/test.txt的 <span class="string">"test.txt"</span> 的部分</span></span><br><span class="line">basename /home/aaa/test.txt =&gt; test.txt</span><br><span class="line">basename /home/aaa/test.txt .txt =&gt; test</span><br></pre></td></tr></tbody></table>
+
+<h3 id="dirname"><a href="#dirname" class="headerlink" title="dirname"></a>dirname</h3><p><img src="/image-20240515111520036.png" alt="image-20240515111520036"></p>
+<p>案例：</p>
+<table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">案例1：请返回/home/aaa/test.txt 的 /home/aaa</span></span><br><span class="line">dirname /home/aaa/test.txt</span><br></pre></td></tr></tbody></table>
+
+<h3 id="自定义函数"><a href="#自定义函数" class="headerlink" title="自定义函数"></a>自定义函数</h3><p><img src="/image-20240515111933117.png" alt="image-20240515111933117"></p>
+<p>案例：</p>
+<table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">案例1：计算输入两个参数的和(动态的获取)，getSum</span></span><br><span class="line">function getSum()</span><br><span class="line">{</span><br><span class="line">	SUM=$[$1+$2]	</span><br><span class="line">	echo "和是=$SUM"</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line">read -p "请输入一个数字n1=" n1</span><br><span class="line">read -p "请输入一个数字n2=" n2</span><br><span class="line"></span><br><span class="line">getSum $n1 $n2</span><br></pre></td></tr></tbody></table>
+
+<h3 id="Shell脚本案例"><a href="#Shell脚本案例" class="headerlink" title="Shell脚本案例"></a>Shell脚本案例</h3><p><img src="/image-20240515132902308.png" alt="image-20240515132902308"></p>
+<table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">BACKUP=/data/backup/db</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">获取当前时间</span></span><br><span class="line">DATETIME=$(date +%Y-%m-%d_%H_%M_%S)</span><br><span class="line">echo $DATETIME</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">数据库的地址</span></span><br><span class="line">HOST=localhost</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">数据库的用户名</span></span><br><span class="line">DB_USER=root</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">数据库密码</span></span><br><span class="line">DB_PW=Zikl142857</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">数据库名</span></span><br><span class="line">DATABASE=raehp</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">创建备份目录</span></span><br><span class="line">[ ! -d "${BACKUP}/${DATETIME}" ] &amp;&amp; mkdir -p "${BACKUP}/${DATETIME}"</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">备份数据库</span></span><br><span class="line">mysqldump -u${DB_USER} -p${DB_PW} --host=${HOST} -q -R --databases ${DATABASE} | gzip &gt; ${BACKUP}/${DATETIME}/$DATETIME.sql.gz</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">将文件处理成tar.gz</span></span><br><span class="line">cd ${BACKUP}</span><br><span class="line">tar -zcvf $DATETIME.tar.gz ${DATETIME}</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">删除对应的备份文件</span></span><br><span class="line">rm -rf ${BACKUP}/${DATETIME}</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">检查是否有10天前的备份数据库文件</span></span><br><span class="line">find ${BACKUP} -atime +10 -name "*.tar.gz" -exec rm {} \;</span><br><span class="line">echo "备份数据库${DATABASE}成功"</span><br><span class="line"></span><br></pre></td></tr></tbody></table></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://raehp.github.io">翎晗</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://raehp.github.io/2024/04/25/Linux/">https://raehp.github.io/2024/04/25/Linux/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="https://raehp.github.io" target="_blank">L1n</a>！</span></div></div><div class="tag_share"><div class="post-share"><div class="social-share" data-image="/img/avatar.jpg" data-sites="facebook,x,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/2024/04/25/Redis/" title="Redis"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">Redis</div></div><div class="info-2"><div class="info-item-1">快速入门 初识NoSQLNoSQL：非关系型数据库  初识Redis简介Redis， 远程词典服务器，是一个基于内存的键值型NoSQL数据库 特征：  键值型，valuie支持多种不同数据结构，功能丰富 单线程，每个命令具备原子性 低延迟，速度快（基于内存，IO多路复用，良好的编码） 支持数据持久化 指出主从集群，分片集群 支持多语言客户端  安装RedisRedis安装说明大多数企业都是基于Linux服务器来部署项目，而且Redis官方也没有提供Windows版本的安装包。因此课程中我们会基于Linux系统来安装Redis. 此处选择的Linux版本为CentOS 7. Redis的官方网站地址：https://redis.io/ 1.单机安装Redis1.1.安装Redis依赖Redis是基于C语言编写的，因此首先需要安装Redis所需要的gcc依赖： 1yum install -y gcc tcl  1.2.上传安装包并解压然后将课前资料提供的Redis安装包上传到虚拟机的任意目录：  例如，我放到了&#x2F;usr&#x2F;local&#x2F;src 目录：  解压...</div></div></div></a><a class="pagination-related" href="/2024/04/25/%E7%A7%81%E6%9C%8D%E9%85%8D%E7%BD%AE%E8%AF%B4%E6%98%8E/" title="私服配置说明"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">私服配置说明</div></div><div class="info-2"><div class="info-item-1">私服这一节，我们主要学习的内容是:  私服简介 私服仓库分类 资源上传与下载  首先来说一说什么是私服? 私服简介团队开发现状分析  (1)张三负责ssm_crm的开发，自己写了一个ssm_pojo模块，要想使用直接将ssm_pojo安装到本地仓库即可 (2)李四负责ssm_order的开发，需要用到张三所写的ssm_pojo模块，这个时候如何将张三写的ssm_pojo模块交给李四呢? (3)如果直接拷贝，那么团队之间的jar包管理会非常混乱而且容器出错，这个时候我们就想能不能将写好的项目上传到中央仓库，谁想用就直接联网下载即可 (4)Maven的中央仓库不允许私人上传自己的jar包,那么我们就得换种思路，自己搭建一个类似于中央仓库的东西，把自己的内容上传上去，其他人就可以从上面下载jar包使用 (5)这个类似于中央仓库的东西就是我们接下来要学习的&#x3D;&#x3D;私服&#x3D;&#x3D; 所以到这就有两个概念，一个是私服，一个是中央仓库 私服:公司内部搭建的用于存储Maven资源的服务器 远程仓库:Maven开发团队维护的用于存储Maven资源的服务器 所以说:  私...</div></div></div></a></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">翎晗</div><div class="author-info-description">心有所向, 无问东西</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">29</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">15</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/Raehp" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:zhanghaolin406@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="/atom.xml" target="_blank" title="RSS"><i class="fas fa-rss"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Linux%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4"><span class="toc-number">1.</span> <span class="toc-text">Linux基础命令</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Linux%E7%9A%84%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84"><span class="toc-number">1.1.</span> <span class="toc-text">Linux的目录结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ls%E5%91%BD%E4%BB%A4"><span class="toc-number">1.2.</span> <span class="toc-text">ls命令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9A%90%E8%97%8F%E6%96%87%E4%BB%B6%E3%80%81%E6%96%87%E4%BB%B6%E5%A4%B9"><span class="toc-number">1.2.1.</span> <span class="toc-text">隐藏文件、文件夹</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#pwd%E5%91%BD%E4%BB%A4"><span class="toc-number">1.3.</span> <span class="toc-text">pwd命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#cd%E5%91%BD%E4%BB%A4"><span class="toc-number">1.4.</span> <span class="toc-text">cd命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HOME%E7%9B%AE%E5%BD%95"><span class="toc-number">1.5.</span> <span class="toc-text">HOME目录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%B8%E5%AF%B9%E8%B7%AF%E5%BE%84%E3%80%81%E7%BB%9D%E5%AF%B9%E8%B7%AF%E5%BE%84"><span class="toc-number">1.6.</span> <span class="toc-text">相对路径、绝对路径</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%89%B9%E6%AE%8A%E8%B7%AF%E5%BE%84%E7%AC%A6"><span class="toc-number">1.7.</span> <span class="toc-text">特殊路径符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#mkdir%E5%91%BD%E4%BB%A4"><span class="toc-number">1.8.</span> <span class="toc-text">mkdir命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#touch%E5%91%BD%E4%BB%A4"><span class="toc-number">1.9.</span> <span class="toc-text">touch命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#cat%E5%91%BD%E4%BB%A4"><span class="toc-number">1.10.</span> <span class="toc-text">cat命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#more%E5%91%BD%E4%BB%A4"><span class="toc-number">1.11.</span> <span class="toc-text">more命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#cp%E5%91%BD%E4%BB%A4"><span class="toc-number">1.12.</span> <span class="toc-text">cp命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#mv%E5%91%BD%E4%BB%A4"><span class="toc-number">1.13.</span> <span class="toc-text">mv命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#rm%E5%91%BD%E4%BB%A4"><span class="toc-number">1.14.</span> <span class="toc-text">rm命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#which%E5%91%BD%E4%BB%A4"><span class="toc-number">1.15.</span> <span class="toc-text">which命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#find%E5%91%BD%E4%BB%A4"><span class="toc-number">1.16.</span> <span class="toc-text">find命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ps%E5%91%BD%E4%BB%A4"><span class="toc-number">1.17.</span> <span class="toc-text">ps命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#kill%E5%91%BD%E4%BB%A4"><span class="toc-number">1.18.</span> <span class="toc-text">kill命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#nmap%E5%91%BD%E4%BB%A4"><span class="toc-number">1.19.</span> <span class="toc-text">nmap命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#netstat%E5%91%BD%E4%BB%A4"><span class="toc-number">1.20.</span> <span class="toc-text">netstat命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ping%E5%91%BD%E4%BB%A4"><span class="toc-number">1.21.</span> <span class="toc-text">ping命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#wget%E5%91%BD%E4%BB%A4"><span class="toc-number">1.22.</span> <span class="toc-text">wget命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#curl%E5%91%BD%E4%BB%A4"><span class="toc-number">1.23.</span> <span class="toc-text">curl命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#top%E5%91%BD%E4%BB%A4"><span class="toc-number">1.24.</span> <span class="toc-text">top命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#df%E5%91%BD%E4%BB%A4"><span class="toc-number">1.25.</span> <span class="toc-text">df命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#iostat%E5%91%BD%E4%BB%A4"><span class="toc-number">1.26.</span> <span class="toc-text">iostat命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#sar%E5%91%BD%E4%BB%A4"><span class="toc-number">1.27.</span> <span class="toc-text">sar命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F"><span class="toc-number">1.28.</span> <span class="toc-text">环境变量</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#PATH%E5%8F%98%E9%87%8F"><span class="toc-number">1.28.1.</span> <span class="toc-text">PATH变量</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%A6%E5%8F%B7"><span class="toc-number">1.29.</span> <span class="toc-text">$符号</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8E%8B%E7%BC%A9%E8%A7%A3%E5%8E%8B"><span class="toc-number">1.30.</span> <span class="toc-text">压缩解压</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8E%8B%E7%BC%A9"><span class="toc-number">1.30.1.</span> <span class="toc-text">压缩</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E5%8E%8B"><span class="toc-number">1.30.2.</span> <span class="toc-text">解压</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#su%E5%91%BD%E4%BB%A4"><span class="toc-number">1.31.</span> <span class="toc-text">su命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#sudo%E5%91%BD%E4%BB%A4"><span class="toc-number">1.32.</span> <span class="toc-text">sudo命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#chmod%E5%91%BD%E4%BB%A4"><span class="toc-number">1.33.</span> <span class="toc-text">chmod命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#chown%E5%91%BD%E4%BB%A4"><span class="toc-number">1.34.</span> <span class="toc-text">chown命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%A8%E6%88%B7%E7%BB%84%E7%AE%A1%E7%90%86"><span class="toc-number">1.35.</span> <span class="toc-text">用户组管理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86"><span class="toc-number">1.36.</span> <span class="toc-text">用户管理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#genenv%E5%91%BD%E4%BB%A4"><span class="toc-number">1.37.</span> <span class="toc-text">genenv命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#env%E5%91%BD%E4%BB%A4"><span class="toc-number">1.38.</span> <span class="toc-text">env命令</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Shell%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B"><span class="toc-number">2.</span> <span class="toc-text">Shell脚本编程</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A6%82%E5%BF%B5"><span class="toc-number">2.1.</span> <span class="toc-text">概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%A5%E9%97%A8%E6%A1%88%E4%BE%8B"><span class="toc-number">2.2.</span> <span class="toc-text">入门案例</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95"><span class="toc-number">2.3.</span> <span class="toc-text">基本语法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AE%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F"><span class="toc-number">2.4.</span> <span class="toc-text">设置环境变量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%8D%E7%BD%AE%E5%8F%82%E6%95%B0%E5%8F%98%E9%87%8F"><span class="toc-number">2.5.</span> <span class="toc-text">位置参数变量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%84%E5%AE%9A%E4%B9%89%E5%8F%98%E9%87%8F"><span class="toc-number">2.6.</span> <span class="toc-text">预定义变量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">2.7.</span> <span class="toc-text">运算符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9D%A1%E4%BB%B6%E5%88%A4%E6%96%AD"><span class="toc-number">2.8.</span> <span class="toc-text">条件判断</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6"><span class="toc-number">2.9.</span> <span class="toc-text">流程控制</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#if%E5%88%86%E6%94%AF"><span class="toc-number">2.9.1.</span> <span class="toc-text">if分支</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#case%E8%AF%AD%E5%8F%A5"><span class="toc-number">2.9.2.</span> <span class="toc-text">case语句</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#for%E5%BE%AA%E7%8E%AF"><span class="toc-number">2.9.3.</span> <span class="toc-text">for循环</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#while%E5%BE%AA%E7%8E%AF"><span class="toc-number">2.9.4.</span> <span class="toc-text">while循环</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#read%E8%AF%BB%E5%8F%96%E6%8E%A7%E5%88%B6%E5%8F%B0%E8%BE%93%E5%85%A5"><span class="toc-number">2.10.</span> <span class="toc-text">read读取控制台输入</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%BD%E6%95%B0"><span class="toc-number">2.11.</span> <span class="toc-text">函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#basename"><span class="toc-number">2.11.1.</span> <span class="toc-text">basename</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#dirname"><span class="toc-number">2.11.2.</span> <span class="toc-text">dirname</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E5%87%BD%E6%95%B0"><span class="toc-number">2.11.3.</span> <span class="toc-text">自定义函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Shell%E8%84%9A%E6%9C%AC%E6%A1%88%E4%BE%8B"><span class="toc-number">2.11.4.</span> <span class="toc-text">Shell脚本案例</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/10/13/kafkaConfig/" title="kafkaConfig">kafkaConfig</a><time datetime="2024-10-13T07:15:45.000Z" title="发表于 2024-10-13 15:15:45">2024-10-13</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/09/27/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E9%9D%A2%E8%AF%95%E9%A2%98/" title="微服务面试题">微服务面试题</a><time datetime="2024-09-27T02:32:38.000Z" title="发表于 2024-09-27 10:32:38">2024-09-27</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/09/19/es%E9%9B%86%E7%BE%A4/" title="es集群">es集群</a><time datetime="2024-09-19T08:01:14.000Z" title="发表于 2024-09-19 16:01:14">2024-09-19</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/09/19/Redis%E9%9B%86%E7%BE%A4/" title="Redis集群">Redis集群</a><time datetime="2024-09-19T08:00:14.000Z" title="发表于 2024-09-19 16:00:14">2024-09-19</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/07/14/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" title="设计模式">设计模式</a><time datetime="2024-07-14T10:45:42.000Z" title="发表于 2024-07-14 18:45:42">2024-07-14</time></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 - 2026 By 翎晗</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 7.3.0</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.7.0</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.7.0"></script><script src="/js/main.js?v=5.7.0"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

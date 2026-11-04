@@ -1,0 +1,321 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>git | L1n</title><meta name="author" content="翎晗"><meta name="copyright" content="翎晗"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Git简介什么是Git？  Git是一个分布式版本控制工具，主要用于管理开发过程中的源代码文件（Java类、xml文件、html页面等）在软件开发过程中被广泛使用 Git仓库分为两种： 本地仓库：开发人员自己电脑上的Git仓库 远程仓库：远程服务器上的Git仓库      commit：提交，将本地文件和版本信息 保存到本地仓库 push：推送，将本地仓库文件和版本信息上传到远程仓库 pull：拉">
+<meta property="og:type" content="article">
+<meta property="og:title" content="git">
+<meta property="og:url" content="https://raehp.github.io/2024/04/25/git/index.html">
+<meta property="og:site_name" content="L1n">
+<meta property="og:description" content="Git简介什么是Git？  Git是一个分布式版本控制工具，主要用于管理开发过程中的源代码文件（Java类、xml文件、html页面等）在软件开发过程中被广泛使用 Git仓库分为两种： 本地仓库：开发人员自己电脑上的Git仓库 远程仓库：远程服务器上的Git仓库      commit：提交，将本地文件和版本信息 保存到本地仓库 push：推送，将本地仓库文件和版本信息上传到远程仓库 pull：拉">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://raehp.github.io/img/avatar.jpg">
+<meta property="article:published_time" content="2024-04-25T05:20:54.000Z">
+<meta property="article:modified_time" content="2024-06-30T08:14:48.000Z">
+<meta property="article:author" content="翎晗">
+<meta property="article:tag" content="Java,后端,笔记">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raehp.github.io/img/avatar.jpg"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "git",
+  "url": "https://raehp.github.io/2024/04/25/git/",
+  "image": "https://raehp.github.io/img/avatar.jpg",
+  "datePublished": "2024-04-25T05:20:54.000Z",
+  "dateModified": "2024-06-30T08:14:48.000Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "翎晗",
+      "url": "https://raehp.github.io"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://raehp.github.io/2024/04/25/git/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=5.7.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.3.1/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        const data = { value }
+
+        if (ttl != null) {
+          data.expiry = Date.now() + ttl * 86400000
+        }
+
+        localStorage.setItem(key, JSON.stringify(data))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return
+
+        try {
+          const data = JSON.parse(itemStr)
+
+          if (data.expiry && Date.now() > data.expiry) {
+            localStorage.removeItem(key)
+            return
+          }
+
+          return data.value
+        } catch {
+          localStorage.removeItem(key)
+        }
+      }
+    }
+
+    const scriptCache = new Map()
+    const cssCache = new Map()
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => {
+        if (scriptCache.has(url)) {
+          return scriptCache.get(url)
+        }
+
+        const promise = new Promise((resolve, reject) => {
+          const script = document.createElement('script')
+
+          script.src = url
+          script.async = true
+
+          for (const key in attr) {
+            script.setAttribute(key, attr[key])
+          }
+
+          script.onload = resolve
+          script.onerror = reject
+
+          document.head.appendChild(script)
+        })
+
+        scriptCache.set(url, promise)
+
+        return promise
+      },
+      getCSS: (url, id) => {
+        if (cssCache.has(url)) {
+          return cssCache.get(url)
+        }
+
+        const promise = new Promise((resolve, reject) => {
+          const link = document.createElement('link')
+
+          link.rel = 'stylesheet'
+          link.href = url
+
+          if (id) {
+            link.id = id
+          }
+
+          link.onload = resolve
+          link.onerror = reject
+
+          document.head.appendChild(link)
+        })
+
+        cssCache.set(url, promise)
+
+        return promise
+      },
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const metaThemeColor = document.querySelector('meta[name="theme-color"]')
+      const activateDarkMode = () => {
+        document.documentElement.dataset.theme = 'dark'
+        if (metaThemeColor !== null) {
+          metaThemeColor.setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.dataset.theme = 'light'
+        if (metaThemeColor !== null) {
+          metaThemeColor.setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.13.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'git',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><link rel="stylesheet" href="/css/background.css"><meta name="generator" content="Hexo 7.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">29</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">15</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><span class="site-page group"><span> 博文</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> archives</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> categories</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> tags</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><span> 生活</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/photos/"><i class="fa-fw fas fa-images"></i><span> photos</span></a></li><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-film"></i><span> movies</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于笔者</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(/img/3.jpg);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">L1n</span></a><a class="nav-page-title" href="/"><span class="site-name">git</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  返回首页</span></span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><span class="site-page group"><span> 博文</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> archives</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> categories</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> tags</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><span> 生活</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/photos/"><i class="fa-fw fas fa-images"></i><span> photos</span></a></li><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-film"></i><span> movies</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于笔者</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">git</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-04-25T05:20:54.000Z" title="发表于 2024-04-25 13:20:54">2024-04-25</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-06-30T08:14:48.000Z" title="更新于 2024-06-30 16:14:48">2024-06-30</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E5%B7%A5%E5%85%B7/">版本控制工具</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><h1 id="Git简介"><a href="#Git简介" class="headerlink" title="Git简介"></a>Git简介</h1><p>什么是Git？</p>
+<ul>
+<li>Git是一个分布式版本控制工具，主要用于管理开发过程中的源代码文件（Java类、xml文件、html页面等）在软件开发过程中被广泛使用</li>
+<li>Git仓库分为两种：<ul>
+<li>本地仓库：开发人员自己电脑上的Git仓库</li>
+<li>远程仓库：远程服务器上的Git仓库</li>
+</ul>
+</li>
+</ul>
+<p><img src="/image-20240403113135925-1712116181119-1.png" alt="image-20240403113135925"></p>
+<ul>
+<li>commit：提交，将本地文件和版本信息 保存到本地仓库</li>
+<li>push：推送，将本地仓库文件和版本信息上传到远程仓库</li>
+<li>pull：拉取，将远程仓库文件和版本信息下载到本地仓库</li>
+</ul>
+<h1 id="Git下载与操作"><a href="#Git下载与操作" class="headerlink" title="Git下载与操作"></a>Git下载与操作</h1><p><img src="/image-20240403113332699-1712116181119-2.png" alt="image-20240403113332699"></p>
+<h1 id="工作区、暂存区、版本库-概念"><a href="#工作区、暂存区、版本库-概念" class="headerlink" title="工作区、暂存区、版本库 概念"></a>工作区、暂存区、版本库 概念</h1><ul>
+<li>版本库：.git隐藏文件夹就是版本库，版本库中 存储了很多配置信息，日志信息和文件版本信息</li>
+<li>工作区：包含.git 文件夹的目录就是 工作区 ，也成为工作目录，主要用于存放开发的代码</li>
+<li>暂存区：.git 文件夹中有很多文件，其中一个index文件就是暂存区，也叫做stage 暂存区是一个临时保存修改文件的地方</li>
+</ul>
+<p><img src="/image-20240403121021210.png" alt="image-20240403121021210"></p>
+<h1 id="工作区中文件的状态"><a href="#工作区中文件的状态" class="headerlink" title="工作区中文件的状态"></a>工作区中文件的状态</h1><p><strong>Git工作区中的文件存在两种状态：</strong></p>
+<ul>
+<li>untracked 未跟踪 （未被纳入版本控制）</li>
+<li>tracked 已跟踪 （被纳入版本控制）<ul>
+<li>Unmodified 未修改状态</li>
+<li>Modified 已修改状态</li>
+<li>Staged 已暂存状态</li>
+</ul>
+</li>
+</ul>
+<h1 id="Git常用命令"><a href="#Git常用命令" class="headerlink" title="Git常用命令"></a>Git常用命令</h1><h2 id="本地仓库常用命令："><a href="#本地仓库常用命令：" class="headerlink" title="本地仓库常用命令："></a>本地仓库常用命令：</h2><ul>
+<li><code>git status</code> 查看文件状态</li>
+<li><code>git add</code> 将文件的修改加入暂存区</li>
+<li><code>git reset</code> 将暂存区的文件取消暂存 或者 切换到指定版本<ul>
+<li><code>git reset 文件名</code> 将文件取消暂存<ul>
+<li><img src="/image-20240403122357867.png" alt="image-20240403122357867"></li>
+</ul>
+</li>
+<li><code>git reset --hard 版本号</code> 切换到指定版本<ul>
+<li><img src="/image-20240403123039124.png" alt="image-20240403123039124"></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>git commit</code> 将暂存区的文件修改提交到版本库</li>
+<li><code>git log</code> 查看日志<ul>
+<li><img src="/image-20240403123138085.png" alt="image-20240403123138085"></li>
+</ul>
+</li>
+</ul>
+<h2 id="远程仓库常见命令"><a href="#远程仓库常见命令" class="headerlink" title="远程仓库常见命令:"></a>远程仓库常见命令:</h2><ul>
+<li><code>git remote</code> <strong>查看远程仓库</strong><ul>
+<li><img src="/image-20240403123729559.png" alt="image-20240403123729559"></li>
+</ul>
+</li>
+<li><code>git remote add &lt;shortname 可引用的简写&gt; &lt;url&gt;</code> <strong>添加远程仓库</strong><ul>
+<li><img src="/image-20240403123744362.png" alt="image-20240403123744362"></li>
+</ul>
+</li>
+<li><code>git clone [url]</code> <strong>克隆远程仓库</strong><ul>
+<li><img src="/image-20240403123859314.png" alt="image-20240403123859314"></li>
+</ul>
+</li>
+<li><code>git push [remote-name(简写的名字)] [brach-name(推送到的位置 分支)]</code> <strong>推送至远程仓库</strong><ul>
+<li><img src="/image-20240403124122805.png" alt="image-20240403124122805"></li>
+</ul>
+</li>
+<li><code>git pull [short-name] [branch-name 分支的名字 表示从哪个分支来拉取]</code> 从远程仓库拉取数据 合并到本地仓库<ul>
+<li><img src="/image-20240403133815133.png" alt="image-20240403133815133"></li>
+</ul>
+</li>
+</ul>
+<p><strong>注意：</strong> 如果当前本地仓库不是从远程仓库克隆，而是本地创建的仓库，并且仓库中存在文件，此时再从远程仓库拉去文件的时候会报错（fatal：refusing to merge unrelated histories ）</p>
+<p>解决此问题可以在 <code>git pull</code> 命令后加入参数：<code>--allow-unrelated-histories</code></p>
+<h2 id="分支操作"><a href="#分支操作" class="headerlink" title="分支操作"></a>分支操作</h2><p>分支是Git 使用过程中 非常重要的概念，使用分支意味着 你可以把你的工作 从开发主线上分离开来 以免避免开发主线。同一个仓库 可以有多个分支，各个分支相互独立，互不干扰 通过 <code>git init</code> 命令创建本地仓库时默认会创建一个master分支。</p>
+<ul>
+<li><p><code>git branch</code> 查看分支</p>
+<ul>
+<li><pre><code>git checkout
+12345- `git branch [name]`  创建分支  - ```    git checkout b1
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">        </span><br><span class="line">-   `git checkout[name]` 切换分支</span><br><span class="line">    </span><br><span class="line">    -   ```</span><br><span class="line">        git checkout b1</span><br><span class="line">        12345- `git push [shortName] [name]`  推送至远程仓库分支  - ```    git push origin master</span><br></pre></td></tr></table></figure>
+</code></pre>
+</li>
+</ul>
+</li>
+<li><p><code>git merge [name]</code> 合并分支</p>
+<ul>
+<li><pre><code># 把b1分支下的b1.txt合并到主分支
+git merge b1
+# 把b2分支下的b2.txt合并到主分支
+git merge b2
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="标签操作"><a href="#标签操作" class="headerlink" title="标签操作"></a>标签操作</h2><p>Git中的标签，指的是某个分支某个特定时间点的状态，通过标签，可以很方便的切换到标记时的状态，比较有代表性的是人们会使用这个功能来标记发布结点（v1.0 v1.2）</p>
+<ul>
+<li><code>git tag</code> 列出已有标签<ul>
+<li><img src="/image-20240403141948827.png" alt="image-20240403141948827"></li>
+</ul>
+</li>
+<li><code>git tag [name]</code> 创建标签<ul>
+<li><img src="/image-20240403141942391.png" alt="image-20240403141942391"></li>
+</ul>
+</li>
+<li><code>git push [shortname] [name]</code> 将标签推送至远程仓库<ul>
+<li><img src="/image-20240403141959742.png" alt="image-20240403141959742"></li>
+</ul>
+</li>
+<li><code>git checkout -b [branch] [name]</code> 检出标签 检出标签时需要创建一个新分支来指向某个标签<ul>
+<li><img src="/image-20240425132313132.png" alt="image-20240425132313132"></li>
+</ul>
+</li>
+</ul>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://raehp.github.io">翎晗</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://raehp.github.io/2024/04/25/git/">https://raehp.github.io/2024/04/25/git/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="https://raehp.github.io" target="_blank">L1n</a>！</span></div></div><div class="tag_share"><div class="post-share"><div class="social-share" data-image="/img/avatar.jpg" data-sites="facebook,x,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/2024/04/25/%E7%99%BD%E7%9B%92%E6%B5%8B%E8%AF%95/" title="白盒测试"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">白盒测试</div></div><div class="info-2"><div class="info-item-1">白盒测试代码逻辑的测试 定义： 白盒测试是一种测试方法，测试人员考虑程序的内部结构、代码逻辑和算法来验证软件的正确性 特点：优点：代码覆盖率高 缺点：1.覆盖所有代码路径难度大 2.业务功能可能覆盖不全 3.测试开销大 使用场景： 单元测试(主要)： 白盒测试常用于测试单个模块、函数或方法，确保其在各种输入条件下都能正确执行。 集成测试： 在系统集成的过程中，白盒测试可以用于验证各个模块之间的接口和数据流是否正确。 性能测试： 白盒测试也可用于评估系统的性能，例如检查代码中的效率和资源利用情况。  白盒设计方法（先静态后动态）设计用例一般使用基本路径测试，重点模块使用多种覆盖率标准 静态=&#x3D;&gt;【1.桌面检查 2.代码审查 3.代码走查 】（手动）【4.代码扫描工具】（自动化） 动态=&#x3D;&gt;1.逻辑覆盖法&#x3D;&#x3D;&gt;1.语句覆盖 2.判定覆盖 3.条件覆盖 4.判定条件覆盖 5.条件组合覆盖 6.路径覆盖 2.基本路径测试法 动态测试方法1.逻辑覆盖法是对程序逻辑结构的遍历实现程序的覆盖 语句覆盖介绍：设计测试用例，使得程序中每条语...</div></div></div></a><a class="pagination-related" href="/2024/04/25/JavaWeb/" title="JavaWeb"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">JavaWeb</div></div><div class="info-2"><div class="info-item-1">Maven简介Maven是一款管理和构建java项目的工具 Maven的作用？ 方便依赖管理 方便快捷的管理项目依赖的资源(jar包)，避免版本冲突问题  统一项目结构 提供标准，统一的项目结构  项目构建 标准跨平台（Linux、Windows、MacOS）的自动化项目结构方式   Maven坐标什么是坐标？  Maven中的坐标是&#x3D;&#x3D;资源的唯一标识&#x3D;&#x3D; , 通过该坐标可以唯一定位资源位置 使用坐标来定义项目或引入项目中需要的依赖  Maven坐标主要组成  groupId：定义当前Maven项目隶属组织名称（通常是域名反写，例如：com.itheima） artifactId：定义当前Maven项目名称（通常是模块名称，例如 order-service、goods-service） version：定义当前项目版本号   注意：  上面所说的资源可以是插件、依赖、当前项目。 我们的项目如果被其他的项目依赖时，也是需要坐标来引入的。  依赖管理依赖配置依赖：指当前项目运行所需要的jar包。一个项目中可以引入多个依赖 例如：在当前工程中，我...</div></div></div></a></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">翎晗</div><div class="author-info-description">心有所向, 无问东西</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">29</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">15</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/Raehp" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:zhanghaolin406@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="/atom.xml" target="_blank" title="RSS"><i class="fas fa-rss"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Git%E7%AE%80%E4%BB%8B"><span class="toc-number">1.</span> <span class="toc-text">Git简介</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Git%E4%B8%8B%E8%BD%BD%E4%B8%8E%E6%93%8D%E4%BD%9C"><span class="toc-number">2.</span> <span class="toc-text">Git下载与操作</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%B7%A5%E4%BD%9C%E5%8C%BA%E3%80%81%E6%9A%82%E5%AD%98%E5%8C%BA%E3%80%81%E7%89%88%E6%9C%AC%E5%BA%93-%E6%A6%82%E5%BF%B5"><span class="toc-number">3.</span> <span class="toc-text">工作区、暂存区、版本库 概念</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%B7%A5%E4%BD%9C%E5%8C%BA%E4%B8%AD%E6%96%87%E4%BB%B6%E7%9A%84%E7%8A%B6%E6%80%81"><span class="toc-number">4.</span> <span class="toc-text">工作区中文件的状态</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="toc-number">5.</span> <span class="toc-text">Git常用命令</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%AC%E5%9C%B0%E4%BB%93%E5%BA%93%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%EF%BC%9A"><span class="toc-number">5.1.</span> <span class="toc-text">本地仓库常用命令：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E5%B8%B8%E8%A7%81%E5%91%BD%E4%BB%A4"><span class="toc-number">5.2.</span> <span class="toc-text">远程仓库常见命令:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%86%E6%94%AF%E6%93%8D%E4%BD%9C"><span class="toc-number">5.3.</span> <span class="toc-text">分支操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%87%E7%AD%BE%E6%93%8D%E4%BD%9C"><span class="toc-number">5.4.</span> <span class="toc-text">标签操作</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/10/13/kafkaConfig/" title="kafkaConfig">kafkaConfig</a><time datetime="2024-10-13T07:15:45.000Z" title="发表于 2024-10-13 15:15:45">2024-10-13</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/09/27/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E9%9D%A2%E8%AF%95%E9%A2%98/" title="微服务面试题">微服务面试题</a><time datetime="2024-09-27T02:32:38.000Z" title="发表于 2024-09-27 10:32:38">2024-09-27</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/09/19/es%E9%9B%86%E7%BE%A4/" title="es集群">es集群</a><time datetime="2024-09-19T08:01:14.000Z" title="发表于 2024-09-19 16:01:14">2024-09-19</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/09/19/Redis%E9%9B%86%E7%BE%A4/" title="Redis集群">Redis集群</a><time datetime="2024-09-19T08:00:14.000Z" title="发表于 2024-09-19 16:00:14">2024-09-19</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/07/14/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" title="设计模式">设计模式</a><time datetime="2024-07-14T10:45:42.000Z" title="发表于 2024-07-14 18:45:42">2024-07-14</time></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 - 2026 By 翎晗</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 7.3.0</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.7.0</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.7.0"></script><script src="/js/main.js?v=5.7.0"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
