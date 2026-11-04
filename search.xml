@@ -1688,6 +1688,382 @@
       </categories>
   </entry>
   <entry>
+    <title>Linux</title>
+    <url>/2024/04/25/Linux/</url>
+    <content><![CDATA[<h1 id="Linux基础命令"><a href="#Linux基础命令" class="headerlink" title="Linux基础命令"></a>Linux基础命令</h1><h2 id="Linux的目录结构"><a href="#Linux的目录结构" class="headerlink" title="Linux的目录结构"></a>Linux的目录结构</h2><p><img src="/2024/04/25/Linux/image-20240514213712464.png" alt="image-20240514213712464"></p>
+<ul>
+<li><code>/</code>，根目录是最顶级的目录了</li>
+<li>Linux只有一个顶级目录：<code>/</code></li>
+<li>路径描述的层次关系同样适用<code>/</code>来表示</li>
+<li>&#x2F;home&#x2F;itheima&#x2F;a.txt，表示根目录下的home文件夹内有itheima文件夹，内有a.txt</li>
+</ul>
+<h2 id="ls命令"><a href="#ls命令" class="headerlink" title="ls命令"></a>ls命令</h2><p>功能：列出文件夹信息</p>
+<p>语法：<code>ls [-l -h -a] [参数]</code></p>
+<ul>
+<li>参数：被查看的文件夹，不提供参数，表示查看当前工作目录</li>
+<li>-l，以列表形式查看</li>
+<li>-h，配合-l，以更加人性化的方式显示文件大小</li>
+<li>-a，显示隐藏文件</li>
+</ul>
+<h3 id="隐藏文件、文件夹"><a href="#隐藏文件、文件夹" class="headerlink" title="隐藏文件、文件夹"></a>隐藏文件、文件夹</h3><p>在Linux中以<code>.</code>开头的，均是隐藏的。</p>
+<p>默认不显示出来，需要<code>-a</code>选项才可查看到。</p>
+<h2 id="pwd命令"><a href="#pwd命令" class="headerlink" title="pwd命令"></a>pwd命令</h2><p>功能：展示当前工作目录</p>
+<p>语法：<code>pwd</code></p>
+<p>作用是：输出当前所在的工作目录</p>
+<h2 id="cd命令"><a href="#cd命令" class="headerlink" title="cd命令"></a>cd命令</h2><p>功能：切换工作目录</p>
+<p>语法：<code>cd [目标目录]</code></p>
+<p>参数：目标目录，要切换去的地方，不提供默认切换到<code>当前登录用户HOME目录</code></p>
+<h2 id="HOME目录"><a href="#HOME目录" class="headerlink" title="HOME目录"></a>HOME目录</h2><p>每一个用户在Linux系统中都有自己的专属工作目录，称之为HOME目录。</p>
+<ul>
+<li><p>普通用户的HOME目录，默认在：<code>/home/用户名</code></p>
+</li>
+<li><p>root用户的HOME目录，在：<code>/root</code></p>
+</li>
+</ul>
+<p>FinalShell登陆终端后，默认的工作目录就是用户的HOME目录</p>
+<h2 id="相对路径、绝对路径"><a href="#相对路径、绝对路径" class="headerlink" title="相对路径、绝对路径"></a>相对路径、绝对路径</h2><ul>
+<li><p>相对路径，&#x3D;&#x3D;非&#x3D;&#x3D;<code>/</code>开头的称之为相对路径</p>
+<p>相对路径表示以<code>当前目录</code>作为起点，去描述路径，如<code>test/a.txt</code>，表示当前工作目录内的test文件夹内的a.txt文件</p>
+</li>
+<li><p>绝对路径，&#x3D;&#x3D;以&#x3D;&#x3D;<code>/</code>开头的称之为绝对路径</p>
+<p>绝对路径从<code>根</code>开始描述路径</p>
+</li>
+</ul>
+<h2 id="特殊路径符"><a href="#特殊路径符" class="headerlink" title="特殊路径符"></a>特殊路径符</h2><ul>
+<li><code>.</code>，表示当前，比如.&#x2F;a.txt，表示当前文件夹内的<code>a.txt</code>文件</li>
+<li><code>..</code>，表示上级目录，比如<code>../</code>表示上级目录，<code>../../</code>表示上级的上级目录</li>
+<li><code>~</code>，表示用户的HOME目录，比如<code>cd ~</code>，即可切回用户HOME目录</li>
+</ul>
+<h2 id="mkdir命令"><a href="#mkdir命令" class="headerlink" title="mkdir命令"></a>mkdir命令</h2><p>功能：创建文件夹</p>
+<p>语法：<code>mkdir [-p] 参数</code></p>
+<ul>
+<li>参数：被创建文件夹的路径</li>
+<li>选项：-p，可选，表示创建前置路径<ul>
+<li>自动创建不存在的父目录，适用于创建连续多层级的目录</li>
+</ul>
+</li>
+</ul>
+<h2 id="touch命令"><a href="#touch命令" class="headerlink" title="touch命令"></a>touch命令</h2><p>功能：创建文件</p>
+<p>语法：<code>touch 参数</code></p>
+<ul>
+<li>参数：参数必填，表示要创建的文件路径</li>
+</ul>
+<h2 id="cat命令"><a href="#cat命令" class="headerlink" title="cat命令"></a>cat命令</h2><p>功能：查看文件内容</p>
+<p>语法：<code>cat 参数</code></p>
+<ul>
+<li>参数：被查看的文件路径</li>
+</ul>
+<h2 id="more命令"><a href="#more命令" class="headerlink" title="more命令"></a>more命令</h2><p>功能：查看文件，可以支持翻页查看</p>
+<p>语法：<code>more 参数</code></p>
+<ul>
+<li>参数：被查看的文件路径</li>
+<li>在查看过程中：<ul>
+<li><code>空格</code>键翻页</li>
+<li><code>q</code>退出查看</li>
+</ul>
+</li>
+</ul>
+<h2 id="cp命令"><a href="#cp命令" class="headerlink" title="cp命令"></a>cp命令</h2><p>功能：复制文件、文件夹</p>
+<p>语法：<code>cp [-r] 参数1 参数2</code></p>
+<ul>
+<li>参数1，被复制的</li>
+<li>参数2，要复制去的地方</li>
+<li>选项：-r，可选，复制文件夹使用</li>
+</ul>
+<p>示例：</p>
+<ul>
+<li>cp a.txt b.txt，复制当前目录下a.txt为b.txt</li>
+<li>cp a.txt test&#x2F;，复制当前目录a.txt到test文件夹内</li>
+<li>cp -r test test2，复制文件夹test到当前文件夹内为test2存在</li>
+</ul>
+<h2 id="mv命令"><a href="#mv命令" class="headerlink" title="mv命令"></a>mv命令</h2><p>功能：移动文件、文件夹</p>
+<p>语法：<code>mv 参数1 参数2</code></p>
+<ul>
+<li>参数1：被移动的</li>
+<li>参数2：要移动去的地方，参数2如果不存在，则会进行改名</li>
+</ul>
+<h2 id="rm命令"><a href="#rm命令" class="headerlink" title="rm命令"></a>rm命令</h2><p>功能：删除文件、文件夹</p>
+<p>语法：<code>rm [-r -f] 参数...参数</code></p>
+<ul>
+<li><p>参数：支持多个，每一个表示被删除的，空格进行分隔</p>
+</li>
+<li><p>选项：-r，删除文件夹使用</p>
+</li>
+<li><p>选项：-f，强制删除，不会给出确认提示，一般root用户会用到</p>
+</li>
+<li><p>参数也支持通配符*，用以做模糊匹配</p>
+<ul>
+<li>text* 匹配以text开头的文件或文件夹</li>
+<li>*text 匹配text结尾的文件或文件夹</li>
+<li>*text * 匹配包含text的文件或文件夹</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>rm命令很危险，一定要注意，特别是切换到root用户的时候。</p>
+</blockquote>
+<h2 id="which命令"><a href="#which命令" class="headerlink" title="which命令"></a>which命令</h2><p>功能：查看命令的程序本体文件路径</p>
+<p>语法：<code>which 参数</code></p>
+<ul>
+<li>参数：被查看的命令</li>
+</ul>
+<h2 id="find命令"><a href="#find命令" class="headerlink" title="find命令"></a>find命令</h2><p>功能：搜索文件</p>
+<p>语法1按文件名搜索：<code>find 路径 -name 参数</code></p>
+<ul>
+<li><p>路径，搜索的起始路径</p>
+</li>
+<li><p>参数，搜索的关键字，支持通配符*， 比如：<code>*</code>test表示搜索任意以test结尾的文件</p>
+</li>
+<li><p>按文件大小查找：<code>find 起始路径 -size +|-n [KMG]</code></p>
+</li>
+<li><pre><code>查找小于10KB的文件：find / -size -10k
+查找小于100MB的文件：find / -size -100mb
+查找大于1GB的文件：find / -size +1GB
+1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071  ## grep命令功能：过滤关键字语法：`grep [-n] 关键字 文件路径`- 选项-n，可选，表示在结果中显示匹配的行的行号。- 参数，关键字，必填，表示过滤的关键字，带有空格或其它特殊符号，建议使用””将关键字包围起来- 参数，文件路径，必填，表示要过滤内容的文件路径，可作为内容输入端口&gt; 参数文件路径，可以作为管道符的输入## wc命令功能：统计语法：`wc [-c -m -l -w] 文件路径`- 选项，-c，统计bytes数量- 选项，-m，统计字符数量- 选项，-l，统计行数- 选项，-w，统计单词数量- 参数，文件路径，被统计的文件，可作为内容输入端口&gt; 参数文件路径，可作为管道符的输入## 管道符|写法：`|`功能：将符号左边的结果，作为符号右边的输入示例：`cat a.txt | grep itheima`，将cat a.txt的结果，作为grep命令的输入，用来过滤`itheima`关键字可以支持嵌套：`cat a.txt | grep itheima | grep itcast`## echo命令功能：输出内容语法：`echo 参数`- 参数：被输出的内容- 无需选择，只有一个参数，表示要输出的内容，复杂内容可以用“ &quot;包围  演示：  - 在终端上显示：Hello Linux
+  echo Hello Linux
+  123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101102103104105106107108109110111112113114115116117118119120121122123124125126127128129130131132133134135136137138139140141142143144145146147148149150151152153154155156157158159160161162163164165166167168169170171172173174175176177178179180181182183184185186187188189190191192193194195196197198199200201202203204205206207208209210211212213214215216217218219220221222223224225226227228229230231232233234235236237238239240241242243244245246247248249250251252253254255256257258259260261262263264265266267268269270271272273274275276277278279280281282283284285286287288289290291292293294295296297298299300301- 带有空格或\等特殊符号，建议使用双引号包围  - 因为不包围的话，空格很容易被识别为参数2，尽管echo不受影响## `反引号功能：被两个反引号包围的内容，会作为命令执行示例：- echo \`pwd\`，会输出当前工作目录## tail命令功能：查看文件尾部内容语法：`tail [-f] 参数`- 参数：被查看的文件- 选项：-f，持续跟踪文件修改## head命令功能：查看文件头部内容语法：`head [-n] 参数`- 参数：被查看的文件- 选项：-n，查看的行数## 重定向符功能：将符号左边的结果，输出到右边指定的文件中去- `&gt;`，表示覆盖输出  将左侧命令的结果，覆盖写入到符号右侧指定的文件中- `&gt;&gt;`，表示追加输出   将左侧命令的结果，追加写入到符号右侧指定的文件中## vi编辑器### 命令模式快捷键| 模式         | 命令  | 描述                              || ------------ | ----- | --------------------------------- || **命令模式** | `i`   | 在当前光标位置进入 `输入模式`     || **命令模式** | `a`   | 在当前光标位置之后进入 `输入模式` || **命令模式** | `I`   | 在当前行的开头进入 `输入模式`     || **命令模式** | `A`   | 在当前行的结尾进入 `输入模式`     || **命令模式** | `o`   | 在当前光标下一行进入 `输入模式`   || **命令模式** | `O`   | 在当前光标上一行进入 `输入模式`   || **输入模式** | `esc` | 任何情况下`esc` 都能回到命令模式  |****| 模式         | 命令             | 描述                   || ------------ | ---------------- | ---------------------- || **命令模式** | `键盘上、键盘k`  | 向上移动光标           || **命令模式** | `键盘下、键盘j`  | 向下移动光标           || **命令模式** | `键盘左、键盘h`  | 向左移动光标           || **命令模式** | `键盘右、键盘l`  | 向右移动光标           || **命令模式** | `0`              | 移动光标到当前行的开头 || **命令模式** | `$`              | 移动光标到当前行的结尾 || **命令模式** | `pageup(Pgup)`   | 向上翻页               || **命令模式** | `pagedown(PgDn)` | 向下翻页               || **命令模式** | `/`              | 进入搜索模式           || **命令模式** | `n`              | 向下继续搜索           || **命令模式** | `N`              | 向上继续搜索           || **模式**     | 命令       | 描述                             || ------------ | ---------- | -------------------------------- || **命令模式** | `dd`       | 删除光标所在行的内容             || **命令模式** | `ndd`      | n是数字，表示删除当前光标向下n行 || **命令模式** | `yy`       | 复制当前行                       || **命令模式** | `nyy`      | n是数字，复制当前行和下面的n行   || **命令模式** | `p`        | 粘贴复制的内容                   || **命令模式** | `u`        | 撤销修改                         || **命令模式** | `ctrl + r` | 反向撤销修改                     || **命令模式** | `gg`       | 跳到首行                         || **命令模式** | `G`        | 跳到行尾                         || **命令模式** | `dG`       | 从当前行开始，向下全部删除       || **命令模式** | `dgg`      | 从当前行开始，向上全部删除       || **命令模式** | `d$`       | 从当前光标开始，删除到本行的结尾 || **命令模式** | `d0`       | 从当前光标开始，删除到本行的开头 |### 底线命令快捷键![image-20240514212954898](./Linux/image-20240514212954898.png)## 命令的选项我们学习的一系列Linux命令，它们所拥有的选项都是非常多的。比如，简单的ls命令就有：-a -A -b -c -C -d -D -f -F -g -G -h -H -i -I -k -l -L -m -n -N -o -p -q -Q -r-R -s -S -t -T -u -U -v -w -x -X -1等选项，可以发现选项是极其多的。课程中， 并不会将全部的选项都进行讲解，否则，一个ls命令就可能讲解2小时之久。课程中，会对常见的选项进行讲解， 足够满足绝大多数的学习、工作场景。### 查看命令的帮助可以通过：`命令 --help`查看命令的帮助手册![image-20240514213545358](./Linux/image-20240514213545358.png)### 查看命令的详细手册可以通过：`man 命令`查看某命令的详细手册![image-20240514213539751](./Linux/image-20240514213539751.png)# Linux常用操作## 软件安装- CentOS系统使用：  - yum [install remove search] [-y] 软件名称    - install 安装    - remove 卸载    - search 搜索    - -y，自动确认- Ubuntu系统使用  - apt [install remove search] [-y] 软件名称    - install 安装    - remove 卸载    - search 搜索    - -y，自动确认&gt; yum 和 apt 均需要root权限## systemctl功能：控制系统服务的启动关闭等语法：`systemctl start | stop | restart | disable | enable | status 服务名`- start，启动- stop，停止- status，查看状态- disable，关闭开机自启- enable，开启开机自启- restart，重启## 软链接功能：创建文件、文件夹软链接（快捷方式）语法：`ln -s 参数1 参数2`- 参数1：被链接的- 参数2：要链接去的地方（快捷方式的名称和存放位置）## 日期语法：`date [-d] [+格式化字符串]`- -d 按照给定的字符串显示日期，一般用于日期计算- 格式化字符串：通过特定的字符串标记，来控制显示的日期格式  - %Y   年%y   年份后两位数字 (00..99)  - %m   月份 (01..12)  - %d   日 (01..31)  - %H   小时 (00..23)  - %M   分钟 (00..59)  - %S   秒 (00..60)  - %s   自 1970-01-01 00:00:00 UTC 到现在的秒数示例：- 按照2022-01-01的格式显示日期  ![image-20240514213528329](./Linux/image-20240514213528329.png)- 按照2022-01-01 10:00:00的格式显示日期  ![image-20240514213523029](./Linux/image-20240514213523029.png)- -d选项日期计算  ![image-20240514213518516](./Linux/image-20240514213518516.png)  - 支持的时间标记为：    ![image-20240514213514134](./Linux/image-20240514213514134.png)## 时区修改时区为中国时区![image-20221027220554654](https://image-set.oss-cn-zhangjiakou.aliyuncs.com/img-out/2022/10/27/20221027220554.png)## ntp功能：同步时间安装：`yum install -y ntp`启动管理：`systemctl start | stop | restart | status | disable | enable ntpd`手动校准时间：`ntpdate -u ntp.aliyun.com`## ip地址格式：a.b.c.d- abcd为0~255的数字特殊IP：- 127.0.0.1，表示本机- 0.0.0.0  - 可以表示本机  - 也可以表示任意IP（看使用场景）查看ip：`ifconfig`## 主机名功能：Linux系统的名称查看：`hostname`设置：`hostnamectl set-hostname 主机名`## 配置VMware固定IP1. 修改VMware网络，参阅PPT，图太多2. 设置Linux内部固定IP   修改文件：`/etc/sysconfig/network-scripts/ifcfg-ens33`   示例文件内容：   ```shell   TYPE=&quot;Ethernet&quot;   PROXY_METHOD=&quot;none&quot;   BROWSER_ONLY=&quot;no&quot;   BOOTPROTO=&quot;static&quot;            # 改为static，固定IP   DEFROUTE=&quot;yes&quot;   IPV4_FAILURE_FATAL=&quot;no&quot;   IPV6INIT=&quot;yes&quot;   IPV6_AUTOCONF=&quot;yes&quot;   IPV6_DEFROUTE=&quot;yes&quot;   IPV6_FAILURE_FATAL=&quot;no&quot;   IPV6_ADDR_GEN_MODE=&quot;stable-privacy&quot;   NAME=&quot;ens33&quot;   UUID=&quot;1b0011cb-0d2e-4eaa-8a11-af7d50ebc876&quot;   DEVICE=&quot;ens33&quot;   ONBOOT=&quot;yes&quot;   IPADDR=&quot;192.168.88.131&quot;        # IP地址，自己设置，要匹配网络范围   NETMASK=&quot;255.255.255.0&quot;        # 子网掩码，固定写法255.255.255.0   GATEWAY=&quot;192.168.88.2&quot;        # 网关，要和VMware中配置的一致   DNS1=&quot;192.168.88.2&quot;            # DNS1服务器，和网关一致即可
+</code></pre>
+</li>
+</ul>
+<h2 id="ps命令"><a href="#ps命令" class="headerlink" title="ps命令"></a>ps命令</h2><p>功能：查看进程信息</p>
+<p>语法：<code>ps -ef</code>，查看全部进程信息，可以搭配grep做过滤：<code>ps -ef | grep xxx</code></p>
+<h2 id="kill命令"><a href="#kill命令" class="headerlink" title="kill命令"></a>kill命令</h2><p><img src="/2024/04/25/Linux/image-20240514213501448.png" alt="image-20240514213501448"></p>
+<h2 id="nmap命令"><a href="#nmap命令" class="headerlink" title="nmap命令"></a>nmap命令</h2><p><img src="/2024/04/25/Linux/image-20240514213455076.png" alt="image-20240514213455076"></p>
+<h2 id="netstat命令"><a href="#netstat命令" class="headerlink" title="netstat命令"></a>netstat命令</h2><p>功能：查看端口占用</p>
+<p>用法：<code>netstat -anp | grep xxx</code></p>
+<h2 id="ping命令"><a href="#ping命令" class="headerlink" title="ping命令"></a>ping命令</h2><p>测试网络是否联通</p>
+<p>语法：<code>ping [-c num] 参数</code></p>
+<p><img src="/2024/04/25/Linux/image-20240514213446601.png" alt="image-20240514213446601"></p>
+<h2 id="wget命令"><a href="#wget命令" class="headerlink" title="wget命令"></a>wget命令</h2><p><img src="/2024/04/25/Linux/image-20240514213436429.png" alt="image-20240514213436429"></p>
+<h2 id="curl命令"><a href="#curl命令" class="headerlink" title="curl命令"></a>curl命令</h2><p><img src="/2024/04/25/Linux/image-20240514213428349.png" alt="image-20240514213428349"></p>
+<p><img src="/2024/04/25/Linux/image-20240514213422455.png" alt="image-20240514213422455"></p>
+<h2 id="top命令"><a href="#top命令" class="headerlink" title="top命令"></a>top命令</h2><p>功能：查看主机运行状态</p>
+<p>语法：<code>top</code>，查看基础信息</p>
+<p>可用选项：</p>
+<p><img src="/2024/04/25/Linux/image-20240514213411146.png" alt="image-20240514213411146"></p>
+<p>交互式模式中，可用快捷键：</p>
+<p><img src="/2024/04/25/Linux/image-20240514213405285.png" alt="image-20240514213405285"></p>
+<h2 id="df命令"><a href="#df命令" class="headerlink" title="df命令"></a>df命令</h2><p>查看磁盘占用</p>
+<p><img src="/2024/04/25/Linux/image-20240514213350037.png" alt="image-20240514213350037"></p>
+<h2 id="iostat命令"><a href="#iostat命令" class="headerlink" title="iostat命令"></a>iostat命令</h2><p>查看CPU、磁盘的相关信息</p>
+<p><img src="/2024/04/25/Linux/image-20240514213341010.png" alt="image-20240514213341010"></p>
+<p><img src="/2024/04/25/Linux/image-20240514213334228.png" alt="image-20240514213334228"></p>
+<h2 id="sar命令"><a href="#sar命令" class="headerlink" title="sar命令"></a>sar命令</h2><p>查看网络统计</p>
+<p><img src="/2024/04/25/Linux/image-20240514213316310.png" alt="image-20240514213316310"></p>
+<h2 id="环境变量"><a href="#环境变量" class="headerlink" title="环境变量"></a>环境变量</h2><ul>
+<li>临时设置：export 变量名&#x3D;变量值</li>
+<li>永久设置：<ul>
+<li>针对用户，设置用户HOME目录内：<code>.bashrc</code>文件</li>
+<li>针对全局，设置<code>/etc/profile</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="PATH变量"><a href="#PATH变量" class="headerlink" title="PATH变量"></a>PATH变量</h3><p>记录了执行程序的搜索路径</p>
+<p>可以将自定义路径加入PATH内，实现自定义命令在任意地方均可执行的效果</p>
+<h2 id="符号"><a href="#符号" class="headerlink" title="$符号"></a>$符号</h2><p>可以取出指定的环境变量的值</p>
+<p>语法：<code>$变量名</code></p>
+<p>示例：</p>
+<p><code>echo $PATH</code>，输出PATH环境变量的值</p>
+<p><code>echo $&#123;PATH&#125;ABC</code>，输出PATH环境变量的值以及ABC</p>
+<p>如果变量名和其它内容混淆在一起，可以使用${}</p>
+<h2 id="压缩解压"><a href="#压缩解压" class="headerlink" title="压缩解压"></a>压缩解压</h2><h3 id="压缩"><a href="#压缩" class="headerlink" title="压缩"></a>压缩</h3><p><code>tar -zcvf 压缩包 被压缩1...被压缩2...被压缩N</code></p>
+<ul>
+<li>-z表示使用gzip，可以不写</li>
+</ul>
+<p><code>zip [-r] 参数1 参数2 参数N</code></p>
+<p><img src="/2024/04/25/Linux/image-20240514213306989.png" alt="image-20240514213306989"></p>
+<h3 id="解压"><a href="#解压" class="headerlink" title="解压"></a>解压</h3><p><code>tar -zxvf 被解压的文件 -C 要解压去的地方</code></p>
+<ul>
+<li>-z表示使用gzip，可以省略</li>
+<li>-C，可以省略，指定要解压去的地方，不写解压到当前目录</li>
+</ul>
+<p><code>unzip [-d] 参数</code></p>
+<p><img src="/2024/04/25/Linux/image-20240514213259749.png" alt="image-20240514213259749"></p>
+<h2 id="su命令"><a href="#su命令" class="headerlink" title="su命令"></a>su命令</h2><p>切换用户</p>
+<p>语法：<code>su [-] [用户]</code></p>
+<p><img src="/2024/04/25/Linux/image-20240514213251660.png" alt="image-20240514213251660"></p>
+<h2 id="sudo命令"><a href="#sudo命令" class="headerlink" title="sudo命令"></a>sudo命令</h2><p><img src="/2024/04/25/Linux/image-20240514213246030.png" alt="image-20240514213246030"></p>
+<p>比如：</p>
+<table><tbody><tr><td class="code"><pre><span class="line">itheima ALL=(ALL)       NOPASSWD: ALL</span><br></pre></td></tr></tbody></table>
+
+<p>在visudo内配置如上内容，可以让itheima用户，无需密码直接使用<code>sudo</code></p>
+<h2 id="chmod命令"><a href="#chmod命令" class="headerlink" title="chmod命令"></a>chmod命令</h2><p>修改文件、文件夹权限</p>
+<p>语法：<code>chmod [-R] 权限 参数</code></p>
+<ul>
+<li><p>权限，要设置的权限，比如755，表示：<code>rwxr-xr-x</code></p>
+<p><img src="/2024/04/25/Linux/image-20240514213237881.png" alt="image-20240514213237881"></p>
+</li>
+<li><p>参数，被修改的文件、文件夹</p>
+</li>
+<li><p>选项-R，设置文件夹和其内部全部内容一样生效</p>
+</li>
+</ul>
+<h2 id="chown命令"><a href="#chown命令" class="headerlink" title="chown命令"></a>chown命令</h2><p>修改文件、文件夹所属用户、组</p>
+<p>语法：<code>chown [-R] [用户][:][用户组] 文件或文件夹</code></p>
+<p><img src="/2024/04/25/Linux/image-20240514213227133.png" alt="image-20240514213227133"></p>
+<h2 id="用户组管理"><a href="#用户组管理" class="headerlink" title="用户组管理"></a>用户组管理</h2><p><img src="/2024/04/25/Linux/image-20240514213217206.png" alt="image-20240514213217206"></p>
+<h2 id="用户管理"><a href="#用户管理" class="headerlink" title="用户管理"></a>用户管理</h2><p><img src="/2024/04/25/Linux/image-20240514213144475.png" alt="image-20240514213144475"></p>
+<h2 id="genenv命令"><a href="#genenv命令" class="headerlink" title="genenv命令"></a>genenv命令</h2><ul>
+<li><p><code>getenv group</code>，查看系统全部的用户组</p>
+<p><img src="/2024/04/25/Linux/image-20240514213133464.png" alt="image-20240514213133464"></p>
+</li>
+<li><p><code>getenv passwd</code>，查看系统全部的用户</p>
+<p><img src="/2024/04/25/Linux/image-20240514213126691.png" alt="image-20240514213126691"></p>
+</li>
+</ul>
+<h2 id="env命令"><a href="#env命令" class="headerlink" title="env命令"></a>env命令</h2><p>查看系统全部的环境变量</p>
+<p>语法：<code>env</code></p>
+<h1 id="Shell脚本编程"><a href="#Shell脚本编程" class="headerlink" title="Shell脚本编程"></a>Shell脚本编程</h1><h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p>Shell是什么？</p>
+<ul>
+<li>Shell是一个命令行解释器，它为用户提供了一个向Linux内核发送请求以便运行程序的界面系统级程序，用户可以用Shell来启动，挂起，停止甚至是编写一些程序。看一个示意图</li>
+</ul>
+<h2 id="入门案例"><a href="#入门案例" class="headerlink" title="入门案例"></a>入门案例</h2><ul>
+<li>脚本要求格式<ul>
+<li>脚本以 <code>#!bin/bash</code> 开头</li>
+<li>脚本执行需要权限</li>
+</ul>
+</li>
+<li>编写第一个Shell脚本<ul>
+<li>需求说明，新建一个Shell脚本，输出Hello world</li>
+</ul>
+</li>
+</ul>
+<table><tbody><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">创建shell脚本，注意以sh结尾</span></span><br><span class="line">mkdir hello.sh</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">两种执行方式</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">1. (使用脚本的绝对路径和相对路径)默认root是没有执行权限的，我们要给shell脚本添加x运行权限</span></span><br><span class="line">chmod u+x hello.sh</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">运行</span></span><br><span class="line">./hello.sh</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">2. (sh+脚本)使用sh命令直接运行，不需要添加x权限</span></span><br><span class="line">sh hello.sh</span><br></pre></td></tr></tbody></table>
+
+<h2 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h2><ul>
+<li>Shell变量介绍<ul>
+<li>Linux Shell中的变量分为，系统变量和用户自定义变量</li>
+<li>系统变量：$HOME、$PWD、$SHELL、$USER等，比如：echo $HOME 等等</li>
+<li>显示当前shell中所有变量：set</li>
+</ul>
+</li>
+<li>shell变量的定义<ul>
+<li>定义变量：变量名&#x3D;值</li>
+<li>撤销变量：unset 变量</li>
+<li>声明静态变量：readonly变量，注意：不能unset</li>
+</ul>
+</li>
+</ul>
+<table><tbody><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">案例</span></span><br><span class="line">1. 定义变量A</span><br><span class="line">	A=10</span><br><span class="line">	echo A=$A  =&gt; A=100</span><br><span class="line">2. 撤销变量A</span><br><span class="line">	unset A</span><br><span class="line">	echo A=$A   =&gt; A=</span><br><span class="line">3. 声明静态变量B=2，不能unset</span><br><span class="line">	readonly B=2</span><br><span class="line">	echo B=$B  =&gt; B=2</span><br><span class="line">4. 可把比那辆提升为全局环境变量，可供其他shell程序使用[该案例后面将]</span><br></pre></td></tr></tbody></table>
+
+<p>注意：</p>
+<p><img src="/2024/04/25/Linux/image-20240515090101325.png" alt="image-20240515090101325"></p>
+<h2 id="设置环境变量"><a href="#设置环境变量" class="headerlink" title="设置环境变量"></a>设置环境变量</h2><ul>
+<li>基本语法<ul>
+<li><code>export 变量名=变量值</code>：将shell变量输出为环境变量&#x2F;全局变量</li>
+<li><code>source 配置文件</code>：让修改后的配置信息立即生效</li>
+<li><code>echo $变量名</code>：查询环境变量的值</li>
+</ul>
+</li>
+</ul>
+<p>案例：</p>
+<table><tbody><tr><td class="code"><pre><span class="line">1. 在/etc/profile文件中定义TOMCAT_HOME环境变量</span><br><span class="line"><span class="meta prompt_">	1&gt; </span><span class="language-bash">vim /etc/profile  进入vim编辑器</span></span><br><span class="line"><span class="meta prompt_">	2&gt; </span><span class="language-bash"><span class="built_in">export</span> TOMCAT_HOME=/opt/tomcat  定义环境变量</span></span><br><span class="line"><span class="meta prompt_">	3&gt; </span><span class="language-bash"><span class="built_in">source</span> /etc/profile  刷新</span></span><br><span class="line">2. 查看环境变量TOMCAT_HOME的值</span><br><span class="line">	echo $TOMCAT_HOME  输出</span><br><span class="line">3. 在另外一个shell程序中使用TOMCAT_HOME</span><br><span class="line">	进入另一个shell脚本</span><br><span class="line">	echo "tomcat_home=$TOMCAT_HOME"</span><br></pre></td></tr></tbody></table>
+
+<p>shell脚本多行注释： <code>:&lt;&lt;! 内容 !</code></p>
+<h2 id="位置参数变量"><a href="#位置参数变量" class="headerlink" title="位置参数变量"></a>位置参数变量</h2><ul>
+<li><p>介绍</p>
+<ul>
+<li>当我们执行一个shell脚本时，如果希望获取到命令行的参数信息，就可以使用到位置参数变量，比如: <code>./myshell.sh 100 200</code>，这个就是一个执行shell的命令行，可以在myshell 脚本中获取到参数信息</li>
+</ul>
+</li>
+<li><p>基本语法</p>
+<ul>
+<li><code>$n</code> ：n为数字，$0代表命令本身，$1-$9代表第一到第九个参数，十以上的参数，十以上的参数需要用大括号包含，如${10}</li>
+<li><code>$*</code> ：这个变量代表命令行中所有的参数，$* 把所有的参数堪称一个整体</li>
+<li><code>$@</code> ：这个变量代表命令行中所有的参数，不过$@ 把每个参数区分对待</li>
+<li><code>$#</code> ：这个变量代表命令行中所有参数的个数</li>
+</ul>
+</li>
+</ul>
+<p>案例：</p>
+<table><tbody><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">编写一个shell脚本position.sh 在脚本中获取到命令行的各个参数信息</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">!/bin/bash</span></span><br><span class="line">echo "0=$0 1=$1 2=$2"</span><br><span class="line">echo "所有的参数=$*"</span><br><span class="line">echo "$@"</span><br><span class="line">echo "所有的参数个数=$#"</span><br></pre></td></tr></tbody></table>
+
+<h2 id="预定义变量"><a href="#预定义变量" class="headerlink" title="预定义变量"></a>预定义变量</h2><ul>
+<li><p>基本介绍</p>
+<ul>
+<li>就是shell设计者事先已经定义好的变量，可以直接在shell脚本中使用</li>
+</ul>
+</li>
+<li><p>基本语法</p>
+<ul>
+<li><code>$$</code> ：当前进程的进程号(PID)</li>
+<li><code>$!</code> ：后台运行的最后一个进程的进程号(PID)</li>
+<li><code>$?</code> ：最后一次执行的命令的返回状态，如果这个变量的职位0，证明上一个命令正确执行，如果这个变量的值为非0（具体是哪个数，由命令自己来决定），则证明上一个命令执行不正确了</li>
+</ul>
+</li>
+</ul>
+<p>案例：</p>
+<table><tbody><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">在一个shell脚本中简单使用一下预定义变量preVar.sh</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">!/bin/bash</span></span><br><span class="line">echo "当前正在运行的进程号id=$$"</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">以后台的方式运行一个脚本，并获取他的进程号</span></span><br><span class="line">./myshell.sh &amp;</span><br><span class="line">echo "后台运行的最后一个进程号=$!"</span><br><span class="line">echo "最后一次执行的结果=$?"</span><br><span class="line"></span><br></pre></td></tr></tbody></table>
+
+<h2 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h2><ul>
+<li><p>基本介绍</p>
+<ul>
+<li>学习如何在shell中进行各种运算操作</li>
+</ul>
+</li>
+<li><p>基本语法</p>
+<ul>
+<li>“$((运算式))” 或 “$[运算式]” 或者 expr m + n</li>
+<li>注意expr 运算符间要有空格，如果希望将expr 的结果赋给某个变量，使用``</li>
+<li>expr m - n</li>
+<li>expr <code>\*</code>, <code>/</code>, <code>%</code> 乘、除、取余</li>
+</ul>
+</li>
+</ul>
+<p>案例：</p>
+<table><tbody><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">计算(2+3)*4</span></span><br><span class="line"><span class="meta prompt_">	# </span><span class="language-bash">第一种方式</span></span><br><span class="line">		RES1=$(((2+3)*4))</span><br><span class="line"><span class="meta prompt_">	# </span><span class="language-bash">第二种方式</span></span><br><span class="line">		RES2=$[(2+3)*4]</span><br><span class="line"><span class="meta prompt_">	# </span><span class="language-bash">第三种方式</span></span><br><span class="line">		TEMP=`expr 2 + 3`</span><br><span class="line">		RES=`expr $TEMP \* 4`</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">请求出命令行的两个参数[整数] 和 20</span></span><br><span class="line">	SUM=$[$1+$2]</span><br><span class="line">	./oper.sh 20 50</span><br></pre></td></tr></tbody></table>
+
+<h2 id="条件判断"><a href="#条件判断" class="headerlink" title="条件判断"></a>条件判断</h2><p><img src="/2024/04/25/Linux/image-20240515095940187.png" alt="image-20240515095940187"></p>
+<p><img src="/2024/04/25/Linux/image-20240515100008957.png" alt="image-20240515100008957"></p>
+<p>案例：</p>
+<table><tbody><tr><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">案例1. <span class="string">"ok"</span> 是否等于 <span class="string">"ok"</span></span></span><br><span class="line">if [ "ok" = "ok" ]</span><br><span class="line">then</span><br><span class="line">	echo "equal"</span><br><span class="line">fi</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">案例2. 23是否大于等于22</span></span><br><span class="line">if [ 23 -ge 22 ]</span><br><span class="line">then</span><br><span class="line">	echo "大于"</span><br><span class="line">fi</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">案例3. /root/shcode/aaa.txt 目录中的文件是否存在</span></span><br><span class="line">if [ -f /root/shcode/aaa.txt ]</span><br><span class="line">then</span><br><span class="line">	echo "存在"</span><br><span class="line">fi</span><br></pre></td></tr></tbody></table>
+
+<h2 id="流程控制"><a href="#流程控制" class="headerlink" title="流程控制"></a>流程控制</h2><h3 id="if分支"><a href="#if分支" class="headerlink" title="if分支"></a>if分支</h3><p><img src="/2024/04/25/Linux/image-20240515103100113.png" alt="image-20240515103100113"></p>
+<p>注意：[条件判断式] 中括号和条件判断式之间必须有空格</p>
+<p>案例：</p>
+<table><tbody><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">请编写一个shell程序，如果输入的参数，大于等于60 则输出<span class="string">"及格了"</span> 如果小于60，则输出 <span class="string">"不及格"</span></span></span><br><span class="line">if [ $1 -ge 60 ]</span><br><span class="line">then</span><br><span class="line">	echo "及格了"</span><br><span class="line">elif [ $1 -lt 60 ]</span><br><span class="line">then</span><br><span class="line">	echo "不及格"</span><br><span class="line">fi</span><br></pre></td></tr></tbody></table>
+
+<h3 id="case语句"><a href="#case语句" class="headerlink" title="case语句"></a>case语句</h3><p><img src="/2024/04/25/Linux/image-20240515103930040.png" alt="image-20240515103930040"></p>
+<p>案例：</p>
+<table><tbody><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">当命令行参数是1时，输出<span class="string">"周一"</span>，是2时，就输出<span class="string">"周二"</span>，其他情况输出 <span class="string">"other"</span></span></span><br><span class="line">case $1 in</span><br><span class="line">"1")</span><br><span class="line">echo "周一"</span><br><span class="line">;;</span><br><span class="line">case $2 in</span><br><span class="line">"2")</span><br><span class="line">echo "周二"</span><br><span class="line">;;</span><br><span class="line">*)</span><br><span class="line">echo "other"</span><br><span class="line">;;</span><br><span class="line">esac</span><br></pre></td></tr></tbody></table>
+
+<h3 id="for循环"><a href="#for循环" class="headerlink" title="for循环"></a>for循环</h3><p><img src="/2024/04/25/Linux/image-20240515104846827.png" alt="image-20240515104846827"></p>
+<p>案例：</p>
+<table><tbody><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">打印命令行输入的参数[这里可以看出$* 和 <span class="variable">$@</span> 的区别]</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">$* 会把参数当成一个整体 所以只会输出一句话</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash"><span class="variable">$@</span> 会把参数区分，所以有几个参数 就输出几句话</span></span><br><span class="line">for i in "$*/$@"</span><br><span class="line">do</span><br><span class="line">	echo "i的值为$i"</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">从1加到100的值输出显示</span></span><br><span class="line">SUM=0</span><br><span class="line">for (( i=1; i&lt;=$1; i++ ))</span><br><span class="line">do</span><br><span class="line">	SUM=$[$SUM+$i]</span><br><span class="line">done</span><br><span class="line">	echo "SUM=$SUM"</span><br></pre></td></tr></tbody></table>
+
+<h3 id="while循环"><a href="#while循环" class="headerlink" title="while循环"></a>while循环</h3><p><img src="/2024/04/25/Linux/image-20240515105936017.png" alt="image-20240515105936017"></p>
+<p>案例：</p>
+<table><tbody><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">从命令中输入一个数n,求1+...+n的值是多少</span></span><br><span class="line">SUM=0</span><br><span class="line">i=0</span><br><span class="line">while [ $i -gt $1 ]</span><br><span class="line">do</span><br><span class="line">	SUM=$[$SUM+$i]</span><br><span class="line">	i=$[$i+1]</span><br><span class="line">done</span><br><span class="line">	echo "SUM的值=$SUM"</span><br></pre></td></tr></tbody></table>
+
+<h2 id="read读取控制台输入"><a href="#read读取控制台输入" class="headerlink" title="read读取控制台输入"></a>read读取控制台输入</h2><p><img src="/2024/04/25/Linux/image-20240515110647470.png" alt="image-20240515110647470"></p>
+<p>案例：</p>
+<table><tbody><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">案例1：读取控制台输入一个num值</span></span><br><span class="line">read -p "请输入一个数num1=" NUM1</span><br><span class="line">echo "你输入的num1=$NUM1"</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">案例2：读取控制台输入一个num值，在10s内输入</span></span><br><span class="line">read -t 10 -p "请输入一个数NUM1=" NUM1</span><br><span class="line">echo "你输入的num1="$NUM1</span><br></pre></td></tr></tbody></table>
+
+<h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><h3 id="basename"><a href="#basename" class="headerlink" title="basename"></a>basename</h3><ul>
+<li>函数介绍<ul>
+<li>shell编程和其他语言一样，有系统函数，也可以自定义函数，系统函数中，我们这里就介绍两个</li>
+</ul>
+</li>
+</ul>
+<p><img src="/2024/04/25/Linux/image-20240515111138084.png" alt="image-20240515111138084"></p>
+<p>案例：</p>
+<table><tbody><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">案例1：请返回/home/aaa/test.txt的 <span class="string">"test.txt"</span> 的部分</span></span><br><span class="line">basename /home/aaa/test.txt =&gt; test.txt</span><br><span class="line">basename /home/aaa/test.txt .txt =&gt; test</span><br></pre></td></tr></tbody></table>
+
+<h3 id="dirname"><a href="#dirname" class="headerlink" title="dirname"></a>dirname</h3><p><img src="/2024/04/25/Linux/image-20240515111520036.png" alt="image-20240515111520036"></p>
+<p>案例：</p>
+<table><tbody><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">案例1：请返回/home/aaa/test.txt 的 /home/aaa</span></span><br><span class="line">dirname /home/aaa/test.txt</span><br></pre></td></tr></tbody></table>
+
+<h3 id="自定义函数"><a href="#自定义函数" class="headerlink" title="自定义函数"></a>自定义函数</h3><p><img src="/2024/04/25/Linux/image-20240515111933117.png" alt="image-20240515111933117"></p>
+<p>案例：</p>
+<table><tbody><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">案例1：计算输入两个参数的和(动态的获取)，getSum</span></span><br><span class="line">function getSum()</span><br><span class="line">{</span><br><span class="line">	SUM=$[$1+$2]	</span><br><span class="line">	echo "和是=$SUM"</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line">read -p "请输入一个数字n1=" n1</span><br><span class="line">read -p "请输入一个数字n2=" n2</span><br><span class="line"></span><br><span class="line">getSum $n1 $n2</span><br></pre></td></tr></tbody></table>
+
+<h3 id="Shell脚本案例"><a href="#Shell脚本案例" class="headerlink" title="Shell脚本案例"></a>Shell脚本案例</h3><p><img src="/2024/04/25/Linux/image-20240515132902308.png" alt="image-20240515132902308"></p>
+<table><tbody><tr><td class="code"><pre><span class="line">BACKUP=/data/backup/db</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">获取当前时间</span></span><br><span class="line">DATETIME=$(date +%Y-%m-%d_%H_%M_%S)</span><br><span class="line">echo $DATETIME</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">数据库的地址</span></span><br><span class="line">HOST=localhost</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">数据库的用户名</span></span><br><span class="line">DB_USER=root</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">数据库密码</span></span><br><span class="line">DB_PW=Zikl142857</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">数据库名</span></span><br><span class="line">DATABASE=raehp</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">创建备份目录</span></span><br><span class="line">[ ! -d "${BACKUP}/${DATETIME}" ] &amp;&amp; mkdir -p "${BACKUP}/${DATETIME}"</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">备份数据库</span></span><br><span class="line">mysqldump -u${DB_USER} -p${DB_PW} --host=${HOST} -q -R --databases ${DATABASE} | gzip &gt; ${BACKUP}/${DATETIME}/$DATETIME.sql.gz</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">将文件处理成tar.gz</span></span><br><span class="line">cd ${BACKUP}</span><br><span class="line">tar -zcvf $DATETIME.tar.gz ${DATETIME}</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">删除对应的备份文件</span></span><br><span class="line">rm -rf ${BACKUP}/${DATETIME}</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">检查是否有10天前的备份数据库文件</span></span><br><span class="line">find ${BACKUP} -atime +10 -name "*.tar.gz" -exec rm {} \;</span><br><span class="line">echo "备份数据库${DATABASE}成功"</span><br><span class="line"></span><br></pre></td></tr></tbody></table>]]></content>
+      <categories>
+        <category>服务器</category>
+      </categories>
+  </entry>
+  <entry>
     <title>JavaWeb</title>
     <url>/2024/04/25/JavaWeb/</url>
     <content><![CDATA[<h1 id="Maven"><a href="#Maven" class="headerlink" title="Maven"></a>Maven</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p><strong>Maven是一款管理和构建java项目的工具</strong></p>
@@ -4139,382 +4515,6 @@
       </categories>
   </entry>
   <entry>
-    <title>Linux</title>
-    <url>/2024/04/25/Linux/</url>
-    <content><![CDATA[<h1 id="Linux基础命令"><a href="#Linux基础命令" class="headerlink" title="Linux基础命令"></a>Linux基础命令</h1><h2 id="Linux的目录结构"><a href="#Linux的目录结构" class="headerlink" title="Linux的目录结构"></a>Linux的目录结构</h2><p><img src="/2024/04/25/Linux/image-20240514213712464.png" alt="image-20240514213712464"></p>
-<ul>
-<li><code>/</code>，根目录是最顶级的目录了</li>
-<li>Linux只有一个顶级目录：<code>/</code></li>
-<li>路径描述的层次关系同样适用<code>/</code>来表示</li>
-<li>&#x2F;home&#x2F;itheima&#x2F;a.txt，表示根目录下的home文件夹内有itheima文件夹，内有a.txt</li>
-</ul>
-<h2 id="ls命令"><a href="#ls命令" class="headerlink" title="ls命令"></a>ls命令</h2><p>功能：列出文件夹信息</p>
-<p>语法：<code>ls [-l -h -a] [参数]</code></p>
-<ul>
-<li>参数：被查看的文件夹，不提供参数，表示查看当前工作目录</li>
-<li>-l，以列表形式查看</li>
-<li>-h，配合-l，以更加人性化的方式显示文件大小</li>
-<li>-a，显示隐藏文件</li>
-</ul>
-<h3 id="隐藏文件、文件夹"><a href="#隐藏文件、文件夹" class="headerlink" title="隐藏文件、文件夹"></a>隐藏文件、文件夹</h3><p>在Linux中以<code>.</code>开头的，均是隐藏的。</p>
-<p>默认不显示出来，需要<code>-a</code>选项才可查看到。</p>
-<h2 id="pwd命令"><a href="#pwd命令" class="headerlink" title="pwd命令"></a>pwd命令</h2><p>功能：展示当前工作目录</p>
-<p>语法：<code>pwd</code></p>
-<p>作用是：输出当前所在的工作目录</p>
-<h2 id="cd命令"><a href="#cd命令" class="headerlink" title="cd命令"></a>cd命令</h2><p>功能：切换工作目录</p>
-<p>语法：<code>cd [目标目录]</code></p>
-<p>参数：目标目录，要切换去的地方，不提供默认切换到<code>当前登录用户HOME目录</code></p>
-<h2 id="HOME目录"><a href="#HOME目录" class="headerlink" title="HOME目录"></a>HOME目录</h2><p>每一个用户在Linux系统中都有自己的专属工作目录，称之为HOME目录。</p>
-<ul>
-<li><p>普通用户的HOME目录，默认在：<code>/home/用户名</code></p>
-</li>
-<li><p>root用户的HOME目录，在：<code>/root</code></p>
-</li>
-</ul>
-<p>FinalShell登陆终端后，默认的工作目录就是用户的HOME目录</p>
-<h2 id="相对路径、绝对路径"><a href="#相对路径、绝对路径" class="headerlink" title="相对路径、绝对路径"></a>相对路径、绝对路径</h2><ul>
-<li><p>相对路径，&#x3D;&#x3D;非&#x3D;&#x3D;<code>/</code>开头的称之为相对路径</p>
-<p>相对路径表示以<code>当前目录</code>作为起点，去描述路径，如<code>test/a.txt</code>，表示当前工作目录内的test文件夹内的a.txt文件</p>
-</li>
-<li><p>绝对路径，&#x3D;&#x3D;以&#x3D;&#x3D;<code>/</code>开头的称之为绝对路径</p>
-<p>绝对路径从<code>根</code>开始描述路径</p>
-</li>
-</ul>
-<h2 id="特殊路径符"><a href="#特殊路径符" class="headerlink" title="特殊路径符"></a>特殊路径符</h2><ul>
-<li><code>.</code>，表示当前，比如.&#x2F;a.txt，表示当前文件夹内的<code>a.txt</code>文件</li>
-<li><code>..</code>，表示上级目录，比如<code>../</code>表示上级目录，<code>../../</code>表示上级的上级目录</li>
-<li><code>~</code>，表示用户的HOME目录，比如<code>cd ~</code>，即可切回用户HOME目录</li>
-</ul>
-<h2 id="mkdir命令"><a href="#mkdir命令" class="headerlink" title="mkdir命令"></a>mkdir命令</h2><p>功能：创建文件夹</p>
-<p>语法：<code>mkdir [-p] 参数</code></p>
-<ul>
-<li>参数：被创建文件夹的路径</li>
-<li>选项：-p，可选，表示创建前置路径<ul>
-<li>自动创建不存在的父目录，适用于创建连续多层级的目录</li>
-</ul>
-</li>
-</ul>
-<h2 id="touch命令"><a href="#touch命令" class="headerlink" title="touch命令"></a>touch命令</h2><p>功能：创建文件</p>
-<p>语法：<code>touch 参数</code></p>
-<ul>
-<li>参数：参数必填，表示要创建的文件路径</li>
-</ul>
-<h2 id="cat命令"><a href="#cat命令" class="headerlink" title="cat命令"></a>cat命令</h2><p>功能：查看文件内容</p>
-<p>语法：<code>cat 参数</code></p>
-<ul>
-<li>参数：被查看的文件路径</li>
-</ul>
-<h2 id="more命令"><a href="#more命令" class="headerlink" title="more命令"></a>more命令</h2><p>功能：查看文件，可以支持翻页查看</p>
-<p>语法：<code>more 参数</code></p>
-<ul>
-<li>参数：被查看的文件路径</li>
-<li>在查看过程中：<ul>
-<li><code>空格</code>键翻页</li>
-<li><code>q</code>退出查看</li>
-</ul>
-</li>
-</ul>
-<h2 id="cp命令"><a href="#cp命令" class="headerlink" title="cp命令"></a>cp命令</h2><p>功能：复制文件、文件夹</p>
-<p>语法：<code>cp [-r] 参数1 参数2</code></p>
-<ul>
-<li>参数1，被复制的</li>
-<li>参数2，要复制去的地方</li>
-<li>选项：-r，可选，复制文件夹使用</li>
-</ul>
-<p>示例：</p>
-<ul>
-<li>cp a.txt b.txt，复制当前目录下a.txt为b.txt</li>
-<li>cp a.txt test&#x2F;，复制当前目录a.txt到test文件夹内</li>
-<li>cp -r test test2，复制文件夹test到当前文件夹内为test2存在</li>
-</ul>
-<h2 id="mv命令"><a href="#mv命令" class="headerlink" title="mv命令"></a>mv命令</h2><p>功能：移动文件、文件夹</p>
-<p>语法：<code>mv 参数1 参数2</code></p>
-<ul>
-<li>参数1：被移动的</li>
-<li>参数2：要移动去的地方，参数2如果不存在，则会进行改名</li>
-</ul>
-<h2 id="rm命令"><a href="#rm命令" class="headerlink" title="rm命令"></a>rm命令</h2><p>功能：删除文件、文件夹</p>
-<p>语法：<code>rm [-r -f] 参数...参数</code></p>
-<ul>
-<li><p>参数：支持多个，每一个表示被删除的，空格进行分隔</p>
-</li>
-<li><p>选项：-r，删除文件夹使用</p>
-</li>
-<li><p>选项：-f，强制删除，不会给出确认提示，一般root用户会用到</p>
-</li>
-<li><p>参数也支持通配符*，用以做模糊匹配</p>
-<ul>
-<li>text* 匹配以text开头的文件或文件夹</li>
-<li>*text 匹配text结尾的文件或文件夹</li>
-<li>*text * 匹配包含text的文件或文件夹</li>
-</ul>
-</li>
-</ul>
-<blockquote>
-<p>rm命令很危险，一定要注意，特别是切换到root用户的时候。</p>
-</blockquote>
-<h2 id="which命令"><a href="#which命令" class="headerlink" title="which命令"></a>which命令</h2><p>功能：查看命令的程序本体文件路径</p>
-<p>语法：<code>which 参数</code></p>
-<ul>
-<li>参数：被查看的命令</li>
-</ul>
-<h2 id="find命令"><a href="#find命令" class="headerlink" title="find命令"></a>find命令</h2><p>功能：搜索文件</p>
-<p>语法1按文件名搜索：<code>find 路径 -name 参数</code></p>
-<ul>
-<li><p>路径，搜索的起始路径</p>
-</li>
-<li><p>参数，搜索的关键字，支持通配符*， 比如：<code>*</code>test表示搜索任意以test结尾的文件</p>
-</li>
-<li><p>按文件大小查找：<code>find 起始路径 -size +|-n [KMG]</code></p>
-</li>
-<li><pre><code>查找小于10KB的文件：find / -size -10k
-查找小于100MB的文件：find / -size -100mb
-查找大于1GB的文件：find / -size +1GB
-1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071  ## grep命令功能：过滤关键字语法：`grep [-n] 关键字 文件路径`- 选项-n，可选，表示在结果中显示匹配的行的行号。- 参数，关键字，必填，表示过滤的关键字，带有空格或其它特殊符号，建议使用””将关键字包围起来- 参数，文件路径，必填，表示要过滤内容的文件路径，可作为内容输入端口&gt; 参数文件路径，可以作为管道符的输入## wc命令功能：统计语法：`wc [-c -m -l -w] 文件路径`- 选项，-c，统计bytes数量- 选项，-m，统计字符数量- 选项，-l，统计行数- 选项，-w，统计单词数量- 参数，文件路径，被统计的文件，可作为内容输入端口&gt; 参数文件路径，可作为管道符的输入## 管道符|写法：`|`功能：将符号左边的结果，作为符号右边的输入示例：`cat a.txt | grep itheima`，将cat a.txt的结果，作为grep命令的输入，用来过滤`itheima`关键字可以支持嵌套：`cat a.txt | grep itheima | grep itcast`## echo命令功能：输出内容语法：`echo 参数`- 参数：被输出的内容- 无需选择，只有一个参数，表示要输出的内容，复杂内容可以用“ &quot;包围  演示：  - 在终端上显示：Hello Linux
-  echo Hello Linux
-  123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101102103104105106107108109110111112113114115116117118119120121122123124125126127128129130131132133134135136137138139140141142143144145146147148149150151152153154155156157158159160161162163164165166167168169170171172173174175176177178179180181182183184185186187188189190191192193194195196197198199200201202203204205206207208209210211212213214215216217218219220221222223224225226227228229230231232233234235236237238239240241242243244245246247248249250251252253254255256257258259260261262263264265266267268269270271272273274275276277278279280281282283284285286287288289290291292293294295296297298299300301- 带有空格或\等特殊符号，建议使用双引号包围  - 因为不包围的话，空格很容易被识别为参数2，尽管echo不受影响## `反引号功能：被两个反引号包围的内容，会作为命令执行示例：- echo \`pwd\`，会输出当前工作目录## tail命令功能：查看文件尾部内容语法：`tail [-f] 参数`- 参数：被查看的文件- 选项：-f，持续跟踪文件修改## head命令功能：查看文件头部内容语法：`head [-n] 参数`- 参数：被查看的文件- 选项：-n，查看的行数## 重定向符功能：将符号左边的结果，输出到右边指定的文件中去- `&gt;`，表示覆盖输出  将左侧命令的结果，覆盖写入到符号右侧指定的文件中- `&gt;&gt;`，表示追加输出   将左侧命令的结果，追加写入到符号右侧指定的文件中## vi编辑器### 命令模式快捷键| 模式         | 命令  | 描述                              || ------------ | ----- | --------------------------------- || **命令模式** | `i`   | 在当前光标位置进入 `输入模式`     || **命令模式** | `a`   | 在当前光标位置之后进入 `输入模式` || **命令模式** | `I`   | 在当前行的开头进入 `输入模式`     || **命令模式** | `A`   | 在当前行的结尾进入 `输入模式`     || **命令模式** | `o`   | 在当前光标下一行进入 `输入模式`   || **命令模式** | `O`   | 在当前光标上一行进入 `输入模式`   || **输入模式** | `esc` | 任何情况下`esc` 都能回到命令模式  |****| 模式         | 命令             | 描述                   || ------------ | ---------------- | ---------------------- || **命令模式** | `键盘上、键盘k`  | 向上移动光标           || **命令模式** | `键盘下、键盘j`  | 向下移动光标           || **命令模式** | `键盘左、键盘h`  | 向左移动光标           || **命令模式** | `键盘右、键盘l`  | 向右移动光标           || **命令模式** | `0`              | 移动光标到当前行的开头 || **命令模式** | `$`              | 移动光标到当前行的结尾 || **命令模式** | `pageup(Pgup)`   | 向上翻页               || **命令模式** | `pagedown(PgDn)` | 向下翻页               || **命令模式** | `/`              | 进入搜索模式           || **命令模式** | `n`              | 向下继续搜索           || **命令模式** | `N`              | 向上继续搜索           || **模式**     | 命令       | 描述                             || ------------ | ---------- | -------------------------------- || **命令模式** | `dd`       | 删除光标所在行的内容             || **命令模式** | `ndd`      | n是数字，表示删除当前光标向下n行 || **命令模式** | `yy`       | 复制当前行                       || **命令模式** | `nyy`      | n是数字，复制当前行和下面的n行   || **命令模式** | `p`        | 粘贴复制的内容                   || **命令模式** | `u`        | 撤销修改                         || **命令模式** | `ctrl + r` | 反向撤销修改                     || **命令模式** | `gg`       | 跳到首行                         || **命令模式** | `G`        | 跳到行尾                         || **命令模式** | `dG`       | 从当前行开始，向下全部删除       || **命令模式** | `dgg`      | 从当前行开始，向上全部删除       || **命令模式** | `d$`       | 从当前光标开始，删除到本行的结尾 || **命令模式** | `d0`       | 从当前光标开始，删除到本行的开头 |### 底线命令快捷键![image-20240514212954898](./Linux/image-20240514212954898.png)## 命令的选项我们学习的一系列Linux命令，它们所拥有的选项都是非常多的。比如，简单的ls命令就有：-a -A -b -c -C -d -D -f -F -g -G -h -H -i -I -k -l -L -m -n -N -o -p -q -Q -r-R -s -S -t -T -u -U -v -w -x -X -1等选项，可以发现选项是极其多的。课程中， 并不会将全部的选项都进行讲解，否则，一个ls命令就可能讲解2小时之久。课程中，会对常见的选项进行讲解， 足够满足绝大多数的学习、工作场景。### 查看命令的帮助可以通过：`命令 --help`查看命令的帮助手册![image-20240514213545358](./Linux/image-20240514213545358.png)### 查看命令的详细手册可以通过：`man 命令`查看某命令的详细手册![image-20240514213539751](./Linux/image-20240514213539751.png)# Linux常用操作## 软件安装- CentOS系统使用：  - yum [install remove search] [-y] 软件名称    - install 安装    - remove 卸载    - search 搜索    - -y，自动确认- Ubuntu系统使用  - apt [install remove search] [-y] 软件名称    - install 安装    - remove 卸载    - search 搜索    - -y，自动确认&gt; yum 和 apt 均需要root权限## systemctl功能：控制系统服务的启动关闭等语法：`systemctl start | stop | restart | disable | enable | status 服务名`- start，启动- stop，停止- status，查看状态- disable，关闭开机自启- enable，开启开机自启- restart，重启## 软链接功能：创建文件、文件夹软链接（快捷方式）语法：`ln -s 参数1 参数2`- 参数1：被链接的- 参数2：要链接去的地方（快捷方式的名称和存放位置）## 日期语法：`date [-d] [+格式化字符串]`- -d 按照给定的字符串显示日期，一般用于日期计算- 格式化字符串：通过特定的字符串标记，来控制显示的日期格式  - %Y   年%y   年份后两位数字 (00..99)  - %m   月份 (01..12)  - %d   日 (01..31)  - %H   小时 (00..23)  - %M   分钟 (00..59)  - %S   秒 (00..60)  - %s   自 1970-01-01 00:00:00 UTC 到现在的秒数示例：- 按照2022-01-01的格式显示日期  ![image-20240514213528329](./Linux/image-20240514213528329.png)- 按照2022-01-01 10:00:00的格式显示日期  ![image-20240514213523029](./Linux/image-20240514213523029.png)- -d选项日期计算  ![image-20240514213518516](./Linux/image-20240514213518516.png)  - 支持的时间标记为：    ![image-20240514213514134](./Linux/image-20240514213514134.png)## 时区修改时区为中国时区![image-20221027220554654](https://image-set.oss-cn-zhangjiakou.aliyuncs.com/img-out/2022/10/27/20221027220554.png)## ntp功能：同步时间安装：`yum install -y ntp`启动管理：`systemctl start | stop | restart | status | disable | enable ntpd`手动校准时间：`ntpdate -u ntp.aliyun.com`## ip地址格式：a.b.c.d- abcd为0~255的数字特殊IP：- 127.0.0.1，表示本机- 0.0.0.0  - 可以表示本机  - 也可以表示任意IP（看使用场景）查看ip：`ifconfig`## 主机名功能：Linux系统的名称查看：`hostname`设置：`hostnamectl set-hostname 主机名`## 配置VMware固定IP1. 修改VMware网络，参阅PPT，图太多2. 设置Linux内部固定IP   修改文件：`/etc/sysconfig/network-scripts/ifcfg-ens33`   示例文件内容：   ```shell   TYPE=&quot;Ethernet&quot;   PROXY_METHOD=&quot;none&quot;   BROWSER_ONLY=&quot;no&quot;   BOOTPROTO=&quot;static&quot;            # 改为static，固定IP   DEFROUTE=&quot;yes&quot;   IPV4_FAILURE_FATAL=&quot;no&quot;   IPV6INIT=&quot;yes&quot;   IPV6_AUTOCONF=&quot;yes&quot;   IPV6_DEFROUTE=&quot;yes&quot;   IPV6_FAILURE_FATAL=&quot;no&quot;   IPV6_ADDR_GEN_MODE=&quot;stable-privacy&quot;   NAME=&quot;ens33&quot;   UUID=&quot;1b0011cb-0d2e-4eaa-8a11-af7d50ebc876&quot;   DEVICE=&quot;ens33&quot;   ONBOOT=&quot;yes&quot;   IPADDR=&quot;192.168.88.131&quot;        # IP地址，自己设置，要匹配网络范围   NETMASK=&quot;255.255.255.0&quot;        # 子网掩码，固定写法255.255.255.0   GATEWAY=&quot;192.168.88.2&quot;        # 网关，要和VMware中配置的一致   DNS1=&quot;192.168.88.2&quot;            # DNS1服务器，和网关一致即可
-</code></pre>
-</li>
-</ul>
-<h2 id="ps命令"><a href="#ps命令" class="headerlink" title="ps命令"></a>ps命令</h2><p>功能：查看进程信息</p>
-<p>语法：<code>ps -ef</code>，查看全部进程信息，可以搭配grep做过滤：<code>ps -ef | grep xxx</code></p>
-<h2 id="kill命令"><a href="#kill命令" class="headerlink" title="kill命令"></a>kill命令</h2><p><img src="/2024/04/25/Linux/image-20240514213501448.png" alt="image-20240514213501448"></p>
-<h2 id="nmap命令"><a href="#nmap命令" class="headerlink" title="nmap命令"></a>nmap命令</h2><p><img src="/2024/04/25/Linux/image-20240514213455076.png" alt="image-20240514213455076"></p>
-<h2 id="netstat命令"><a href="#netstat命令" class="headerlink" title="netstat命令"></a>netstat命令</h2><p>功能：查看端口占用</p>
-<p>用法：<code>netstat -anp | grep xxx</code></p>
-<h2 id="ping命令"><a href="#ping命令" class="headerlink" title="ping命令"></a>ping命令</h2><p>测试网络是否联通</p>
-<p>语法：<code>ping [-c num] 参数</code></p>
-<p><img src="/2024/04/25/Linux/image-20240514213446601.png" alt="image-20240514213446601"></p>
-<h2 id="wget命令"><a href="#wget命令" class="headerlink" title="wget命令"></a>wget命令</h2><p><img src="/2024/04/25/Linux/image-20240514213436429.png" alt="image-20240514213436429"></p>
-<h2 id="curl命令"><a href="#curl命令" class="headerlink" title="curl命令"></a>curl命令</h2><p><img src="/2024/04/25/Linux/image-20240514213428349.png" alt="image-20240514213428349"></p>
-<p><img src="/2024/04/25/Linux/image-20240514213422455.png" alt="image-20240514213422455"></p>
-<h2 id="top命令"><a href="#top命令" class="headerlink" title="top命令"></a>top命令</h2><p>功能：查看主机运行状态</p>
-<p>语法：<code>top</code>，查看基础信息</p>
-<p>可用选项：</p>
-<p><img src="/2024/04/25/Linux/image-20240514213411146.png" alt="image-20240514213411146"></p>
-<p>交互式模式中，可用快捷键：</p>
-<p><img src="/2024/04/25/Linux/image-20240514213405285.png" alt="image-20240514213405285"></p>
-<h2 id="df命令"><a href="#df命令" class="headerlink" title="df命令"></a>df命令</h2><p>查看磁盘占用</p>
-<p><img src="/2024/04/25/Linux/image-20240514213350037.png" alt="image-20240514213350037"></p>
-<h2 id="iostat命令"><a href="#iostat命令" class="headerlink" title="iostat命令"></a>iostat命令</h2><p>查看CPU、磁盘的相关信息</p>
-<p><img src="/2024/04/25/Linux/image-20240514213341010.png" alt="image-20240514213341010"></p>
-<p><img src="/2024/04/25/Linux/image-20240514213334228.png" alt="image-20240514213334228"></p>
-<h2 id="sar命令"><a href="#sar命令" class="headerlink" title="sar命令"></a>sar命令</h2><p>查看网络统计</p>
-<p><img src="/2024/04/25/Linux/image-20240514213316310.png" alt="image-20240514213316310"></p>
-<h2 id="环境变量"><a href="#环境变量" class="headerlink" title="环境变量"></a>环境变量</h2><ul>
-<li>临时设置：export 变量名&#x3D;变量值</li>
-<li>永久设置：<ul>
-<li>针对用户，设置用户HOME目录内：<code>.bashrc</code>文件</li>
-<li>针对全局，设置<code>/etc/profile</code></li>
-</ul>
-</li>
-</ul>
-<h3 id="PATH变量"><a href="#PATH变量" class="headerlink" title="PATH变量"></a>PATH变量</h3><p>记录了执行程序的搜索路径</p>
-<p>可以将自定义路径加入PATH内，实现自定义命令在任意地方均可执行的效果</p>
-<h2 id="符号"><a href="#符号" class="headerlink" title="$符号"></a>$符号</h2><p>可以取出指定的环境变量的值</p>
-<p>语法：<code>$变量名</code></p>
-<p>示例：</p>
-<p><code>echo $PATH</code>，输出PATH环境变量的值</p>
-<p><code>echo $&#123;PATH&#125;ABC</code>，输出PATH环境变量的值以及ABC</p>
-<p>如果变量名和其它内容混淆在一起，可以使用${}</p>
-<h2 id="压缩解压"><a href="#压缩解压" class="headerlink" title="压缩解压"></a>压缩解压</h2><h3 id="压缩"><a href="#压缩" class="headerlink" title="压缩"></a>压缩</h3><p><code>tar -zcvf 压缩包 被压缩1...被压缩2...被压缩N</code></p>
-<ul>
-<li>-z表示使用gzip，可以不写</li>
-</ul>
-<p><code>zip [-r] 参数1 参数2 参数N</code></p>
-<p><img src="/2024/04/25/Linux/image-20240514213306989.png" alt="image-20240514213306989"></p>
-<h3 id="解压"><a href="#解压" class="headerlink" title="解压"></a>解压</h3><p><code>tar -zxvf 被解压的文件 -C 要解压去的地方</code></p>
-<ul>
-<li>-z表示使用gzip，可以省略</li>
-<li>-C，可以省略，指定要解压去的地方，不写解压到当前目录</li>
-</ul>
-<p><code>unzip [-d] 参数</code></p>
-<p><img src="/2024/04/25/Linux/image-20240514213259749.png" alt="image-20240514213259749"></p>
-<h2 id="su命令"><a href="#su命令" class="headerlink" title="su命令"></a>su命令</h2><p>切换用户</p>
-<p>语法：<code>su [-] [用户]</code></p>
-<p><img src="/2024/04/25/Linux/image-20240514213251660.png" alt="image-20240514213251660"></p>
-<h2 id="sudo命令"><a href="#sudo命令" class="headerlink" title="sudo命令"></a>sudo命令</h2><p><img src="/2024/04/25/Linux/image-20240514213246030.png" alt="image-20240514213246030"></p>
-<p>比如：</p>
-<table><tbody><tr><td class="code"><pre><span class="line">itheima ALL=(ALL)       NOPASSWD: ALL</span><br></pre></td></tr></tbody></table>
-
-<p>在visudo内配置如上内容，可以让itheima用户，无需密码直接使用<code>sudo</code></p>
-<h2 id="chmod命令"><a href="#chmod命令" class="headerlink" title="chmod命令"></a>chmod命令</h2><p>修改文件、文件夹权限</p>
-<p>语法：<code>chmod [-R] 权限 参数</code></p>
-<ul>
-<li><p>权限，要设置的权限，比如755，表示：<code>rwxr-xr-x</code></p>
-<p><img src="/2024/04/25/Linux/image-20240514213237881.png" alt="image-20240514213237881"></p>
-</li>
-<li><p>参数，被修改的文件、文件夹</p>
-</li>
-<li><p>选项-R，设置文件夹和其内部全部内容一样生效</p>
-</li>
-</ul>
-<h2 id="chown命令"><a href="#chown命令" class="headerlink" title="chown命令"></a>chown命令</h2><p>修改文件、文件夹所属用户、组</p>
-<p>语法：<code>chown [-R] [用户][:][用户组] 文件或文件夹</code></p>
-<p><img src="/2024/04/25/Linux/image-20240514213227133.png" alt="image-20240514213227133"></p>
-<h2 id="用户组管理"><a href="#用户组管理" class="headerlink" title="用户组管理"></a>用户组管理</h2><p><img src="/2024/04/25/Linux/image-20240514213217206.png" alt="image-20240514213217206"></p>
-<h2 id="用户管理"><a href="#用户管理" class="headerlink" title="用户管理"></a>用户管理</h2><p><img src="/2024/04/25/Linux/image-20240514213144475.png" alt="image-20240514213144475"></p>
-<h2 id="genenv命令"><a href="#genenv命令" class="headerlink" title="genenv命令"></a>genenv命令</h2><ul>
-<li><p><code>getenv group</code>，查看系统全部的用户组</p>
-<p><img src="/2024/04/25/Linux/image-20240514213133464.png" alt="image-20240514213133464"></p>
-</li>
-<li><p><code>getenv passwd</code>，查看系统全部的用户</p>
-<p><img src="/2024/04/25/Linux/image-20240514213126691.png" alt="image-20240514213126691"></p>
-</li>
-</ul>
-<h2 id="env命令"><a href="#env命令" class="headerlink" title="env命令"></a>env命令</h2><p>查看系统全部的环境变量</p>
-<p>语法：<code>env</code></p>
-<h1 id="Shell脚本编程"><a href="#Shell脚本编程" class="headerlink" title="Shell脚本编程"></a>Shell脚本编程</h1><h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p>Shell是什么？</p>
-<ul>
-<li>Shell是一个命令行解释器，它为用户提供了一个向Linux内核发送请求以便运行程序的界面系统级程序，用户可以用Shell来启动，挂起，停止甚至是编写一些程序。看一个示意图</li>
-</ul>
-<h2 id="入门案例"><a href="#入门案例" class="headerlink" title="入门案例"></a>入门案例</h2><ul>
-<li>脚本要求格式<ul>
-<li>脚本以 <code>#!bin/bash</code> 开头</li>
-<li>脚本执行需要权限</li>
-</ul>
-</li>
-<li>编写第一个Shell脚本<ul>
-<li>需求说明，新建一个Shell脚本，输出Hello world</li>
-</ul>
-</li>
-</ul>
-<table><tbody><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">创建shell脚本，注意以sh结尾</span></span><br><span class="line">mkdir hello.sh</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">两种执行方式</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">1. (使用脚本的绝对路径和相对路径)默认root是没有执行权限的，我们要给shell脚本添加x运行权限</span></span><br><span class="line">chmod u+x hello.sh</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">运行</span></span><br><span class="line">./hello.sh</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">2. (sh+脚本)使用sh命令直接运行，不需要添加x权限</span></span><br><span class="line">sh hello.sh</span><br></pre></td></tr></tbody></table>
-
-<h2 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h2><ul>
-<li>Shell变量介绍<ul>
-<li>Linux Shell中的变量分为，系统变量和用户自定义变量</li>
-<li>系统变量：$HOME、$PWD、$SHELL、$USER等，比如：echo $HOME 等等</li>
-<li>显示当前shell中所有变量：set</li>
-</ul>
-</li>
-<li>shell变量的定义<ul>
-<li>定义变量：变量名&#x3D;值</li>
-<li>撤销变量：unset 变量</li>
-<li>声明静态变量：readonly变量，注意：不能unset</li>
-</ul>
-</li>
-</ul>
-<table><tbody><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">案例</span></span><br><span class="line">1. 定义变量A</span><br><span class="line">	A=10</span><br><span class="line">	echo A=$A  =&gt; A=100</span><br><span class="line">2. 撤销变量A</span><br><span class="line">	unset A</span><br><span class="line">	echo A=$A   =&gt; A=</span><br><span class="line">3. 声明静态变量B=2，不能unset</span><br><span class="line">	readonly B=2</span><br><span class="line">	echo B=$B  =&gt; B=2</span><br><span class="line">4. 可把比那辆提升为全局环境变量，可供其他shell程序使用[该案例后面将]</span><br></pre></td></tr></tbody></table>
-
-<p>注意：</p>
-<p><img src="/2024/04/25/Linux/image-20240515090101325.png" alt="image-20240515090101325"></p>
-<h2 id="设置环境变量"><a href="#设置环境变量" class="headerlink" title="设置环境变量"></a>设置环境变量</h2><ul>
-<li>基本语法<ul>
-<li><code>export 变量名=变量值</code>：将shell变量输出为环境变量&#x2F;全局变量</li>
-<li><code>source 配置文件</code>：让修改后的配置信息立即生效</li>
-<li><code>echo $变量名</code>：查询环境变量的值</li>
-</ul>
-</li>
-</ul>
-<p>案例：</p>
-<table><tbody><tr><td class="code"><pre><span class="line">1. 在/etc/profile文件中定义TOMCAT_HOME环境变量</span><br><span class="line"><span class="meta prompt_">	1&gt; </span><span class="language-bash">vim /etc/profile  进入vim编辑器</span></span><br><span class="line"><span class="meta prompt_">	2&gt; </span><span class="language-bash"><span class="built_in">export</span> TOMCAT_HOME=/opt/tomcat  定义环境变量</span></span><br><span class="line"><span class="meta prompt_">	3&gt; </span><span class="language-bash"><span class="built_in">source</span> /etc/profile  刷新</span></span><br><span class="line">2. 查看环境变量TOMCAT_HOME的值</span><br><span class="line">	echo $TOMCAT_HOME  输出</span><br><span class="line">3. 在另外一个shell程序中使用TOMCAT_HOME</span><br><span class="line">	进入另一个shell脚本</span><br><span class="line">	echo "tomcat_home=$TOMCAT_HOME"</span><br></pre></td></tr></tbody></table>
-
-<p>shell脚本多行注释： <code>:&lt;&lt;! 内容 !</code></p>
-<h2 id="位置参数变量"><a href="#位置参数变量" class="headerlink" title="位置参数变量"></a>位置参数变量</h2><ul>
-<li><p>介绍</p>
-<ul>
-<li>当我们执行一个shell脚本时，如果希望获取到命令行的参数信息，就可以使用到位置参数变量，比如: <code>./myshell.sh 100 200</code>，这个就是一个执行shell的命令行，可以在myshell 脚本中获取到参数信息</li>
-</ul>
-</li>
-<li><p>基本语法</p>
-<ul>
-<li><code>$n</code> ：n为数字，$0代表命令本身，$1-$9代表第一到第九个参数，十以上的参数，十以上的参数需要用大括号包含，如${10}</li>
-<li><code>$*</code> ：这个变量代表命令行中所有的参数，$* 把所有的参数堪称一个整体</li>
-<li><code>$@</code> ：这个变量代表命令行中所有的参数，不过$@ 把每个参数区分对待</li>
-<li><code>$#</code> ：这个变量代表命令行中所有参数的个数</li>
-</ul>
-</li>
-</ul>
-<p>案例：</p>
-<table><tbody><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">编写一个shell脚本position.sh 在脚本中获取到命令行的各个参数信息</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">!/bin/bash</span></span><br><span class="line">echo "0=$0 1=$1 2=$2"</span><br><span class="line">echo "所有的参数=$*"</span><br><span class="line">echo "$@"</span><br><span class="line">echo "所有的参数个数=$#"</span><br></pre></td></tr></tbody></table>
-
-<h2 id="预定义变量"><a href="#预定义变量" class="headerlink" title="预定义变量"></a>预定义变量</h2><ul>
-<li><p>基本介绍</p>
-<ul>
-<li>就是shell设计者事先已经定义好的变量，可以直接在shell脚本中使用</li>
-</ul>
-</li>
-<li><p>基本语法</p>
-<ul>
-<li><code>$$</code> ：当前进程的进程号(PID)</li>
-<li><code>$!</code> ：后台运行的最后一个进程的进程号(PID)</li>
-<li><code>$?</code> ：最后一次执行的命令的返回状态，如果这个变量的职位0，证明上一个命令正确执行，如果这个变量的值为非0（具体是哪个数，由命令自己来决定），则证明上一个命令执行不正确了</li>
-</ul>
-</li>
-</ul>
-<p>案例：</p>
-<table><tbody><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">在一个shell脚本中简单使用一下预定义变量preVar.sh</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">!/bin/bash</span></span><br><span class="line">echo "当前正在运行的进程号id=$$"</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">以后台的方式运行一个脚本，并获取他的进程号</span></span><br><span class="line">./myshell.sh &amp;</span><br><span class="line">echo "后台运行的最后一个进程号=$!"</span><br><span class="line">echo "最后一次执行的结果=$?"</span><br><span class="line"></span><br></pre></td></tr></tbody></table>
-
-<h2 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h2><ul>
-<li><p>基本介绍</p>
-<ul>
-<li>学习如何在shell中进行各种运算操作</li>
-</ul>
-</li>
-<li><p>基本语法</p>
-<ul>
-<li>“$((运算式))” 或 “$[运算式]” 或者 expr m + n</li>
-<li>注意expr 运算符间要有空格，如果希望将expr 的结果赋给某个变量，使用``</li>
-<li>expr m - n</li>
-<li>expr <code>\*</code>, <code>/</code>, <code>%</code> 乘、除、取余</li>
-</ul>
-</li>
-</ul>
-<p>案例：</p>
-<table><tbody><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">计算(2+3)*4</span></span><br><span class="line"><span class="meta prompt_">	# </span><span class="language-bash">第一种方式</span></span><br><span class="line">		RES1=$(((2+3)*4))</span><br><span class="line"><span class="meta prompt_">	# </span><span class="language-bash">第二种方式</span></span><br><span class="line">		RES2=$[(2+3)*4]</span><br><span class="line"><span class="meta prompt_">	# </span><span class="language-bash">第三种方式</span></span><br><span class="line">		TEMP=`expr 2 + 3`</span><br><span class="line">		RES=`expr $TEMP \* 4`</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">请求出命令行的两个参数[整数] 和 20</span></span><br><span class="line">	SUM=$[$1+$2]</span><br><span class="line">	./oper.sh 20 50</span><br></pre></td></tr></tbody></table>
-
-<h2 id="条件判断"><a href="#条件判断" class="headerlink" title="条件判断"></a>条件判断</h2><p><img src="/2024/04/25/Linux/image-20240515095940187.png" alt="image-20240515095940187"></p>
-<p><img src="/2024/04/25/Linux/image-20240515100008957.png" alt="image-20240515100008957"></p>
-<p>案例：</p>
-<table><tbody><tr><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">案例1. <span class="string">"ok"</span> 是否等于 <span class="string">"ok"</span></span></span><br><span class="line">if [ "ok" = "ok" ]</span><br><span class="line">then</span><br><span class="line">	echo "equal"</span><br><span class="line">fi</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">案例2. 23是否大于等于22</span></span><br><span class="line">if [ 23 -ge 22 ]</span><br><span class="line">then</span><br><span class="line">	echo "大于"</span><br><span class="line">fi</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">案例3. /root/shcode/aaa.txt 目录中的文件是否存在</span></span><br><span class="line">if [ -f /root/shcode/aaa.txt ]</span><br><span class="line">then</span><br><span class="line">	echo "存在"</span><br><span class="line">fi</span><br></pre></td></tr></tbody></table>
-
-<h2 id="流程控制"><a href="#流程控制" class="headerlink" title="流程控制"></a>流程控制</h2><h3 id="if分支"><a href="#if分支" class="headerlink" title="if分支"></a>if分支</h3><p><img src="/2024/04/25/Linux/image-20240515103100113.png" alt="image-20240515103100113"></p>
-<p>注意：[条件判断式] 中括号和条件判断式之间必须有空格</p>
-<p>案例：</p>
-<table><tbody><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">请编写一个shell程序，如果输入的参数，大于等于60 则输出<span class="string">"及格了"</span> 如果小于60，则输出 <span class="string">"不及格"</span></span></span><br><span class="line">if [ $1 -ge 60 ]</span><br><span class="line">then</span><br><span class="line">	echo "及格了"</span><br><span class="line">elif [ $1 -lt 60 ]</span><br><span class="line">then</span><br><span class="line">	echo "不及格"</span><br><span class="line">fi</span><br></pre></td></tr></tbody></table>
-
-<h3 id="case语句"><a href="#case语句" class="headerlink" title="case语句"></a>case语句</h3><p><img src="/2024/04/25/Linux/image-20240515103930040.png" alt="image-20240515103930040"></p>
-<p>案例：</p>
-<table><tbody><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">当命令行参数是1时，输出<span class="string">"周一"</span>，是2时，就输出<span class="string">"周二"</span>，其他情况输出 <span class="string">"other"</span></span></span><br><span class="line">case $1 in</span><br><span class="line">"1")</span><br><span class="line">echo "周一"</span><br><span class="line">;;</span><br><span class="line">case $2 in</span><br><span class="line">"2")</span><br><span class="line">echo "周二"</span><br><span class="line">;;</span><br><span class="line">*)</span><br><span class="line">echo "other"</span><br><span class="line">;;</span><br><span class="line">esac</span><br></pre></td></tr></tbody></table>
-
-<h3 id="for循环"><a href="#for循环" class="headerlink" title="for循环"></a>for循环</h3><p><img src="/2024/04/25/Linux/image-20240515104846827.png" alt="image-20240515104846827"></p>
-<p>案例：</p>
-<table><tbody><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">打印命令行输入的参数[这里可以看出$* 和 <span class="variable">$@</span> 的区别]</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">$* 会把参数当成一个整体 所以只会输出一句话</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash"><span class="variable">$@</span> 会把参数区分，所以有几个参数 就输出几句话</span></span><br><span class="line">for i in "$*/$@"</span><br><span class="line">do</span><br><span class="line">	echo "i的值为$i"</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">从1加到100的值输出显示</span></span><br><span class="line">SUM=0</span><br><span class="line">for (( i=1; i&lt;=$1; i++ ))</span><br><span class="line">do</span><br><span class="line">	SUM=$[$SUM+$i]</span><br><span class="line">done</span><br><span class="line">	echo "SUM=$SUM"</span><br></pre></td></tr></tbody></table>
-
-<h3 id="while循环"><a href="#while循环" class="headerlink" title="while循环"></a>while循环</h3><p><img src="/2024/04/25/Linux/image-20240515105936017.png" alt="image-20240515105936017"></p>
-<p>案例：</p>
-<table><tbody><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">从命令中输入一个数n,求1+...+n的值是多少</span></span><br><span class="line">SUM=0</span><br><span class="line">i=0</span><br><span class="line">while [ $i -gt $1 ]</span><br><span class="line">do</span><br><span class="line">	SUM=$[$SUM+$i]</span><br><span class="line">	i=$[$i+1]</span><br><span class="line">done</span><br><span class="line">	echo "SUM的值=$SUM"</span><br></pre></td></tr></tbody></table>
-
-<h2 id="read读取控制台输入"><a href="#read读取控制台输入" class="headerlink" title="read读取控制台输入"></a>read读取控制台输入</h2><p><img src="/2024/04/25/Linux/image-20240515110647470.png" alt="image-20240515110647470"></p>
-<p>案例：</p>
-<table><tbody><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">案例1：读取控制台输入一个num值</span></span><br><span class="line">read -p "请输入一个数num1=" NUM1</span><br><span class="line">echo "你输入的num1=$NUM1"</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">案例2：读取控制台输入一个num值，在10s内输入</span></span><br><span class="line">read -t 10 -p "请输入一个数NUM1=" NUM1</span><br><span class="line">echo "你输入的num1="$NUM1</span><br></pre></td></tr></tbody></table>
-
-<h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><h3 id="basename"><a href="#basename" class="headerlink" title="basename"></a>basename</h3><ul>
-<li>函数介绍<ul>
-<li>shell编程和其他语言一样，有系统函数，也可以自定义函数，系统函数中，我们这里就介绍两个</li>
-</ul>
-</li>
-</ul>
-<p><img src="/2024/04/25/Linux/image-20240515111138084.png" alt="image-20240515111138084"></p>
-<p>案例：</p>
-<table><tbody><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">案例1：请返回/home/aaa/test.txt的 <span class="string">"test.txt"</span> 的部分</span></span><br><span class="line">basename /home/aaa/test.txt =&gt; test.txt</span><br><span class="line">basename /home/aaa/test.txt .txt =&gt; test</span><br></pre></td></tr></tbody></table>
-
-<h3 id="dirname"><a href="#dirname" class="headerlink" title="dirname"></a>dirname</h3><p><img src="/2024/04/25/Linux/image-20240515111520036.png" alt="image-20240515111520036"></p>
-<p>案例：</p>
-<table><tbody><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">案例1：请返回/home/aaa/test.txt 的 /home/aaa</span></span><br><span class="line">dirname /home/aaa/test.txt</span><br></pre></td></tr></tbody></table>
-
-<h3 id="自定义函数"><a href="#自定义函数" class="headerlink" title="自定义函数"></a>自定义函数</h3><p><img src="/2024/04/25/Linux/image-20240515111933117.png" alt="image-20240515111933117"></p>
-<p>案例：</p>
-<table><tbody><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">案例1：计算输入两个参数的和(动态的获取)，getSum</span></span><br><span class="line">function getSum()</span><br><span class="line">{</span><br><span class="line">	SUM=$[$1+$2]	</span><br><span class="line">	echo "和是=$SUM"</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line">read -p "请输入一个数字n1=" n1</span><br><span class="line">read -p "请输入一个数字n2=" n2</span><br><span class="line"></span><br><span class="line">getSum $n1 $n2</span><br></pre></td></tr></tbody></table>
-
-<h3 id="Shell脚本案例"><a href="#Shell脚本案例" class="headerlink" title="Shell脚本案例"></a>Shell脚本案例</h3><p><img src="/2024/04/25/Linux/image-20240515132902308.png" alt="image-20240515132902308"></p>
-<table><tbody><tr><td class="code"><pre><span class="line">BACKUP=/data/backup/db</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">获取当前时间</span></span><br><span class="line">DATETIME=$(date +%Y-%m-%d_%H_%M_%S)</span><br><span class="line">echo $DATETIME</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">数据库的地址</span></span><br><span class="line">HOST=localhost</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">数据库的用户名</span></span><br><span class="line">DB_USER=root</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">数据库密码</span></span><br><span class="line">DB_PW=Zikl142857</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">数据库名</span></span><br><span class="line">DATABASE=raehp</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">创建备份目录</span></span><br><span class="line">[ ! -d "${BACKUP}/${DATETIME}" ] &amp;&amp; mkdir -p "${BACKUP}/${DATETIME}"</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">备份数据库</span></span><br><span class="line">mysqldump -u${DB_USER} -p${DB_PW} --host=${HOST} -q -R --databases ${DATABASE} | gzip &gt; ${BACKUP}/${DATETIME}/$DATETIME.sql.gz</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">将文件处理成tar.gz</span></span><br><span class="line">cd ${BACKUP}</span><br><span class="line">tar -zcvf $DATETIME.tar.gz ${DATETIME}</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">删除对应的备份文件</span></span><br><span class="line">rm -rf ${BACKUP}/${DATETIME}</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">检查是否有10天前的备份数据库文件</span></span><br><span class="line">find ${BACKUP} -atime +10 -name "*.tar.gz" -exec rm {} \;</span><br><span class="line">echo "备份数据库${DATABASE}成功"</span><br><span class="line"></span><br></pre></td></tr></tbody></table>]]></content>
-      <categories>
-        <category>服务器</category>
-      </categories>
-  </entry>
-  <entry>
     <title>Maven</title>
     <url>/2024/05/05/Maven/</url>
     <content><![CDATA[<h2 id="分模块开发"><a href="#分模块开发" class="headerlink" title="分模块开发"></a>分模块开发</h2><h3 id="分模块开发设计"><a href="#分模块开发设计" class="headerlink" title="分模块开发设计"></a>分模块开发设计</h3><p>(1)按照功能拆分</p>
@@ -5179,14 +5179,6 @@
 ]]></content>
       <categories>
         <category>Java开发框架</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Netty</title>
-    <url>/2024/05/14/Netty/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>网络编程</category>
       </categories>
   </entry>
   <entry>
@@ -6161,6 +6153,14 @@
       </categories>
   </entry>
   <entry>
+    <title>Netty</title>
+    <url>/2024/05/14/Netty/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>网络编程</category>
+      </categories>
+  </entry>
+  <entry>
     <title>Nginx</title>
     <url>/2024/05/14/Nginx/</url>
     <content><![CDATA[<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><h2 id="Nginx概念"><a href="#Nginx概念" class="headerlink" title="Nginx概念"></a>Nginx概念</h2><p>Nginx (engine x) 是一个高性能的<a href="https://baike.baidu.com/item/HTTP/243074?fromModule=lemma_inlink">HTTP</a>和<a href="https://baike.baidu.com/item/%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86/7793488?fromModule=lemma_inlink">反向代理</a>web服务器，特点是占有内存少，并发能力强，事实上nginx的并发能力确实在同类型的网页服务器中变现较好</p>
@@ -6340,35 +6340,6 @@ make &amp;&amp; make install
 ]]></content>
       <categories>
         <category>中间件</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>RESTful风格开发防SQL注入</title>
-    <url>/2024/06/30/RESTful%E9%A3%8E%E6%A0%BC%E5%BC%80%E5%8F%91%E9%98%B2SQL%E6%B3%A8%E5%85%A5/</url>
-    <content><![CDATA[<p>在Spring Boot开发的RESTful风格后端项目中，SQL注入仍然是一个潜在的安全风险，尤其是当未正确处理用户输入时。以下是有关SQL注入如何发生及其防范措施的详细说明。</p>
-<h3 id="SQL注入概述"><a href="#SQL注入概述" class="headerlink" title="SQL注入概述"></a>SQL注入概述</h3><p>SQL注入攻击是指攻击者通过在应用程序中输入恶意的SQL代码来操控数据库查询，从而获取、修改、删除数据，或执行其他恶意操作。通常发生在应用程序直接使用用户输入来构建SQL查询时。</p>
-<h3 id="SQL注入示例"><a href="#SQL注入示例" class="headerlink" title="SQL注入示例"></a>SQL注入示例</h3><p>假设我们有一个简单的RESTful API来获取用户信息，URL为<code>/users?id=1</code>，处理这个请求的代码如下：</p>
-<table><tbody><tr><td class="code"><pre><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">UserController</span> {</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> JdbcTemplate jdbcTemplate;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@GetMapping("/users")</span></span><br><span class="line">    <span class="keyword">public</span> List&lt;Map&lt;String, Object&gt;&gt; <span class="title function_">getUser</span><span class="params">(<span class="meta">@RequestParam</span> String id)</span> {</span><br><span class="line">        <span class="type">String</span> <span class="variable">sql</span> <span class="operator">=</span> <span class="string">"SELECT * FROM users WHERE id = "</span> + id;</span><br><span class="line">        <span class="keyword">return</span> jdbcTemplate.queryForList(sql);</span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"></span><br></pre></td></tr></tbody></table>
-
-<p>上述代码存在SQL注入风险，因为直接使用了用户输入的<code>id</code>来构建SQL查询。攻击者可以这样构造URL：<code>/users?id=1 OR 1=1</code>，从而执行如下SQL查询：</p>
-<table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> users <span class="keyword">WHERE</span> id <span class="operator">=</span> <span class="number">1</span> <span class="keyword">OR</span> <span class="number">1</span><span class="operator">=</span><span class="number">1</span>;</span><br></pre></td></tr></tbody></table>
-
-<p>这将返回所有用户的信息，而不仅仅是ID为1的用户。</p>
-<h3 id="防范SQL注入的方法"><a href="#防范SQL注入的方法" class="headerlink" title="防范SQL注入的方法"></a>防范SQL注入的方法</h3><h4 id="1、使用PreparedStatement"><a href="#1、使用PreparedStatement" class="headerlink" title="1、使用PreparedStatement"></a>1、使用PreparedStatement</h4><p>通过使用JDBC的<code>PreparedStatement</code>或Spring的<code>NamedParameterJdbcTemplate</code>来执行预编译的SQL查询，从而避免直接拼接用户输入。</p>
-<table><tbody><tr><td class="code"><pre><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">UserController</span> {</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> JdbcTemplate jdbcTemplate;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@GetMapping("/users")</span></span><br><span class="line">    <span class="keyword">public</span> List&lt;Map&lt;String, Object&gt;&gt; <span class="title function_">getUser</span><span class="params">(<span class="meta">@RequestParam</span> <span class="type">int</span> id)</span> {</span><br><span class="line">        <span class="type">String</span> <span class="variable">sql</span> <span class="operator">=</span> <span class="string">"SELECT * FROM users WHERE id = ?"</span>;</span><br><span class="line">        <span class="keyword">return</span> jdbcTemplate.queryForList(sql, id);</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table>
-
-<h4 id="2、使用Spring-Data-JPA或Hibernate"><a href="#2、使用Spring-Data-JPA或Hibernate" class="headerlink" title="2、使用Spring Data JPA或Hibernate"></a>2、使用Spring Data JPA或Hibernate</h4><p>Spring Data JPA或Hibernate自动处理参数化查询，有效防止SQL注入。</p>
-<table><tbody><tr><td class="code"><pre><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">UserController</span> {</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> UserRepository userRepository;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@GetMapping("/users")</span></span><br><span class="line">    <span class="keyword">public</span> Optional&lt;User&gt; <span class="title function_">getUser</span><span class="params">(<span class="meta">@RequestParam</span> Long id)</span> {</span><br><span class="line">        <span class="keyword">return</span> userRepository.findById(id);</span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">UserRepository</span> <span class="keyword">extends</span> <span class="title class_">JpaRepository</span>&lt;User, Long&gt; {</span><br><span class="line">}</span><br><span class="line"></span><br></pre></td></tr></tbody></table>
-
-<h4 id="3、数据验证与清洗"><a href="#3、数据验证与清洗" class="headerlink" title="3、数据验证与清洗"></a>3、数据验证与清洗</h4><p>始终验证和清洗用户输入的数据。确保输入符合预期格式，如整数、字符串长度等。</p>
-<table><tbody><tr><td class="code"><pre><span class="line"><span class="meta">@GetMapping("/users")</span></span><br><span class="line"><span class="keyword">public</span> List&lt;Map&lt;String, Object&gt;&gt; <span class="title function_">getUser</span><span class="params">(<span class="meta">@RequestParam</span> <span class="type">int</span> id)</span> {</span><br><span class="line">    <span class="comment">// Validate the input</span></span><br><span class="line">    <span class="keyword">if</span> (id &lt;= <span class="number">0</span>) {</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">IllegalArgumentException</span>(<span class="string">"Invalid ID"</span>);</span><br><span class="line">    }</span><br><span class="line">    <span class="type">String</span> <span class="variable">sql</span> <span class="operator">=</span> <span class="string">"SELECT * FROM users WHERE id = ?"</span>;</span><br><span class="line">    <span class="keyword">return</span> jdbcTemplate.queryForList(sql, id);</span><br><span class="line">}</span><br></pre></td></tr></tbody></table>
-
-<h4 id="4、使用ORM框架"><a href="#4、使用ORM框架" class="headerlink" title="4、使用ORM框架"></a>4、使用ORM框架</h4><p>ORM（对象关系映射）框架如Hibernate或MyBatis可以有效防止SQL注入，因为它们会自动处理SQL查询的参数化问题。</p>
-<h4 id="5、限制数据库用户权限"><a href="#5、限制数据库用户权限" class="headerlink" title="5、限制数据库用户权限"></a>5、限制数据库用户权限</h4><p>确保数据库用户具有最低的权限，只有执行特定查询的权限，避免因SQL注入导致的更大范围的数据库损害。</p>
-<h3 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h3><p>即使在Spring Boot的RESTful风格后端项目中，SQL注入仍然是一个需要注意的安全问题。通过使用预编译查询、ORM框架、验证用户输入和限制数据库用户权限等措施，可以有效防范SQL注入攻击。确保你的应用程序时刻保持安全，是开发中至关重要的一部分。</p>
-]]></content>
-      <categories>
-        <category>SQL注入</category>
       </categories>
   </entry>
   <entry>
@@ -8225,6 +8196,35 @@ make &amp;&amp; make install
 ]]></content>
       <categories>
         <category>数据库</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>RESTful风格开发防SQL注入</title>
+    <url>/2024/06/30/RESTful%E9%A3%8E%E6%A0%BC%E5%BC%80%E5%8F%91%E9%98%B2SQL%E6%B3%A8%E5%85%A5/</url>
+    <content><![CDATA[<p>在Spring Boot开发的RESTful风格后端项目中，SQL注入仍然是一个潜在的安全风险，尤其是当未正确处理用户输入时。以下是有关SQL注入如何发生及其防范措施的详细说明。</p>
+<h3 id="SQL注入概述"><a href="#SQL注入概述" class="headerlink" title="SQL注入概述"></a>SQL注入概述</h3><p>SQL注入攻击是指攻击者通过在应用程序中输入恶意的SQL代码来操控数据库查询，从而获取、修改、删除数据，或执行其他恶意操作。通常发生在应用程序直接使用用户输入来构建SQL查询时。</p>
+<h3 id="SQL注入示例"><a href="#SQL注入示例" class="headerlink" title="SQL注入示例"></a>SQL注入示例</h3><p>假设我们有一个简单的RESTful API来获取用户信息，URL为<code>/users?id=1</code>，处理这个请求的代码如下：</p>
+<table><tbody><tr><td class="code"><pre><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">UserController</span> {</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> JdbcTemplate jdbcTemplate;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@GetMapping("/users")</span></span><br><span class="line">    <span class="keyword">public</span> List&lt;Map&lt;String, Object&gt;&gt; <span class="title function_">getUser</span><span class="params">(<span class="meta">@RequestParam</span> String id)</span> {</span><br><span class="line">        <span class="type">String</span> <span class="variable">sql</span> <span class="operator">=</span> <span class="string">"SELECT * FROM users WHERE id = "</span> + id;</span><br><span class="line">        <span class="keyword">return</span> jdbcTemplate.queryForList(sql);</span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"></span><br></pre></td></tr></tbody></table>
+
+<p>上述代码存在SQL注入风险，因为直接使用了用户输入的<code>id</code>来构建SQL查询。攻击者可以这样构造URL：<code>/users?id=1 OR 1=1</code>，从而执行如下SQL查询：</p>
+<table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> users <span class="keyword">WHERE</span> id <span class="operator">=</span> <span class="number">1</span> <span class="keyword">OR</span> <span class="number">1</span><span class="operator">=</span><span class="number">1</span>;</span><br></pre></td></tr></tbody></table>
+
+<p>这将返回所有用户的信息，而不仅仅是ID为1的用户。</p>
+<h3 id="防范SQL注入的方法"><a href="#防范SQL注入的方法" class="headerlink" title="防范SQL注入的方法"></a>防范SQL注入的方法</h3><h4 id="1、使用PreparedStatement"><a href="#1、使用PreparedStatement" class="headerlink" title="1、使用PreparedStatement"></a>1、使用PreparedStatement</h4><p>通过使用JDBC的<code>PreparedStatement</code>或Spring的<code>NamedParameterJdbcTemplate</code>来执行预编译的SQL查询，从而避免直接拼接用户输入。</p>
+<table><tbody><tr><td class="code"><pre><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">UserController</span> {</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> JdbcTemplate jdbcTemplate;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@GetMapping("/users")</span></span><br><span class="line">    <span class="keyword">public</span> List&lt;Map&lt;String, Object&gt;&gt; <span class="title function_">getUser</span><span class="params">(<span class="meta">@RequestParam</span> <span class="type">int</span> id)</span> {</span><br><span class="line">        <span class="type">String</span> <span class="variable">sql</span> <span class="operator">=</span> <span class="string">"SELECT * FROM users WHERE id = ?"</span>;</span><br><span class="line">        <span class="keyword">return</span> jdbcTemplate.queryForList(sql, id);</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table>
+
+<h4 id="2、使用Spring-Data-JPA或Hibernate"><a href="#2、使用Spring-Data-JPA或Hibernate" class="headerlink" title="2、使用Spring Data JPA或Hibernate"></a>2、使用Spring Data JPA或Hibernate</h4><p>Spring Data JPA或Hibernate自动处理参数化查询，有效防止SQL注入。</p>
+<table><tbody><tr><td class="code"><pre><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">UserController</span> {</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> UserRepository userRepository;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@GetMapping("/users")</span></span><br><span class="line">    <span class="keyword">public</span> Optional&lt;User&gt; <span class="title function_">getUser</span><span class="params">(<span class="meta">@RequestParam</span> Long id)</span> {</span><br><span class="line">        <span class="keyword">return</span> userRepository.findById(id);</span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">UserRepository</span> <span class="keyword">extends</span> <span class="title class_">JpaRepository</span>&lt;User, Long&gt; {</span><br><span class="line">}</span><br><span class="line"></span><br></pre></td></tr></tbody></table>
+
+<h4 id="3、数据验证与清洗"><a href="#3、数据验证与清洗" class="headerlink" title="3、数据验证与清洗"></a>3、数据验证与清洗</h4><p>始终验证和清洗用户输入的数据。确保输入符合预期格式，如整数、字符串长度等。</p>
+<table><tbody><tr><td class="code"><pre><span class="line"><span class="meta">@GetMapping("/users")</span></span><br><span class="line"><span class="keyword">public</span> List&lt;Map&lt;String, Object&gt;&gt; <span class="title function_">getUser</span><span class="params">(<span class="meta">@RequestParam</span> <span class="type">int</span> id)</span> {</span><br><span class="line">    <span class="comment">// Validate the input</span></span><br><span class="line">    <span class="keyword">if</span> (id &lt;= <span class="number">0</span>) {</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">IllegalArgumentException</span>(<span class="string">"Invalid ID"</span>);</span><br><span class="line">    }</span><br><span class="line">    <span class="type">String</span> <span class="variable">sql</span> <span class="operator">=</span> <span class="string">"SELECT * FROM users WHERE id = ?"</span>;</span><br><span class="line">    <span class="keyword">return</span> jdbcTemplate.queryForList(sql, id);</span><br><span class="line">}</span><br></pre></td></tr></tbody></table>
+
+<h4 id="4、使用ORM框架"><a href="#4、使用ORM框架" class="headerlink" title="4、使用ORM框架"></a>4、使用ORM框架</h4><p>ORM（对象关系映射）框架如Hibernate或MyBatis可以有效防止SQL注入，因为它们会自动处理SQL查询的参数化问题。</p>
+<h4 id="5、限制数据库用户权限"><a href="#5、限制数据库用户权限" class="headerlink" title="5、限制数据库用户权限"></a>5、限制数据库用户权限</h4><p>确保数据库用户具有最低的权限，只有执行特定查询的权限，避免因SQL注入导致的更大范围的数据库损害。</p>
+<h3 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h3><p>即使在Spring Boot的RESTful风格后端项目中，SQL注入仍然是一个需要注意的安全问题。通过使用预编译查询、ORM框架、验证用户输入和限制数据库用户权限等措施，可以有效防范SQL注入攻击。确保你的应用程序时刻保持安全，是开发中至关重要的一部分。</p>
+]]></content>
+      <categories>
+        <category>SQL注入</category>
       </categories>
   </entry>
   <entry>
@@ -11825,6 +11825,98 @@ make &amp;&amp; make install
       </categories>
   </entry>
   <entry>
+    <title>Vue3</title>
+    <url>/2024/05/21/Vue3/</url>
+    <content><![CDATA[<h1 id="认识Vue3"><a href="#认识Vue3" class="headerlink" title="认识Vue3"></a>认识Vue3</h1><h2 id="1-Vue2-选项式-API-vs-Vue3-组合式API"><a href="#1-Vue2-选项式-API-vs-Vue3-组合式API" class="headerlink" title="1. Vue2 选项式 API vs Vue3 组合式API"></a>1. Vue2 选项式 API vs Vue3 组合式API</h2><table><tbody><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">export default {</span><br><span class="line">  data(){</span><br><span class="line">    return {</span><br><span class="line">      count:0</span><br><span class="line">    }</span><br><span class="line">  },</span><br><span class="line">  methods:{</span><br><span class="line">    addCount(){</span><br><span class="line">      this.count++</span><br><span class="line">    }</span><br><span class="line">  }</span><br><span class="line">}</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></tbody></table>
+
+<table><tbody><tr><td class="code"><pre><span class="line">&lt;script setup&gt;</span><br><span class="line">import { ref } from 'vue'</span><br><span class="line">const count = ref(0)</span><br><span class="line">const addCount = ()=&gt; count.value++</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></tbody></table>
+
+<p>特点：</p>
+<ol>
+<li>代码量变少</li>
+<li>分散式维护变成集中式维护</li>
+</ol>
+<h2 id="2-Vue3的优势"><a href="#2-Vue3的优势" class="headerlink" title="2. Vue3的优势"></a>2. Vue3的优势</h2><p><img src="/2024/05/21/Vue3/01.png" alt="01"></p>
+<h1 id="使用create-vue搭建Vue3项目"><a href="#使用create-vue搭建Vue3项目" class="headerlink" title="使用create-vue搭建Vue3项目"></a>使用create-vue搭建Vue3项目</h1><h2 id="1-认识create-vue"><a href="#1-认识create-vue" class="headerlink" title="1. 认识create-vue"></a>1. 认识create-vue</h2><blockquote>
+<p>create-vue是Vue官方新的脚手架工具，底层切换到了 vite （下一代前端工具链），为开发提供极速响应</p>
+</blockquote>
+<p><img src="/2024/05/21/Vue3/2.png" alt="2"></p>
+<h2 id="2-使用create-vue创建项目"><a href="#2-使用create-vue创建项目" class="headerlink" title="2. 使用create-vue创建项目"></a>2. 使用create-vue创建项目</h2><blockquote>
+<p>前置条件 - 已安装16.0或更高版本的Node.js</p>
+</blockquote>
+<p>执行如下命令，这一指令将会安装并执行 create-vue</p>
+<table><tbody><tr><td class="code"><pre><span class="line">npm init vue@latest</span><br></pre></td></tr></tbody></table>
+
+<p><img src="/2024/05/21/Vue3/3.png" alt="3"></p>
+<h1 id="熟悉项目和关键文件"><a href="#熟悉项目和关键文件" class="headerlink" title="熟悉项目和关键文件"></a>熟悉项目和关键文件</h1><p><img src="/2024/05/21/Vue3/4.png" alt="4"></p>
+<h1 id="组合式API-setup选项"><a href="#组合式API-setup选项" class="headerlink" title="组合式API - setup选项"></a>组合式API - setup选项</h1><h2 id="1-setup选项的写法和执行时机"><a href="#1-setup选项的写法和执行时机" class="headerlink" title="1. setup选项的写法和执行时机"></a>1. setup选项的写法和执行时机</h2><p>写法</p>
+<table><tbody><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  export default {</span><br><span class="line">    setup(){</span><br><span class="line">      </span><br><span class="line">    },</span><br><span class="line">    beforeCreate(){</span><br><span class="line">      </span><br><span class="line">    }</span><br><span class="line">  }</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></tbody></table>
+
+<p>执行时机</p>
+<blockquote>
+<p>在beforeCreate钩子之前执行</p>
+</blockquote>
+<p><img src="/2024/05/21/Vue3/5.png" alt="5"></p>
+<h2 id="2-setup中写代码的特点"><a href="#2-setup中写代码的特点" class="headerlink" title="2. setup中写代码的特点"></a>2. setup中写代码的特点</h2><blockquote>
+<p>在setup函数中写的数据和方法需要在末尾以对象的方式return，才能给模版使用</p>
+</blockquote>
+<table><tbody><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  export default {</span><br><span class="line">    setup(){</span><br><span class="line">      const message = 'this is message'</span><br><span class="line">      const logMessage = ()=&gt;{</span><br><span class="line">        console.log(message)</span><br><span class="line">      }</span><br><span class="line">      // 必须return才可以</span><br><span class="line">      return {</span><br><span class="line">        message,</span><br><span class="line">        logMessage</span><br><span class="line">      }</span><br><span class="line">    }</span><br><span class="line">  }</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></tbody></table>
+
+<h2 id="3"><a href="#3" class="headerlink" title="3."></a>3.</h2>]]></content>
+      <categories>
+        <category>web前端</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>es集群</title>
+    <url>/2024/09/19/es%E9%9B%86%E7%BE%A4/</url>
+    <content><![CDATA[<h1 id="部署es集群"><a href="#部署es集群" class="headerlink" title="部署es集群"></a>部署es集群</h1><p>我们会在单机上利用docker容器运行多个es实例来模拟es集群。不过生产环境推荐大家每一台服务节点仅部署一个es的实例。</p>
+<p>部署es集群可以直接使用docker-compose来完成，但这要求你的Linux虚拟机至少有<strong>1G</strong>的内存空间</p>
+<h2 id="1-1-创建es集群"><a href="#1-1-创建es集群" class="headerlink" title="1.1.创建es集群"></a>1.1.创建es集群</h2><p>首先编写一个docker-compose文件，内容如下：</p>
+<table><tbody><tr><td class="code"><pre><span class="line">version: <span class="string">'2.2'</span></span><br><span class="line">services:</span><br><span class="line">  es01:</span><br><span class="line">    image: elasticsearch:7.12.1</span><br><span class="line">    container_name: es01</span><br><span class="line">    environment:</span><br><span class="line">      - node.name=es01</span><br><span class="line">      - cluster.name=es-docker-cluster</span><br><span class="line">      - discovery.seed_hosts=es02,es03</span><br><span class="line">      - cluster.initial_master_nodes=es01,es02,es03</span><br><span class="line">      - <span class="string">"ES_JAVA_OPTS=-Xms512m -Xmx512m"</span></span><br><span class="line">    volumes:</span><br><span class="line">      - data01:/usr/share/elasticsearch/data</span><br><span class="line">    ports:</span><br><span class="line">      - 9200:9200</span><br><span class="line">    networks:</span><br><span class="line">      - elastic</span><br><span class="line">  es02:</span><br><span class="line">    image: elasticsearch:7.12.1</span><br><span class="line">    container_name: es02</span><br><span class="line">    environment:</span><br><span class="line">      - node.name=es02</span><br><span class="line">      - cluster.name=es-docker-cluster</span><br><span class="line">      - discovery.seed_hosts=es01,es03</span><br><span class="line">      - cluster.initial_master_nodes=es01,es02,es03</span><br><span class="line">      - <span class="string">"ES_JAVA_OPTS=-Xms512m -Xmx512m"</span></span><br><span class="line">    volumes:</span><br><span class="line">      - data02:/usr/share/elasticsearch/data</span><br><span class="line">    ports:</span><br><span class="line">      - 9201:9200</span><br><span class="line">    networks:</span><br><span class="line">      - elastic</span><br><span class="line">  es03:</span><br><span class="line">    image: elasticsearch:7.12.1</span><br><span class="line">    container_name: es03</span><br><span class="line">    environment:</span><br><span class="line">      - node.name=es03</span><br><span class="line">      - cluster.name=es-docker-cluster</span><br><span class="line">      - discovery.seed_hosts=es01,es02</span><br><span class="line">      - cluster.initial_master_nodes=es01,es02,es03</span><br><span class="line">      - <span class="string">"ES_JAVA_OPTS=-Xms512m -Xmx512m"</span></span><br><span class="line">    volumes:</span><br><span class="line">      - data03:/usr/share/elasticsearch/data</span><br><span class="line">    networks:</span><br><span class="line">      - elastic</span><br><span class="line">    ports:</span><br><span class="line">      - 9202:9200</span><br><span class="line">volumes:</span><br><span class="line">  data01:</span><br><span class="line">    driver: <span class="built_in">local</span></span><br><span class="line">  data02:</span><br><span class="line">    driver: <span class="built_in">local</span></span><br><span class="line">  data03:</span><br><span class="line">    driver: <span class="built_in">local</span></span><br><span class="line"></span><br><span class="line">networks:</span><br><span class="line">  elastic:</span><br><span class="line">    driver: bridge</span><br></pre></td></tr></tbody></table>
+
+<p>es运行需要修改一些linux系统权限，修改<code>/etc/sysctl.conf</code>文件</p>
+<table><tbody><tr><td class="code"><pre><span class="line">vi /etc/sysctl.conf</span><br></pre></td></tr></tbody></table>
+
+<p>添加下面的内容：</p>
+<table><tbody><tr><td class="code"><pre><span class="line">vm.max_map_count=262111</span><br></pre></td></tr></tbody></table>
+
+<p>然后执行命令，让配置生效：</p>
+<table><tbody><tr><td class="code"><pre><span class="line">sysctl -p</span><br></pre></td></tr></tbody></table>
+
+<p>通过docker-compose启动集群：</p>
+<table><tbody><tr><td class="code"><pre><span class="line">docker-compose up -d</span><br></pre></td></tr></tbody></table>
+
+<h2 id="1-2-集群状态监控"><a href="#1-2-集群状态监控" class="headerlink" title="1.2.集群状态监控"></a>1.2.集群状态监控</h2><p>kibana可以监控es集群，不过新版本需要依赖es的x-pack 功能，配置比较复杂。</p>
+<p>这里推荐使用cerebro来监控es集群状态，官方网址：<a href="https://github.com/lmenezes/cerebro">https://github.com/lmenezes/cerebro</a></p>
+<p>下载好的目录如下：</p>
+<p><img src="/2024/09/19/es%E9%9B%86%E7%BE%A4/image-20240919160529087.png" alt="image-20240919160529087"></p>
+<p>进入对应的bin目录：</p>
+<p><img src="/2024/09/19/es%E9%9B%86%E7%BE%A4/image-20240919160521313.png" alt="image-20240919160521313"></p>
+<p>双击其中的cerebro.bat文件即可启动服务。</p>
+<p><img src="/2024/09/19/es%E9%9B%86%E7%BE%A4/image-20240919160513149.png" alt="image-20240919160513149"></p>
+<p>访问<a href="http://localhost:9000/">http://localhost:9000</a> 即可进入管理界面：</p>
+<p><img src="/2024/09/19/es%E9%9B%86%E7%BE%A4/image-20210602221115763.png" alt="image-20210602221115763"></p>
+<p>输入你的elasticsearch的任意节点的地址和端口，点击connect即可：</p>
+<p><img src="/2024/09/19/es%E9%9B%86%E7%BE%A4/image-20210109181106866.png" alt="image-20210109181106866"></p>
+<p>绿色的条，代表集群处于绿色（健康状态）。</p>
+<h2 id="1-3-创建索引库"><a href="#1-3-创建索引库" class="headerlink" title="1.3.创建索引库"></a>1.3.创建索引库</h2><h3 id="1）利用kibana的DevTools创建索引库"><a href="#1）利用kibana的DevTools创建索引库" class="headerlink" title="1）利用kibana的DevTools创建索引库"></a>1）利用kibana的DevTools创建索引库</h3><p>在DevTools中输入指令：</p>
+<table><tbody><tr><td class="code"><pre><span class="line">PUT /itcast</span><br><span class="line"><span class="punctuation">{</span></span><br><span class="line">  <span class="attr">"settings"</span><span class="punctuation">:</span> <span class="punctuation">{</span></span><br><span class="line">    <span class="attr">"number_of_shards"</span><span class="punctuation">:</span> <span class="number">3</span><span class="punctuation">,</span> <span class="comment">// 分片数量</span></span><br><span class="line">    <span class="attr">"number_of_replicas"</span><span class="punctuation">:</span> <span class="number">1</span> <span class="comment">// 副本数量</span></span><br><span class="line">  <span class="punctuation">}</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"mappings"</span><span class="punctuation">:</span> <span class="punctuation">{</span></span><br><span class="line">    <span class="attr">"properties"</span><span class="punctuation">:</span> <span class="punctuation">{</span></span><br><span class="line">      <span class="comment">// mapping映射定义 ...</span></span><br><span class="line">    <span class="punctuation">}</span></span><br><span class="line">  <span class="punctuation">}</span></span><br><span class="line"><span class="punctuation">}</span></span><br></pre></td></tr></tbody></table>
+
+<h3 id="2）利用cerebro创建索引库"><a href="#2）利用cerebro创建索引库" class="headerlink" title="2）利用cerebro创建索引库"></a>2）利用cerebro创建索引库</h3><p>利用cerebro还可以创建索引库：</p>
+<p><img src="/2024/09/19/es%E9%9B%86%E7%BE%A4/image-20240919160503178.png" alt="image-20240919160503178"></p>
+<p>填写索引库信息：</p>
+<p><img src="/2024/09/19/es%E9%9B%86%E7%BE%A4/image-20210602221520629.png" alt="image-20210602221520629"></p>
+<p>点击右下角的create按钮：</p>
+<p><img src="/2024/09/19/es%E9%9B%86%E7%BE%A4/image-20240919160456077.png" alt="image-20240919160456077"></p>
+<h2 id="1-1-查看分片效果"><a href="#1-1-查看分片效果" class="headerlink" title="1.1.查看分片效果"></a>1.1.查看分片效果</h2><p>回到首页，即可查看索引库分片效果：</p>
+<p><img src="/2024/09/19/es%E9%9B%86%E7%BE%A4/image-20240919160447911.png" alt="image-20240919160447911"></p>
+]]></content>
+      <categories>
+        <category>微服务</category>
+      </categories>
+  </entry>
+  <entry>
     <title>SpringSecurity</title>
     <url>/2024/05/14/SpringSecurity/</url>
     <content><![CDATA[<h1 id="前置知识"><a href="#前置知识" class="headerlink" title="前置知识"></a>前置知识</h1><p>1、掌握Spring框架</p>
@@ -12148,98 +12240,6 @@ make &amp;&amp; make install
       </categories>
   </entry>
   <entry>
-    <title>Vue3</title>
-    <url>/2024/05/21/Vue3/</url>
-    <content><![CDATA[<h1 id="认识Vue3"><a href="#认识Vue3" class="headerlink" title="认识Vue3"></a>认识Vue3</h1><h2 id="1-Vue2-选项式-API-vs-Vue3-组合式API"><a href="#1-Vue2-选项式-API-vs-Vue3-组合式API" class="headerlink" title="1. Vue2 选项式 API vs Vue3 组合式API"></a>1. Vue2 选项式 API vs Vue3 组合式API</h2><table><tbody><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">export default {</span><br><span class="line">  data(){</span><br><span class="line">    return {</span><br><span class="line">      count:0</span><br><span class="line">    }</span><br><span class="line">  },</span><br><span class="line">  methods:{</span><br><span class="line">    addCount(){</span><br><span class="line">      this.count++</span><br><span class="line">    }</span><br><span class="line">  }</span><br><span class="line">}</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></tbody></table>
-
-<table><tbody><tr><td class="code"><pre><span class="line">&lt;script setup&gt;</span><br><span class="line">import { ref } from 'vue'</span><br><span class="line">const count = ref(0)</span><br><span class="line">const addCount = ()=&gt; count.value++</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></tbody></table>
-
-<p>特点：</p>
-<ol>
-<li>代码量变少</li>
-<li>分散式维护变成集中式维护</li>
-</ol>
-<h2 id="2-Vue3的优势"><a href="#2-Vue3的优势" class="headerlink" title="2. Vue3的优势"></a>2. Vue3的优势</h2><p><img src="/2024/05/21/Vue3/01.png" alt="01"></p>
-<h1 id="使用create-vue搭建Vue3项目"><a href="#使用create-vue搭建Vue3项目" class="headerlink" title="使用create-vue搭建Vue3项目"></a>使用create-vue搭建Vue3项目</h1><h2 id="1-认识create-vue"><a href="#1-认识create-vue" class="headerlink" title="1. 认识create-vue"></a>1. 认识create-vue</h2><blockquote>
-<p>create-vue是Vue官方新的脚手架工具，底层切换到了 vite （下一代前端工具链），为开发提供极速响应</p>
-</blockquote>
-<p><img src="/2024/05/21/Vue3/2.png" alt="2"></p>
-<h2 id="2-使用create-vue创建项目"><a href="#2-使用create-vue创建项目" class="headerlink" title="2. 使用create-vue创建项目"></a>2. 使用create-vue创建项目</h2><blockquote>
-<p>前置条件 - 已安装16.0或更高版本的Node.js</p>
-</blockquote>
-<p>执行如下命令，这一指令将会安装并执行 create-vue</p>
-<table><tbody><tr><td class="code"><pre><span class="line">npm init vue@latest</span><br></pre></td></tr></tbody></table>
-
-<p><img src="/2024/05/21/Vue3/3.png" alt="3"></p>
-<h1 id="熟悉项目和关键文件"><a href="#熟悉项目和关键文件" class="headerlink" title="熟悉项目和关键文件"></a>熟悉项目和关键文件</h1><p><img src="/2024/05/21/Vue3/4.png" alt="4"></p>
-<h1 id="组合式API-setup选项"><a href="#组合式API-setup选项" class="headerlink" title="组合式API - setup选项"></a>组合式API - setup选项</h1><h2 id="1-setup选项的写法和执行时机"><a href="#1-setup选项的写法和执行时机" class="headerlink" title="1. setup选项的写法和执行时机"></a>1. setup选项的写法和执行时机</h2><p>写法</p>
-<table><tbody><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  export default {</span><br><span class="line">    setup(){</span><br><span class="line">      </span><br><span class="line">    },</span><br><span class="line">    beforeCreate(){</span><br><span class="line">      </span><br><span class="line">    }</span><br><span class="line">  }</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></tbody></table>
-
-<p>执行时机</p>
-<blockquote>
-<p>在beforeCreate钩子之前执行</p>
-</blockquote>
-<p><img src="/2024/05/21/Vue3/5.png" alt="5"></p>
-<h2 id="2-setup中写代码的特点"><a href="#2-setup中写代码的特点" class="headerlink" title="2. setup中写代码的特点"></a>2. setup中写代码的特点</h2><blockquote>
-<p>在setup函数中写的数据和方法需要在末尾以对象的方式return，才能给模版使用</p>
-</blockquote>
-<table><tbody><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  export default {</span><br><span class="line">    setup(){</span><br><span class="line">      const message = 'this is message'</span><br><span class="line">      const logMessage = ()=&gt;{</span><br><span class="line">        console.log(message)</span><br><span class="line">      }</span><br><span class="line">      // 必须return才可以</span><br><span class="line">      return {</span><br><span class="line">        message,</span><br><span class="line">        logMessage</span><br><span class="line">      }</span><br><span class="line">    }</span><br><span class="line">  }</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></tbody></table>
-
-<h2 id="3"><a href="#3" class="headerlink" title="3."></a>3.</h2>]]></content>
-      <categories>
-        <category>web前端</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>es集群</title>
-    <url>/2024/09/19/es%E9%9B%86%E7%BE%A4/</url>
-    <content><![CDATA[<h1 id="部署es集群"><a href="#部署es集群" class="headerlink" title="部署es集群"></a>部署es集群</h1><p>我们会在单机上利用docker容器运行多个es实例来模拟es集群。不过生产环境推荐大家每一台服务节点仅部署一个es的实例。</p>
-<p>部署es集群可以直接使用docker-compose来完成，但这要求你的Linux虚拟机至少有<strong>1G</strong>的内存空间</p>
-<h2 id="1-1-创建es集群"><a href="#1-1-创建es集群" class="headerlink" title="1.1.创建es集群"></a>1.1.创建es集群</h2><p>首先编写一个docker-compose文件，内容如下：</p>
-<table><tbody><tr><td class="code"><pre><span class="line">version: <span class="string">'2.2'</span></span><br><span class="line">services:</span><br><span class="line">  es01:</span><br><span class="line">    image: elasticsearch:7.12.1</span><br><span class="line">    container_name: es01</span><br><span class="line">    environment:</span><br><span class="line">      - node.name=es01</span><br><span class="line">      - cluster.name=es-docker-cluster</span><br><span class="line">      - discovery.seed_hosts=es02,es03</span><br><span class="line">      - cluster.initial_master_nodes=es01,es02,es03</span><br><span class="line">      - <span class="string">"ES_JAVA_OPTS=-Xms512m -Xmx512m"</span></span><br><span class="line">    volumes:</span><br><span class="line">      - data01:/usr/share/elasticsearch/data</span><br><span class="line">    ports:</span><br><span class="line">      - 9200:9200</span><br><span class="line">    networks:</span><br><span class="line">      - elastic</span><br><span class="line">  es02:</span><br><span class="line">    image: elasticsearch:7.12.1</span><br><span class="line">    container_name: es02</span><br><span class="line">    environment:</span><br><span class="line">      - node.name=es02</span><br><span class="line">      - cluster.name=es-docker-cluster</span><br><span class="line">      - discovery.seed_hosts=es01,es03</span><br><span class="line">      - cluster.initial_master_nodes=es01,es02,es03</span><br><span class="line">      - <span class="string">"ES_JAVA_OPTS=-Xms512m -Xmx512m"</span></span><br><span class="line">    volumes:</span><br><span class="line">      - data02:/usr/share/elasticsearch/data</span><br><span class="line">    ports:</span><br><span class="line">      - 9201:9200</span><br><span class="line">    networks:</span><br><span class="line">      - elastic</span><br><span class="line">  es03:</span><br><span class="line">    image: elasticsearch:7.12.1</span><br><span class="line">    container_name: es03</span><br><span class="line">    environment:</span><br><span class="line">      - node.name=es03</span><br><span class="line">      - cluster.name=es-docker-cluster</span><br><span class="line">      - discovery.seed_hosts=es01,es02</span><br><span class="line">      - cluster.initial_master_nodes=es01,es02,es03</span><br><span class="line">      - <span class="string">"ES_JAVA_OPTS=-Xms512m -Xmx512m"</span></span><br><span class="line">    volumes:</span><br><span class="line">      - data03:/usr/share/elasticsearch/data</span><br><span class="line">    networks:</span><br><span class="line">      - elastic</span><br><span class="line">    ports:</span><br><span class="line">      - 9202:9200</span><br><span class="line">volumes:</span><br><span class="line">  data01:</span><br><span class="line">    driver: <span class="built_in">local</span></span><br><span class="line">  data02:</span><br><span class="line">    driver: <span class="built_in">local</span></span><br><span class="line">  data03:</span><br><span class="line">    driver: <span class="built_in">local</span></span><br><span class="line"></span><br><span class="line">networks:</span><br><span class="line">  elastic:</span><br><span class="line">    driver: bridge</span><br></pre></td></tr></tbody></table>
-
-<p>es运行需要修改一些linux系统权限，修改<code>/etc/sysctl.conf</code>文件</p>
-<table><tbody><tr><td class="code"><pre><span class="line">vi /etc/sysctl.conf</span><br></pre></td></tr></tbody></table>
-
-<p>添加下面的内容：</p>
-<table><tbody><tr><td class="code"><pre><span class="line">vm.max_map_count=262111</span><br></pre></td></tr></tbody></table>
-
-<p>然后执行命令，让配置生效：</p>
-<table><tbody><tr><td class="code"><pre><span class="line">sysctl -p</span><br></pre></td></tr></tbody></table>
-
-<p>通过docker-compose启动集群：</p>
-<table><tbody><tr><td class="code"><pre><span class="line">docker-compose up -d</span><br></pre></td></tr></tbody></table>
-
-<h2 id="1-2-集群状态监控"><a href="#1-2-集群状态监控" class="headerlink" title="1.2.集群状态监控"></a>1.2.集群状态监控</h2><p>kibana可以监控es集群，不过新版本需要依赖es的x-pack 功能，配置比较复杂。</p>
-<p>这里推荐使用cerebro来监控es集群状态，官方网址：<a href="https://github.com/lmenezes/cerebro">https://github.com/lmenezes/cerebro</a></p>
-<p>下载好的目录如下：</p>
-<p><img src="/2024/09/19/es%E9%9B%86%E7%BE%A4/image-20240919160529087.png" alt="image-20240919160529087"></p>
-<p>进入对应的bin目录：</p>
-<p><img src="/2024/09/19/es%E9%9B%86%E7%BE%A4/image-20240919160521313.png" alt="image-20240919160521313"></p>
-<p>双击其中的cerebro.bat文件即可启动服务。</p>
-<p><img src="/2024/09/19/es%E9%9B%86%E7%BE%A4/image-20240919160513149.png" alt="image-20240919160513149"></p>
-<p>访问<a href="http://localhost:9000/">http://localhost:9000</a> 即可进入管理界面：</p>
-<p><img src="/2024/09/19/es%E9%9B%86%E7%BE%A4/image-20210602221115763.png" alt="image-20210602221115763"></p>
-<p>输入你的elasticsearch的任意节点的地址和端口，点击connect即可：</p>
-<p><img src="/2024/09/19/es%E9%9B%86%E7%BE%A4/image-20210109181106866.png" alt="image-20210109181106866"></p>
-<p>绿色的条，代表集群处于绿色（健康状态）。</p>
-<h2 id="1-3-创建索引库"><a href="#1-3-创建索引库" class="headerlink" title="1.3.创建索引库"></a>1.3.创建索引库</h2><h3 id="1）利用kibana的DevTools创建索引库"><a href="#1）利用kibana的DevTools创建索引库" class="headerlink" title="1）利用kibana的DevTools创建索引库"></a>1）利用kibana的DevTools创建索引库</h3><p>在DevTools中输入指令：</p>
-<table><tbody><tr><td class="code"><pre><span class="line">PUT /itcast</span><br><span class="line"><span class="punctuation">{</span></span><br><span class="line">  <span class="attr">"settings"</span><span class="punctuation">:</span> <span class="punctuation">{</span></span><br><span class="line">    <span class="attr">"number_of_shards"</span><span class="punctuation">:</span> <span class="number">3</span><span class="punctuation">,</span> <span class="comment">// 分片数量</span></span><br><span class="line">    <span class="attr">"number_of_replicas"</span><span class="punctuation">:</span> <span class="number">1</span> <span class="comment">// 副本数量</span></span><br><span class="line">  <span class="punctuation">}</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"mappings"</span><span class="punctuation">:</span> <span class="punctuation">{</span></span><br><span class="line">    <span class="attr">"properties"</span><span class="punctuation">:</span> <span class="punctuation">{</span></span><br><span class="line">      <span class="comment">// mapping映射定义 ...</span></span><br><span class="line">    <span class="punctuation">}</span></span><br><span class="line">  <span class="punctuation">}</span></span><br><span class="line"><span class="punctuation">}</span></span><br></pre></td></tr></tbody></table>
-
-<h3 id="2）利用cerebro创建索引库"><a href="#2）利用cerebro创建索引库" class="headerlink" title="2）利用cerebro创建索引库"></a>2）利用cerebro创建索引库</h3><p>利用cerebro还可以创建索引库：</p>
-<p><img src="/2024/09/19/es%E9%9B%86%E7%BE%A4/image-20240919160503178.png" alt="image-20240919160503178"></p>
-<p>填写索引库信息：</p>
-<p><img src="/2024/09/19/es%E9%9B%86%E7%BE%A4/image-20210602221520629.png" alt="image-20210602221520629"></p>
-<p>点击右下角的create按钮：</p>
-<p><img src="/2024/09/19/es%E9%9B%86%E7%BE%A4/image-20240919160456077.png" alt="image-20240919160456077"></p>
-<h2 id="1-1-查看分片效果"><a href="#1-1-查看分片效果" class="headerlink" title="1.1.查看分片效果"></a>1.1.查看分片效果</h2><p>回到首页，即可查看索引库分片效果：</p>
-<p><img src="/2024/09/19/es%E9%9B%86%E7%BE%A4/image-20240919160447911.png" alt="image-20240919160447911"></p>
-]]></content>
-      <categories>
-        <category>微服务</category>
-      </categories>
-  </entry>
-  <entry>
     <title>git</title>
     <url>/2024/04/25/git/</url>
     <content><![CDATA[<h1 id="Git简介"><a href="#Git简介" class="headerlink" title="Git简介"></a>Git简介</h1><p>什么是Git？</p>
@@ -12363,6 +12363,106 @@ git merge b2
       <categories>
         <category>版本控制工具</category>
       </categories>
+  </entry>
+  <entry>
+    <title>tools</title>
+    <url>/2024/05/13/tools/</url>
+    <content><![CDATA[<h1 id="实用工具箱"><a href="#实用工具箱" class="headerlink" title="实用工具箱"></a>实用工具箱</h1><h2 id="下载工具"><a href="#下载工具" class="headerlink" title="下载工具"></a>下载工具</h2><ul>
+<li><a href="https://sci-hub.se/">Sci-Hub</a>: Elbakyan 女神向你挥手，旨在打破知识壁垒的革命性网站。</li>
+<li><a href="http://libgen.is/">Library Genesis</a>: 电子书下载网站。</li>
+<li><a href="https://zlibrary-global.se/">Z-library</a>: 电子书下载网站（在 <a href="https://www.torproject.org/">Tor</a> 下运行较佳，<a href="http://loginzlib2vrak5zzpcocc3ouizykn6k5qecgj2tzlnab5wcbqhembyd.onion/">链接</a>）。</li>
+<li><a href="https://z-epub.com/">Z-ePub</a>: ePub 电子书下载网站。</li>
+<li><a href="https://www.pdfdrive.com/">PDF Drive</a>: PDF 电子书搜索引擎。</li>
+<li><a href="https://magazinelib.com/">MagazineLib</a>: PDF 电子杂志下载网站。</li>
+<li><a href="https://bitdownloader.io/">BitDownloader</a>: 油管视频下载器。</li>
+<li><a href="https://www.qbittorrent.org/download.php">qBittorrent</a>: BitTorrent 客户端。</li>
+<li><a href="https://www.utorrent.com/">uTorrent</a>: BitTorrent 客户端。</li>
+<li><a href="https://std.samr.gov.cn/">全国标准信息公共服务平台</a>：各类标准查询和下载官方平台。</li>
+<li><a href="http://www.standards.com.cn/">标准知识服务系统</a>：检索与阅读所需标准。</li>
+<li><a href="https://msdn.itellyou.cn/">MSDN,我告诉你</a>: Windows 操作系统镜像下载站，也有许多其他软件的下载。</li>
+</ul>
+<h2 id="设计工具"><a href="#设计工具" class="headerlink" title="设计工具"></a>设计工具</h2><ul>
+<li><a href="https://excalidraw.com/">excalidraw</a>: 一款手绘风格的绘图工具，非常适合绘制课程报告或者PPT内的示意图。</li>
+<li><a href="https://www.tldraw.com/">tldraw</a>: 一个绘图工具，适合画流程图，架构图等。</li>
+<li><a href="https://app.diagrams.net/">draw.io</a>: 强大简洁的在线的绘图网站，支持流程图，UML图，架构图，原型图等等，支持 Onedrive, Google Drive, Github 导出，同时提供离线客户端。</li>
+<li><a href="https://www.origamiway.com/paper-folding-crafts-step-by-step.shtml">origamiway</a>: 手把手教你怎么折纸。</li>
+<li><a href="https://www.thingiverse.com/">thingiverse</a>: 囊括各类 2D&#x2F;3D 设计资源，其 STL 文件下载可直接 3D 打印。</li>
+<li><a href="https://www.iconfont.cn/">iconfont</a>: 国内最大的图标和插画资源库，可用于开发或绘制系统架构图。</li>
+<li><a href="https://www.turbosquid.com/">turbosquid</a>: 可以购买各式各样的模型。</li>
+<li><a href="https://www.flaticon.com/">flaticon</a>: 可下载免费且高质量的图标。</li>
+<li><a href="http://bzdt.ch.mnr.gov.cn/">标准地图服务系统</a>: 可以下载官方标准地图。</li>
+<li><a href="https://plantuml.com/zh/">PlantUML</a>: 可以使用代码快速编写 UML 图。</li>
+</ul>
+<h2 id="编程相关"><a href="#编程相关" class="headerlink" title="编程相关"></a>编程相关</h2><ul>
+<li><a href="http://www.sqlfiddle.com/">sqlfiddle</a>: 一个简易的在线 SQL Playground。</li>
+<li><a href="https://sqlzoo.net/wiki/SQL_Tutorial">sqlzoo</a>：在线练习 sql 语句。</li>
+<li><a href="https://godbolt.org/">godbolt</a>: 非常方便的编译器探索工具。你可以写一段 C&#x2F;C++ 代码，选择一款编译器，然后便可以观察生成的具体汇编代码。</li>
+<li><a href="https://explainshell.com/">explainshell</a>: 你是否曾为一段 shell 代码的具体含义感到困扰？manpage 看半天还是不明所以？试试这个网站！</li>
+<li><a href="https://regex101.com/">regex101</a>: 正则表达式调试网站，支持各种编程语言的匹配标准。</li>
+<li><a href="https://www.typingtom.com/lessons">typingtom</a>: 针对程序员的打字练习&#x2F;测速网站。</li>
+<li><a href="https://github.com/wg/wrk">wrk</a>: 网站压测工具。</li>
+<li><a href="https://www.gbmb.org/">gbmb</a>: 数据单位转换。</li>
+<li><a href="https://tools.fun/">tools</a>: 在线工具合集。</li>
+<li><a href="https://github1s.com/">github1s</a>: 用网页版 VS Code 在线阅读 GitHub 代码。</li>
+<li><a href="https://visualgo.net/en">visualgo</a>: 算法可视化网站。</li>
+<li><a href="http://www.rmboot.com/">DataStructureVisual</a>: 数据结构可视化网站。</li>
+<li><a href="https://www.cs.usfca.edu/~galles/visualization/Algorithms.html">Data Structure Visualizations</a>: 数据结构与算法的可视化网站。</li>
+<li><a href="https://learngitbranching.js.org/?locale=zh_CN">learngitbranching</a>: 可视化学习 git。</li>
+<li><a href="https://unicode-table.com/en/">UnicodeCharacter</a>: Unicode 字符集网站。</li>
+<li><a href="https://extendsclass.com/regex-tester.html">cyrilex</a>: 一个用于测试和可视化正则表达式的网站，支持各种编程语言标准。</li>
+<li><a href="https://softwium.com/mockium/">mockium</a>: 生成测试数据的平台。</li>
+</ul>
+<h2 id="学习网站"><a href="#学习网站" class="headerlink" title="学习网站"></a>学习网站</h2><ul>
+<li><a href="https://hepsoftwarefoundation.org/training/curriculum.html">HFS</a>: 各类软件教程。</li>
+<li><a href="https://www.shadertoy.com/">Shadertoy</a>: 编写各式各样的 shader。</li>
+<li><a href="https://conanhujinming.github.io/comments-for-awesome-courses/">comments-for-awesome-courses</a>: 名校公开课评价网。</li>
+<li><a href="https://codetop.cc/home">codetop</a>: 企业题库。</li>
+<li><a href="https://github.com/Developer-Y/cs-video-courses">cs-video-courses</a>: 带有视频讲座的计算机科学课程列表。</li>
+<li><a href="https://elixir.bootlin.com/linux/v2.6.39.4/source/include/linux">bootlin</a>: 在线阅读 Linux 源码。</li>
+<li><a href="https://github.com/tianyilt/ecnu-PGCourseShare">ecust-CourseShare</a>: 华东师范大学研究生课程攻略共享计划。</li>
+<li><a href="https://github.com/PKUanonym/REKCARC-TSC-UHT">REKCARC-TSC-UHT</a>: 清华大学计算机系课程攻略。</li>
+<li><a href="https://github.com/oneman233/seu-master">seu-master</a>: 东南大学研究生课程资料整理。</li>
+<li><a href="https://www.runoob.com/">菜鸟教程</a>: 计算机相关知识的简要的教程。</li>
+<li><a href="https://book.bsdcn.org/">FreeBSD 从入门到跑路</a>: 一本 FreeBSD 的中文教程。</li>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Learn">MDN Web Docs</a>: MDN 网络开发入门手册。</li>
+<li><a href="https://www.hello-algo.com/">Hello 算法</a>: 动画图解、能运行、可提问的数据结构与算法快速入门教程。</li>
+</ul>
+<h2 id="百科网站-词典性质的网站"><a href="#百科网站-词典性质的网站" class="headerlink" title="百科网站&#x2F;词典性质的网站"></a>百科网站&#x2F;词典性质的网站</h2><ul>
+<li><a href="https://wiki.osdev.org/Main_Page">os-wiki</a>: 操作系统技术资源百科全书。</li>
+<li><a href="https://docs.freebsd.org/en/">FreeBSD Documentation</a>: FreeBSD 官方文档。</li>
+<li><a href="https://docs.python.org/zh-cn/3/">Python3 Documentation</a>: Python3 官方中文文档。</li>
+<li><a href="https://en.cppreference.com/w/">C++ Reference</a>: C++ 参考手册。</li>
+<li><a href="https://oi-wiki.org/">OI Wiki</a>: 编程竞赛知识整合站点。</li>
+<li><a href="https://learn.microsoft.com/zh-cn/">Microsoft Learn</a>: 微软官方的学习平台，包含了绝大多数微软产品的文档。</li>
+<li><a href="https://wiki.archlinux.org/">Arch Wiki</a>: 专为 Arch Linux 而写的 Wiki，包含了大量 Linux 相关的知识。</li>
+<li><a href="https://wiki.qt.io/Main">Qt Wiki</a>: Qt 官方 Wiki。</li>
+<li><a href="https://opencv.apachecn.org/#/">OpenCV 中文文档</a>: OpenCV 的社区版中文文档。</li>
+<li><a href="https://docs.npmjs.com/">npm Docs</a>: npm 官方文档。</li>
+</ul>
+<h2 id="交流平台"><a href="#交流平台" class="headerlink" title="交流平台"></a>交流平台</h2><ul>
+<li><a href="https://github.com/">GitHub</a>: 许多开源项目的托管平台，也是许多开源项目的主要交流平台，通过查看 issue 可以解决许多问题。</li>
+<li><a href="https://stackexchange.com/">StackExchange</a>: Stack Exchange 是由 181 个问答社区组成（其中包括 Stack Overflow）的编程社区。</li>
+<li><a href="https://stackoverflow.com/">StackOverflow</a>: Stack Overflow 是一个与程序相关的 IT 技术问答网站。</li>
+<li><a href="https://gitee.com/">Gitee</a>: 一个类似于 GitHub 的代码托管平台，可以在对应项目的 issue 里查找一些常见问题的解答。</li>
+<li><a href="https://www.zhihu.com/">知乎</a>: 一个类似于 Quora 的问答社区，可以在其中提问，一些问答包含有计算机的知识。</li>
+<li><a href="https://www.cnblogs.com/">博客园</a>: 一个面向开发者的知识分享社区，拥有一些常见问题的博客，正确率不能保证，请谨慎使用。</li>
+<li><a href="https://blog.csdn.net/">CSDN</a>: 拥有一些常见问题的博客，正确率不能保证，请谨慎使用。</li>
+</ul>
+<h2 id="杂项"><a href="#杂项" class="headerlink" title="杂项"></a>杂项</h2><ul>
+<li><a href="https://tophub.today/">tophub</a>: 新闻热榜合集（综合了知乎、微博、百度、微信等）。</li>
+<li><a href="https://feedly.com/">feedly</a>: 著名的 RSS 订阅源阅读器。</li>
+<li><a href="https://www.speedtest.net/zh-Hans">speedtest</a>: 在线网络测速网站。</li>
+<li><a href="https://github.com/public-apis/public-apis">public-apis</a>: 公共 API 合集列表。</li>
+<li><a href="https://zh.numberempire.com/derivativecalculator.php">numberempire</a>: 函数求导工具。</li>
+<li><a href="https://sustech-application.com/#/grad-application/computer-science-and-engineering/README">sustech-application</a>: 南方科技大学经验分享网。</li>
+<li><a href="https://vim-adventures.com/">vim-adventures</a>: 一款基于 vim 键盘快捷键的在线游戏。</li>
+<li><a href="https://vimsnake.com/">vimsnake</a>: 利用 vim 玩贪吃蛇。</li>
+<li><a href="https://www.keybr.com/">keybr</a>: 学习盲打的网站。</li>
+<li><a href="https://cpp.libhunt.com/">Awesome C++</a>: 很棒的 C&#x2F;C++ 框架、库、资源精选列表。</li>
+<li><a href="https://hellogithub.com/">HelloGitHub</a>: 分享 GitHub 上有趣、入门级的开源项目。</li>
+<li><a href="https://github.com/DEAKSoftware/Synergy-Binaries">Synergy</a>: 一套键鼠能控制多台电脑。</li>
+</ul>
+]]></content>
   </entry>
   <entry>
     <title>Vue2</title>
@@ -13402,646 +13502,6 @@ git merge b2
       </categories>
   </entry>
   <entry>
-    <title>tools</title>
-    <url>/2024/05/13/tools/</url>
-    <content><![CDATA[<h1 id="实用工具箱"><a href="#实用工具箱" class="headerlink" title="实用工具箱"></a>实用工具箱</h1><h2 id="下载工具"><a href="#下载工具" class="headerlink" title="下载工具"></a>下载工具</h2><ul>
-<li><a href="https://sci-hub.se/">Sci-Hub</a>: Elbakyan 女神向你挥手，旨在打破知识壁垒的革命性网站。</li>
-<li><a href="http://libgen.is/">Library Genesis</a>: 电子书下载网站。</li>
-<li><a href="https://zlibrary-global.se/">Z-library</a>: 电子书下载网站（在 <a href="https://www.torproject.org/">Tor</a> 下运行较佳，<a href="http://loginzlib2vrak5zzpcocc3ouizykn6k5qecgj2tzlnab5wcbqhembyd.onion/">链接</a>）。</li>
-<li><a href="https://z-epub.com/">Z-ePub</a>: ePub 电子书下载网站。</li>
-<li><a href="https://www.pdfdrive.com/">PDF Drive</a>: PDF 电子书搜索引擎。</li>
-<li><a href="https://magazinelib.com/">MagazineLib</a>: PDF 电子杂志下载网站。</li>
-<li><a href="https://bitdownloader.io/">BitDownloader</a>: 油管视频下载器。</li>
-<li><a href="https://www.qbittorrent.org/download.php">qBittorrent</a>: BitTorrent 客户端。</li>
-<li><a href="https://www.utorrent.com/">uTorrent</a>: BitTorrent 客户端。</li>
-<li><a href="https://std.samr.gov.cn/">全国标准信息公共服务平台</a>：各类标准查询和下载官方平台。</li>
-<li><a href="http://www.standards.com.cn/">标准知识服务系统</a>：检索与阅读所需标准。</li>
-<li><a href="https://msdn.itellyou.cn/">MSDN,我告诉你</a>: Windows 操作系统镜像下载站，也有许多其他软件的下载。</li>
-</ul>
-<h2 id="设计工具"><a href="#设计工具" class="headerlink" title="设计工具"></a>设计工具</h2><ul>
-<li><a href="https://excalidraw.com/">excalidraw</a>: 一款手绘风格的绘图工具，非常适合绘制课程报告或者PPT内的示意图。</li>
-<li><a href="https://www.tldraw.com/">tldraw</a>: 一个绘图工具，适合画流程图，架构图等。</li>
-<li><a href="https://app.diagrams.net/">draw.io</a>: 强大简洁的在线的绘图网站，支持流程图，UML图，架构图，原型图等等，支持 Onedrive, Google Drive, Github 导出，同时提供离线客户端。</li>
-<li><a href="https://www.origamiway.com/paper-folding-crafts-step-by-step.shtml">origamiway</a>: 手把手教你怎么折纸。</li>
-<li><a href="https://www.thingiverse.com/">thingiverse</a>: 囊括各类 2D&#x2F;3D 设计资源，其 STL 文件下载可直接 3D 打印。</li>
-<li><a href="https://www.iconfont.cn/">iconfont</a>: 国内最大的图标和插画资源库，可用于开发或绘制系统架构图。</li>
-<li><a href="https://www.turbosquid.com/">turbosquid</a>: 可以购买各式各样的模型。</li>
-<li><a href="https://www.flaticon.com/">flaticon</a>: 可下载免费且高质量的图标。</li>
-<li><a href="http://bzdt.ch.mnr.gov.cn/">标准地图服务系统</a>: 可以下载官方标准地图。</li>
-<li><a href="https://plantuml.com/zh/">PlantUML</a>: 可以使用代码快速编写 UML 图。</li>
-</ul>
-<h2 id="编程相关"><a href="#编程相关" class="headerlink" title="编程相关"></a>编程相关</h2><ul>
-<li><a href="http://www.sqlfiddle.com/">sqlfiddle</a>: 一个简易的在线 SQL Playground。</li>
-<li><a href="https://sqlzoo.net/wiki/SQL_Tutorial">sqlzoo</a>：在线练习 sql 语句。</li>
-<li><a href="https://godbolt.org/">godbolt</a>: 非常方便的编译器探索工具。你可以写一段 C&#x2F;C++ 代码，选择一款编译器，然后便可以观察生成的具体汇编代码。</li>
-<li><a href="https://explainshell.com/">explainshell</a>: 你是否曾为一段 shell 代码的具体含义感到困扰？manpage 看半天还是不明所以？试试这个网站！</li>
-<li><a href="https://regex101.com/">regex101</a>: 正则表达式调试网站，支持各种编程语言的匹配标准。</li>
-<li><a href="https://www.typingtom.com/lessons">typingtom</a>: 针对程序员的打字练习&#x2F;测速网站。</li>
-<li><a href="https://github.com/wg/wrk">wrk</a>: 网站压测工具。</li>
-<li><a href="https://www.gbmb.org/">gbmb</a>: 数据单位转换。</li>
-<li><a href="https://tools.fun/">tools</a>: 在线工具合集。</li>
-<li><a href="https://github1s.com/">github1s</a>: 用网页版 VS Code 在线阅读 GitHub 代码。</li>
-<li><a href="https://visualgo.net/en">visualgo</a>: 算法可视化网站。</li>
-<li><a href="http://www.rmboot.com/">DataStructureVisual</a>: 数据结构可视化网站。</li>
-<li><a href="https://www.cs.usfca.edu/~galles/visualization/Algorithms.html">Data Structure Visualizations</a>: 数据结构与算法的可视化网站。</li>
-<li><a href="https://learngitbranching.js.org/?locale=zh_CN">learngitbranching</a>: 可视化学习 git。</li>
-<li><a href="https://unicode-table.com/en/">UnicodeCharacter</a>: Unicode 字符集网站。</li>
-<li><a href="https://extendsclass.com/regex-tester.html">cyrilex</a>: 一个用于测试和可视化正则表达式的网站，支持各种编程语言标准。</li>
-<li><a href="https://softwium.com/mockium/">mockium</a>: 生成测试数据的平台。</li>
-</ul>
-<h2 id="学习网站"><a href="#学习网站" class="headerlink" title="学习网站"></a>学习网站</h2><ul>
-<li><a href="https://hepsoftwarefoundation.org/training/curriculum.html">HFS</a>: 各类软件教程。</li>
-<li><a href="https://www.shadertoy.com/">Shadertoy</a>: 编写各式各样的 shader。</li>
-<li><a href="https://conanhujinming.github.io/comments-for-awesome-courses/">comments-for-awesome-courses</a>: 名校公开课评价网。</li>
-<li><a href="https://codetop.cc/home">codetop</a>: 企业题库。</li>
-<li><a href="https://github.com/Developer-Y/cs-video-courses">cs-video-courses</a>: 带有视频讲座的计算机科学课程列表。</li>
-<li><a href="https://elixir.bootlin.com/linux/v2.6.39.4/source/include/linux">bootlin</a>: 在线阅读 Linux 源码。</li>
-<li><a href="https://github.com/tianyilt/ecnu-PGCourseShare">ecust-CourseShare</a>: 华东师范大学研究生课程攻略共享计划。</li>
-<li><a href="https://github.com/PKUanonym/REKCARC-TSC-UHT">REKCARC-TSC-UHT</a>: 清华大学计算机系课程攻略。</li>
-<li><a href="https://github.com/oneman233/seu-master">seu-master</a>: 东南大学研究生课程资料整理。</li>
-<li><a href="https://www.runoob.com/">菜鸟教程</a>: 计算机相关知识的简要的教程。</li>
-<li><a href="https://book.bsdcn.org/">FreeBSD 从入门到跑路</a>: 一本 FreeBSD 的中文教程。</li>
-<li><a href="https://developer.mozilla.org/zh-CN/docs/Learn">MDN Web Docs</a>: MDN 网络开发入门手册。</li>
-<li><a href="https://www.hello-algo.com/">Hello 算法</a>: 动画图解、能运行、可提问的数据结构与算法快速入门教程。</li>
-</ul>
-<h2 id="百科网站-词典性质的网站"><a href="#百科网站-词典性质的网站" class="headerlink" title="百科网站&#x2F;词典性质的网站"></a>百科网站&#x2F;词典性质的网站</h2><ul>
-<li><a href="https://wiki.osdev.org/Main_Page">os-wiki</a>: 操作系统技术资源百科全书。</li>
-<li><a href="https://docs.freebsd.org/en/">FreeBSD Documentation</a>: FreeBSD 官方文档。</li>
-<li><a href="https://docs.python.org/zh-cn/3/">Python3 Documentation</a>: Python3 官方中文文档。</li>
-<li><a href="https://en.cppreference.com/w/">C++ Reference</a>: C++ 参考手册。</li>
-<li><a href="https://oi-wiki.org/">OI Wiki</a>: 编程竞赛知识整合站点。</li>
-<li><a href="https://learn.microsoft.com/zh-cn/">Microsoft Learn</a>: 微软官方的学习平台，包含了绝大多数微软产品的文档。</li>
-<li><a href="https://wiki.archlinux.org/">Arch Wiki</a>: 专为 Arch Linux 而写的 Wiki，包含了大量 Linux 相关的知识。</li>
-<li><a href="https://wiki.qt.io/Main">Qt Wiki</a>: Qt 官方 Wiki。</li>
-<li><a href="https://opencv.apachecn.org/#/">OpenCV 中文文档</a>: OpenCV 的社区版中文文档。</li>
-<li><a href="https://docs.npmjs.com/">npm Docs</a>: npm 官方文档。</li>
-</ul>
-<h2 id="交流平台"><a href="#交流平台" class="headerlink" title="交流平台"></a>交流平台</h2><ul>
-<li><a href="https://github.com/">GitHub</a>: 许多开源项目的托管平台，也是许多开源项目的主要交流平台，通过查看 issue 可以解决许多问题。</li>
-<li><a href="https://stackexchange.com/">StackExchange</a>: Stack Exchange 是由 181 个问答社区组成（其中包括 Stack Overflow）的编程社区。</li>
-<li><a href="https://stackoverflow.com/">StackOverflow</a>: Stack Overflow 是一个与程序相关的 IT 技术问答网站。</li>
-<li><a href="https://gitee.com/">Gitee</a>: 一个类似于 GitHub 的代码托管平台，可以在对应项目的 issue 里查找一些常见问题的解答。</li>
-<li><a href="https://www.zhihu.com/">知乎</a>: 一个类似于 Quora 的问答社区，可以在其中提问，一些问答包含有计算机的知识。</li>
-<li><a href="https://www.cnblogs.com/">博客园</a>: 一个面向开发者的知识分享社区，拥有一些常见问题的博客，正确率不能保证，请谨慎使用。</li>
-<li><a href="https://blog.csdn.net/">CSDN</a>: 拥有一些常见问题的博客，正确率不能保证，请谨慎使用。</li>
-</ul>
-<h2 id="杂项"><a href="#杂项" class="headerlink" title="杂项"></a>杂项</h2><ul>
-<li><a href="https://tophub.today/">tophub</a>: 新闻热榜合集（综合了知乎、微博、百度、微信等）。</li>
-<li><a href="https://feedly.com/">feedly</a>: 著名的 RSS 订阅源阅读器。</li>
-<li><a href="https://www.speedtest.net/zh-Hans">speedtest</a>: 在线网络测速网站。</li>
-<li><a href="https://github.com/public-apis/public-apis">public-apis</a>: 公共 API 合集列表。</li>
-<li><a href="https://zh.numberempire.com/derivativecalculator.php">numberempire</a>: 函数求导工具。</li>
-<li><a href="https://sustech-application.com/#/grad-application/computer-science-and-engineering/README">sustech-application</a>: 南方科技大学经验分享网。</li>
-<li><a href="https://vim-adventures.com/">vim-adventures</a>: 一款基于 vim 键盘快捷键的在线游戏。</li>
-<li><a href="https://vimsnake.com/">vimsnake</a>: 利用 vim 玩贪吃蛇。</li>
-<li><a href="https://www.keybr.com/">keybr</a>: 学习盲打的网站。</li>
-<li><a href="https://cpp.libhunt.com/">Awesome C++</a>: 很棒的 C&#x2F;C++ 框架、库、资源精选列表。</li>
-<li><a href="https://hellogithub.com/">HelloGitHub</a>: 分享 GitHub 上有趣、入门级的开源项目。</li>
-<li><a href="https://github.com/DEAKSoftware/Synergy-Binaries">Synergy</a>: 一套键鼠能控制多台电脑。</li>
-</ul>
-]]></content>
-  </entry>
-  <entry>
-    <title>微服务面试题</title>
-    <url>/2024/09/27/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E9%9D%A2%E8%AF%95%E9%A2%98/</url>
-    <content><![CDATA[<h1 id="常见面试题"><a href="#常见面试题" class="headerlink" title="常见面试题"></a>常见面试题</h1><h1 id="1-微服务篇"><a href="#1-微服务篇" class="headerlink" title="1.微服务篇"></a>1.微服务篇</h1><h2 id="1-1-SpringCloud常见组件有哪些？"><a href="#1-1-SpringCloud常见组件有哪些？" class="headerlink" title="1.1.SpringCloud常见组件有哪些？"></a>1.1.SpringCloud常见组件有哪些？</h2><p><strong>问题说明</strong>：这个题目主要考察对SpringCloud的组件基本了解</p>
-<p><strong>难易程度</strong>：简单</p>
-<p><strong>参考话术</strong>：</p>
-<p>SpringCloud包含的组件很多，有很多功能是重复的。其中最常用组件包括：</p>
-<ul>
-<li><p>注册中心组件：Eureka、Nacos等</p>
-</li>
-<li><p>负载均衡组件：Ribbon</p>
-</li>
-<li><p>远程调用组件：OpenFeign</p>
-</li>
-<li><p>网关组件：Zuul、Gateway</p>
-</li>
-<li><p>服务保护组件：Hystrix、Sentinel</p>
-</li>
-<li><p>服务配置管理组件：SpringCloudConfig、Nacos</p>
-</li>
-</ul>
-<h2 id="1-2-Nacos的服务注册表结构是怎样的？"><a href="#1-2-Nacos的服务注册表结构是怎样的？" class="headerlink" title="1.2.Nacos的服务注册表结构是怎样的？"></a>1.2.Nacos的服务注册表结构是怎样的？</h2><p><strong>问题说明</strong>：考察对Nacos数据分级结构的了解，以及Nacos源码的掌握情况</p>
-<p><strong>难易程度</strong>：一般</p>
-<p><strong>参考话术</strong>：</p>
-<p>Nacos采用了数据的分级存储模型，最外层是Namespace，用来隔离环境。然后是Group，用来对服务分组。接下来就是服务（Service）了，一个服务包含多个实例，但是可能处于不同机房，因此Service下有多个集群（Cluster），Cluster下是不同的实例（Instance）。</p>
-<p>对应到Java代码中，Nacos采用了一个多层的Map来表示。结构为Map&lt;String, Map&lt;String, Service&gt;&gt;，其中最外层Map的key就是namespaceId，值是一个Map。内层Map的key是group拼接serviceName，值是Service对象。Service对象内部又是一个Map，key是集群名称，值是Cluster对象。而Cluster对象内部维护了Instance的集合。</p>
-<p>如图：</p>
-<p><img src="/2024/09/27/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E9%9D%A2%E8%AF%95%E9%A2%98/image-20210925215305446-1727139382386-11.png" alt="image-20210925215305446"></p>
-<h2 id="1-3-Nacos如何支撑阿里内部数十万服务注册压力？"><a href="#1-3-Nacos如何支撑阿里内部数十万服务注册压力？" class="headerlink" title="1.3.Nacos如何支撑阿里内部数十万服务注册压力？"></a>1.3.Nacos如何支撑阿里内部数十万服务注册压力？</h2><p><strong>问题说明</strong>：考察对Nacos源码的掌握情况</p>
-<p><strong>难易程度</strong>：难</p>
-<p><strong>参考话术</strong>：</p>
-<p>Nacos内部接收到注册的请求时，不会立即写数据，而是将服务注册的任务放入一个阻塞队列就立即响应给客户端。然后利用线程池读取阻塞队列中的任务，异步来完成实例更新，从而提高并发写能力。</p>
-<h2 id="1-4-Nacos如何避免并发读写冲突问题？"><a href="#1-4-Nacos如何避免并发读写冲突问题？" class="headerlink" title="1.4.Nacos如何避免并发读写冲突问题？"></a>1.4.Nacos如何避免并发读写冲突问题？</h2><p><strong>问题说明</strong>：考察对Nacos源码的掌握情况</p>
-<p><strong>难易程度</strong>：难</p>
-<p><strong>参考话术</strong>：</p>
-<p>Nacos在更新实例列表时，会采用CopyOnWrite技术，首先将旧的实例列表拷贝一份，然后更新拷贝的实例列表，再用更新后的实例列表来覆盖旧的实例列表。</p>
-<p>这样在更新的过程中，就不会对读实例列表的请求产生影响，也不会出现脏读问题了。</p>
-<h2 id="1-5-Nacos与Eureka的区别有哪些？"><a href="#1-5-Nacos与Eureka的区别有哪些？" class="headerlink" title="1.5.Nacos与Eureka的区别有哪些？"></a>1.5.Nacos与Eureka的区别有哪些？</h2><p><strong>问题说明</strong>：考察对Nacos、Eureka的底层实现的掌握情况</p>
-<p><strong>难易程度</strong>：难</p>
-<p><strong>参考话术</strong>：</p>
-<p>Nacos与Eureka有相同点，也有不同之处，可以从以下几点来描述：</p>
-<ul>
-<li><strong>接口方式</strong>：Nacos与Eureka都对外暴露了Rest风格的API接口，用来实现服务注册、发现等功能</li>
-<li><strong>实例类型</strong>：Nacos的实例有永久和临时实例之分；而Eureka只支持临时实例</li>
-<li><strong>健康检测</strong>：Nacos对临时实例采用心跳模式检测，对永久实例采用主动请求来检测；Eureka只支持心跳模式</li>
-<li><strong>服务发现</strong>：Nacos支持定时拉取和订阅推送两种模式；Eureka只支持定时拉取模式</li>
-</ul>
-<h2 id="1-6-Sentinel的限流与Gateway的限流有什么差别？"><a href="#1-6-Sentinel的限流与Gateway的限流有什么差别？" class="headerlink" title="1.6.Sentinel的限流与Gateway的限流有什么差别？"></a>1.6.Sentinel的限流与Gateway的限流有什么差别？</h2><p><strong>问题说明</strong>：考察对限流算法的掌握情况</p>
-<p><strong>难易程度</strong>：难</p>
-<p><strong>参考话术</strong>：</p>
-<p>限流算法常见的有三种实现：滑动时间窗口、令牌桶算法、漏桶算法。Gateway则采用了基于Redis实现的令牌桶算法。</p>
-<p>而Sentinel内部却比较复杂：</p>
-<ul>
-<li>默认限流模式是基于滑动时间窗口算法</li>
-<li>排队等待的限流模式则基于漏桶算法</li>
-<li>而热点参数限流则是基于令牌桶算法</li>
-</ul>
-<h2 id="1-7-Sentinel的线程隔离与Hystix的线程隔离有什么差别"><a href="#1-7-Sentinel的线程隔离与Hystix的线程隔离有什么差别" class="headerlink" title="1.7.Sentinel的线程隔离与Hystix的线程隔离有什么差别?"></a>1.7.Sentinel的线程隔离与Hystix的线程隔离有什么差别?</h2><p><strong>问题说明</strong>：考察对线程隔离方案的掌握情况</p>
-<p><strong>难易程度</strong>：一般</p>
-<p><strong>参考话术</strong>：</p>
-<p>Hystix默认是基于线程池实现的线程隔离，每一个被隔离的业务都要创建一个独立的线程池，线程过多会带来额外的CPU开销，性能一般，但是隔离性更强。</p>
-<p>Sentinel是基于信号量（计数器）实现的线程隔离，不用创建线程池，性能较好，但是隔离性一般。</p>
-<h1 id="2-MQ篇"><a href="#2-MQ篇" class="headerlink" title="2.MQ篇"></a>2.MQ篇</h1><h2 id="2-1-你们为什么选择了RabbitMQ而不是其它的MQ？"><a href="#2-1-你们为什么选择了RabbitMQ而不是其它的MQ？" class="headerlink" title="2.1.你们为什么选择了RabbitMQ而不是其它的MQ？"></a>2.1.你们为什么选择了RabbitMQ而不是其它的MQ？</h2><p>如图：</p>
-<p><img src="/2024/09/27/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E9%9D%A2%E8%AF%95%E9%A2%98/image-20210925220034702-1727139351111-6.png" alt="image-20210925220034702"></p>
-<p><strong>话术：</strong></p>
-<p>kafka是以吞吐量高而闻名，不过其数据稳定性一般，而且无法保证消息有序性。我们公司的日志收集也有使用，业务模块中则使用的RabbitMQ。</p>
-<p>阿里巴巴的RocketMQ基于Kafka的原理，弥补了Kafka的缺点，继承了其高吞吐的优势，其客户端目前以Java为主。但是我们担心阿里巴巴开源产品的稳定性，所以就没有使用。</p>
-<p>RabbitMQ基于面向并发的语言Erlang开发，吞吐量不如Kafka，但是对我们公司来讲够用了。而且消息可靠性较好，并且消息延迟极低，集群搭建比较方便。支持多种协议，并且有各种语言的客户端，比较灵活。Spring对RabbitMQ的支持也比较好，使用起来比较方便，比较符合我们公司的需求。</p>
-<p>综合考虑我们公司的并发需求以及稳定性需求，我们选择了RabbitMQ。</p>
-<h2 id="2-2-RabbitMQ如何确保消息的不丢失？"><a href="#2-2-RabbitMQ如何确保消息的不丢失？" class="headerlink" title="2.2.RabbitMQ如何确保消息的不丢失？"></a>2.2.RabbitMQ如何确保消息的不丢失？</h2><p><strong>话术：</strong></p>
-<p>RabbitMQ针对消息传递过程中可能发生问题的各个地方，给出了针对性的解决方案：</p>
-<ul>
-<li>生产者发送消息时可能因为网络问题导致消息没有到达交换机：<ul>
-<li>RabbitMQ提供了publisher confirm机制<ul>
-<li>生产者发送消息后，可以编写ConfirmCallback函数</li>
-<li>消息成功到达交换机后，RabbitMQ会调用ConfirmCallback通知消息的发送者，返回ACK</li>
-<li>消息如果未到达交换机，RabbitMQ也会调用ConfirmCallback通知消息的发送者，返回NACK</li>
-<li>消息超时未发送成功也会抛出异常</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>消息到达交换机后，如果未能到达队列，也会导致消息丢失：<ul>
-<li>RabbitMQ提供了publisher return机制<ul>
-<li>生产者可以定义ReturnCallback函数</li>
-<li>消息到达交换机，未到达队列，RabbitMQ会调用ReturnCallback通知发送者，告知失败原因</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>消息到达队列后，MQ宕机也可能导致丢失消息：<ul>
-<li>RabbitMQ提供了持久化功能，集群的主从备份功能<ul>
-<li>消息持久化，RabbitMQ会将交换机、队列、消息持久化到磁盘，宕机重启可以恢复消息</li>
-<li>镜像集群，仲裁队列，都可以提供主从备份功能，主节点宕机，从节点会自动切换为主，数据依然在</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>消息投递给消费者后，如果消费者处理不当，也可能导致消息丢失<ul>
-<li>SpringAMQP基于RabbitMQ提供了消费者确认机制、消费者重试机制，消费者失败处理策略：<ul>
-<li>消费者的确认机制：<ul>
-<li>消费者处理消息成功，未出现异常时，Spring返回ACK给RabbitMQ，消息才被移除</li>
-<li>消费者处理消息失败，抛出异常，宕机，Spring返回NACK或者不返回结果，消息不被异常</li>
-</ul>
-</li>
-<li>消费者重试机制：<ul>
-<li>默认情况下，消费者处理失败时，消息会再次回到MQ队列，然后投递给其它消费者。Spring提供的消费者重试机制，则是在处理失败后不返回NACK，而是直接在消费者本地重试。多次重试都失败后，则按照消费者失败处理策略来处理消息。避免了消息频繁入队带来的额外压力。</li>
-</ul>
-</li>
-<li>消费者失败策略：<ul>
-<li>当消费者多次本地重试失败时，消息默认会丢弃。</li>
-<li>Spring提供了Republish策略，在多次重试都失败，耗尽重试次数后，将消息重新投递给指定的异常交换机，并且会携带上异常栈信息，帮助定位问题。</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="2-3-RabbitMQ如何避免消息堆积？"><a href="#2-3-RabbitMQ如何避免消息堆积？" class="headerlink" title="2.3.RabbitMQ如何避免消息堆积？"></a>2.3.RabbitMQ如何避免消息堆积？</h2><p><strong>话术：</strong></p>
-<p>消息堆积问题产生的原因往往是因为消息发送的速度超过了消费者消息处理的速度。因此解决方案无外乎以下三点：</p>
-<ul>
-<li>提高消费者处理速度</li>
-<li>增加更多消费者</li>
-<li>增加队列消息存储上限</li>
-</ul>
-<p>1）提高消费者处理速度</p>
-<p>消费者处理速度是由业务代码决定的，所以我们能做的事情包括：</p>
-<ul>
-<li>尽可能优化业务代码，提高业务性能</li>
-<li>接收到消息后，开启线程池，并发处理多个消息</li>
-</ul>
-<p>优点：成本低，改改代码即可</p>
-<p>缺点：开启线程池会带来额外的性能开销，对于高频、低时延的任务不合适。推荐任务执行周期较长的业务。</p>
-<p>2）增加更多消费者</p>
-<p>一个队列绑定多个消费者，共同争抢任务，自然可以提供消息处理的速度。</p>
-<p>优点：能用钱解决的问题都不是问题。实现简单粗暴</p>
-<p>缺点：问题是没有钱。成本太高</p>
-<p>3）增加队列消息存储上限</p>
-<p>在RabbitMQ的1.8版本后，加入了新的队列模式：Lazy Queue</p>
-<p>这种队列不会将消息保存在内存中，而是在收到消息后直接写入磁盘中，理论上没有存储上限。可以解决消息堆积问题。</p>
-<p>优点：磁盘存储更安全；存储无上限；避免内存存储带来的Page Out问题，性能更稳定；</p>
-<p>缺点：磁盘存储受到IO性能的限制，消息时效性不如内存模式，但影响不大。</p>
-<h2 id="2-4-RabbitMQ如何保证消息的有序性？"><a href="#2-4-RabbitMQ如何保证消息的有序性？" class="headerlink" title="2.4.RabbitMQ如何保证消息的有序性？"></a>2.4.RabbitMQ如何保证消息的有序性？</h2><p><strong>话术：</strong></p>
-<p>其实RabbitMQ是队列存储，天然具备先进先出的特点，只要消息的发送是有序的，那么理论上接收也是有序的。不过当一个队列绑定了多个消费者时，可能出现消息轮询投递给消费者的情况，而消费者的处理顺序就无法保证了。</p>
-<p>因此，要保证消息的有序性，需要做的下面几点：</p>
-<ul>
-<li>保证消息发送的有序性</li>
-<li>保证一组有序的消息都发送到同一个队列</li>
-<li>保证一个队列只包含一个消费者</li>
-</ul>
-<h2 id="2-5-如何防止MQ消息被重复消费？"><a href="#2-5-如何防止MQ消息被重复消费？" class="headerlink" title="2.5.如何防止MQ消息被重复消费？"></a>2.5.如何防止MQ消息被重复消费？</h2><p><strong>话术：</strong></p>
-<p>消息重复消费的原因多种多样，不可避免。所以只能从消费者端入手，只要能保证消息处理的幂等性就可以确保消息不被重复消费。</p>
-<p>而幂等性的保证又有很多方案：</p>
-<ul>
-<li>给每一条消息都添加一个唯一id，在本地记录消息表及消息状态，处理消息时基于数据库表的id唯一性做判断</li>
-<li>同样是记录消息表，利用消息状态字段实现基于乐观锁的判断，保证幂等</li>
-<li>基于业务本身的幂等性。比如根据id的删除、查询业务天生幂等；新增、修改等业务可以考虑基于数据库id唯一性、或者乐观锁机制确保幂等。本质与消息表方案类似。</li>
-</ul>
-<h2 id="2-6-如何保证RabbitMQ的高可用？"><a href="#2-6-如何保证RabbitMQ的高可用？" class="headerlink" title="2.6.如何保证RabbitMQ的高可用？"></a>2.6.如何保证RabbitMQ的高可用？</h2><p><strong>话术：</strong></p>
-<p>要实现RabbitMQ的高可用无外乎下面两点：</p>
-<ul>
-<li>做好交换机、队列、消息的持久化</li>
-<li>搭建RabbitMQ的镜像集群，做好主从备份。当然也可以使用仲裁队列代替镜像集群。</li>
-</ul>
-<h2 id="2-7-使用MQ可以解决那些问题？"><a href="#2-7-使用MQ可以解决那些问题？" class="headerlink" title="2.7.使用MQ可以解决那些问题？"></a>2.7.使用MQ可以解决那些问题？</h2><p><strong>话术：</strong></p>
-<p>RabbitMQ能解决的问题很多，例如：</p>
-<ul>
-<li>解耦合：将几个业务关联的微服务调用修改为基于MQ的异步通知，可以解除微服务之间的业务耦合。同时还提高了业务性能。</li>
-<li>流量削峰：将突发的业务请求放入MQ中，作为缓冲区。后端的业务根据自己的处理能力从MQ中获取消息，逐个处理任务。流量曲线变的平滑很多</li>
-<li>延迟队列：基于RabbitMQ的死信队列或者DelayExchange插件，可以实现消息发送后，延迟接收的效果。</li>
-</ul>
-<h1 id="3-Redis篇"><a href="#3-Redis篇" class="headerlink" title="3.Redis篇"></a>3.Redis篇</h1><h2 id="3-1-Redis与Memcache的区别？"><a href="#3-1-Redis与Memcache的区别？" class="headerlink" title="3.1.Redis与Memcache的区别？"></a>3.1.Redis与Memcache的区别？</h2><ul>
-<li><code>redis支持更丰富的数据类型</code>（支持更复杂的应用场景）：Redis不仅仅支持简单的k&#x2F;v类型的数据，同时还提供list，set，zset，hash等数据结构的存储。memcache支持简单的数据类型，String。</li>
-<li><code>Redis支持数据的持久化</code>，可以将内存中的数据保持在磁盘中，重启的时候可以再次加载进行使用,而Memecache把数据全部存在内存之中。</li>
-<li><code>集群模式</code>：memcached没有原生的集群模式，需要依靠客户端来实现往集群中分片写入数据；但是 redis 目前是原生支持 cluster 模式的.</li>
-<li><code>Redis使用单线程</code>：Memcached是多线程，非阻塞IO复用的网络模型；Redis使用单线程的多路 IO 复用模型。</li>
-</ul>
-<p><img src="/2024/09/27/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E9%9D%A2%E8%AF%95%E9%A2%98/1574821356723.png" alt="1574821356723"></p>
-<h2 id="3-2-Redis的单线程问题"><a href="#3-2-Redis的单线程问题" class="headerlink" title="3.2.Redis的单线程问题"></a>3.2.Redis的单线程问题</h2><p><strong>面试官</strong>：Redis采用单线程，如何保证高并发？</p>
-<p><strong>面试话术</strong>：</p>
-<p>Redis快的主要原因是：</p>
-<ol>
-<li>完全基于内存</li>
-<li>数据结构简单，对数据操作也简单</li>
-<li>使用多路 I&#x2F;O 复用模型，充分利用CPU资源</li>
-</ol>
-<p><strong>面试官</strong>：这样做的好处是什么？</p>
-<p><strong>面试话术</strong>：</p>
-<p>单线程优势有下面几点：</p>
-<ul>
-<li>代码更清晰，处理逻辑更简单</li>
-<li>不用去考虑各种锁的问题，不存在加锁释放锁操作，没有因为锁而导致的性能消耗</li>
-<li>不存在多进程或者多线程导致的CPU切换，充分利用CPU资源</li>
-</ul>
-<h2 id="3-2-Redis的持久化方案由哪些？"><a href="#3-2-Redis的持久化方案由哪些？" class="headerlink" title="3.2.Redis的持久化方案由哪些？"></a>3.2.Redis的持久化方案由哪些？</h2><p><strong>相关资料：</strong></p>
-<p>1）RDB 持久化</p>
-<p>RDB持久化可以使用save或bgsave，为了不阻塞主进程业务，一般都使用bgsave，流程：</p>
-<ul>
-<li>Redis 进程会 fork 出一个子进程（与父进程内存数据一致）。</li>
-<li>父进程继续处理客户端请求命令</li>
-<li>由子进程将内存中的所有数据写入到一个临时的 RDB 文件中。</li>
-<li>完成写入操作之后，旧的 RDB 文件会被新的 RDB 文件替换掉。</li>
-</ul>
-<p>下面是一些和 RDB 持久化相关的配置：</p>
-<ul>
-<li><code>save 60 10000</code>：如果在 60 秒内有 10000 个 key 发生改变，那就执行 RDB 持久化。</li>
-<li><code>stop-writes-on-bgsave-error yes</code>：如果 Redis 执行 RDB 持久化失败（常见于操作系统内存不足），那么 Redis 将不再接受 client 写入数据的请求。</li>
-<li><code>rdbcompression yes</code>：当生成 RDB 文件时，同时进行压缩。</li>
-<li><code>dbfilename dump.rdb</code>：将 RDB 文件命名为 dump.rdb。</li>
-<li><code>dir /var/lib/redis</code>：将 RDB 文件保存在<code>/var/lib/redis</code>目录下。</li>
-</ul>
-<p>　　当然在实践中，我们通常会将<code>stop-writes-on-bgsave-error</code>设置为<code>false</code>，同时让监控系统在 Redis 执行 RDB 持久化失败时发送告警，以便人工介入解决，而不是粗暴地拒绝 client 的写入请求。</p>
-<p>RDB持久化的优点：</p>
-<ul>
-<li>RDB持久化文件小，Redis数据恢复时速度快</li>
-<li>子进程不影响父进程，父进程可以持续处理客户端命令</li>
-<li>子进程fork时采用copy-on-write方式，大多数情况下，没有太多的内存消耗，效率比较好。</li>
-</ul>
-<p>RDB 持久化的缺点：</p>
-<ul>
-<li>子进程fork时采用copy-on-write方式，如果Redis此时写操作较多，可能导致额外的内存占用，甚至内存溢出</li>
-<li>RDB文件压缩会减小文件体积，但通过时会对CPU有额外的消耗</li>
-<li>如果业务场景很看重数据的持久性 (durability)，那么不应该采用 RDB 持久化。譬如说，如果 Redis 每 5 分钟执行一次 RDB 持久化，要是 Redis 意外奔溃了，那么最多会丢失 5 分钟的数据。</li>
-</ul>
-<p>2）AOF 持久化</p>
-<p>　　可以使用<code>appendonly yes</code>配置项来开启 AOF 持久化。Redis 执行 AOF 持久化时，会将接收到的写命令追加到 AOF 文件的末尾，因此 Redis 只要对 AOF 文件中的命令进行回放，就可以将数据库还原到原先的状态。<br>　　与 RDB 持久化相比，AOF 持久化的一个明显优势就是，它可以提高数据的持久性 (durability)。因为在 AOF 模式下，Redis 每次接收到 client 的写命令，就会将命令<code>write()</code>到 AOF 文件末尾。<br>　　然而，在 Linux 中，将数据<code>write()</code>到文件后，数据并不会立即刷新到磁盘，而会先暂存在 OS 的文件系统缓冲区。在合适的时机，OS 才会将缓冲区的数据刷新到磁盘（如果需要将文件内容刷新到磁盘，可以调用<code>fsync()</code>或<code>fdatasync()</code>）。<br>　　通过<code>appendfsync</code>配置项，可以控制 Redis 将命令同步到磁盘的频率：</p>
-<ul>
-<li><code>always</code>：每次 Redis 将命令<code>write()</code>到 AOF 文件时，都会调用<code>fsync()</code>，将命令刷新到磁盘。这可以保证最好的数据持久性，但却会给系统带来极大的开销。</li>
-<li><code>no</code>：Redis 只将命令<code>write()</code>到 AOF 文件。这会让 OS 决定何时将命令刷新到磁盘。</li>
-<li><code>everysec</code>：除了将命令<code>write()</code>到 AOF 文件，Redis 还会每秒执行一次<code>fsync()</code>。在实践中，推荐使用这种设置，一定程度上可以保证数据持久性，又不会明显降低 Redis 性能。</li>
-</ul>
-<p>　　然而，AOF 持久化并不是没有缺点的：Redis 会不断将接收到的写命令追加到 AOF 文件中，导致 AOF 文件越来越大。过大的 AOF 文件会消耗磁盘空间，并且导致 Redis 重启时更加缓慢。为了解决这个问题，在适当情况下，Redis 会对 AOF 文件进行重写，去除文件中冗余的命令，以减小 AOF 文件的体积。在重写 AOF 文件期间， Redis 会启动一个子进程，由子进程负责对 AOF 文件进行重写。<br>　　可以通过下面两个配置项，控制 Redis 重写 AOF 文件的频率：</p>
-<ul>
-<li><code>auto-aof-rewrite-min-size 64mb</code></li>
-<li><code>auto-aof-rewrite-percentage 100</code></li>
-</ul>
-<p>　　上面两个配置的作用：当 AOF 文件的体积大于 64MB，并且 AOF 文件的体积比上一次重写之后的体积大了至少一倍，那么 Redis 就会执行 AOF 重写。</p>
-<p>优点：</p>
-<ul>
-<li>持久化频率高，数据可靠性高</li>
-<li>没有额外的内存或CPU消耗</li>
-</ul>
-<p>缺点：</p>
-<ul>
-<li>文件体积大</li>
-<li>文件大导致服务数据恢复时效率较低</li>
-</ul>
-<p><strong>面试话术：</strong></p>
-<p>Redis 提供了两种数据持久化的方式，一种是 RDB，另一种是 AOF。默认情况下，Redis 使用的是 RDB 持久化。</p>
-<p>RDB持久化文件体积较小，但是保存数据的频率一般较低，可靠性差，容易丢失数据。另外RDB写数据时会采用Fork函数拷贝主进程，可能有额外的内存消耗，文件压缩也会有额外的CPU消耗。</p>
-<p>ROF持久化可以做到每秒钟持久化一次，可靠性高。但是持久化文件体积较大，导致数据恢复时读取文件时间较长，效率略低</p>
-<h2 id="3-3-Redis的集群方式有哪些？"><a href="#3-3-Redis的集群方式有哪些？" class="headerlink" title="3.3.Redis的集群方式有哪些？"></a>3.3.Redis的集群方式有哪些？</h2><p><strong>面试话术：</strong></p>
-<p>Redis集群可以分为<strong>主从集群</strong>和<strong>分片集群</strong>两类。</p>
-<p><strong>主从集群</strong>一般一主多从，主库用来写数据，从库用来读数据。结合哨兵，可以再主库宕机时从新选主，<strong>目的是保证Redis的高可用</strong>。</p>
-<p><strong>分片集群</strong>是数据分片，我们会让多个Redis节点组成集群，并将16383个插槽分到不同的节点上。存储数据时利用对key做hash运算，得到插槽值后存储到对应的节点即可。因为存储数据面向的是插槽而非节点本身，因此可以做到集群动态伸缩。<strong>目的是让Redis能存储更多数据。</strong></p>
-<p>1）主从集群</p>
-<p>主从集群，也是读写分离集群。一般都是一主多从方式。</p>
-<p>Redis 的复制（replication）功能允许用户根据一个 Redis 服务器来创建任意多个该服务器的复制品，其中被复制的服务器为主服务器（master），而通过复制创建出来的服务器复制品则为从服务器（slave）。</p>
-<p>只要主从服务器之间的网络连接正常，主从服务器两者会具有相同的数据，主服务器就会一直将发生在自己身上的数据更新同步 给从服务器，从而一直保证主从服务器的数据相同。</p>
-<ul>
-<li>写数据时只能通过主节点完成</li>
-<li>读数据可以从任何节点完成</li>
-<li>如果配置了<code>哨兵节点</code>，当master宕机时，哨兵会从salve节点选出一个新的主。</li>
-</ul>
-<p>主从集群分两种：</p>
-<p><img src="/2024/09/27/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E9%9D%A2%E8%AF%95%E9%A2%98/1574821993599.png" alt="1574821993599"> <img src="/2024/09/27/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E9%9D%A2%E8%AF%95%E9%A2%98/1574822026037.png" alt="1574822026037"></p>
-<p>带有哨兵的集群：</p>
-<p><img src="/2024/09/27/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E9%9D%A2%E8%AF%95%E9%A2%98/1574822077190.png" alt="1574822077190"></p>
-<p>2）分片集群</p>
-<p>主从集群中，每个节点都要保存所有信息，容易形成木桶效应。并且当数据量较大时，单个机器无法满足需求。此时我们就要使用分片集群了。</p>
-<p><img src="/2024/09/27/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E9%9D%A2%E8%AF%95%E9%A2%98/1574822184467.png" alt="1574822184467"></p>
-<p>集群特征：</p>
-<ul>
-<li><p>每个节点都保存不同数据</p>
-</li>
-<li><p>所有的redis节点彼此互联(PING-PONG机制),内部使用二进制协议优化传输速度和带宽.</p>
-</li>
-<li><p>节点的fail是通过集群中超过半数的节点检测失效时才生效.</p>
-</li>
-<li><p>客户端与redis节点直连,不需要中间proxy层连接集群中任何一个可用节点都可以访问到数据</p>
-</li>
-<li><p>redis-cluster把所有的物理节点映射到[0-16383]slot（插槽）上，实现动态伸缩</p>
-</li>
-</ul>
-<p>为了保证Redis中每个节点的高可用，我们还可以给每个节点创建replication（slave节点），如图：</p>
-<p><img src="/2024/09/27/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E9%9D%A2%E8%AF%95%E9%A2%98/1574822584357.png" alt="1574822584357"></p>
-<p>出现故障时，主从可以及时切换：</p>
-<p><img src="/2024/09/27/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E9%9D%A2%E8%AF%95%E9%A2%98/1574822602109.png" alt="1574822602109"></p>
-<h2 id="3-4-Redis的常用数据类型有哪些？"><a href="#3-4-Redis的常用数据类型有哪些？" class="headerlink" title="3.4.Redis的常用数据类型有哪些？"></a>3.4.Redis的常用数据类型有哪些？</h2><p>支持多种类型的数据结构，主要区别是value存储的数据格式不同：</p>
-<ul>
-<li><p>string：最基本的数据类型，二进制安全的字符串，最大512M。</p>
-</li>
-<li><p>list：按照添加顺序保持顺序的字符串列表。</p>
-</li>
-<li><p>set：无序的字符串集合，不存在重复的元素。</p>
-</li>
-<li><p>sorted set：已排序的字符串集合。</p>
-</li>
-<li><p>hash：key-value对格式</p>
-</li>
-</ul>
-<h2 id="3-5-聊一下Redis事务机制"><a href="#3-5-聊一下Redis事务机制" class="headerlink" title="3.5.聊一下Redis事务机制"></a>3.5.聊一下Redis事务机制</h2><p><strong>相关资料：</strong></p>
-<p>参考：<a href="http://redisdoc.com/topic/transaction.html">http://redisdoc.com/topic/transaction.html</a></p>
-<p>Redis事务功能是通过MULTI、EXEC、DISCARD和WATCH 四个原语实现的。Redis会将一个事务中的所有命令序列化，然后按顺序执行。但是Redis事务不支持回滚操作，命令运行出错后，正确的命令会继续执行。</p>
-<ul>
-<li><code>MULTI</code>: 用于开启一个事务，它总是返回OK。 MULTI执行之后，客户端可以继续向服务器发送任意多条命令，这些命令不会立即被执行，而是被放到一个<strong>待执行命令队列</strong>中</li>
-<li><code>EXEC</code>：按顺序执行命令队列内的所有命令。返回所有命令的返回值。事务执行过程中，Redis不会执行其它事务的命令。</li>
-<li><code>DISCARD</code>：清空命令队列，并放弃执行事务， 并且客户端会从事务状态中退出</li>
-<li><code>WATCH</code>：Redis的乐观锁机制，利用compare-and-set（CAS）原理，可以监控一个或多个键，一旦其中有一个键被修改，之后的事务就不会执行</li>
-</ul>
-<p>使用事务时可能会遇上以下两种错误：</p>
-<ul>
-<li>执行 EXEC 之前，入队的命令可能会出错。比如说，命令可能会产生语法错误（参数数量错误，参数名错误，等等），或者其他更严重的错误，比如内存不足（如果服务器使用 <code>maxmemory</code> 设置了最大内存限制的话）。<ul>
-<li>Redis 2.6.5 开始，服务器会对命令入队失败的情况进行记录，并在客户端调用 EXEC 命令时，拒绝执行并自动放弃这个事务。</li>
-</ul>
-</li>
-<li>命令可能在 EXEC 调用之后失败。举个例子，事务中的命令可能处理了错误类型的键，比如将列表命令用在了字符串键上面，诸如此类。<ul>
-<li>即使事务中有某个&#x2F;某些命令在执行时产生了错误， 事务中的其他命令仍然会继续执行，不会回滚。</li>
-</ul>
-</li>
-</ul>
-<p>为什么 Redis 不支持回滚（roll back）？</p>
-<p>以下是这种做法的优点：</p>
-<ul>
-<li>Redis 命令只会因为错误的语法而失败（并且这些问题不能在入队时发现），或是命令用在了错误类型的键上面：这也就是说，从实用性的角度来说，失败的命令是由<strong>编程错误</strong>造成的，而这些错误应该在开发的过程中被发现，而不应该出现在生产环境中。</li>
-<li>因为不需要对回滚进行支持，所以 Redis 的内部可以保持简单且快速。</li>
-</ul>
-<p>鉴于没有任何机制能避免程序员自己造成的错误， 并且这类错误通常不会在生产环境中出现， 所以 Redis 选择了更简单、更快速的无回滚方式来处理事务。</p>
-<p><strong>面试话术：</strong></p>
-<p>Redis事务其实是把一系列Redis命令放入队列，然后批量执行，执行过程中不会有其它事务来打断。不过与关系型数据库的事务不同，Redis事务不支持回滚操作，事务中某个命令执行失败，其它命令依然会执行。</p>
-<p>为了弥补不能回滚的问题，Redis会在事务入队时就检查命令，如果命令异常则会放弃整个事务。</p>
-<p>因此，只要程序员编程是正确的，理论上说Redis会正确执行所有事务，无需回滚。</p>
-<p>面试官：如果事务执行一半的时候Redis宕机怎么办？</p>
-<p>Redis有持久化机制，因为可靠性问题，我们一般使用AOF持久化。事务的所有命令也会写入AOF文件，但是如果在执行EXEC命令之前，Redis已经宕机，则AOF文件中事务不完整。使用 <code>redis-check-aof</code> 程序可以移除 AOF 文件中不完整事务的信息，确保服务器可以顺利启动。</p>
-<h2 id="3-6-Redis的Key过期策略"><a href="#3-6-Redis的Key过期策略" class="headerlink" title="3.6.Redis的Key过期策略"></a>3.6.Redis的Key过期策略</h2><h3 id="参考资料："><a href="#参考资料：" class="headerlink" title="参考资料："></a><strong>参考资料：</strong></h3><h4 id="为什么需要内存回收？"><a href="#为什么需要内存回收？" class="headerlink" title="为什么需要内存回收？"></a>为什么需要内存回收？</h4><ul>
-<li>1、在Redis中，set指令可以指定key的过期时间，当过期时间到达以后，key就失效了；</li>
-<li>2、Redis是基于内存操作的，所有的数据都是保存在内存中，一台机器的内存是有限且很宝贵的。</li>
-</ul>
-<p>基于以上两点，为了保证Redis能继续提供可靠的服务，Redis需要一种机制清理掉不常用的、无效的、多余的数据，失效后的数据需要及时清理，这就需要内存回收了。</p>
-<p>Redis的内存回收主要分为过期删除策略和内存淘汰策略两部分。</p>
-<h4 id="过期删除策略"><a href="#过期删除策略" class="headerlink" title="过期删除策略"></a>过期删除策略</h4><p>删除达到过期时间的key。</p>
-<ul>
-<li>1）定时删除</li>
-</ul>
-<p>对于每一个设置了过期时间的key都会创建一个定时器，一旦到达过期时间就立即删除。该策略可以立即清除过期的数据，对内存较友好，但是缺点是占用了大量的CPU资源去处理过期的数据，会影响Redis的吞吐量和响应时间。</p>
-<ul>
-<li>2）惰性删除</li>
-</ul>
-<p>当访问一个key时，才判断该key是否过期，过期则删除。该策略能最大限度地节省CPU资源，但是对内存却十分不友好。有一种极端的情况是可能出现大量的过期key没有被再次访问，因此不会被清除，导致占用了大量的内存。</p>
-<blockquote>
-<p>在计算机科学中，懒惰删除（英文：lazy deletion）指的是从一个散列表（也称哈希表）中删除元素的一种方法。在这个方法中，删除仅仅是指标记一个元素被删除，而不是整个清除它。被删除的位点在插入时被当作空元素，在搜索之时被当作已占据。</p>
-</blockquote>
-<ul>
-<li>3）定期删除</li>
-</ul>
-<p>每隔一段时间，扫描Redis中过期key字典，并清除部分过期的key。该策略是前两者的一个折中方案，还可以通过调整定时扫描的时间间隔和每次扫描的限定耗时，在不同情况下使得CPU和内存资源达到最优的平衡效果。</p>
-<p>在Redis中，<code>同时使用了定期删除和惰性删除</code>。不过Redis定期删除采用的是随机抽取的方式删除部分Key，因此不能保证过期key 100%的删除。</p>
-<p>Redis结合了定期删除和惰性删除，基本上能很好的处理过期数据的清理，但是实际上还是有点问题的，如果过期key较多，定期删除漏掉了一部分，而且也没有及时去查，即没有走惰性删除，那么就会有大量的过期key堆积在内存中，导致redis内存耗尽，当内存耗尽之后，有新的key到来会发生什么事呢？是直接抛弃还是其他措施呢？有什么办法可以接受更多的key？</p>
-<h4 id="内存淘汰策略"><a href="#内存淘汰策略" class="headerlink" title="内存淘汰策略"></a>内存淘汰策略</h4><p>Redis的内存淘汰策略，是指内存达到maxmemory极限时，使用某种算法来决定清理掉哪些数据，以保证新数据的存入。</p>
-<p>Redis的内存淘汰机制包括：</p>
-<ul>
-<li>noeviction: 当内存不足以容纳新写入数据时，新写入操作会报错。</li>
-<li>allkeys-lru：当内存不足以容纳新写入数据时，在键空间（<code>server.db[i].dict</code>）中，移除最近最少使用的 key（这个是最常用的）。</li>
-<li>allkeys-random：当内存不足以容纳新写入数据时，在键空间（<code>server.db[i].dict</code>）中，随机移除某个 key。</li>
-<li>volatile-lru：当内存不足以容纳新写入数据时，在设置了过期时间的键空间（<code>server.db[i].expires</code>）中，移除最近最少使用的 key。</li>
-<li>volatile-random：当内存不足以容纳新写入数据时，在设置了过期时间的键空间（<code>server.db[i].expires</code>）中，随机移除某个 key。</li>
-<li>volatile-ttl：当内存不足以容纳新写入数据时，在设置了过期时间的键空间（<code>server.db[i].expires</code>）中，有更早过期时间的 key 优先移除。</li>
-</ul>
-<blockquote>
-<p>在配置文件中，通过maxmemory-policy可以配置要使用哪一个淘汰机制。</p>
-</blockquote>
-<p>什么时候会进行淘汰？</p>
-<p>Redis会在每一次处理命令的时候（processCommand函数调用freeMemoryIfNeeded）判断当前redis是否达到了内存的最大限制，如果达到限制，则使用对应的算法去处理需要删除的key。</p>
-<p>在淘汰key时，Redis默认最常用的是LRU算法（Latest Recently Used）。Redis通过在每一个redisObject保存lru属性来保存key最近的访问时间，在实现LRU算法时直接读取key的lru属性。</p>
-<p>具体实现时，Redis遍历每一个db，从每一个db中随机抽取一批样本key，默认是3个key，再从这3个key中，删除最近最少使用的key。</p>
-<h3 id="面试话术："><a href="#面试话术：" class="headerlink" title="面试话术："></a>面试话术：</h3><p>Redis过期策略包含定期删除和惰性删除两部分。定期删除是在Redis内部有一个定时任务，会定期删除一些过期的key。惰性删除是当用户查询某个Key时，会检查这个Key是否已经过期，如果没过期则返回用户，如果过期则删除。</p>
-<p>但是这两个策略都无法保证过期key一定删除，漏网之鱼越来越多，还可能导致内存溢出。当发生内存不足问题时，Redis还会做内存回收。内存回收采用LRU策略，就是最近最少使用。其原理就是记录每个Key的最近使用时间，内存回收时，随机抽取一些Key，比较其使用时间，把最老的几个删除。</p>
-<p>Redis的逻辑是：最近使用过的，很可能再次被使用</p>
-<h2 id="3-7-Redis在项目中的哪些地方有用到"><a href="#3-7-Redis在项目中的哪些地方有用到" class="headerlink" title="3.7.Redis在项目中的哪些地方有用到?"></a>3.7.Redis在项目中的哪些地方有用到?</h2><p>（1）共享session</p>
-<p>在分布式系统下，服务会部署在不同的tomcat，因此多个tomcat的session无法共享，以前存储在session中的数据无法实现共享，可以用redis代替session，解决分布式系统间数据共享问题。</p>
-<p>（2）数据缓存</p>
-<p>Redis采用内存存储，读写效率较高。我们可以把数据库的访问频率高的热点数据存储到redis中，这样用户请求时优先从redis中读取，减少数据库压力，提高并发能力。</p>
-<p>（3）异步队列</p>
-<p>Reids在内存存储引擎领域的一大优点是提供 list 和 set 操作，这使得Redis能作为一个很好的消息队列平台来使用。而且Redis中还有pub&#x2F;sub这样的专用结构，用于1对N的消息通信模式。</p>
-<p>（4）分布式锁</p>
-<p>Redis中的乐观锁机制，可以帮助我们实现分布式锁的效果，用于解决分布式系统下的多线程安全问题</p>
-<h2 id="3-8-Redis的缓存击穿、缓存雪崩、缓存穿透"><a href="#3-8-Redis的缓存击穿、缓存雪崩、缓存穿透" class="headerlink" title="3.8.Redis的缓存击穿、缓存雪崩、缓存穿透"></a>3.8.Redis的缓存击穿、缓存雪崩、缓存穿透</h2><h3 id="1）缓存穿透"><a href="#1）缓存穿透" class="headerlink" title="1）缓存穿透"></a>1）缓存穿透</h3><p>参考资料：</p>
-<ul>
-<li><p>什么是缓存穿透</p>
-<ul>
-<li>正常情况下，我们去查询数据都是存在。那么请求去查询一条压根儿数据库中根本就不存在的数据，也就是缓存和数据库都查询不到这条数据，但是请求每次都会打到数据库上面去。这种查询不存在数据的现象我们称为<strong>缓存穿透</strong>。</li>
-</ul>
-</li>
-<li><p>穿透带来的问题</p>
-<ul>
-<li>试想一下，如果有黑客会对你的系统进行攻击，拿一个不存在的id 去查询数据，会产生大量的请求到数据库去查询。可能会导致你的数据库由于压力过大而宕掉。</li>
-</ul>
-</li>
-<li><p>解决办法</p>
-<ul>
-<li>缓存空值：之所以会发生穿透，就是因为缓存中没有存储这些空数据的key。从而导致每次查询都到数据库去了。那么我们就可以为这些key对应的值设置为null 丢到缓存里面去。后面再出现查询这个key 的请求的时候，直接返回null 。这样，就不用在到数据库中去走一圈了，但是别忘了设置过期时间。</li>
-<li>BloomFilter（布隆过滤）：将所有可能存在的数据哈希到一个足够大的bitmap中，一个一定不存在的数据会被 这个bitmap拦截掉，从而避免了对底层存储系统的查询压力。在缓存之前在加一层 BloomFilter ，在查询的时候先去 BloomFilter 去查询 key 是否存在，如果不存在就直接返回，存在再走查缓存 -&gt; 查 DB。</li>
-</ul>
-</li>
-</ul>
-<p><strong>话术：</strong></p>
-<p>缓存穿透有两种解决方案：<strong>其一</strong>是把不存在的key设置null值到缓存中。<strong>其二</strong>是使用布隆过滤器，在查询缓存前先通过布隆过滤器判断key是否存在，存在再去查询缓存。</p>
-<p>设置null值可能被恶意针对，攻击者使用大量不存在的不重复key ，那么方案一就会缓存大量不存在key数据。此时我们还可以对Key规定格式模板，然后对不存在的key做<strong>正则规范</strong>匹配，如果完全不符合就不用存null值到redis，而是直接返回错误。</p>
-<h3 id="2）缓存击穿"><a href="#2）缓存击穿" class="headerlink" title="2）缓存击穿"></a>2）缓存击穿</h3><p><strong>相关资料</strong>：</p>
-<ul>
-<li>什么是缓存击穿？</li>
-</ul>
-<p>key可能会在某些时间点被超高并发地访问，是一种非常“热点”的数据。这个时候，需要考虑一个问题：缓存被“击穿”的问题。</p>
-<p>当这个key在失效的瞬间，redis查询失败，持续的大并发就穿破缓存，直接请求数据库，就像在一个屏障上凿开了一个洞。</p>
-<ul>
-<li>解决方案：<ul>
-<li>使用互斥锁(mutex key)：mutex，就是互斥。简单地来说，就是在缓存失效的时候（判断拿出来的值为空），不是立即去load db，而是先使用Redis的SETNX去set一个互斥key，当操作返回成功时，再进行load db的操作并回设缓存；否则，就重试整个get缓存的方法。SETNX，是「SET if Not eXists」的缩写，也就是只有不存在的时候才设置，可以利用它来实现互斥的效果。</li>
-<li>软过期：也就是逻辑过期，不使用redis提供的过期时间，而是业务层在数据中存储过期时间信息。查询时由业务程序判断是否过期，如果数据即将过期时，将缓存的时效延长，程序可以派遣一个线程去数据库中获取最新的数据，其他线程这时看到延长了的过期时间，就会继续使用旧数据，等派遣的线程获取最新数据后再更新缓存。</li>
-</ul>
-</li>
-</ul>
-<p>推荐使用互斥锁，因为软过期会有业务逻辑侵入和额外的判断。</p>
-<p><strong>面试话术</strong>：</p>
-<p>缓存击穿主要担心的是某个Key过期，更新缓存时引起对数据库的突发高并发访问。因此我们可以在更新缓存时采用互斥锁控制，只允许一个线程去更新缓存，其它线程等待并重新读取缓存。例如Redis的setnx命令就能实现互斥效果。</p>
-<h3 id="3）缓存雪崩"><a href="#3）缓存雪崩" class="headerlink" title="3）缓存雪崩"></a>3）缓存雪崩</h3><p><strong>相关资料</strong>：</p>
-<p>缓存雪崩，是指在某一个时间段，缓存集中过期失效。对这批数据的访问查询，都落到了数据库上，对于数据库而言，就会产生周期性的压力波峰。</p>
-<p>解决方案：</p>
-<ul>
-<li>数据分类分批处理：采取不同分类数据，缓存不同周期</li>
-<li>相同分类数据：采用固定时长加随机数方式设置缓存</li>
-<li>热点数据缓存时间长一些，冷门数据缓存时间短一些</li>
-<li>避免redis节点宕机引起雪崩，搭建主从集群，保证高可用</li>
-</ul>
-<p><strong>面试话术：</strong></p>
-<p>解决缓存雪崩问题的关键是让缓存Key的过期时间分散。因此我们可以把数据按照业务分类，然后设置不同过期时间。相同业务类型的key，设置固定时长加随机数。尽可能保证每个Key的过期时间都不相同。</p>
-<p>另外，Redis宕机也可能导致缓存雪崩，因此我们还要搭建Redis主从集群及哨兵监控，保证Redis的高可用。</p>
-<h2 id="3-9-缓存冷热数据分离"><a href="#3-9-缓存冷热数据分离" class="headerlink" title="3.9.缓存冷热数据分离"></a>3.9.缓存冷热数据分离</h2><p><strong>背景资料</strong>：</p>
-<p>Redis使用的是内存存储，当需要海量数据存储时，成本非常高。</p>
-<p>经过调研发现，当前主流DDR3内存和主流SATA SSD的单位成本价格差距大概在20倍左右，为了优化redis机器综合成本，我们考虑实现基于<strong>热度统计 的数据分级存储</strong>及数据在RAM&#x2F;FLASH之间的动态交换，从而大幅度降低成本，达到性能与成本的高平衡。</p>
-<p>基本思路：基于key访问次数(LFU)的热度统计算法识别出热点数据，并将热点数据保留在redis中，对于无访问&#x2F;访问次数少的数据则转存到SSD上，如果SSD上的key再次变热，则重新将其加载到redis内存中。</p>
-<p>目前流行的高性能磁盘存储，并且遵循Redis协议的方案包括：</p>
-<ul>
-<li>SSDB：<a href="http://ssdb.io/zh_cn/">http://ssdb.io/zh_cn&#x2F;</a></li>
-<li>RocksDB：<a href="https://rocksdb.org.cn/">https://rocksdb.org.cn/</a></li>
-</ul>
-<p>因此，我们就需要在应用程序与缓存服务之间引入代理，实现Redis和SSD之间的切换，如图：</p>
-<p><img src="/2024/09/27/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E9%9D%A2%E8%AF%95%E9%A2%98/image-20200521115702956.png" alt="image-20200521115702956"></p>
-<p>这样的代理方案阿里云提供的就有。当然也有一些开源方案，例如：<a href="https://github.com/JingchengLi/swapdb">https://github.com/JingchengLi/swapdb</a></p>
-<h2 id="3-10-Redis实现分布式锁"><a href="#3-10-Redis实现分布式锁" class="headerlink" title="3.10.Redis实现分布式锁"></a>3.10.Redis实现分布式锁</h2><p>分布式锁要满足的条件：</p>
-<ul>
-<li>多进程互斥：同一时刻，只有一个进程可以获取锁</li>
-<li>保证锁可以释放：任务结束或出现异常，锁一定要释放，避免死锁</li>
-<li>阻塞锁（可选）：获取锁失败时可否重试</li>
-<li>重入锁（可选）：获取锁的代码递归调用时，依然可以获取锁</li>
-</ul>
-<h3 id="1）最基本的分布式锁："><a href="#1）最基本的分布式锁：" class="headerlink" title="1）最基本的分布式锁："></a>1）最基本的分布式锁：</h3><p>利用Redis的setnx命令，这个命令的特征时如果多次执行，只有第一次执行会成功，可以实现<code>互斥</code>的效果。但是为了保证服务宕机时也可以释放锁，需要利用expire命令给锁设置一个有效期</p>
-<table><tbody><tr><td class="code"><pre><span class="line">setnx lock thread-01 # 尝试获取锁</span><br><span class="line">expire lock 10 # 设置有效期</span><br></pre></td></tr></tbody></table>
-
-<p><strong>面试官问题1</strong>：如果expire之前服务宕机怎么办？</p>
-<p>要保证setnx和expire命令的原子性。redis的set命令可以满足：</p>
-<table><tbody><tr><td class="code"><pre><span class="line">set key value [NX] [EX time] </span><br></pre></td></tr></tbody></table>
-
-<p>需要添加nx和ex的选项：</p>
-<ul>
-<li>NX：与setnx一致，第一次执行成功</li>
-<li>EX：设置过期时间</li>
-</ul>
-<p><strong>面试官问题2</strong>：释放锁的时候，如果自己的锁已经过期了，此时会出现安全漏洞，如何解决？</p>
-<p>在锁中存储当前进程和线程标识，释放锁时对锁的标识判断，如果是自己的则删除，不是则放弃操作。</p>
-<p>但是这两步操作要保证原子性，需要通过Lua脚本来实现。</p>
-<table><tbody><tr><td class="code"><pre><span class="line">if redis.call("get",KEYS[1]) == ARGV[1] then</span><br><span class="line">    redis.call("del",KEYS[1])</span><br><span class="line">end</span><br></pre></td></tr></tbody></table>
-
-<h3 id="2）可重入分布式锁"><a href="#2）可重入分布式锁" class="headerlink" title="2）可重入分布式锁"></a>2）可重入分布式锁</h3><p>如果有重入的需求，则除了在锁中记录进程标识，还要记录重试次数，流程如下：</p>
-<p><img src="/2024/09/27/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E9%9D%A2%E8%AF%95%E9%A2%98/1574824172228.png" alt="1574824172228"></p>
-<p>下面我们假设锁的key为“<code>lock</code>”，hashKey是当前线程的id：“<code>threadId</code>”，锁自动释放时间假设为20</p>
-<p>获取锁的步骤：</p>
-<ul>
-<li>1、判断lock是否存在 <code>EXISTS lock</code><ul>
-<li>存在，说明有人获取锁了，下面判断是不是自己的锁<ul>
-<li>判断当前线程id作为hashKey是否存在：<code>HEXISTS lock threadId</code><ul>
-<li>不存在，说明锁已经有了，且不是自己获取的，锁获取失败，end</li>
-<li>存在，说明是自己获取的锁，重入次数+1：<code>HINCRBY lock threadId 1</code>，去到步骤3</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>2、不存在，说明可以获取锁，<code>HSET key threadId 1</code></li>
-<li>3、设置锁自动释放时间，<code>EXPIRE lock 20</code></li>
-</ul>
-</li>
-</ul>
-<p>释放锁的步骤：</p>
-<ul>
-<li>1、判断当前线程id作为hashKey是否存在：<code>HEXISTS lock threadId</code><ul>
-<li>不存在，说明锁已经失效，不用管了</li>
-<li>存在，说明锁还在，重入次数减1：<code>HINCRBY lock threadId -1</code>，获取新的重入次数</li>
-</ul>
-</li>
-<li>2、判断重入次数是否为0：<ul>
-<li>为0，说明锁全部释放，删除key：<code>DEL lock</code></li>
-<li>大于0，说明锁还在使用，重置有效时间：<code>EXPIRE lock 20</code></li>
-</ul>
-</li>
-</ul>
-<p>对应的Lua脚本如下：</p>
-<p>首先是获取锁：</p>
-<table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">local</span> key = KEYS[<span class="number">1</span>]; <span class="comment">-- 锁的key</span></span><br><span class="line"><span class="keyword">local</span> threadId = ARGV[<span class="number">1</span>]; <span class="comment">-- 线程唯一标识</span></span><br><span class="line"><span class="keyword">local</span> releaseTime = ARGV[<span class="number">2</span>]; <span class="comment">-- 锁的自动释放时间</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(redis.call(<span class="string">'exists'</span>, key) == <span class="number">0</span>) <span class="keyword">then</span> <span class="comment">-- 判断是否存在</span></span><br><span class="line">	redis.call(<span class="string">'hset'</span>, key, threadId, <span class="string">'1'</span>); <span class="comment">-- 不存在, 获取锁</span></span><br><span class="line">	redis.call(<span class="string">'expire'</span>, key, releaseTime); <span class="comment">-- 设置有效期</span></span><br><span class="line">	<span class="keyword">return</span> <span class="number">1</span>; <span class="comment">-- 返回结果</span></span><br><span class="line"><span class="keyword">end</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(redis.call(<span class="string">'hexists'</span>, key, threadId) == <span class="number">1</span>) <span class="keyword">then</span> <span class="comment">-- 锁已经存在，判断threadId是否是自己	</span></span><br><span class="line">	redis.call(<span class="string">'hincrby'</span>, key, threadId, <span class="string">'1'</span>); <span class="comment">-- 不存在, 获取锁，重入次数+1</span></span><br><span class="line">	redis.call(<span class="string">'expire'</span>, key, releaseTime); <span class="comment">-- 设置有效期</span></span><br><span class="line">	<span class="keyword">return</span> <span class="number">1</span>; <span class="comment">-- 返回结果</span></span><br><span class="line"><span class="keyword">end</span>;</span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>; <span class="comment">-- 代码走到这里,说明获取锁的不是自己，获取锁失败</span></span><br></pre></td></tr></tbody></table>
-
-<p>然后是释放锁：</p>
-<table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">local</span> key = KEYS[<span class="number">1</span>]; <span class="comment">-- 锁的key</span></span><br><span class="line"><span class="keyword">local</span> threadId = ARGV[<span class="number">1</span>]; <span class="comment">-- 线程唯一标识</span></span><br><span class="line"><span class="keyword">local</span> releaseTime = ARGV[<span class="number">2</span>]; <span class="comment">-- 锁的自动释放时间</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (redis.call(<span class="string">'HEXISTS'</span>, key, threadId) == <span class="number">0</span>) <span class="keyword">then</span> <span class="comment">-- 判断当前锁是否还是被自己持有</span></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">nil</span>; <span class="comment">-- 如果已经不是自己，则直接返回</span></span><br><span class="line"><span class="keyword">end</span>;</span><br><span class="line"><span class="keyword">local</span> count = redis.call(<span class="string">'HINCRBY'</span>, key, threadId, <span class="number">-1</span>); <span class="comment">-- 是自己的锁，则重入次数-1</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (count &gt; <span class="number">0</span>) <span class="keyword">then</span> <span class="comment">-- 判断是否重入次数是否已经为0</span></span><br><span class="line">    redis.call(<span class="string">'EXPIRE'</span>, key, releaseTime); <span class="comment">-- 大于0说明不能释放锁，重置有效期然后返回</span></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">nil</span>;</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">    redis.call(<span class="string">'DEL'</span>, key); <span class="comment">-- 等于0说明可以释放锁，直接删除</span></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">nil</span>;</span><br><span class="line"><span class="keyword">end</span>;</span><br></pre></td></tr></tbody></table>
-
-<h3 id="3）高可用的锁"><a href="#3）高可用的锁" class="headerlink" title="3）高可用的锁"></a>3）高可用的锁</h3><p><code>面试官问题</code>：redis分布式锁依赖与redis，如果redis宕机则锁失效。如何解决？</p>
-<p>此时大多数同学会回答说：搭建主从集群，做数据备份。</p>
-<p>这样就进入了陷阱，因为面试官的下一个问题就来了：</p>
-<p><code>面试官问题</code>：如果搭建主从集群做数据备份时，进程A获取锁，master还没有把数据备份到slave，master宕机，slave升级为master，此时原来锁失效，其它进程也可以获取锁，出现安全问题。如何解决？</p>
-<p>关于这个问题，Redis官网给出了解决方案，使用RedLock思路可以解决：</p>
-<blockquote>
-<p>在Redis的分布式环境中，我们假设有N个Redis master。这些节点完全互相独立，不存在主从复制或者其他集群协调机制。之前我们已经描述了在Redis单实例下怎么安全地获取和释放锁。我们确保将在每（N)个实例上使用此方法获取和释放锁。在这个样例中，我们假设有5个Redis master节点，这是一个比较合理的设置，所以我们需要在5台机器上面或者5台虚拟机上面运行这些实例，这样保证他们不会同时都宕掉。</p>
-<p>为了取到锁，客户端应该执行以下操作:</p>
-<ol>
-<li>获取当前Unix时间，以毫秒为单位。</li>
-<li>依次尝试从N个实例，使用相同的key和随机值获取锁。在步骤2，当向Redis设置锁时,客户端应该设置一个网络连接和响应超时时间，这个超时时间应该小于锁的失效时间。例如你的锁自动失效时间为10秒，则超时时间应该在5-50毫秒之间。这样可以避免服务器端Redis已经挂掉的情况下，客户端还在死死地等待响应结果。如果服务器端没有在规定时间内响应，客户端应该尽快尝试另外一个Redis实例。</li>
-<li>客户端使用当前时间减去开始获取锁时间（步骤1记录的时间）就得到获取锁使用的时间。当且仅当从大多数（这里是3个节点）的Redis节点都取到锁，并且使用的时间小于锁失效时间时，锁才算获取成功。</li>
-<li>如果取到了锁，key的真正有效时间等于有效时间减去获取锁所使用的时间（步骤3计算的结果）。</li>
-<li>如果因为某些原因，获取锁失败（<em>没有</em>在至少N&#x2F;2+1个Redis实例取到锁或者取锁时间已经超过了有效时间），客户端应该在所有的Redis实例上进行解锁（即便某些Redis实例根本就没有加锁成功）。</li>
-</ol>
-</blockquote>
-<h2 id="3-11-如何实现数据库与缓存数据一致？"><a href="#3-11-如何实现数据库与缓存数据一致？" class="headerlink" title="3.11.如何实现数据库与缓存数据一致？"></a>3.11.如何实现数据库与缓存数据一致？</h2><p>面试话术：</p>
-<p>实现方案有下面几种：</p>
-<ul>
-<li>本地缓存同步：当前微服务的数据库数据与缓存数据同步，可以直接在数据库修改时加入对Redis的修改逻辑，保证一致。</li>
-<li>跨服务缓存同步：服务A调用了服务B，并对查询结果缓存。服务B数据库修改，可以通过MQ通知服务A，服务A修改Redis缓存数据</li>
-<li>通用方案：使用Canal框架，伪装成MySQL的salve节点，监听MySQL的binLog变化，然后修改Redis缓存数据</li>
-</ul>
-]]></content>
-      <categories>
-        <category>微服务</category>
-      </categories>
-  </entry>
-  <entry>
     <title>kafkaConfig</title>
     <url>/2024/10/13/kafkaConfig/</url>
     <content><![CDATA[<h2 id="生产者配置"><a href="#生产者配置" class="headerlink" title="生产者配置"></a>生产者配置</h2><table>
@@ -15028,6 +14488,546 @@ git merge b2
 <td>low</td>
 </tr>
 </tbody></table>
+]]></content>
+      <categories>
+        <category>微服务</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>微服务面试题</title>
+    <url>/2024/09/27/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E9%9D%A2%E8%AF%95%E9%A2%98/</url>
+    <content><![CDATA[<h1 id="常见面试题"><a href="#常见面试题" class="headerlink" title="常见面试题"></a>常见面试题</h1><h1 id="1-微服务篇"><a href="#1-微服务篇" class="headerlink" title="1.微服务篇"></a>1.微服务篇</h1><h2 id="1-1-SpringCloud常见组件有哪些？"><a href="#1-1-SpringCloud常见组件有哪些？" class="headerlink" title="1.1.SpringCloud常见组件有哪些？"></a>1.1.SpringCloud常见组件有哪些？</h2><p><strong>问题说明</strong>：这个题目主要考察对SpringCloud的组件基本了解</p>
+<p><strong>难易程度</strong>：简单</p>
+<p><strong>参考话术</strong>：</p>
+<p>SpringCloud包含的组件很多，有很多功能是重复的。其中最常用组件包括：</p>
+<ul>
+<li><p>注册中心组件：Eureka、Nacos等</p>
+</li>
+<li><p>负载均衡组件：Ribbon</p>
+</li>
+<li><p>远程调用组件：OpenFeign</p>
+</li>
+<li><p>网关组件：Zuul、Gateway</p>
+</li>
+<li><p>服务保护组件：Hystrix、Sentinel</p>
+</li>
+<li><p>服务配置管理组件：SpringCloudConfig、Nacos</p>
+</li>
+</ul>
+<h2 id="1-2-Nacos的服务注册表结构是怎样的？"><a href="#1-2-Nacos的服务注册表结构是怎样的？" class="headerlink" title="1.2.Nacos的服务注册表结构是怎样的？"></a>1.2.Nacos的服务注册表结构是怎样的？</h2><p><strong>问题说明</strong>：考察对Nacos数据分级结构的了解，以及Nacos源码的掌握情况</p>
+<p><strong>难易程度</strong>：一般</p>
+<p><strong>参考话术</strong>：</p>
+<p>Nacos采用了数据的分级存储模型，最外层是Namespace，用来隔离环境。然后是Group，用来对服务分组。接下来就是服务（Service）了，一个服务包含多个实例，但是可能处于不同机房，因此Service下有多个集群（Cluster），Cluster下是不同的实例（Instance）。</p>
+<p>对应到Java代码中，Nacos采用了一个多层的Map来表示。结构为Map&lt;String, Map&lt;String, Service&gt;&gt;，其中最外层Map的key就是namespaceId，值是一个Map。内层Map的key是group拼接serviceName，值是Service对象。Service对象内部又是一个Map，key是集群名称，值是Cluster对象。而Cluster对象内部维护了Instance的集合。</p>
+<p>如图：</p>
+<p><img src="/2024/09/27/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E9%9D%A2%E8%AF%95%E9%A2%98/image-20210925215305446-1727139382386-11.png" alt="image-20210925215305446"></p>
+<h2 id="1-3-Nacos如何支撑阿里内部数十万服务注册压力？"><a href="#1-3-Nacos如何支撑阿里内部数十万服务注册压力？" class="headerlink" title="1.3.Nacos如何支撑阿里内部数十万服务注册压力？"></a>1.3.Nacos如何支撑阿里内部数十万服务注册压力？</h2><p><strong>问题说明</strong>：考察对Nacos源码的掌握情况</p>
+<p><strong>难易程度</strong>：难</p>
+<p><strong>参考话术</strong>：</p>
+<p>Nacos内部接收到注册的请求时，不会立即写数据，而是将服务注册的任务放入一个阻塞队列就立即响应给客户端。然后利用线程池读取阻塞队列中的任务，异步来完成实例更新，从而提高并发写能力。</p>
+<h2 id="1-4-Nacos如何避免并发读写冲突问题？"><a href="#1-4-Nacos如何避免并发读写冲突问题？" class="headerlink" title="1.4.Nacos如何避免并发读写冲突问题？"></a>1.4.Nacos如何避免并发读写冲突问题？</h2><p><strong>问题说明</strong>：考察对Nacos源码的掌握情况</p>
+<p><strong>难易程度</strong>：难</p>
+<p><strong>参考话术</strong>：</p>
+<p>Nacos在更新实例列表时，会采用CopyOnWrite技术，首先将旧的实例列表拷贝一份，然后更新拷贝的实例列表，再用更新后的实例列表来覆盖旧的实例列表。</p>
+<p>这样在更新的过程中，就不会对读实例列表的请求产生影响，也不会出现脏读问题了。</p>
+<h2 id="1-5-Nacos与Eureka的区别有哪些？"><a href="#1-5-Nacos与Eureka的区别有哪些？" class="headerlink" title="1.5.Nacos与Eureka的区别有哪些？"></a>1.5.Nacos与Eureka的区别有哪些？</h2><p><strong>问题说明</strong>：考察对Nacos、Eureka的底层实现的掌握情况</p>
+<p><strong>难易程度</strong>：难</p>
+<p><strong>参考话术</strong>：</p>
+<p>Nacos与Eureka有相同点，也有不同之处，可以从以下几点来描述：</p>
+<ul>
+<li><strong>接口方式</strong>：Nacos与Eureka都对外暴露了Rest风格的API接口，用来实现服务注册、发现等功能</li>
+<li><strong>实例类型</strong>：Nacos的实例有永久和临时实例之分；而Eureka只支持临时实例</li>
+<li><strong>健康检测</strong>：Nacos对临时实例采用心跳模式检测，对永久实例采用主动请求来检测；Eureka只支持心跳模式</li>
+<li><strong>服务发现</strong>：Nacos支持定时拉取和订阅推送两种模式；Eureka只支持定时拉取模式</li>
+</ul>
+<h2 id="1-6-Sentinel的限流与Gateway的限流有什么差别？"><a href="#1-6-Sentinel的限流与Gateway的限流有什么差别？" class="headerlink" title="1.6.Sentinel的限流与Gateway的限流有什么差别？"></a>1.6.Sentinel的限流与Gateway的限流有什么差别？</h2><p><strong>问题说明</strong>：考察对限流算法的掌握情况</p>
+<p><strong>难易程度</strong>：难</p>
+<p><strong>参考话术</strong>：</p>
+<p>限流算法常见的有三种实现：滑动时间窗口、令牌桶算法、漏桶算法。Gateway则采用了基于Redis实现的令牌桶算法。</p>
+<p>而Sentinel内部却比较复杂：</p>
+<ul>
+<li>默认限流模式是基于滑动时间窗口算法</li>
+<li>排队等待的限流模式则基于漏桶算法</li>
+<li>而热点参数限流则是基于令牌桶算法</li>
+</ul>
+<h2 id="1-7-Sentinel的线程隔离与Hystix的线程隔离有什么差别"><a href="#1-7-Sentinel的线程隔离与Hystix的线程隔离有什么差别" class="headerlink" title="1.7.Sentinel的线程隔离与Hystix的线程隔离有什么差别?"></a>1.7.Sentinel的线程隔离与Hystix的线程隔离有什么差别?</h2><p><strong>问题说明</strong>：考察对线程隔离方案的掌握情况</p>
+<p><strong>难易程度</strong>：一般</p>
+<p><strong>参考话术</strong>：</p>
+<p>Hystix默认是基于线程池实现的线程隔离，每一个被隔离的业务都要创建一个独立的线程池，线程过多会带来额外的CPU开销，性能一般，但是隔离性更强。</p>
+<p>Sentinel是基于信号量（计数器）实现的线程隔离，不用创建线程池，性能较好，但是隔离性一般。</p>
+<h1 id="2-MQ篇"><a href="#2-MQ篇" class="headerlink" title="2.MQ篇"></a>2.MQ篇</h1><h2 id="2-1-你们为什么选择了RabbitMQ而不是其它的MQ？"><a href="#2-1-你们为什么选择了RabbitMQ而不是其它的MQ？" class="headerlink" title="2.1.你们为什么选择了RabbitMQ而不是其它的MQ？"></a>2.1.你们为什么选择了RabbitMQ而不是其它的MQ？</h2><p>如图：</p>
+<p><img src="/2024/09/27/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E9%9D%A2%E8%AF%95%E9%A2%98/image-20210925220034702-1727139351111-6.png" alt="image-20210925220034702"></p>
+<p><strong>话术：</strong></p>
+<p>kafka是以吞吐量高而闻名，不过其数据稳定性一般，而且无法保证消息有序性。我们公司的日志收集也有使用，业务模块中则使用的RabbitMQ。</p>
+<p>阿里巴巴的RocketMQ基于Kafka的原理，弥补了Kafka的缺点，继承了其高吞吐的优势，其客户端目前以Java为主。但是我们担心阿里巴巴开源产品的稳定性，所以就没有使用。</p>
+<p>RabbitMQ基于面向并发的语言Erlang开发，吞吐量不如Kafka，但是对我们公司来讲够用了。而且消息可靠性较好，并且消息延迟极低，集群搭建比较方便。支持多种协议，并且有各种语言的客户端，比较灵活。Spring对RabbitMQ的支持也比较好，使用起来比较方便，比较符合我们公司的需求。</p>
+<p>综合考虑我们公司的并发需求以及稳定性需求，我们选择了RabbitMQ。</p>
+<h2 id="2-2-RabbitMQ如何确保消息的不丢失？"><a href="#2-2-RabbitMQ如何确保消息的不丢失？" class="headerlink" title="2.2.RabbitMQ如何确保消息的不丢失？"></a>2.2.RabbitMQ如何确保消息的不丢失？</h2><p><strong>话术：</strong></p>
+<p>RabbitMQ针对消息传递过程中可能发生问题的各个地方，给出了针对性的解决方案：</p>
+<ul>
+<li>生产者发送消息时可能因为网络问题导致消息没有到达交换机：<ul>
+<li>RabbitMQ提供了publisher confirm机制<ul>
+<li>生产者发送消息后，可以编写ConfirmCallback函数</li>
+<li>消息成功到达交换机后，RabbitMQ会调用ConfirmCallback通知消息的发送者，返回ACK</li>
+<li>消息如果未到达交换机，RabbitMQ也会调用ConfirmCallback通知消息的发送者，返回NACK</li>
+<li>消息超时未发送成功也会抛出异常</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>消息到达交换机后，如果未能到达队列，也会导致消息丢失：<ul>
+<li>RabbitMQ提供了publisher return机制<ul>
+<li>生产者可以定义ReturnCallback函数</li>
+<li>消息到达交换机，未到达队列，RabbitMQ会调用ReturnCallback通知发送者，告知失败原因</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>消息到达队列后，MQ宕机也可能导致丢失消息：<ul>
+<li>RabbitMQ提供了持久化功能，集群的主从备份功能<ul>
+<li>消息持久化，RabbitMQ会将交换机、队列、消息持久化到磁盘，宕机重启可以恢复消息</li>
+<li>镜像集群，仲裁队列，都可以提供主从备份功能，主节点宕机，从节点会自动切换为主，数据依然在</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>消息投递给消费者后，如果消费者处理不当，也可能导致消息丢失<ul>
+<li>SpringAMQP基于RabbitMQ提供了消费者确认机制、消费者重试机制，消费者失败处理策略：<ul>
+<li>消费者的确认机制：<ul>
+<li>消费者处理消息成功，未出现异常时，Spring返回ACK给RabbitMQ，消息才被移除</li>
+<li>消费者处理消息失败，抛出异常，宕机，Spring返回NACK或者不返回结果，消息不被异常</li>
+</ul>
+</li>
+<li>消费者重试机制：<ul>
+<li>默认情况下，消费者处理失败时，消息会再次回到MQ队列，然后投递给其它消费者。Spring提供的消费者重试机制，则是在处理失败后不返回NACK，而是直接在消费者本地重试。多次重试都失败后，则按照消费者失败处理策略来处理消息。避免了消息频繁入队带来的额外压力。</li>
+</ul>
+</li>
+<li>消费者失败策略：<ul>
+<li>当消费者多次本地重试失败时，消息默认会丢弃。</li>
+<li>Spring提供了Republish策略，在多次重试都失败，耗尽重试次数后，将消息重新投递给指定的异常交换机，并且会携带上异常栈信息，帮助定位问题。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-3-RabbitMQ如何避免消息堆积？"><a href="#2-3-RabbitMQ如何避免消息堆积？" class="headerlink" title="2.3.RabbitMQ如何避免消息堆积？"></a>2.3.RabbitMQ如何避免消息堆积？</h2><p><strong>话术：</strong></p>
+<p>消息堆积问题产生的原因往往是因为消息发送的速度超过了消费者消息处理的速度。因此解决方案无外乎以下三点：</p>
+<ul>
+<li>提高消费者处理速度</li>
+<li>增加更多消费者</li>
+<li>增加队列消息存储上限</li>
+</ul>
+<p>1）提高消费者处理速度</p>
+<p>消费者处理速度是由业务代码决定的，所以我们能做的事情包括：</p>
+<ul>
+<li>尽可能优化业务代码，提高业务性能</li>
+<li>接收到消息后，开启线程池，并发处理多个消息</li>
+</ul>
+<p>优点：成本低，改改代码即可</p>
+<p>缺点：开启线程池会带来额外的性能开销，对于高频、低时延的任务不合适。推荐任务执行周期较长的业务。</p>
+<p>2）增加更多消费者</p>
+<p>一个队列绑定多个消费者，共同争抢任务，自然可以提供消息处理的速度。</p>
+<p>优点：能用钱解决的问题都不是问题。实现简单粗暴</p>
+<p>缺点：问题是没有钱。成本太高</p>
+<p>3）增加队列消息存储上限</p>
+<p>在RabbitMQ的1.8版本后，加入了新的队列模式：Lazy Queue</p>
+<p>这种队列不会将消息保存在内存中，而是在收到消息后直接写入磁盘中，理论上没有存储上限。可以解决消息堆积问题。</p>
+<p>优点：磁盘存储更安全；存储无上限；避免内存存储带来的Page Out问题，性能更稳定；</p>
+<p>缺点：磁盘存储受到IO性能的限制，消息时效性不如内存模式，但影响不大。</p>
+<h2 id="2-4-RabbitMQ如何保证消息的有序性？"><a href="#2-4-RabbitMQ如何保证消息的有序性？" class="headerlink" title="2.4.RabbitMQ如何保证消息的有序性？"></a>2.4.RabbitMQ如何保证消息的有序性？</h2><p><strong>话术：</strong></p>
+<p>其实RabbitMQ是队列存储，天然具备先进先出的特点，只要消息的发送是有序的，那么理论上接收也是有序的。不过当一个队列绑定了多个消费者时，可能出现消息轮询投递给消费者的情况，而消费者的处理顺序就无法保证了。</p>
+<p>因此，要保证消息的有序性，需要做的下面几点：</p>
+<ul>
+<li>保证消息发送的有序性</li>
+<li>保证一组有序的消息都发送到同一个队列</li>
+<li>保证一个队列只包含一个消费者</li>
+</ul>
+<h2 id="2-5-如何防止MQ消息被重复消费？"><a href="#2-5-如何防止MQ消息被重复消费？" class="headerlink" title="2.5.如何防止MQ消息被重复消费？"></a>2.5.如何防止MQ消息被重复消费？</h2><p><strong>话术：</strong></p>
+<p>消息重复消费的原因多种多样，不可避免。所以只能从消费者端入手，只要能保证消息处理的幂等性就可以确保消息不被重复消费。</p>
+<p>而幂等性的保证又有很多方案：</p>
+<ul>
+<li>给每一条消息都添加一个唯一id，在本地记录消息表及消息状态，处理消息时基于数据库表的id唯一性做判断</li>
+<li>同样是记录消息表，利用消息状态字段实现基于乐观锁的判断，保证幂等</li>
+<li>基于业务本身的幂等性。比如根据id的删除、查询业务天生幂等；新增、修改等业务可以考虑基于数据库id唯一性、或者乐观锁机制确保幂等。本质与消息表方案类似。</li>
+</ul>
+<h2 id="2-6-如何保证RabbitMQ的高可用？"><a href="#2-6-如何保证RabbitMQ的高可用？" class="headerlink" title="2.6.如何保证RabbitMQ的高可用？"></a>2.6.如何保证RabbitMQ的高可用？</h2><p><strong>话术：</strong></p>
+<p>要实现RabbitMQ的高可用无外乎下面两点：</p>
+<ul>
+<li>做好交换机、队列、消息的持久化</li>
+<li>搭建RabbitMQ的镜像集群，做好主从备份。当然也可以使用仲裁队列代替镜像集群。</li>
+</ul>
+<h2 id="2-7-使用MQ可以解决那些问题？"><a href="#2-7-使用MQ可以解决那些问题？" class="headerlink" title="2.7.使用MQ可以解决那些问题？"></a>2.7.使用MQ可以解决那些问题？</h2><p><strong>话术：</strong></p>
+<p>RabbitMQ能解决的问题很多，例如：</p>
+<ul>
+<li>解耦合：将几个业务关联的微服务调用修改为基于MQ的异步通知，可以解除微服务之间的业务耦合。同时还提高了业务性能。</li>
+<li>流量削峰：将突发的业务请求放入MQ中，作为缓冲区。后端的业务根据自己的处理能力从MQ中获取消息，逐个处理任务。流量曲线变的平滑很多</li>
+<li>延迟队列：基于RabbitMQ的死信队列或者DelayExchange插件，可以实现消息发送后，延迟接收的效果。</li>
+</ul>
+<h1 id="3-Redis篇"><a href="#3-Redis篇" class="headerlink" title="3.Redis篇"></a>3.Redis篇</h1><h2 id="3-1-Redis与Memcache的区别？"><a href="#3-1-Redis与Memcache的区别？" class="headerlink" title="3.1.Redis与Memcache的区别？"></a>3.1.Redis与Memcache的区别？</h2><ul>
+<li><code>redis支持更丰富的数据类型</code>（支持更复杂的应用场景）：Redis不仅仅支持简单的k&#x2F;v类型的数据，同时还提供list，set，zset，hash等数据结构的存储。memcache支持简单的数据类型，String。</li>
+<li><code>Redis支持数据的持久化</code>，可以将内存中的数据保持在磁盘中，重启的时候可以再次加载进行使用,而Memecache把数据全部存在内存之中。</li>
+<li><code>集群模式</code>：memcached没有原生的集群模式，需要依靠客户端来实现往集群中分片写入数据；但是 redis 目前是原生支持 cluster 模式的.</li>
+<li><code>Redis使用单线程</code>：Memcached是多线程，非阻塞IO复用的网络模型；Redis使用单线程的多路 IO 复用模型。</li>
+</ul>
+<p><img src="/2024/09/27/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E9%9D%A2%E8%AF%95%E9%A2%98/1574821356723.png" alt="1574821356723"></p>
+<h2 id="3-2-Redis的单线程问题"><a href="#3-2-Redis的单线程问题" class="headerlink" title="3.2.Redis的单线程问题"></a>3.2.Redis的单线程问题</h2><p><strong>面试官</strong>：Redis采用单线程，如何保证高并发？</p>
+<p><strong>面试话术</strong>：</p>
+<p>Redis快的主要原因是：</p>
+<ol>
+<li>完全基于内存</li>
+<li>数据结构简单，对数据操作也简单</li>
+<li>使用多路 I&#x2F;O 复用模型，充分利用CPU资源</li>
+</ol>
+<p><strong>面试官</strong>：这样做的好处是什么？</p>
+<p><strong>面试话术</strong>：</p>
+<p>单线程优势有下面几点：</p>
+<ul>
+<li>代码更清晰，处理逻辑更简单</li>
+<li>不用去考虑各种锁的问题，不存在加锁释放锁操作，没有因为锁而导致的性能消耗</li>
+<li>不存在多进程或者多线程导致的CPU切换，充分利用CPU资源</li>
+</ul>
+<h2 id="3-2-Redis的持久化方案由哪些？"><a href="#3-2-Redis的持久化方案由哪些？" class="headerlink" title="3.2.Redis的持久化方案由哪些？"></a>3.2.Redis的持久化方案由哪些？</h2><p><strong>相关资料：</strong></p>
+<p>1）RDB 持久化</p>
+<p>RDB持久化可以使用save或bgsave，为了不阻塞主进程业务，一般都使用bgsave，流程：</p>
+<ul>
+<li>Redis 进程会 fork 出一个子进程（与父进程内存数据一致）。</li>
+<li>父进程继续处理客户端请求命令</li>
+<li>由子进程将内存中的所有数据写入到一个临时的 RDB 文件中。</li>
+<li>完成写入操作之后，旧的 RDB 文件会被新的 RDB 文件替换掉。</li>
+</ul>
+<p>下面是一些和 RDB 持久化相关的配置：</p>
+<ul>
+<li><code>save 60 10000</code>：如果在 60 秒内有 10000 个 key 发生改变，那就执行 RDB 持久化。</li>
+<li><code>stop-writes-on-bgsave-error yes</code>：如果 Redis 执行 RDB 持久化失败（常见于操作系统内存不足），那么 Redis 将不再接受 client 写入数据的请求。</li>
+<li><code>rdbcompression yes</code>：当生成 RDB 文件时，同时进行压缩。</li>
+<li><code>dbfilename dump.rdb</code>：将 RDB 文件命名为 dump.rdb。</li>
+<li><code>dir /var/lib/redis</code>：将 RDB 文件保存在<code>/var/lib/redis</code>目录下。</li>
+</ul>
+<p>　　当然在实践中，我们通常会将<code>stop-writes-on-bgsave-error</code>设置为<code>false</code>，同时让监控系统在 Redis 执行 RDB 持久化失败时发送告警，以便人工介入解决，而不是粗暴地拒绝 client 的写入请求。</p>
+<p>RDB持久化的优点：</p>
+<ul>
+<li>RDB持久化文件小，Redis数据恢复时速度快</li>
+<li>子进程不影响父进程，父进程可以持续处理客户端命令</li>
+<li>子进程fork时采用copy-on-write方式，大多数情况下，没有太多的内存消耗，效率比较好。</li>
+</ul>
+<p>RDB 持久化的缺点：</p>
+<ul>
+<li>子进程fork时采用copy-on-write方式，如果Redis此时写操作较多，可能导致额外的内存占用，甚至内存溢出</li>
+<li>RDB文件压缩会减小文件体积，但通过时会对CPU有额外的消耗</li>
+<li>如果业务场景很看重数据的持久性 (durability)，那么不应该采用 RDB 持久化。譬如说，如果 Redis 每 5 分钟执行一次 RDB 持久化，要是 Redis 意外奔溃了，那么最多会丢失 5 分钟的数据。</li>
+</ul>
+<p>2）AOF 持久化</p>
+<p>　　可以使用<code>appendonly yes</code>配置项来开启 AOF 持久化。Redis 执行 AOF 持久化时，会将接收到的写命令追加到 AOF 文件的末尾，因此 Redis 只要对 AOF 文件中的命令进行回放，就可以将数据库还原到原先的状态。<br>　　与 RDB 持久化相比，AOF 持久化的一个明显优势就是，它可以提高数据的持久性 (durability)。因为在 AOF 模式下，Redis 每次接收到 client 的写命令，就会将命令<code>write()</code>到 AOF 文件末尾。<br>　　然而，在 Linux 中，将数据<code>write()</code>到文件后，数据并不会立即刷新到磁盘，而会先暂存在 OS 的文件系统缓冲区。在合适的时机，OS 才会将缓冲区的数据刷新到磁盘（如果需要将文件内容刷新到磁盘，可以调用<code>fsync()</code>或<code>fdatasync()</code>）。<br>　　通过<code>appendfsync</code>配置项，可以控制 Redis 将命令同步到磁盘的频率：</p>
+<ul>
+<li><code>always</code>：每次 Redis 将命令<code>write()</code>到 AOF 文件时，都会调用<code>fsync()</code>，将命令刷新到磁盘。这可以保证最好的数据持久性，但却会给系统带来极大的开销。</li>
+<li><code>no</code>：Redis 只将命令<code>write()</code>到 AOF 文件。这会让 OS 决定何时将命令刷新到磁盘。</li>
+<li><code>everysec</code>：除了将命令<code>write()</code>到 AOF 文件，Redis 还会每秒执行一次<code>fsync()</code>。在实践中，推荐使用这种设置，一定程度上可以保证数据持久性，又不会明显降低 Redis 性能。</li>
+</ul>
+<p>　　然而，AOF 持久化并不是没有缺点的：Redis 会不断将接收到的写命令追加到 AOF 文件中，导致 AOF 文件越来越大。过大的 AOF 文件会消耗磁盘空间，并且导致 Redis 重启时更加缓慢。为了解决这个问题，在适当情况下，Redis 会对 AOF 文件进行重写，去除文件中冗余的命令，以减小 AOF 文件的体积。在重写 AOF 文件期间， Redis 会启动一个子进程，由子进程负责对 AOF 文件进行重写。<br>　　可以通过下面两个配置项，控制 Redis 重写 AOF 文件的频率：</p>
+<ul>
+<li><code>auto-aof-rewrite-min-size 64mb</code></li>
+<li><code>auto-aof-rewrite-percentage 100</code></li>
+</ul>
+<p>　　上面两个配置的作用：当 AOF 文件的体积大于 64MB，并且 AOF 文件的体积比上一次重写之后的体积大了至少一倍，那么 Redis 就会执行 AOF 重写。</p>
+<p>优点：</p>
+<ul>
+<li>持久化频率高，数据可靠性高</li>
+<li>没有额外的内存或CPU消耗</li>
+</ul>
+<p>缺点：</p>
+<ul>
+<li>文件体积大</li>
+<li>文件大导致服务数据恢复时效率较低</li>
+</ul>
+<p><strong>面试话术：</strong></p>
+<p>Redis 提供了两种数据持久化的方式，一种是 RDB，另一种是 AOF。默认情况下，Redis 使用的是 RDB 持久化。</p>
+<p>RDB持久化文件体积较小，但是保存数据的频率一般较低，可靠性差，容易丢失数据。另外RDB写数据时会采用Fork函数拷贝主进程，可能有额外的内存消耗，文件压缩也会有额外的CPU消耗。</p>
+<p>ROF持久化可以做到每秒钟持久化一次，可靠性高。但是持久化文件体积较大，导致数据恢复时读取文件时间较长，效率略低</p>
+<h2 id="3-3-Redis的集群方式有哪些？"><a href="#3-3-Redis的集群方式有哪些？" class="headerlink" title="3.3.Redis的集群方式有哪些？"></a>3.3.Redis的集群方式有哪些？</h2><p><strong>面试话术：</strong></p>
+<p>Redis集群可以分为<strong>主从集群</strong>和<strong>分片集群</strong>两类。</p>
+<p><strong>主从集群</strong>一般一主多从，主库用来写数据，从库用来读数据。结合哨兵，可以再主库宕机时从新选主，<strong>目的是保证Redis的高可用</strong>。</p>
+<p><strong>分片集群</strong>是数据分片，我们会让多个Redis节点组成集群，并将16383个插槽分到不同的节点上。存储数据时利用对key做hash运算，得到插槽值后存储到对应的节点即可。因为存储数据面向的是插槽而非节点本身，因此可以做到集群动态伸缩。<strong>目的是让Redis能存储更多数据。</strong></p>
+<p>1）主从集群</p>
+<p>主从集群，也是读写分离集群。一般都是一主多从方式。</p>
+<p>Redis 的复制（replication）功能允许用户根据一个 Redis 服务器来创建任意多个该服务器的复制品，其中被复制的服务器为主服务器（master），而通过复制创建出来的服务器复制品则为从服务器（slave）。</p>
+<p>只要主从服务器之间的网络连接正常，主从服务器两者会具有相同的数据，主服务器就会一直将发生在自己身上的数据更新同步 给从服务器，从而一直保证主从服务器的数据相同。</p>
+<ul>
+<li>写数据时只能通过主节点完成</li>
+<li>读数据可以从任何节点完成</li>
+<li>如果配置了<code>哨兵节点</code>，当master宕机时，哨兵会从salve节点选出一个新的主。</li>
+</ul>
+<p>主从集群分两种：</p>
+<p><img src="/2024/09/27/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E9%9D%A2%E8%AF%95%E9%A2%98/1574821993599.png" alt="1574821993599"> <img src="/2024/09/27/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E9%9D%A2%E8%AF%95%E9%A2%98/1574822026037.png" alt="1574822026037"></p>
+<p>带有哨兵的集群：</p>
+<p><img src="/2024/09/27/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E9%9D%A2%E8%AF%95%E9%A2%98/1574822077190.png" alt="1574822077190"></p>
+<p>2）分片集群</p>
+<p>主从集群中，每个节点都要保存所有信息，容易形成木桶效应。并且当数据量较大时，单个机器无法满足需求。此时我们就要使用分片集群了。</p>
+<p><img src="/2024/09/27/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E9%9D%A2%E8%AF%95%E9%A2%98/1574822184467.png" alt="1574822184467"></p>
+<p>集群特征：</p>
+<ul>
+<li><p>每个节点都保存不同数据</p>
+</li>
+<li><p>所有的redis节点彼此互联(PING-PONG机制),内部使用二进制协议优化传输速度和带宽.</p>
+</li>
+<li><p>节点的fail是通过集群中超过半数的节点检测失效时才生效.</p>
+</li>
+<li><p>客户端与redis节点直连,不需要中间proxy层连接集群中任何一个可用节点都可以访问到数据</p>
+</li>
+<li><p>redis-cluster把所有的物理节点映射到[0-16383]slot（插槽）上，实现动态伸缩</p>
+</li>
+</ul>
+<p>为了保证Redis中每个节点的高可用，我们还可以给每个节点创建replication（slave节点），如图：</p>
+<p><img src="/2024/09/27/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E9%9D%A2%E8%AF%95%E9%A2%98/1574822584357.png" alt="1574822584357"></p>
+<p>出现故障时，主从可以及时切换：</p>
+<p><img src="/2024/09/27/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E9%9D%A2%E8%AF%95%E9%A2%98/1574822602109.png" alt="1574822602109"></p>
+<h2 id="3-4-Redis的常用数据类型有哪些？"><a href="#3-4-Redis的常用数据类型有哪些？" class="headerlink" title="3.4.Redis的常用数据类型有哪些？"></a>3.4.Redis的常用数据类型有哪些？</h2><p>支持多种类型的数据结构，主要区别是value存储的数据格式不同：</p>
+<ul>
+<li><p>string：最基本的数据类型，二进制安全的字符串，最大512M。</p>
+</li>
+<li><p>list：按照添加顺序保持顺序的字符串列表。</p>
+</li>
+<li><p>set：无序的字符串集合，不存在重复的元素。</p>
+</li>
+<li><p>sorted set：已排序的字符串集合。</p>
+</li>
+<li><p>hash：key-value对格式</p>
+</li>
+</ul>
+<h2 id="3-5-聊一下Redis事务机制"><a href="#3-5-聊一下Redis事务机制" class="headerlink" title="3.5.聊一下Redis事务机制"></a>3.5.聊一下Redis事务机制</h2><p><strong>相关资料：</strong></p>
+<p>参考：<a href="http://redisdoc.com/topic/transaction.html">http://redisdoc.com/topic/transaction.html</a></p>
+<p>Redis事务功能是通过MULTI、EXEC、DISCARD和WATCH 四个原语实现的。Redis会将一个事务中的所有命令序列化，然后按顺序执行。但是Redis事务不支持回滚操作，命令运行出错后，正确的命令会继续执行。</p>
+<ul>
+<li><code>MULTI</code>: 用于开启一个事务，它总是返回OK。 MULTI执行之后，客户端可以继续向服务器发送任意多条命令，这些命令不会立即被执行，而是被放到一个<strong>待执行命令队列</strong>中</li>
+<li><code>EXEC</code>：按顺序执行命令队列内的所有命令。返回所有命令的返回值。事务执行过程中，Redis不会执行其它事务的命令。</li>
+<li><code>DISCARD</code>：清空命令队列，并放弃执行事务， 并且客户端会从事务状态中退出</li>
+<li><code>WATCH</code>：Redis的乐观锁机制，利用compare-and-set（CAS）原理，可以监控一个或多个键，一旦其中有一个键被修改，之后的事务就不会执行</li>
+</ul>
+<p>使用事务时可能会遇上以下两种错误：</p>
+<ul>
+<li>执行 EXEC 之前，入队的命令可能会出错。比如说，命令可能会产生语法错误（参数数量错误，参数名错误，等等），或者其他更严重的错误，比如内存不足（如果服务器使用 <code>maxmemory</code> 设置了最大内存限制的话）。<ul>
+<li>Redis 2.6.5 开始，服务器会对命令入队失败的情况进行记录，并在客户端调用 EXEC 命令时，拒绝执行并自动放弃这个事务。</li>
+</ul>
+</li>
+<li>命令可能在 EXEC 调用之后失败。举个例子，事务中的命令可能处理了错误类型的键，比如将列表命令用在了字符串键上面，诸如此类。<ul>
+<li>即使事务中有某个&#x2F;某些命令在执行时产生了错误， 事务中的其他命令仍然会继续执行，不会回滚。</li>
+</ul>
+</li>
+</ul>
+<p>为什么 Redis 不支持回滚（roll back）？</p>
+<p>以下是这种做法的优点：</p>
+<ul>
+<li>Redis 命令只会因为错误的语法而失败（并且这些问题不能在入队时发现），或是命令用在了错误类型的键上面：这也就是说，从实用性的角度来说，失败的命令是由<strong>编程错误</strong>造成的，而这些错误应该在开发的过程中被发现，而不应该出现在生产环境中。</li>
+<li>因为不需要对回滚进行支持，所以 Redis 的内部可以保持简单且快速。</li>
+</ul>
+<p>鉴于没有任何机制能避免程序员自己造成的错误， 并且这类错误通常不会在生产环境中出现， 所以 Redis 选择了更简单、更快速的无回滚方式来处理事务。</p>
+<p><strong>面试话术：</strong></p>
+<p>Redis事务其实是把一系列Redis命令放入队列，然后批量执行，执行过程中不会有其它事务来打断。不过与关系型数据库的事务不同，Redis事务不支持回滚操作，事务中某个命令执行失败，其它命令依然会执行。</p>
+<p>为了弥补不能回滚的问题，Redis会在事务入队时就检查命令，如果命令异常则会放弃整个事务。</p>
+<p>因此，只要程序员编程是正确的，理论上说Redis会正确执行所有事务，无需回滚。</p>
+<p>面试官：如果事务执行一半的时候Redis宕机怎么办？</p>
+<p>Redis有持久化机制，因为可靠性问题，我们一般使用AOF持久化。事务的所有命令也会写入AOF文件，但是如果在执行EXEC命令之前，Redis已经宕机，则AOF文件中事务不完整。使用 <code>redis-check-aof</code> 程序可以移除 AOF 文件中不完整事务的信息，确保服务器可以顺利启动。</p>
+<h2 id="3-6-Redis的Key过期策略"><a href="#3-6-Redis的Key过期策略" class="headerlink" title="3.6.Redis的Key过期策略"></a>3.6.Redis的Key过期策略</h2><h3 id="参考资料："><a href="#参考资料：" class="headerlink" title="参考资料："></a><strong>参考资料：</strong></h3><h4 id="为什么需要内存回收？"><a href="#为什么需要内存回收？" class="headerlink" title="为什么需要内存回收？"></a>为什么需要内存回收？</h4><ul>
+<li>1、在Redis中，set指令可以指定key的过期时间，当过期时间到达以后，key就失效了；</li>
+<li>2、Redis是基于内存操作的，所有的数据都是保存在内存中，一台机器的内存是有限且很宝贵的。</li>
+</ul>
+<p>基于以上两点，为了保证Redis能继续提供可靠的服务，Redis需要一种机制清理掉不常用的、无效的、多余的数据，失效后的数据需要及时清理，这就需要内存回收了。</p>
+<p>Redis的内存回收主要分为过期删除策略和内存淘汰策略两部分。</p>
+<h4 id="过期删除策略"><a href="#过期删除策略" class="headerlink" title="过期删除策略"></a>过期删除策略</h4><p>删除达到过期时间的key。</p>
+<ul>
+<li>1）定时删除</li>
+</ul>
+<p>对于每一个设置了过期时间的key都会创建一个定时器，一旦到达过期时间就立即删除。该策略可以立即清除过期的数据，对内存较友好，但是缺点是占用了大量的CPU资源去处理过期的数据，会影响Redis的吞吐量和响应时间。</p>
+<ul>
+<li>2）惰性删除</li>
+</ul>
+<p>当访问一个key时，才判断该key是否过期，过期则删除。该策略能最大限度地节省CPU资源，但是对内存却十分不友好。有一种极端的情况是可能出现大量的过期key没有被再次访问，因此不会被清除，导致占用了大量的内存。</p>
+<blockquote>
+<p>在计算机科学中，懒惰删除（英文：lazy deletion）指的是从一个散列表（也称哈希表）中删除元素的一种方法。在这个方法中，删除仅仅是指标记一个元素被删除，而不是整个清除它。被删除的位点在插入时被当作空元素，在搜索之时被当作已占据。</p>
+</blockquote>
+<ul>
+<li>3）定期删除</li>
+</ul>
+<p>每隔一段时间，扫描Redis中过期key字典，并清除部分过期的key。该策略是前两者的一个折中方案，还可以通过调整定时扫描的时间间隔和每次扫描的限定耗时，在不同情况下使得CPU和内存资源达到最优的平衡效果。</p>
+<p>在Redis中，<code>同时使用了定期删除和惰性删除</code>。不过Redis定期删除采用的是随机抽取的方式删除部分Key，因此不能保证过期key 100%的删除。</p>
+<p>Redis结合了定期删除和惰性删除，基本上能很好的处理过期数据的清理，但是实际上还是有点问题的，如果过期key较多，定期删除漏掉了一部分，而且也没有及时去查，即没有走惰性删除，那么就会有大量的过期key堆积在内存中，导致redis内存耗尽，当内存耗尽之后，有新的key到来会发生什么事呢？是直接抛弃还是其他措施呢？有什么办法可以接受更多的key？</p>
+<h4 id="内存淘汰策略"><a href="#内存淘汰策略" class="headerlink" title="内存淘汰策略"></a>内存淘汰策略</h4><p>Redis的内存淘汰策略，是指内存达到maxmemory极限时，使用某种算法来决定清理掉哪些数据，以保证新数据的存入。</p>
+<p>Redis的内存淘汰机制包括：</p>
+<ul>
+<li>noeviction: 当内存不足以容纳新写入数据时，新写入操作会报错。</li>
+<li>allkeys-lru：当内存不足以容纳新写入数据时，在键空间（<code>server.db[i].dict</code>）中，移除最近最少使用的 key（这个是最常用的）。</li>
+<li>allkeys-random：当内存不足以容纳新写入数据时，在键空间（<code>server.db[i].dict</code>）中，随机移除某个 key。</li>
+<li>volatile-lru：当内存不足以容纳新写入数据时，在设置了过期时间的键空间（<code>server.db[i].expires</code>）中，移除最近最少使用的 key。</li>
+<li>volatile-random：当内存不足以容纳新写入数据时，在设置了过期时间的键空间（<code>server.db[i].expires</code>）中，随机移除某个 key。</li>
+<li>volatile-ttl：当内存不足以容纳新写入数据时，在设置了过期时间的键空间（<code>server.db[i].expires</code>）中，有更早过期时间的 key 优先移除。</li>
+</ul>
+<blockquote>
+<p>在配置文件中，通过maxmemory-policy可以配置要使用哪一个淘汰机制。</p>
+</blockquote>
+<p>什么时候会进行淘汰？</p>
+<p>Redis会在每一次处理命令的时候（processCommand函数调用freeMemoryIfNeeded）判断当前redis是否达到了内存的最大限制，如果达到限制，则使用对应的算法去处理需要删除的key。</p>
+<p>在淘汰key时，Redis默认最常用的是LRU算法（Latest Recently Used）。Redis通过在每一个redisObject保存lru属性来保存key最近的访问时间，在实现LRU算法时直接读取key的lru属性。</p>
+<p>具体实现时，Redis遍历每一个db，从每一个db中随机抽取一批样本key，默认是3个key，再从这3个key中，删除最近最少使用的key。</p>
+<h3 id="面试话术："><a href="#面试话术：" class="headerlink" title="面试话术："></a>面试话术：</h3><p>Redis过期策略包含定期删除和惰性删除两部分。定期删除是在Redis内部有一个定时任务，会定期删除一些过期的key。惰性删除是当用户查询某个Key时，会检查这个Key是否已经过期，如果没过期则返回用户，如果过期则删除。</p>
+<p>但是这两个策略都无法保证过期key一定删除，漏网之鱼越来越多，还可能导致内存溢出。当发生内存不足问题时，Redis还会做内存回收。内存回收采用LRU策略，就是最近最少使用。其原理就是记录每个Key的最近使用时间，内存回收时，随机抽取一些Key，比较其使用时间，把最老的几个删除。</p>
+<p>Redis的逻辑是：最近使用过的，很可能再次被使用</p>
+<h2 id="3-7-Redis在项目中的哪些地方有用到"><a href="#3-7-Redis在项目中的哪些地方有用到" class="headerlink" title="3.7.Redis在项目中的哪些地方有用到?"></a>3.7.Redis在项目中的哪些地方有用到?</h2><p>（1）共享session</p>
+<p>在分布式系统下，服务会部署在不同的tomcat，因此多个tomcat的session无法共享，以前存储在session中的数据无法实现共享，可以用redis代替session，解决分布式系统间数据共享问题。</p>
+<p>（2）数据缓存</p>
+<p>Redis采用内存存储，读写效率较高。我们可以把数据库的访问频率高的热点数据存储到redis中，这样用户请求时优先从redis中读取，减少数据库压力，提高并发能力。</p>
+<p>（3）异步队列</p>
+<p>Reids在内存存储引擎领域的一大优点是提供 list 和 set 操作，这使得Redis能作为一个很好的消息队列平台来使用。而且Redis中还有pub&#x2F;sub这样的专用结构，用于1对N的消息通信模式。</p>
+<p>（4）分布式锁</p>
+<p>Redis中的乐观锁机制，可以帮助我们实现分布式锁的效果，用于解决分布式系统下的多线程安全问题</p>
+<h2 id="3-8-Redis的缓存击穿、缓存雪崩、缓存穿透"><a href="#3-8-Redis的缓存击穿、缓存雪崩、缓存穿透" class="headerlink" title="3.8.Redis的缓存击穿、缓存雪崩、缓存穿透"></a>3.8.Redis的缓存击穿、缓存雪崩、缓存穿透</h2><h3 id="1）缓存穿透"><a href="#1）缓存穿透" class="headerlink" title="1）缓存穿透"></a>1）缓存穿透</h3><p>参考资料：</p>
+<ul>
+<li><p>什么是缓存穿透</p>
+<ul>
+<li>正常情况下，我们去查询数据都是存在。那么请求去查询一条压根儿数据库中根本就不存在的数据，也就是缓存和数据库都查询不到这条数据，但是请求每次都会打到数据库上面去。这种查询不存在数据的现象我们称为<strong>缓存穿透</strong>。</li>
+</ul>
+</li>
+<li><p>穿透带来的问题</p>
+<ul>
+<li>试想一下，如果有黑客会对你的系统进行攻击，拿一个不存在的id 去查询数据，会产生大量的请求到数据库去查询。可能会导致你的数据库由于压力过大而宕掉。</li>
+</ul>
+</li>
+<li><p>解决办法</p>
+<ul>
+<li>缓存空值：之所以会发生穿透，就是因为缓存中没有存储这些空数据的key。从而导致每次查询都到数据库去了。那么我们就可以为这些key对应的值设置为null 丢到缓存里面去。后面再出现查询这个key 的请求的时候，直接返回null 。这样，就不用在到数据库中去走一圈了，但是别忘了设置过期时间。</li>
+<li>BloomFilter（布隆过滤）：将所有可能存在的数据哈希到一个足够大的bitmap中，一个一定不存在的数据会被 这个bitmap拦截掉，从而避免了对底层存储系统的查询压力。在缓存之前在加一层 BloomFilter ，在查询的时候先去 BloomFilter 去查询 key 是否存在，如果不存在就直接返回，存在再走查缓存 -&gt; 查 DB。</li>
+</ul>
+</li>
+</ul>
+<p><strong>话术：</strong></p>
+<p>缓存穿透有两种解决方案：<strong>其一</strong>是把不存在的key设置null值到缓存中。<strong>其二</strong>是使用布隆过滤器，在查询缓存前先通过布隆过滤器判断key是否存在，存在再去查询缓存。</p>
+<p>设置null值可能被恶意针对，攻击者使用大量不存在的不重复key ，那么方案一就会缓存大量不存在key数据。此时我们还可以对Key规定格式模板，然后对不存在的key做<strong>正则规范</strong>匹配，如果完全不符合就不用存null值到redis，而是直接返回错误。</p>
+<h3 id="2）缓存击穿"><a href="#2）缓存击穿" class="headerlink" title="2）缓存击穿"></a>2）缓存击穿</h3><p><strong>相关资料</strong>：</p>
+<ul>
+<li>什么是缓存击穿？</li>
+</ul>
+<p>key可能会在某些时间点被超高并发地访问，是一种非常“热点”的数据。这个时候，需要考虑一个问题：缓存被“击穿”的问题。</p>
+<p>当这个key在失效的瞬间，redis查询失败，持续的大并发就穿破缓存，直接请求数据库，就像在一个屏障上凿开了一个洞。</p>
+<ul>
+<li>解决方案：<ul>
+<li>使用互斥锁(mutex key)：mutex，就是互斥。简单地来说，就是在缓存失效的时候（判断拿出来的值为空），不是立即去load db，而是先使用Redis的SETNX去set一个互斥key，当操作返回成功时，再进行load db的操作并回设缓存；否则，就重试整个get缓存的方法。SETNX，是「SET if Not eXists」的缩写，也就是只有不存在的时候才设置，可以利用它来实现互斥的效果。</li>
+<li>软过期：也就是逻辑过期，不使用redis提供的过期时间，而是业务层在数据中存储过期时间信息。查询时由业务程序判断是否过期，如果数据即将过期时，将缓存的时效延长，程序可以派遣一个线程去数据库中获取最新的数据，其他线程这时看到延长了的过期时间，就会继续使用旧数据，等派遣的线程获取最新数据后再更新缓存。</li>
+</ul>
+</li>
+</ul>
+<p>推荐使用互斥锁，因为软过期会有业务逻辑侵入和额外的判断。</p>
+<p><strong>面试话术</strong>：</p>
+<p>缓存击穿主要担心的是某个Key过期，更新缓存时引起对数据库的突发高并发访问。因此我们可以在更新缓存时采用互斥锁控制，只允许一个线程去更新缓存，其它线程等待并重新读取缓存。例如Redis的setnx命令就能实现互斥效果。</p>
+<h3 id="3）缓存雪崩"><a href="#3）缓存雪崩" class="headerlink" title="3）缓存雪崩"></a>3）缓存雪崩</h3><p><strong>相关资料</strong>：</p>
+<p>缓存雪崩，是指在某一个时间段，缓存集中过期失效。对这批数据的访问查询，都落到了数据库上，对于数据库而言，就会产生周期性的压力波峰。</p>
+<p>解决方案：</p>
+<ul>
+<li>数据分类分批处理：采取不同分类数据，缓存不同周期</li>
+<li>相同分类数据：采用固定时长加随机数方式设置缓存</li>
+<li>热点数据缓存时间长一些，冷门数据缓存时间短一些</li>
+<li>避免redis节点宕机引起雪崩，搭建主从集群，保证高可用</li>
+</ul>
+<p><strong>面试话术：</strong></p>
+<p>解决缓存雪崩问题的关键是让缓存Key的过期时间分散。因此我们可以把数据按照业务分类，然后设置不同过期时间。相同业务类型的key，设置固定时长加随机数。尽可能保证每个Key的过期时间都不相同。</p>
+<p>另外，Redis宕机也可能导致缓存雪崩，因此我们还要搭建Redis主从集群及哨兵监控，保证Redis的高可用。</p>
+<h2 id="3-9-缓存冷热数据分离"><a href="#3-9-缓存冷热数据分离" class="headerlink" title="3.9.缓存冷热数据分离"></a>3.9.缓存冷热数据分离</h2><p><strong>背景资料</strong>：</p>
+<p>Redis使用的是内存存储，当需要海量数据存储时，成本非常高。</p>
+<p>经过调研发现，当前主流DDR3内存和主流SATA SSD的单位成本价格差距大概在20倍左右，为了优化redis机器综合成本，我们考虑实现基于<strong>热度统计 的数据分级存储</strong>及数据在RAM&#x2F;FLASH之间的动态交换，从而大幅度降低成本，达到性能与成本的高平衡。</p>
+<p>基本思路：基于key访问次数(LFU)的热度统计算法识别出热点数据，并将热点数据保留在redis中，对于无访问&#x2F;访问次数少的数据则转存到SSD上，如果SSD上的key再次变热，则重新将其加载到redis内存中。</p>
+<p>目前流行的高性能磁盘存储，并且遵循Redis协议的方案包括：</p>
+<ul>
+<li>SSDB：<a href="http://ssdb.io/zh_cn/">http://ssdb.io/zh_cn&#x2F;</a></li>
+<li>RocksDB：<a href="https://rocksdb.org.cn/">https://rocksdb.org.cn/</a></li>
+</ul>
+<p>因此，我们就需要在应用程序与缓存服务之间引入代理，实现Redis和SSD之间的切换，如图：</p>
+<p><img src="/2024/09/27/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E9%9D%A2%E8%AF%95%E9%A2%98/image-20200521115702956.png" alt="image-20200521115702956"></p>
+<p>这样的代理方案阿里云提供的就有。当然也有一些开源方案，例如：<a href="https://github.com/JingchengLi/swapdb">https://github.com/JingchengLi/swapdb</a></p>
+<h2 id="3-10-Redis实现分布式锁"><a href="#3-10-Redis实现分布式锁" class="headerlink" title="3.10.Redis实现分布式锁"></a>3.10.Redis实现分布式锁</h2><p>分布式锁要满足的条件：</p>
+<ul>
+<li>多进程互斥：同一时刻，只有一个进程可以获取锁</li>
+<li>保证锁可以释放：任务结束或出现异常，锁一定要释放，避免死锁</li>
+<li>阻塞锁（可选）：获取锁失败时可否重试</li>
+<li>重入锁（可选）：获取锁的代码递归调用时，依然可以获取锁</li>
+</ul>
+<h3 id="1）最基本的分布式锁："><a href="#1）最基本的分布式锁：" class="headerlink" title="1）最基本的分布式锁："></a>1）最基本的分布式锁：</h3><p>利用Redis的setnx命令，这个命令的特征时如果多次执行，只有第一次执行会成功，可以实现<code>互斥</code>的效果。但是为了保证服务宕机时也可以释放锁，需要利用expire命令给锁设置一个有效期</p>
+<table><tbody><tr><td class="code"><pre><span class="line">setnx lock thread-01 # 尝试获取锁</span><br><span class="line">expire lock 10 # 设置有效期</span><br></pre></td></tr></tbody></table>
+
+<p><strong>面试官问题1</strong>：如果expire之前服务宕机怎么办？</p>
+<p>要保证setnx和expire命令的原子性。redis的set命令可以满足：</p>
+<table><tbody><tr><td class="code"><pre><span class="line">set key value [NX] [EX time] </span><br></pre></td></tr></tbody></table>
+
+<p>需要添加nx和ex的选项：</p>
+<ul>
+<li>NX：与setnx一致，第一次执行成功</li>
+<li>EX：设置过期时间</li>
+</ul>
+<p><strong>面试官问题2</strong>：释放锁的时候，如果自己的锁已经过期了，此时会出现安全漏洞，如何解决？</p>
+<p>在锁中存储当前进程和线程标识，释放锁时对锁的标识判断，如果是自己的则删除，不是则放弃操作。</p>
+<p>但是这两步操作要保证原子性，需要通过Lua脚本来实现。</p>
+<table><tbody><tr><td class="code"><pre><span class="line">if redis.call("get",KEYS[1]) == ARGV[1] then</span><br><span class="line">    redis.call("del",KEYS[1])</span><br><span class="line">end</span><br></pre></td></tr></tbody></table>
+
+<h3 id="2）可重入分布式锁"><a href="#2）可重入分布式锁" class="headerlink" title="2）可重入分布式锁"></a>2）可重入分布式锁</h3><p>如果有重入的需求，则除了在锁中记录进程标识，还要记录重试次数，流程如下：</p>
+<p><img src="/2024/09/27/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E9%9D%A2%E8%AF%95%E9%A2%98/1574824172228.png" alt="1574824172228"></p>
+<p>下面我们假设锁的key为“<code>lock</code>”，hashKey是当前线程的id：“<code>threadId</code>”，锁自动释放时间假设为20</p>
+<p>获取锁的步骤：</p>
+<ul>
+<li>1、判断lock是否存在 <code>EXISTS lock</code><ul>
+<li>存在，说明有人获取锁了，下面判断是不是自己的锁<ul>
+<li>判断当前线程id作为hashKey是否存在：<code>HEXISTS lock threadId</code><ul>
+<li>不存在，说明锁已经有了，且不是自己获取的，锁获取失败，end</li>
+<li>存在，说明是自己获取的锁，重入次数+1：<code>HINCRBY lock threadId 1</code>，去到步骤3</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>2、不存在，说明可以获取锁，<code>HSET key threadId 1</code></li>
+<li>3、设置锁自动释放时间，<code>EXPIRE lock 20</code></li>
+</ul>
+</li>
+</ul>
+<p>释放锁的步骤：</p>
+<ul>
+<li>1、判断当前线程id作为hashKey是否存在：<code>HEXISTS lock threadId</code><ul>
+<li>不存在，说明锁已经失效，不用管了</li>
+<li>存在，说明锁还在，重入次数减1：<code>HINCRBY lock threadId -1</code>，获取新的重入次数</li>
+</ul>
+</li>
+<li>2、判断重入次数是否为0：<ul>
+<li>为0，说明锁全部释放，删除key：<code>DEL lock</code></li>
+<li>大于0，说明锁还在使用，重置有效时间：<code>EXPIRE lock 20</code></li>
+</ul>
+</li>
+</ul>
+<p>对应的Lua脚本如下：</p>
+<p>首先是获取锁：</p>
+<table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">local</span> key = KEYS[<span class="number">1</span>]; <span class="comment">-- 锁的key</span></span><br><span class="line"><span class="keyword">local</span> threadId = ARGV[<span class="number">1</span>]; <span class="comment">-- 线程唯一标识</span></span><br><span class="line"><span class="keyword">local</span> releaseTime = ARGV[<span class="number">2</span>]; <span class="comment">-- 锁的自动释放时间</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(redis.call(<span class="string">'exists'</span>, key) == <span class="number">0</span>) <span class="keyword">then</span> <span class="comment">-- 判断是否存在</span></span><br><span class="line">	redis.call(<span class="string">'hset'</span>, key, threadId, <span class="string">'1'</span>); <span class="comment">-- 不存在, 获取锁</span></span><br><span class="line">	redis.call(<span class="string">'expire'</span>, key, releaseTime); <span class="comment">-- 设置有效期</span></span><br><span class="line">	<span class="keyword">return</span> <span class="number">1</span>; <span class="comment">-- 返回结果</span></span><br><span class="line"><span class="keyword">end</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(redis.call(<span class="string">'hexists'</span>, key, threadId) == <span class="number">1</span>) <span class="keyword">then</span> <span class="comment">-- 锁已经存在，判断threadId是否是自己	</span></span><br><span class="line">	redis.call(<span class="string">'hincrby'</span>, key, threadId, <span class="string">'1'</span>); <span class="comment">-- 不存在, 获取锁，重入次数+1</span></span><br><span class="line">	redis.call(<span class="string">'expire'</span>, key, releaseTime); <span class="comment">-- 设置有效期</span></span><br><span class="line">	<span class="keyword">return</span> <span class="number">1</span>; <span class="comment">-- 返回结果</span></span><br><span class="line"><span class="keyword">end</span>;</span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>; <span class="comment">-- 代码走到这里,说明获取锁的不是自己，获取锁失败</span></span><br></pre></td></tr></tbody></table>
+
+<p>然后是释放锁：</p>
+<table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">local</span> key = KEYS[<span class="number">1</span>]; <span class="comment">-- 锁的key</span></span><br><span class="line"><span class="keyword">local</span> threadId = ARGV[<span class="number">1</span>]; <span class="comment">-- 线程唯一标识</span></span><br><span class="line"><span class="keyword">local</span> releaseTime = ARGV[<span class="number">2</span>]; <span class="comment">-- 锁的自动释放时间</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (redis.call(<span class="string">'HEXISTS'</span>, key, threadId) == <span class="number">0</span>) <span class="keyword">then</span> <span class="comment">-- 判断当前锁是否还是被自己持有</span></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">nil</span>; <span class="comment">-- 如果已经不是自己，则直接返回</span></span><br><span class="line"><span class="keyword">end</span>;</span><br><span class="line"><span class="keyword">local</span> count = redis.call(<span class="string">'HINCRBY'</span>, key, threadId, <span class="number">-1</span>); <span class="comment">-- 是自己的锁，则重入次数-1</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (count &gt; <span class="number">0</span>) <span class="keyword">then</span> <span class="comment">-- 判断是否重入次数是否已经为0</span></span><br><span class="line">    redis.call(<span class="string">'EXPIRE'</span>, key, releaseTime); <span class="comment">-- 大于0说明不能释放锁，重置有效期然后返回</span></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">nil</span>;</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">    redis.call(<span class="string">'DEL'</span>, key); <span class="comment">-- 等于0说明可以释放锁，直接删除</span></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">nil</span>;</span><br><span class="line"><span class="keyword">end</span>;</span><br></pre></td></tr></tbody></table>
+
+<h3 id="3）高可用的锁"><a href="#3）高可用的锁" class="headerlink" title="3）高可用的锁"></a>3）高可用的锁</h3><p><code>面试官问题</code>：redis分布式锁依赖与redis，如果redis宕机则锁失效。如何解决？</p>
+<p>此时大多数同学会回答说：搭建主从集群，做数据备份。</p>
+<p>这样就进入了陷阱，因为面试官的下一个问题就来了：</p>
+<p><code>面试官问题</code>：如果搭建主从集群做数据备份时，进程A获取锁，master还没有把数据备份到slave，master宕机，slave升级为master，此时原来锁失效，其它进程也可以获取锁，出现安全问题。如何解决？</p>
+<p>关于这个问题，Redis官网给出了解决方案，使用RedLock思路可以解决：</p>
+<blockquote>
+<p>在Redis的分布式环境中，我们假设有N个Redis master。这些节点完全互相独立，不存在主从复制或者其他集群协调机制。之前我们已经描述了在Redis单实例下怎么安全地获取和释放锁。我们确保将在每（N)个实例上使用此方法获取和释放锁。在这个样例中，我们假设有5个Redis master节点，这是一个比较合理的设置，所以我们需要在5台机器上面或者5台虚拟机上面运行这些实例，这样保证他们不会同时都宕掉。</p>
+<p>为了取到锁，客户端应该执行以下操作:</p>
+<ol>
+<li>获取当前Unix时间，以毫秒为单位。</li>
+<li>依次尝试从N个实例，使用相同的key和随机值获取锁。在步骤2，当向Redis设置锁时,客户端应该设置一个网络连接和响应超时时间，这个超时时间应该小于锁的失效时间。例如你的锁自动失效时间为10秒，则超时时间应该在5-50毫秒之间。这样可以避免服务器端Redis已经挂掉的情况下，客户端还在死死地等待响应结果。如果服务器端没有在规定时间内响应，客户端应该尽快尝试另外一个Redis实例。</li>
+<li>客户端使用当前时间减去开始获取锁时间（步骤1记录的时间）就得到获取锁使用的时间。当且仅当从大多数（这里是3个节点）的Redis节点都取到锁，并且使用的时间小于锁失效时间时，锁才算获取成功。</li>
+<li>如果取到了锁，key的真正有效时间等于有效时间减去获取锁所使用的时间（步骤3计算的结果）。</li>
+<li>如果因为某些原因，获取锁失败（<em>没有</em>在至少N&#x2F;2+1个Redis实例取到锁或者取锁时间已经超过了有效时间），客户端应该在所有的Redis实例上进行解锁（即便某些Redis实例根本就没有加锁成功）。</li>
+</ol>
+</blockquote>
+<h2 id="3-11-如何实现数据库与缓存数据一致？"><a href="#3-11-如何实现数据库与缓存数据一致？" class="headerlink" title="3.11.如何实现数据库与缓存数据一致？"></a>3.11.如何实现数据库与缓存数据一致？</h2><p>面试话术：</p>
+<p>实现方案有下面几种：</p>
+<ul>
+<li>本地缓存同步：当前微服务的数据库数据与缓存数据同步，可以直接在数据库修改时加入对Redis的修改逻辑，保证一致。</li>
+<li>跨服务缓存同步：服务A调用了服务B，并对查询结果缓存。服务B数据库修改，可以通过MQ通知服务A，服务A修改Redis缓存数据</li>
+<li>通用方案：使用Canal框架，伪装成MySQL的salve节点，监听MySQL的binLog变化，然后修改Redis缓存数据</li>
+</ul>
 ]]></content>
       <categories>
         <category>微服务</category>
