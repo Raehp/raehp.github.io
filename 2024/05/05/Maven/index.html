@@ -211,26 +211,26 @@
 <p>上面三个场景出现的时间是不相同的，如果非要把三个场景的模块代码放入到一个项目，那么当其中某一个模块代码出现问题，就会导致整个项目无法正常启动，从而导致银行的多个业务都无法正常班理。所以我们会&#x3D;&#x3D;按照功能&#x3D;&#x3D;将项目进行拆分。</p>
 <p>(2)按照模块拆分</p>
 <p>比如电商的项目中，有订单和商品两个模块，订单中需要包含商品的详细信息，所以需要商品的模型类，商品模块也会用到商品的模型类，这个时候如果两个模块中都写模型类，就会出现重复代码，后期的维护成本就比较高。我们就想能不能将它们公共的部分抽取成一个独立的模块，其他模块要想使用可以像添加第三方jar包依赖一样来使用我们自己抽取的模块，这样就解决了代码重复的问题,这种拆分方式就说我们所说的&#x3D;&#x3D;按照模块&#x3D;&#x3D;拆分。</p>
-<p><img src="/1630768703430-1719410661546-1.png" alt="1630768703430"></p>
+<p><img src="/2024/05/05/Maven/1630768703430-1719410661546-1.png" alt="1630768703430"></p>
 <p>经过两个案例的分析，我们就知道:</p>
 <ul>
 <li>将原始模块按照功能拆分成若干个子模块，方便模块间的相互调用，接口共享。</li>
 </ul>
 <p>刚刚我们说了可以将domain层进行拆分，除了domain层，我们也可以将其他的层也拆成一个个对立的模块，如:</p>
-<p><img src="/1630768869208-1719410661546-2.png" alt="1630768869208"></p>
+<p><img src="/2024/05/05/Maven/1630768869208-1719410661546-2.png" alt="1630768869208"></p>
 <p>这样的话，项目中的每一层都可以单独维护，也可以很方便的被别人使用。关于分模块开发的意义，我们就说完了，说了这么多好处，那么该如何实现呢?</p>
 <h3 id="分模块开发实现"><a href="#分模块开发实现" class="headerlink" title="分模块开发实现"></a>分模块开发实现</h3><p>前面我们已经完成了SSM整合，接下来，咱们就基于SSM整合的项目来实现对项目的拆分。</p>
 <h4 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h4><p>将<code>资料\maven_02_ssm</code>部署到IDEA中，将环境快速准备好，部署成功后，项目的格式如下:</p>
-<p><img src="/1630769969416-1719410661547-3.png" alt="1630769969416"></p>
+<p><img src="/2024/05/05/Maven/1630769969416-1719410661547-3.png" alt="1630769969416"></p>
 <h4 id="抽取domain层"><a href="#抽取domain层" class="headerlink" title="抽取domain层"></a>抽取domain层</h4><p><strong>步骤1:创建新模块</strong></p>
 <p>创建一个名称为<code>maven_03_pojo</code>的jar项目,为什么项目名是从02到03这样创建，原因后面我们会提到，这块的名称可以任意。</p>
-<p><img src="/1630771178137-1719410661547-4.png" alt="1630771178137"></p>
+<p><img src="/2024/05/05/Maven/1630771178137-1719410661547-4.png" alt="1630771178137"></p>
 <p><strong>步骤2:项目中创建domain包</strong></p>
 <p>在<code>maven_03_pojo</code>项目中创建<code>com.itheima.domain</code>包，并将<code>maven_02_ssm</code>中Book类拷贝到该包中</p>
-<p><img src="/1630771371487-1719410661547-5.png" alt="1630771371487"></p>
+<p><img src="/2024/05/05/Maven/1630771371487-1719410661547-5.png" alt="1630771371487"></p>
 <p><strong>步骤3:删除原项目中的domain包</strong></p>
 <p>删除后，<code>maven_02_ssm</code>项目中用到<code>Book</code>的类中都会有红色提示，如下:</p>
-<p><img src="/1630771505703-1719410661547-6.png" alt="1630771505703"></p>
+<p><img src="/2024/05/05/Maven/1630771505703-1719410661547-6.png" alt="1630771505703"></p>
 <p>**说明:**出错的原因是<code>maven_02_ssm</code>中已经将Book类删除，所以该项目找不到Book类，所以报错</p>
 <p>要想解决上述问题，我们需要在<code>maven_02_ssm</code>中添加<code>maven_03_pojo</code>的依赖。</p>
 <p><strong>步骤4:建立依赖关系</strong></p>
@@ -240,26 +240,26 @@
 <p>因为添加了依赖，所以在<code>maven_02_ssm</code>中就已经能找到Book类，所以刚才的报红提示就会消失。</p>
 <p><strong>步骤5:编译<code>maven_02_ssm</code>项目</strong></p>
 <p>编译<code>maven_02_ssm</code>你会在控制台看到如下错误</p>
-<p><img src="/1630771987325-1719410661547-7.png" alt="1630771987325"></p>
+<p><img src="/2024/05/05/Maven/1630771987325-1719410661547-7.png" alt="1630771987325"></p>
 <p>错误信息为：不能解决<code>maven_02_ssm</code>项目的依赖问题，找不到<code>maven_03_pojo</code>这个jar包。</p>
 <p>为什么找不到呢?</p>
 <p>原因是Maven会从本地仓库找对应的jar包，但是本地仓库又不存在该jar包所以会报错。</p>
 <p>在IDEA中是有<code>maven_03_pojo</code>这个项目，所以我们只需要将<code>maven_03_pojo</code>项目安装到本地仓库即可。</p>
 <p><strong>步骤6:将项目安装本地仓库</strong></p>
 <p>将需要被依赖的项目<code>maven_03_pojo</code>，使用maven的install命令，把其安装到Maven的本地仓库中。</p>
-<p><img src="/1630773180969-1719410661547-8.png" alt="1630773180969"></p>
+<p><img src="/2024/05/05/Maven/1630773180969-1719410661547-8.png" alt="1630773180969"></p>
 <p>安装成功后，在对应的路径下就看到安装好的jar包</p>
-<p><img src="/1630773262441-1719410661547-9.png" alt="1630773262441"></p>
+<p><img src="/2024/05/05/Maven/1630773262441-1719410661547-9.png" alt="1630773262441"></p>
 <p>**说明:**具体安装在哪里，和你们自己电脑上Maven的本地仓库配置的位置有关。</p>
 <p>当再次执行<code>maven_02_ssm</code>的compile的命令后，就已经能够成功编译。</p>
 <h4 id="抽取Dao层"><a href="#抽取Dao层" class="headerlink" title="抽取Dao层"></a>抽取Dao层</h4><p><strong>步骤1:创建新模块</strong></p>
 <p>创建一个名称为<code>maven_04_dao</code>的jar项目</p>
-<p><img src="/1630773580067-1719410661547-10.png" alt="1630773580067"></p>
+<p><img src="/2024/05/05/Maven/1630773580067-1719410661547-10.png" alt="1630773580067"></p>
 <p><strong>步骤2:项目中创建dao包</strong></p>
 <p>在<code>maven_04_dao</code>项目中创建<code>com.itheima.dao</code>包，并将<code>maven_02_ssm</code>中BookDao类拷贝到该包中</p>
-<p><img src="/1630773695062-1719410661547-11.png" alt="1630773695062"></p>
+<p><img src="/2024/05/05/Maven/1630773695062-1719410661547-11.png" alt="1630773695062"></p>
 <p>在<code>maven_04_dao</code>中会有如下几个问题需要解决下:</p>
-<p><img src="/1630773958756-1719410661547-12.png" alt="1630773958756"></p>
+<p><img src="/2024/05/05/Maven/1630773958756-1719410661547-12.png" alt="1630773958756"></p>
 <ul>
 <li><p>项目<code>maven_04_dao</code>的BookDao接口中Book类找不到报错</p>
 <ul>
@@ -279,15 +279,15 @@
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.itheima<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>maven_04_dao<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.0-SNAPSHOT<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></tbody></table>
 
 <p>此时在<code>maven_02_ssm</code>项目中就已经添加了<code>maven_03_pojo</code>和<code>maven_04_dao</code>包</p>
-<p><img src="/1630774696344-1719410661547-13.png" alt="1630774696344"></p>
+<p><img src="/2024/05/05/Maven/1630774696344-1719410661547-13.png" alt="1630774696344"></p>
 <p>再次对<code>maven_02_ssm</code>项目进行编译，又会报错，如下:</p>
-<p><img src="/1630774780211-1719410661547-14.png" alt="1630774780211"></p>
+<p><img src="/2024/05/05/Maven/1630774780211-1719410661547-14.png" alt="1630774780211"></p>
 <p>和刚才的错误原因是一样的，maven在仓库中没有找到<code>maven_04_dao</code>,所以此时我们只需要将<code>maven_04_dao</code>安装到Maven的本地仓库即可。</p>
 <p><strong>步骤4:将项目安装到本地仓库</strong></p>
 <p>将需要被依赖的项目<code>maven_04_dao</code>，使用maven的install命令，把其安装到Maven的本地仓库中。</p>
-<p><img src="/1630774917743-1719410661547-15.png" alt="1630774917743"></p>
+<p><img src="/2024/05/05/Maven/1630774917743-1719410661547-15.png" alt="1630774917743"></p>
 <p>安装成功后，在对应的路径下就看到了安装好对应的jar包</p>
-<p><img src="/1630774946856-1719410661547-16.png" alt="1630774946856"></p>
+<p><img src="/2024/05/05/Maven/1630774946856-1719410661547-16.png" alt="1630774946856"></p>
 <p>当再次执行<code>maven_02_ssm</code>的compile的指令后，就已经能够成功编译。</p>
 <h4 id="运行测试并总结"><a href="#运行测试并总结" class="headerlink" title="运行测试并总结"></a>运行测试并总结</h4><p>将抽取后的项目进行运行，测试之前的增删改查功能依然能够使用。</p>
 <p>所以对于项目的拆分，大致会有如下几个步骤:</p>
@@ -309,19 +309,19 @@
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--设置当前项目所依赖的所有jar--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--设置具体的依赖--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--依赖所属群组id--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--依赖所属项目id--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-webmvc<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--依赖版本号--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">version</span>&gt;</span>5.2.10.RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br></pre></td></tr></tbody></table>
 
 <h3 id="依赖传递与冲突问题"><a href="#依赖传递与冲突问题" class="headerlink" title="依赖传递与冲突问题"></a>依赖传递与冲突问题</h3><p>回到我们刚才的项目案例中，打开Maven的面板，你会发现:</p>
-<p><img src="/1630818930387-1719410661547-17.png"></p>
+<p><img src="/2024/05/05/Maven/1630818930387-1719410661547-17.png"></p>
 <p>在项目所依赖的这些jar包中，有一个比较大的区别就是<strong>有的依赖前面有箭头<code>&gt;</code>,有的依赖前面没有。</strong></p>
 <p>那么这个箭头所代表的含义是什么?</p>
 <p>打开前面的箭头，你会发现这个jar包下面还包含有其他的jar包</p>
-<p><img src="/1630819455928-1719410661547-18.png" alt="1630819455928"></p>
+<p><img src="/2024/05/05/Maven/1630819455928-1719410661547-18.png" alt="1630819455928"></p>
 <p>你会发现有两个<code>maven_03_pojo</code>的依赖被加载到Dependencies中，那么<code>maven_04_dao</code>中的<code>maven_03_pojo</code>能不能使用呢?</p>
 <p>要想验证非常简单，只需要把<code>maven_02_ssm</code>项目中pom.xml关于<code>maven_03_pojo</code>的依赖注释或删除掉</p>
-<p><img src="/1630819768305-1719410661547-19.png" alt="1630819768305"></p>
+<p><img src="/2024/05/05/Maven/1630819768305-1719410661547-19.png" alt="1630819768305"></p>
 <p>在Dependencies中移除自己所添加<code>maven_03_pojo</code>依赖后，打开BookServiceImpl的类，你会发现Book类依然存在，可以被正常使用</p>
-<p><img src="/1630819826163-1719410661547-20.png" alt="1630819826163"></p>
+<p><img src="/2024/05/05/Maven/1630819826163-1719410661547-20.png" alt="1630819826163"></p>
 <p>这个特性其实就是我们要讲解的&#x3D;&#x3D;依赖传递&#x3D;&#x3D;。</p>
 <p>依赖是具有传递性的:</p>
-<p><img src="/1630853726532-1719410661547-21.png" alt="1630853726532"></p>
+<p><img src="/2024/05/05/Maven/1630853726532-1719410661547-21.png" alt="1630853726532"></p>
 <p>**说明:**A代表自己的项目；B,C,D,E,F,G代表的是项目所依赖的jar包；D1和D2 E1和E2代表是相同jar包的不同版本</p>
 <p>(1) A依赖了B和C,B和C有分别依赖了其他jar包，所以在A项目中就可以使用上面所有jar包，这就是所说的依赖传递</p>
 <p>(2) 依赖传递有直接依赖和间接依赖</p>
@@ -335,7 +335,7 @@
 <p>情况一: 在<code>maven_02_ssm</code>的pom.xml中添加两个不同版本的Junit依赖:</p>
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>junit<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>junit<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">version</span>&gt;</span>4.12<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">scope</span>&gt;</span>test<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>junit<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>junit<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">version</span>&gt;</span>4.11<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">scope</span>&gt;</span>test<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br></pre></td></tr></tbody></table>
 
-<p><img src="/1630820964663-1719410661547-22.png" alt="1630820964663"></p>
+<p><img src="/2024/05/05/Maven/1630820964663-1719410661547-22.png" alt="1630820964663"></p>
 <p>通过对比，会发现一个结论</p>
 <ul>
 <li>特殊优先：当同级配置了相同资源的不同版本，后配置的覆盖先配置的。</li>
@@ -353,12 +353,12 @@
 <li>D1和D2都是两度，这个时候就不能按照层级来选择，需要按照声明来，谁先声明用谁，也就是说B在C之前声明，这个时候使用的是D1，反之则为D2</li>
 </ul>
 <p>但是对应上面这些结果，大家不需要刻意去记它。因为不管Maven怎么选，最终的结果都会在Maven的<code>Dependencies</code>面板中展示出来，展示的是哪个版本，也就是说它选择的就是哪个版本，如:</p>
-<p><img src="/1630853443920-1719410661547-23.png" alt="1630853443920"></p>
+<p><img src="/2024/05/05/Maven/1630853443920-1719410661547-23.png" alt="1630853443920"></p>
 <p>如果想更全面的查看Maven中各个坐标的依赖关系，可以点击Maven面板中的<code>show Dependencies</code></p>
-<p><img src="/1630853519736-1719410661547-24.png" alt="1630853519736"></p>
+<p><img src="/2024/05/05/Maven/1630853519736-1719410661547-24.png" alt="1630853519736"></p>
 <p>在这个视图中就能很明显的展示出jar包之间的相互依赖关系。</p>
 <h3 id="可选依赖和排除依赖"><a href="#可选依赖和排除依赖" class="headerlink" title="可选依赖和排除依赖"></a>可选依赖和排除依赖</h3><p>依赖传递介绍完以后，我们来思考一个问题，</p>
-<p><img src="/1630854436435-1719410661547-25.png" alt="1630854436435"></p>
+<p><img src="/2024/05/05/Maven/1630854436435-1719410661547-25.png" alt="1630854436435"></p>
 <ul>
 <li>maven_02_ssm 依赖了 maven_04_dao</li>
 <li>maven_04_dao 依赖了 maven_03_pojo</li>
@@ -374,7 +374,7 @@
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.itheima<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>maven_03_pojo<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.0-SNAPSHOT<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--可选依赖是隐藏当前工程所依赖的资源，隐藏后对应资源将不具有依赖传递--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">optional</span>&gt;</span>true<span class="tag">&lt;/<span class="name">optional</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></tbody></table>
 
 <p>此时BookServiceImpl就已经报错了,说明由于maven_04_dao将maven_03_pojo设置成可选依赖，导致maven_02_ssm无法引用到maven_03_pojo中的内容，导致Book类找不到。</p>
-<p><img src="/1630854923484-1719410661547-27.png" alt="1630854923484"></p>
+<p><img src="/2024/05/05/Maven/1630854923484-1719410661547-27.png" alt="1630854923484"></p>
 <p><strong>方案二:排除依赖</strong></p>
 <ul>
 <li>排除依赖指主动断开依赖的资源，被排除的资源无需指定版本—不需要</li>
@@ -393,7 +393,7 @@
 <li>排除依赖是在A上设置<code>&lt;exclusions&gt;</code>,<code>A</code>知道有<code>C</code>的存在，主动将其排除掉。</li>
 </ul>
 <h2 id="聚合和继承"><a href="#聚合和继承" class="headerlink" title="聚合和继承"></a>聚合和继承</h2><p>我们的项目已经从以前的单模块，变成了现在的多模块开发。项目一旦变成了多模块开发以后，就会引发一些问题，在这一节中我们主要会学习两个内容<code>聚合</code>和<code>继承</code>，用这两个知识来解决下分模块后的一些问题。</p>
-<h3 id="聚合"><a href="#聚合" class="headerlink" title="聚合"></a>聚合</h3><p><img src="/1630858596147-1719410661547-26.png" alt="1630858596147"></p>
+<h3 id="聚合"><a href="#聚合" class="headerlink" title="聚合"></a>聚合</h3><p><img src="/2024/05/05/Maven/1630858596147-1719410661547-26.png" alt="1630858596147"></p>
 <ul>
 <li>分模块开发后，需要将这四个项目都安装到本地仓库，目前我们只能通过项目Maven面板的<code>install</code>来安装，并且需要安装四个，如果我们的项目足够多，那么一个个安装起来还是比较麻烦的</li>
 <li>如果四个项目都已经安装成功，当ssm_pojo发生变化后，我们就得将ssm_pojo重新安装到maven仓库，但是为了确保我们对ssm_pojo的修改不会影响到其他项目模块，我们需要对所有的模块进行重新编译，那又需要将所有的模块再来一遍</li>
@@ -410,7 +410,7 @@
 </ul>
 <p>关于聚合具体的实现步骤为:</p>
 <p><strong>步骤1:创建一个空的maven项目</strong></p>
-<p><img src="/1630859532119-1719410661547-29.png" alt="1630859532119"></p>
+<p><img src="/2024/05/05/Maven/1630859532119-1719410661547-29.png" alt="1630859532119"></p>
 <p><strong>步骤2:将项目的打包方式改为pom</strong></p>
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=<span class="string">"1.0"</span> encoding=<span class="string">"UTF-8"</span>?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">project</span> <span class="attr">xmlns</span>=<span class="string">"http://maven.apache.org/POM/4.0.0"</span></span></span><br><span class="line"><span class="tag">         <span class="attr">xmlns:xsi</span>=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span></span></span><br><span class="line"><span class="tag">         <span class="attr">xsi:schemaLocation</span>=<span class="string">"http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">modelVersion</span>&gt;</span>4.0.0<span class="tag">&lt;/<span class="name">modelVersion</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.itheima<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>maven_01_parent<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.0-RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">packaging</span>&gt;</span>pom<span class="tag">&lt;/<span class="name">packaging</span>&gt;</span></span><br><span class="line">    </span><br><span class="line"><span class="tag">&lt;/<span class="name">project</span>&gt;</span></span><br></pre></td></tr></tbody></table>
 
@@ -424,12 +424,12 @@
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=<span class="string">"1.0"</span> encoding=<span class="string">"UTF-8"</span>?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">project</span> <span class="attr">xmlns</span>=<span class="string">"http://maven.apache.org/POM/4.0.0"</span></span></span><br><span class="line"><span class="tag">         <span class="attr">xmlns:xsi</span>=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span></span></span><br><span class="line"><span class="tag">         <span class="attr">xsi:schemaLocation</span>=<span class="string">"http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">modelVersion</span>&gt;</span>4.0.0<span class="tag">&lt;/<span class="name">modelVersion</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.itheima<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>maven_01_parent<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.0-RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">packaging</span>&gt;</span>pom<span class="tag">&lt;/<span class="name">packaging</span>&gt;</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">&lt;!--设置管理的模块名称--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">modules</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">module</span>&gt;</span>../maven_02_ssm<span class="tag">&lt;/<span class="name">module</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">module</span>&gt;</span>../maven_03_pojo<span class="tag">&lt;/<span class="name">module</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">module</span>&gt;</span>../maven_04_dao<span class="tag">&lt;/<span class="name">module</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">modules</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">project</span>&gt;</span></span><br></pre></td></tr></tbody></table>
 
 <p><strong>步骤4:使用聚合统一管理项目</strong></p>
-<p><img src="/1630859797123-1719410661547-28.png" alt="1630859797123"></p>
+<p><img src="/2024/05/05/Maven/1630859797123-1719410661547-28.png" alt="1630859797123"></p>
 <p>测试发现，当<code>maven_01_parent</code>的<code>compile</code>被点击后，所有被其管理的项目都会被执行编译操作。这就是聚合工程的作用。</p>
 <p>**说明：**聚合工程管理的项目在进行运行的时候，会按照项目与项目之间的依赖关系来自动决定执行的顺序和配置的顺序无关。</p>
 <p>聚合的知识我们就讲解完了，最后总结一句话就是，<strong>聚合工程主要是用来管理项目</strong>。</p>
 <h3 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h3><p>我们已经完成了使用聚合工程去管理项目，聚合工程进行某一个构建操作，其他被其管理的项目也会执行相同的构建操作。那么接下来，我们再来分析下，多模块开发存在的另外一个问题，<code>重复配置</code>的问题，我们先来看张图:</p>
-<p><img src="/1630860344968-1719410661547-30.png" alt="1630860344968"></p>
+<p><img src="/2024/05/05/Maven/1630860344968-1719410661547-30.png" alt="1630860344968"></p>
 <ul>
 <li><code>spring-webmvc</code>、<code>spring-jdbc</code>在三个项目模块中都有出现，这样就出现了重复的内容</li>
 <li><code>spring-test</code>只在ssm_crm和ssm_goods中出现，而在ssm_order中没有，这里是部分重复的内容</li>
@@ -470,12 +470,12 @@
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=<span class="string">"1.0"</span> encoding=<span class="string">"UTF-8"</span>?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">project</span> <span class="attr">xmlns</span>=<span class="string">"http://maven.apache.org/POM/4.0.0"</span></span></span><br><span class="line"><span class="tag">         <span class="attr">xmlns:xsi</span>=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span></span></span><br><span class="line"><span class="tag">         <span class="attr">xsi:schemaLocation</span>=<span class="string">"http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">modelVersion</span>&gt;</span>4.0.0<span class="tag">&lt;/<span class="name">modelVersion</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.itheima<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>maven_04_dao<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.0-SNAPSHOT<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!--配置当前工程继承自parent工程--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">parent</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.itheima<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>maven_01_parent<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.0-RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">relativePath</span>&gt;</span>../maven_01_parent/pom.xml<span class="tag">&lt;/<span class="name">relativePath</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">parent</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">project</span>&gt;</span></span><br></pre></td></tr></tbody></table>
 
 <p>刷新并查看Maven的面板，会发现maven_04_dao同样引入了父项目中的所有依赖。</p>
-<p><img src="/1630862406709-1719410661547-31.png" alt="1630862406709"></p>
+<p><img src="/2024/05/05/Maven/1630862406709-1719410661547-31.png" alt="1630862406709"></p>
 <p>这样我们就可以解决刚才提到的第一个问题，将子项目中的公共jar包抽取到父工程中进行统一添加依赖，这样做的可以简化配置，并且当父工程中所依赖的jar包版本发生变化，所有子项目中对应的jar包版本也会跟着更新。</p>
-<p><img src="/1630943390187-1719410661547-32.png" alt="1630943390187"></p>
+<p><img src="/2024/05/05/Maven/1630943390187-1719410661547-32.png" alt="1630943390187"></p>
 <p><strong>步骤4:优化子项目依赖版本问题</strong></p>
 <p>如果把所有用到的jar包都管理在父项目的pom.xml，看上去更简单些，但是这样就会导致有很多项目引入了过多自己不需要的jar包。如上面看到的这张图:</p>
-<p><img src="/1630860344968-1719410661547-30.png"></p>
+<p><img src="/2024/05/05/Maven/1630860344968-1719410661547-30.png"></p>
 <p>如果把所有的依赖都放在了父工程中进行统一维护，就会导致ssm_order项目中多引入了<code>spring-test</code>的jar包，如果这样的jar包过多的话，对于ssm_order来说也是一种”负担”。</p>
 <p>那针对于这种部分项目有的jar包，我们该如何管理优化呢?</p>
 <ol>
@@ -486,7 +486,7 @@
 <ol start="2">
 <li>将maven_02_ssm的pom.xml中的junit依赖删除掉，刷新Maven</li>
 </ol>
-<p><img src="/1630944335419-1719410661547-33.png" alt="1630944335419"></p>
+<p><img src="/2024/05/05/Maven/1630944335419-1719410661547-33.png" alt="1630944335419"></p>
 <p>刷新完会发现，在maven_02_ssm项目中的junit依赖并没有出现，所以我们得到一个结论:</p>
 <p>=&#x3D;<code>&lt;dependencyManagement&gt;</code>标签不真正引入jar包，而是配置可供子项目选择的jar包依赖&#x3D;&#x3D;</p>
 <p>子项目要想使用它所提供的这些jar包，需要自己添加依赖，并且不需要指定<code>&lt;version&gt;</code></p>
@@ -555,10 +555,10 @@
 <h4 id="构建聚合与继承工程"><a href="#构建聚合与继承工程" class="headerlink" title="构建聚合与继承工程"></a>构建聚合与继承工程</h4><p>其实对于聚合和继承工程的创建，IDEA已经能帮助我们快速构建，具体的实现步骤为:</p>
 <p><strong>步骤1:创建一个Maven项目</strong></p>
 <p>创建一个空的Maven项目，可以将项目中的<code>src</code>目录删除掉，这个项目作为聚合工程和父工程。</p>
-<p><img src="/1630946592924-1719410661547-34.png" alt="1630946592924"></p>
+<p><img src="/2024/05/05/Maven/1630946592924-1719410661547-34.png" alt="1630946592924"></p>
 <p><strong>步骤2:创建子项目</strong></p>
 <p>该项目可以被聚合工程管理，同时会继承父工程。</p>
-<p><img src="/1630947082716-1719410661547-35.png" alt="1630947082716"></p>
+<p><img src="/2024/05/05/Maven/1630947082716-1719410661547-35.png" alt="1630947082716"></p>
 <p>创建成功后，maven_parent即是聚合工程又是父工程，maven_web中也有parent标签，继承的就是maven_parent,对于难以配置的内容都自动生成。</p>
 <p>按照上面这种方式，大家就可以根据自己的需要来构建分模块项目。</p>
 <h2 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h2><p>在这一章节内容中，我们将学习两个内容，分别是</p>
@@ -569,10 +569,10 @@
 <p>属性中会继续解决分模块开发项目存在的问题，版本管理主要是认识下当前主流的版本定义方式。</p>
 <h3 id="属性-1"><a href="#属性-1" class="headerlink" title="属性"></a>属性</h3><h4 id="问题分析"><a href="#问题分析" class="headerlink" title="问题分析"></a>问题分析</h4><p>讲解内容之前，我们还是先来分析问题:</p>
 <p>前面我们已经在父工程中的dependencyManagement标签中对项目中所使用的jar包版本进行了统一的管理，但是如果在标签中有如下的内容:</p>
-<p><img src="/1630947403475-1719410661547-36.png" alt="1630947403475"></p>
+<p><img src="/2024/05/05/Maven/1630947403475-1719410661547-36.png" alt="1630947403475"></p>
 <p>你会发现，如果我们现在想更新Spring的版本，你会发现我们依然需要更新多个jar包的版本，这样的话还是有可能出现漏改导致程序出问题，而且改起来也是比较麻烦。</p>
 <p>问题清楚后，我们需要解决的话，就可以参考咱们java基础所学习的变量，声明一个变量，在其他地方使用该变量，当变量的值发生变化后，所有使用变量的地方，就会跟着修改，即:</p>
-<p><img src="/1630947749661-1719410661547-37.png" alt="1630947749661"></p>
+<p><img src="/2024/05/05/Maven/1630947749661-1719410661547-37.png" alt="1630947749661"></p>
 <h4 id="解决步骤"><a href="#解决步骤" class="headerlink" title="解决步骤"></a>解决步骤</h4><p><strong>步骤1:父工程中定义属性</strong></p>
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">properties</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">spring.version</span>&gt;</span>5.2.10.RELEASE<span class="tag">&lt;/<span class="name">spring.version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">junit.version</span>&gt;</span>4.12<span class="tag">&lt;/<span class="name">junit.version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">mybatis-spring.version</span>&gt;</span>1.3.0<span class="tag">&lt;/<span class="name">mybatis-spring.version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">properties</span>&gt;</span></span><br></pre></td></tr></tbody></table>
 
@@ -597,10 +597,10 @@
 
 <p>**说明:**directory路径前要添加<code>../</code>的原因是maven_02_ssm相对于父工程的pom.xml路径是在其上一层的目录中，所以需要添加。</p>
 <p>修改完后，注意maven_02_ssm项目的resources目录就多了些东西，如下:</p>
-<p><img src="/1630977419627-1719410661547-38.png" alt="1630977419627"></p>
+<p><img src="/2024/05/05/Maven/1630977419627-1719410661547-38.png" alt="1630977419627"></p>
 <p><strong>步骤4:测试是否生效</strong></p>
 <p>测试的时候，只需要将maven_02_ssm项目进行打包，然后观察打包结果中最终生成的内容是否为Maven中配置的内容。</p>
-<p><img src="/1630977885030-1719410661547-39.png" alt="1630977885030"></p>
+<p><img src="/2024/05/05/Maven/1630977885030-1719410661547-39.png" alt="1630977885030"></p>
 <p>上面的属性管理就已经完成，但是有一个问题没有解决，因为不只是maven_02_ssm项目需要有属性被父工程管理，如果有多个项目需要配置，该如何实现呢?</p>
 <p>方式一:</p>
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">build</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">resources</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--设置资源目录，并设置能够解析${}--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">resource</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">directory</span>&gt;</span>../maven_02_ssm/src/main/resources<span class="tag">&lt;/<span class="name">directory</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">filtering</span>&gt;</span>true<span class="tag">&lt;/<span class="name">filtering</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">resource</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">resource</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">directory</span>&gt;</span>../maven_03_pojo/src/main/resources<span class="tag">&lt;/<span class="name">directory</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">filtering</span>&gt;</span>true<span class="tag">&lt;/<span class="name">filtering</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">resource</span>&gt;</span></span><br><span class="line">        ...</span><br><span class="line">    <span class="tag">&lt;/<span class="name">resources</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">build</span>&gt;</span></span><br></pre></td></tr></tbody></table>
@@ -610,7 +610,7 @@
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">build</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">resources</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--</span></span><br><span class="line"><span class="comment">			${project.basedir}: 当前项目所在目录,子项目继承了父项目，</span></span><br><span class="line"><span class="comment">			相当于所有的子项目都添加了资源目录的过滤</span></span><br><span class="line"><span class="comment">		--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">resource</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">directory</span>&gt;</span>${project.basedir}/src/main/resources<span class="tag">&lt;/<span class="name">directory</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">filtering</span>&gt;</span>true<span class="tag">&lt;/<span class="name">filtering</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">resource</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">resources</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">build</span>&gt;</span></span><br></pre></td></tr></tbody></table>
 
 <p>**说明:**打包的过程中如果报如下错误:</p>
-<p><img src="/1630948929828-1719410661547-40.png" alt="1630948929828"></p>
+<p><img src="/2024/05/05/Maven/1630948929828-1719410661547-40.png" alt="1630948929828"></p>
 <p>原因就是Maven发现你的项目为web项目，就会去找web项目的入口web.xml[配置文件配置的方式]，发现没有找到，就会报错。</p>
 <p>解决方案1：在maven_02_ssm项目的<code>src\main\webapp\WEB-INF\</code>添加一个web.xml文件</p>
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=<span class="string">"1.0"</span> encoding=<span class="string">"UTF-8"</span>?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">web-app</span> <span class="attr">xmlns</span>=<span class="string">"http://xmlns.jcp.org/xml/ns/javaee"</span></span></span><br><span class="line"><span class="tag">         <span class="attr">xmlns:xsi</span>=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span></span></span><br><span class="line"><span class="tag">         <span class="attr">xsi:schemaLocation</span>=<span class="string">"http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"</span></span></span><br><span class="line"><span class="tag">         <span class="attr">version</span>=<span class="string">"3.1"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">web-app</span>&gt;</span></span><br></pre></td></tr></tbody></table>
@@ -627,16 +627,16 @@
 <li>Java系统属性</li>
 <li>环境变量属性</li>
 </ul>
-<p><img src="/1630981519370-1719410661547-41.png" alt="1630981519370"></p>
+<p><img src="/2024/05/05/Maven/1630981519370-1719410661547-41.png" alt="1630981519370"></p>
 <p>具体如何查看这些属性:</p>
 <p>在cmd命令行中输入<code>mvn help:system</code></p>
-<p><img src="/1630981585748-1719410661547-42.png" alt="1630981585748"></p>
+<p><img src="/2024/05/05/Maven/1630981585748-1719410661547-42.png" alt="1630981585748"></p>
 <p>具体使用，就是使用 <code>$&#123;key&#125;</code>来获取，key为等号左边的，值为等号右边的，比如获取红线的值，对应的写法为 <code>$&#123;java.runtime.name&#125;</code>。</p>
 <h3 id="版本管理"><a href="#版本管理" class="headerlink" title="版本管理"></a>版本管理</h3><p>关于这个版本管理解决的问题是，在Maven创建项目和引用别人项目的时候，我们都看到过如下内容:</p>
-<p><img src="/1630982018031-1719410661547-43.png" alt="1630982018031"></p>
+<p><img src="/2024/05/05/Maven/1630982018031-1719410661547-43.png" alt="1630982018031"></p>
 <p>这里面有两个单词，SNAPSHOT和RELEASE，它们所代表的含义是什么呢?</p>
 <p>我们打开Maven仓库地址<code>https://mvnrepository.com/</code></p>
-<p><img src="/1630983148662-1719410661547-44.png" alt="1630983148662"></p>
+<p><img src="/2024/05/05/Maven/1630983148662-1719410661547-44.png" alt="1630983148662"></p>
 <p>在我们jar包的版本定义中，有两个工程版本用的比较多:</p>
 <ul>
 <li>SNAPSHOT（快照版本）<ul>
@@ -658,7 +658,7 @@
 </ul>
 <p>对于这些版本，大家只需要简单认识下即可。</p>
 <h2 id="多环境配置与应用"><a href="#多环境配置与应用" class="headerlink" title="多环境配置与应用"></a>多环境配置与应用</h2><p>这一节中，我们会讲两个内容，分别是<code>多环境开发</code>和<code>跳过测试</code></p>
-<h3 id="多环境开发"><a href="#多环境开发" class="headerlink" title="多环境开发"></a>多环境开发</h3><p><img src="/1630983617755-1719410661547-45.png" alt="1630983617755"></p>
+<h3 id="多环境开发"><a href="#多环境开发" class="headerlink" title="多环境开发"></a>多环境开发</h3><p><img src="/2024/05/05/Maven/1630983617755-1719410661547-45.png" alt="1630983617755"></p>
 <ul>
 <li>我们平常都是在自己的开发环境进行开发，</li>
 <li>当开发完成后，需要把开发的功能部署到测试环境供测试人员进行测试使用，</li>
@@ -672,21 +672,21 @@
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">profiles</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--开发环境--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">profile</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">id</span>&gt;</span>env_dep<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">properties</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">jdbc.url</span>&gt;</span>jdbc:mysql://127.1.1.1:3306/ssm_db<span class="tag">&lt;/<span class="name">jdbc.url</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">properties</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--设定是否为默认启动环境--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">activation</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">activeByDefault</span>&gt;</span>true<span class="tag">&lt;/<span class="name">activeByDefault</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">activation</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">profile</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--生产环境--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">profile</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">id</span>&gt;</span>env_pro<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">properties</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">jdbc.url</span>&gt;</span>jdbc:mysql://127.2.2.2:3306/ssm_db<span class="tag">&lt;/<span class="name">jdbc.url</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">properties</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">profile</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--测试环境--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">profile</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">id</span>&gt;</span>env_test<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">properties</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">jdbc.url</span>&gt;</span>jdbc:mysql://127.3.3.3:3306/ssm_db<span class="tag">&lt;/<span class="name">jdbc.url</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">properties</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">profile</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">profiles</span>&gt;</span></span><br></pre></td></tr></tbody></table>
 
 <p><strong>步骤2:执行安装查看env_dep环境是否生效</strong></p>
-<p><img src="/1630983967960-1719410661547-46.png" alt="1630983967960"></p>
+<p><img src="/2024/05/05/Maven/1630983967960-1719410661547-46.png" alt="1630983967960"></p>
 <p>查看到的结果为:</p>
-<p><img src="/1630977885030-1719410661547-39.png"></p>
+<p><img src="/2024/05/05/Maven/1630977885030-1719410661547-39.png"></p>
 <p><strong>步骤3:切换默认环境为生产环境</strong></p>
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">profiles</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--开发环境--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">profile</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">id</span>&gt;</span>env_dep<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">properties</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">jdbc.url</span>&gt;</span>jdbc:mysql://127.1.1.1:3306/ssm_db<span class="tag">&lt;/<span class="name">jdbc.url</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">properties</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">profile</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--生产环境--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">profile</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">id</span>&gt;</span>env_pro<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">properties</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">jdbc.url</span>&gt;</span>jdbc:mysql://127.2.2.2:3306/ssm_db<span class="tag">&lt;/<span class="name">jdbc.url</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">properties</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--设定是否为默认启动环境--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">activation</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">activeByDefault</span>&gt;</span>true<span class="tag">&lt;/<span class="name">activeByDefault</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">activation</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">profile</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--测试环境--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">profile</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">id</span>&gt;</span>env_test<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">properties</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">jdbc.url</span>&gt;</span>jdbc:mysql://127.3.3.3:3306/ssm_db<span class="tag">&lt;/<span class="name">jdbc.url</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">properties</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">profile</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">profiles</span>&gt;</span></span><br></pre></td></tr></tbody></table>
 
 <p><strong>步骤4:执行安装并查看env_pro环境是否生效</strong></p>
 <p>查看到的结果为<code>jdbc:mysql://127.2.2.2:3306/ssm_db</code></p>
-<p><img src="/1630977885031-1719410661547-47.png"></p>
+<p><img src="/2024/05/05/Maven/1630977885031-1719410661547-47.png"></p>
 <p>虽然已经能够实现不同环境的切换，但是每次切换都是需要手动修改，如何来实现在不改变代码的前提下完成环境的切换呢?</p>
 <p><strong>步骤5:命令行实现环境切换</strong></p>
-<p><img src="/1630984476202-1719410661547-48.png" alt="1630984476202"></p>
+<p><img src="/2024/05/05/Maven/1630984476202-1719410661547-48.png" alt="1630984476202"></p>
 <p><strong>步骤6:执行安装并查看env_test环境是否生效</strong></p>
 <p>查看到的结果为<code>jdbc:mysql://127.3.3.3:3306/ssm_db</code></p>
-<p><img src="/1630977885032-1719410661548-49.png"></p>
+<p><img src="/2024/05/05/Maven/1630977885032-1719410661548-49.png"></p>
 <p>所以总结来说，对于多环境切换只需要两步即可:</p>
 <ul>
 <li><p>父工程中定义多环境</p>
@@ -703,11 +703,11 @@
 </ul>
 <p>遇到上面这些情况的时候，我们就想跳过测试执行下面的构建命令，具体实现方式有很多：</p>
 <p><strong>方式一:IDEA工具实现跳过测试</strong></p>
-<p><img src="/1630985300814-1719410661548-50.png" alt="1630985300814"></p>
+<p><img src="/2024/05/05/Maven/1630985300814-1719410661548-50.png" alt="1630985300814"></p>
 <p>图中的按钮为<code>Toggle &#39;Skip Tests&#39; Mode</code>,</p>
 <p>Toggle翻译为切换的意思，也就是说在测试与不测试之间进行切换。</p>
 <p>点击一下，出现测试画横线的图片，如下:</p>
-<p><img src="/1630985411766-1719410661548-51.png" alt="1630985411766"></p>
+<p><img src="/2024/05/05/Maven/1630985411766-1719410661548-51.png" alt="1630985411766"></p>
 <p>说明测试已经被关闭，再次点击就会恢复。</p>
 <p>这种方式最简单，但是有点”暴力”，会把所有的测试都跳过，如果我们想更精细的控制哪些跳过哪些不跳过，就需要使用配置插件的方式。</p>
 <p><strong>方式二:配置插件实现跳过测试</strong></p>
@@ -718,7 +718,7 @@
 <p>excludes：哪些测试类不参与测试，即排除，针对skipTests为false来设置的</p>
 <p>includes: 哪些测试类要参与测试，即包含,针对skipTests为true来设置的</p>
 <p><strong>方式三:命令行跳过测试</strong></p>
-<p><img src="/1630986926124-1719410661548-52.png" alt="1630986926124"></p>
+<p><img src="/2024/05/05/Maven/1630986926124-1719410661548-52.png" alt="1630986926124"></p>
 <p>使用Maven的命令行，<code>mvn 指令 -D skipTests</code></p>
 <p>注意事项:</p>
 <ul>
@@ -733,7 +733,7 @@
 </ul>
 <p>首先来说一说什么是私服?</p>
 <h3 id="私服简介"><a href="#私服简介" class="headerlink" title="私服简介"></a>私服简介</h3><p>团队开发现状分析</p>
-<p><img src="/1630987192620-1719410661548-53.png" alt="1630987192620"></p>
+<p><img src="/2024/05/05/Maven/1630987192620-1719410661548-53.png" alt="1630987192620"></p>
 <p>(1)张三负责ssm_crm的开发，自己写了一个ssm_pojo模块，要想使用直接将ssm_pojo安装到本地仓库即可</p>
 <p>(2)李四负责ssm_order的开发，需要用到张三所写的ssm_pojo模块，这个时候如何将张三写的ssm_pojo模块交给李四呢?</p>
 <p>(3)如果直接拷贝，那么团队之间的jar包管理会非常混乱而且容器出错，这个时候我们就想能不能将写好的项目上传到中央仓库，谁想用就直接联网下载即可</p>
@@ -756,29 +756,29 @@
 </ul>
 <h3 id="私服安装"><a href="#私服安装" class="headerlink" title="私服安装"></a>私服安装</h3><p><strong>步骤1:下载解压</strong></p>
 <p>将<code>资料\latest-win64.zip</code>解压到一个空目录下。</p>
-<p><img src="/1630988572349-1719410661548-54.png" alt="1630988572349"></p>
+<p><img src="/2024/05/05/Maven/1630988572349-1719410661548-54.png" alt="1630988572349"></p>
 <p><strong>步骤2:启动Nexus</strong></p>
-<p><img src="/1630988673245-1719410661548-55.png" alt="1630988673245"></p>
+<p><img src="/2024/05/05/Maven/1630988673245-1719410661548-55.png" alt="1630988673245"></p>
 <p>使用cmd进入到解压目录下的<code>nexus-3.30.1-01\bin</code>,执行如下命令:</p>
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nexus.exe /run nexus</span><br></pre></td></tr></tbody></table>
 
 <p>看到如下内容，说明启动成功。</p>
-<p><img src="/1630988939301-1719410661548-56.png" alt="1630988939301"></p>
+<p><img src="/2024/05/05/Maven/1630988939301-1719410661548-56.png" alt="1630988939301"></p>
 <p><strong>步骤3:浏览器访问</strong></p>
 <p>访问地址为:</p>
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://localhost:8081</span><br></pre></td></tr></tbody></table>
 
-<p><img src="/1630988857125-1719410661548-57.png" alt="1630988857125"></p>
+<p><img src="/2024/05/05/Maven/1630988857125-1719410661548-57.png" alt="1630988857125"></p>
 <p><strong>步骤4:首次登录重置密码</strong></p>
-<p><img src="/1630988983159-1719410661548-58.png" alt="1630988983159"></p>
+<p><img src="/2024/05/05/Maven/1630988983159-1719410661548-58.png" alt="1630988983159"></p>
 <p>输入用户名和密码进行登录，登录成功后，出现如下页面</p>
-<p><img src="/1630989052183-1719410661548-59.png" alt="1630989052183"></p>
+<p><img src="/2024/05/05/Maven/1630989052183-1719410661548-59.png" alt="1630989052183"></p>
 <p>点击下一步，需要重新输入新密码，为了和后面的保持一致，密码修改为<code>admin</code></p>
-<p><img src="/1630989094756-1719410661548-60.png" alt="1630989094756"></p>
+<p><img src="/2024/05/05/Maven/1630989094756-1719410661548-60.png" alt="1630989094756"></p>
 <p>设置是否运行匿名访问</p>
-<p><img src="/1630989122737-1719410661548-61.png" alt="1630989122737"></p>
+<p><img src="/2024/05/05/Maven/1630989122737-1719410661548-61.png" alt="1630989122737"></p>
 <p>点击完成</p>
-<p><img src="/1630989136097-1719410661548-62.png" alt="1630989136097"></p>
+<p><img src="/2024/05/05/Maven/1630989136097-1719410661548-62.png" alt="1630989136097"></p>
 <p>至此私服就已经安装成功。如果要想修改一些基础配置信息，可以使用:</p>
 <ul>
 <li>修改基础配置信息<ul>
@@ -791,7 +791,7 @@
 </li>
 </ul>
 <h3 id="私服仓库分类"><a href="#私服仓库分类" class="headerlink" title="私服仓库分类"></a>私服仓库分类</h3><p>私服资源操作流程分析:</p>
-<p><img src="/1630989320979-1719410661548-63.png" alt="1630989320979"></p>
+<p><img src="/2024/05/05/Maven/1630989320979-1719410661548-63.png" alt="1630989320979"></p>
 <p>(1)在没有私服的情况下，我们自己创建的服务都是安装在Maven的本地仓库中</p>
 <p>(2)私服中也有仓库，我们要把自己的资源上传到私服，最终也是放在私服的仓库中</p>
 <p>(3)其他人要想使用你所上传的资源，就需要从私服的仓库中获取</p>
@@ -818,17 +818,17 @@
 <li>将若干个仓库组成一个群组，简化配置</li>
 <li>仓库组不能保存资源，属于设计型仓库</li>
 </ul>
-<p><img src="/1630990244010-1719410661548-64.png" alt="1630990244010"></p>
+<p><img src="/2024/05/05/Maven/1630990244010-1719410661548-64.png" alt="1630990244010"></p>
 <h3 id="本地仓库访问私服配置"><a href="#本地仓库访问私服配置" class="headerlink" title="本地仓库访问私服配置"></a>本地仓库访问私服配置</h3><ul>
 <li>我们通过IDEA将开发的模块上传到私服，中间是要经过本地Maven的</li>
 <li>本地Maven需要知道私服的访问地址以及私服访问的用户名和密码</li>
 <li>私服中的仓库很多，Maven最终要把资源上传到哪个仓库?</li>
 <li>Maven下载的时候，又需要携带用户名和密码到私服上找对应的仓库组进行下载，然后再给IDEA</li>
 </ul>
-<p><img src="/1630990538229-1719410661548-65.png" alt="1630990538229"></p>
+<p><img src="/2024/05/05/Maven/1630990538229-1719410661548-65.png" alt="1630990538229"></p>
 <p>上面所说的这些内容，我们需要在本地Maven的配置文件<code>settings.xml</code>中进行配置。</p>
 <p><strong>步骤1:私服上配置仓库</strong></p>
-<p><img src="/1630991211000-1719410661548-66.png" alt="1630991211000"></p>
+<p><img src="/2024/05/05/Maven/1630991211000-1719410661548-66.png" alt="1630991211000"></p>
 <p><strong>说明:</strong></p>
 <p>第5，6步骤是创建itheima-snapshot仓库</p>
 <p>第7，8步骤是创建itheima-release仓库</p>
@@ -839,25 +839,25 @@
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">mirrors</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">mirror</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--配置仓库组的ID--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">id</span>&gt;</span>maven-public<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--*代表所有内容都从私服获取--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">mirrorOf</span>&gt;</span>*<span class="tag">&lt;/<span class="name">mirrorOf</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--私服仓库组maven-public的访问路径--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">url</span>&gt;</span>http://localhost:8081/repository/maven-public/<span class="tag">&lt;/<span class="name">url</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">mirror</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">mirrors</span>&gt;</span></span><br></pre></td></tr></tbody></table>
 
 <p>为了避免阿里云Maven私服地址的影响，建议先将之前配置的阿里云Maven私服镜像地址注释掉，等练习完后，再将其恢复。</p>
-<p><img src="/1630991535107-1719410661548-67.png" alt="1630991535107"></p>
+<p><img src="/2024/05/05/Maven/1630991535107-1719410661548-67.png" alt="1630991535107"></p>
 <p>至此本地仓库就能与私服进行交互了。</p>
 <h3 id="私服资源上传与下载"><a href="#私服资源上传与下载" class="headerlink" title="私服资源上传与下载"></a>私服资源上传与下载</h3><p>本地仓库与私服已经建立了连接，接下来我们就需要往私服上上传资源和下载资源，具体的实现步骤为:</p>
 <p><strong>步骤1:配置工程上传私服的具体位置</strong></p>
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"> <span class="comment">&lt;!--配置当前工程保存在私服中的具体位置--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">distributionManagement</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">repository</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--和maven/settings.xml中server中的id一致，表示使用该id对应的用户名和密码--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">id</span>&gt;</span>itheima-release<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">         <span class="comment">&lt;!--release版本上传仓库的具体地址--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">url</span>&gt;</span>http://localhost:8081/repository/itheima-release/<span class="tag">&lt;/<span class="name">url</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">repository</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">snapshotRepository</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--和maven/settings.xml中server中的id一致，表示使用该id对应的用户名和密码--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">id</span>&gt;</span>itheima-snapshot<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--snapshot版本上传仓库的具体地址--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">url</span>&gt;</span>http://localhost:8081/repository/itheima-snapshot/<span class="tag">&lt;/<span class="name">url</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">snapshotRepository</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">distributionManagement</span>&gt;</span></span><br></pre></td></tr></tbody></table>
 
 <p><strong>步骤2:发布资源到私服</strong></p>
-<p><img src="/1630992305191-1719410661548-68.png" alt="1630992305191"></p>
+<p><img src="/2024/05/05/Maven/1630992305191-1719410661548-68.png" alt="1630992305191"></p>
 <p>或者执行Maven命令</p>
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mvn deploy</span><br></pre></td></tr></tbody></table>
 
 <p><strong>注意:</strong></p>
 <p>要发布的项目都需要配置<code>distributionManagement</code>标签，要么在自己的pom.xml中配置，要么在其父项目中配置，然后子项目中继承父项目即可。</p>
 <p>发布成功，在私服中就能看到:</p>
-<p><img src="/1630992513299-1719410661548-69.png" alt="1630992513299"></p>
+<p><img src="/2024/05/05/Maven/1630992513299-1719410661548-69.png" alt="1630992513299"></p>
 <p>现在发布是在itheima-snapshot仓库中，如果想发布到itheima-release仓库中就需要将项目pom.xml中的version修改成RELEASE即可。</p>
 <p>如果想删除已经上传的资源，可以在界面上进行删除操作:</p>
-<p><img src="/1630992952378-1719410661548-70.png" alt="1630992952378"></p>
+<p><img src="/2024/05/05/Maven/1630992952378-1719410661548-70.png" alt="1630992952378"></p>
 <p>如果私服中没有对应的jar，会去中央仓库下载，速度很慢。可以配置让私服去阿里云中下载依赖。</p>
-<p><img src="/1630993028454-1719410661548-71.png" alt="1630993028454"></p>
+<p><img src="/2024/05/05/Maven/1630993028454-1719410661548-71.png" alt="1630993028454"></p>
 <p>至此私服的搭建就已经完成，相对来说有点麻烦，但是步骤都比较固定，后期大家如果需要的话，就可以参考上面的步骤一步步完成搭建即可。</p>
 </article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://raehp.github.io">翎晗</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://raehp.github.io/2024/05/05/Maven/">https://raehp.github.io/2024/05/05/Maven/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="https://raehp.github.io" target="_blank">L1n</a>！</span></div></div><div class="tag_share"><div class="post-share"><div class="social-share" data-image="/img/avatar.jpg" data-sites="facebook,x,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/2024/05/05/MyBatis-plus/" title="MyBatis-plus"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">MyBatis-plus</div></div><div class="info-2"><div class="info-item-1">MyBatisPlus入门案例与简介这一节我们来学习下MyBatisPlus的入门案例与简介，这个和其他课程都不太一样，其他的课程都是先介绍概念，然后再写入门案例。而对于MyBatisPlus的学习，我们将顺序做了调整，主要的原因MyBatisPlus主要是对MyBatis的简化，所有我们先体会下它简化在哪，然后再学习它是什么，以及它帮我们都做哪些事。 入门案例 MybatisPlus(简称MP)是基于MyBatis框架基础上开发的增强型工具，旨在简化开发、提供效率。 开发方式 基于MyBatis使用MyBatisPlus 基于Spring使用MyBatisPlus 基于SpringBoot使用MyBatisPlus    SpringBoot刚刚我们学习完成，它能快速构建Spring开发环境用以整合其他技术，使用起来是非常简单，对于MP的学习，我们也基于SpringBoot来构建学习。 学习之前，我们先来回顾下，SpringBoot整合Mybatis的开发过程:  创建SpringBoot工程   勾选配置使用的技术，能够实现自动添加起步依赖包   设置dataSource相关...</div></div></div></a><a class="pagination-related" href="/2024/05/05/SpringMVc/" title="SpringMVc"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">SpringMVc</div></div><div class="info-2"><div class="info-item-1">SpringMVC概述学习SpringMVC我们先来回顾下现在web程序是如何做的，咱们现在web程序大都基于三层架构来实现。 三层架构   浏览器发送一个请求给后端服务器，后端服务器现在是使用Servlet来接收请求和数据 如果所有的处理都交给Servlet来处理的话，所有的东西都耦合在一起，对后期的维护和扩展极为不利 将后端服务器Servlet拆分成三层，分别是web、service和dao web层主要由servlet来处理，负责页面请求和数据的收集以及响应结果给前端 service层主要负责业务逻辑的处理 dao层主要负责数据的增删改查操作   servlet处理请求和数据的时候，存在的问题是一个servlet只能处理一个请求 针对web层进行了优化，采用了MVC设计模式，将其设计为controller、view和Model controller负责请求和数据的接收，接收后将其转发给service进行业务处理 service根据需要会调用dao对数据进行增删改查 dao把数据处理完后将结果交给service,service再交给controller controller根...</div></div></div></a></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">翎晗</div><div class="author-info-description">心有所向, 无问东西</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">29</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">15</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/Raehp" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:zhanghaolin406@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="/atom.xml" target="_blank" title="RSS"><i class="fas fa-rss"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%86%E6%A8%A1%E5%9D%97%E5%BC%80%E5%8F%91"><span class="toc-number">1.</span> <span class="toc-text">分模块开发</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E6%A8%A1%E5%9D%97%E5%BC%80%E5%8F%91%E8%AE%BE%E8%AE%A1"><span class="toc-number">1.1.</span> <span class="toc-text">分模块开发设计</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E6%A8%A1%E5%9D%97%E5%BC%80%E5%8F%91%E5%AE%9E%E7%8E%B0"><span class="toc-number">1.2.</span> <span class="toc-text">分模块开发实现</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%8E%AF%E5%A2%83%E5%87%86%E5%A4%87"><span class="toc-number">1.2.1.</span> <span class="toc-text">环境准备</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8A%BD%E5%8F%96domain%E5%B1%82"><span class="toc-number">1.2.2.</span> <span class="toc-text">抽取domain层</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8A%BD%E5%8F%96Dao%E5%B1%82"><span class="toc-number">1.2.3.</span> <span class="toc-text">抽取Dao层</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%90%E8%A1%8C%E6%B5%8B%E8%AF%95%E5%B9%B6%E6%80%BB%E7%BB%93"><span class="toc-number">1.2.4.</span> <span class="toc-text">运行测试并总结</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BE%9D%E8%B5%96%E7%AE%A1%E7%90%86"><span class="toc-number">2.</span> <span class="toc-text">依赖管理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BE%9D%E8%B5%96%E4%BC%A0%E9%80%92%E4%B8%8E%E5%86%B2%E7%AA%81%E9%97%AE%E9%A2%98"><span class="toc-number">2.1.</span> <span class="toc-text">依赖传递与冲突问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%AF%E9%80%89%E4%BE%9D%E8%B5%96%E5%92%8C%E6%8E%92%E9%99%A4%E4%BE%9D%E8%B5%96"><span class="toc-number">2.2.</span> <span class="toc-text">可选依赖和排除依赖</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%81%9A%E5%90%88%E5%92%8C%E7%BB%A7%E6%89%BF"><span class="toc-number">3.</span> <span class="toc-text">聚合和继承</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%81%9A%E5%90%88"><span class="toc-number">3.1.</span> <span class="toc-text">聚合</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%A7%E6%89%BF"><span class="toc-number">3.2.</span> <span class="toc-text">继承</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%81%9A%E5%90%88%E4%B8%8E%E7%BB%A7%E6%89%BF%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">3.3.</span> <span class="toc-text">聚合与继承的区别</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%81%9A%E5%90%88%E4%B8%8E%E7%BB%A7%E6%89%BF%E7%9A%84%E5%8C%BA%E5%88%AB-1"><span class="toc-number">3.3.1.</span> <span class="toc-text">聚合与继承的区别</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9E%84%E5%BB%BA%E8%81%9A%E5%90%88%E4%B8%8E%E7%BB%A7%E6%89%BF%E5%B7%A5%E7%A8%8B"><span class="toc-number">3.3.2.</span> <span class="toc-text">构建聚合与继承工程</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B1%9E%E6%80%A7"><span class="toc-number">4.</span> <span class="toc-text">属性</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B1%9E%E6%80%A7-1"><span class="toc-number">4.1.</span> <span class="toc-text">属性</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%97%AE%E9%A2%98%E5%88%86%E6%9E%90"><span class="toc-number">4.1.1.</span> <span class="toc-text">问题分析</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3%E6%AD%A5%E9%AA%A4"><span class="toc-number">4.1.2.</span> <span class="toc-text">解决步骤</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E5%8A%A0%E8%BD%BD%E5%B1%9E%E6%80%A7"><span class="toc-number">4.2.</span> <span class="toc-text">配置文件加载属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86"><span class="toc-number">4.3.</span> <span class="toc-text">版本管理</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%9A%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E4%B8%8E%E5%BA%94%E7%94%A8"><span class="toc-number">5.</span> <span class="toc-text">多环境配置与应用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%9A%E7%8E%AF%E5%A2%83%E5%BC%80%E5%8F%91"><span class="toc-number">5.1.</span> <span class="toc-text">多环境开发</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B7%B3%E8%BF%87%E6%B5%8B%E8%AF%95"><span class="toc-number">5.2.</span> <span class="toc-text">跳过测试</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A7%81%E6%9C%8D"><span class="toc-number">6.</span> <span class="toc-text">私服</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A7%81%E6%9C%8D%E7%AE%80%E4%BB%8B"><span class="toc-number">6.1.</span> <span class="toc-text">私服简介</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A7%81%E6%9C%8D%E5%AE%89%E8%A3%85"><span class="toc-number">6.2.</span> <span class="toc-text">私服安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A7%81%E6%9C%8D%E4%BB%93%E5%BA%93%E5%88%86%E7%B1%BB"><span class="toc-number">6.3.</span> <span class="toc-text">私服仓库分类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%AC%E5%9C%B0%E4%BB%93%E5%BA%93%E8%AE%BF%E9%97%AE%E7%A7%81%E6%9C%8D%E9%85%8D%E7%BD%AE"><span class="toc-number">6.4.</span> <span class="toc-text">本地仓库访问私服配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A7%81%E6%9C%8D%E8%B5%84%E6%BA%90%E4%B8%8A%E4%BC%A0%E4%B8%8E%E4%B8%8B%E8%BD%BD"><span class="toc-number">6.5.</span> <span class="toc-text">私服资源上传与下载</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/10/13/kafkaConfig/" title="kafkaConfig">kafkaConfig</a><time datetime="2024-10-13T07:15:45.000Z" title="发表于 2024-10-13 15:15:45">2024-10-13</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/09/27/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E9%9D%A2%E8%AF%95%E9%A2%98/" title="微服务面试题">微服务面试题</a><time datetime="2024-09-27T02:32:38.000Z" title="发表于 2024-09-27 10:32:38">2024-09-27</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/09/19/es%E9%9B%86%E7%BE%A4/" title="es集群">es集群</a><time datetime="2024-09-19T08:01:14.000Z" title="发表于 2024-09-19 16:01:14">2024-09-19</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/09/19/Redis%E9%9B%86%E7%BE%A4/" title="Redis集群">Redis集群</a><time datetime="2024-09-19T08:00:14.000Z" title="发表于 2024-09-19 16:00:14">2024-09-19</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/07/14/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" title="设计模式">设计模式</a><time datetime="2024-07-14T10:45:42.000Z" title="发表于 2024-07-14 18:45:42">2024-07-14</time></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 - 2026 By 翎晗</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 7.3.0</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.7.0</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.7.0"></script><script src="/js/main.js?v=5.7.0"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

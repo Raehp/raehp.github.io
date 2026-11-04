@@ -208,7 +208,7 @@
 <h1 id="什么是Vue"><a href="#什么是Vue" class="headerlink" title="什么是Vue"></a>什么是Vue</h1><p>概念：Vue (读音 &#x2F;vjuː&#x2F;，类似于 view) 是一套 **构建用户界面 ** 的 <strong>渐进式</strong> <strong>框架</strong></p>
 <p>Vue2官网：<a target="_blank" rel="noopener" href="https://v2.cn.vuejs.org/">https://v2.cn.vuejs.org/</a></p>
 <h3 id="1-什么是构建用户界面"><a href="#1-什么是构建用户界面" class="headerlink" title="1.什么是构建用户界面"></a>1.什么是构建用户界面</h3><p><strong>基于数据</strong>渲染出用户可以看到的<strong>界面</strong></p>
-<p><img src="/1681875887026.png" alt="68187588702"></p>
+<p><img src="/2024/05/10/Vue2/1681875887026.png" alt="68187588702"></p>
 <h3 id="2-什么是渐进式"><a href="#2-什么是渐进式" class="headerlink" title="2.什么是渐进式"></a>2.什么是渐进式</h3><p>所谓渐进式就是循序渐进，不一定非得把Vue中的所有API都学完才能开发Vue，可以学一点开发一点</p>
 <h4 id="Vue的两种开发方式："><a href="#Vue的两种开发方式：" class="headerlink" title="Vue的两种开发方式："></a>Vue的两种开发方式：</h4><ol>
 <li><p>Vue核心包开发</p>
@@ -228,7 +228,7 @@
 <li>框架，是一套完整的解决方案，实现了大部分功能，我们只需要按照一定的规则去编码即可。</li>
 </ul>
 <p>下图是 库 和 框架的对比。</p>
-<p><img src="/1681876620277.png" alt="68187662027"></p>
+<p><img src="/2024/05/10/Vue2/1681876620277.png" alt="68187662027"></p>
 <p>框架的特点：有一套必须让开发者遵守的<strong>规则</strong>或者<strong>约束</strong></p>
 <p>咱们学框架就是学习的这些规则 <a target="_blank" rel="noopener" href="https://v2.cn.vuejs.org/">官网</a></p>
 <h3 id="总结：什么是Vue？"><a href="#总结：什么是Vue？" class="headerlink" title="总结：什么是Vue？"></a>总结：什么是Vue？</h3><p>Vue是什么：</p>
@@ -236,7 +236,7 @@
 <p>什么是渐进式：</p>
 <p>什么是框架：</p>
 <h1 id="创建Vue实例"><a href="#创建Vue实例" class="headerlink" title="创建Vue实例"></a>创建Vue实例</h1><p>我们已经知道了Vue框架可以 基于数据帮助我们渲染出用户界面，那应该怎么做呢？</p>
-<p><img src="/1681877190137.png" alt="68187719013"></p>
+<p><img src="/2024/05/10/Vue2/1681877190137.png" alt="68187719013"></p>
 <p>比如就上面这个数据，基于提供好的msg 怎么渲染后右侧可展示的数据呢？</p>
 <p><strong>核心步骤（4步）：</strong></p>
 <ol>
@@ -249,11 +249,11 @@
 </ol>
 </li>
 </ol>
-<p><img src="/1681877405007.png" alt="68187740500"></p>
+<p><img src="/2024/05/10/Vue2/1681877405007.png" alt="68187740500"></p>
 <p><strong>总结：创建Vue实例需要执行哪4步</strong></p>
 <h1 id="插值表达式-“-”"><a href="#插值表达式-“-”" class="headerlink" title="插值表达式 “{}”"></a>插值表达式 “{}”</h1><p>插值表达式是一种Vue的模板语法</p>
 <p>我们可以用插值表达式渲染出Vue提供的数据</p>
-<p><img src="/1681886494417.png" alt="68188649441"></p>
+<p><img src="/2024/05/10/Vue2/1681886494417.png" alt="68188649441"></p>
 <h3 id="1-作用：利用表达式进行插值，渲染到页面中"><a href="#1-作用：利用表达式进行插值，渲染到页面中" class="headerlink" title="1.作用：利用表达式进行插值，渲染到页面中"></a>1.作用：利用表达式进行插值，渲染到页面中</h3><p>表达式：是可以被求值的代码，JS引擎会讲其计算出一个结果</p>
 <p>以下的情况都是表达式：</p>
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">money + <span class="number">100</span></span><br><span class="line">money - <span class="number">100</span></span><br><span class="line">money * <span class="number">10</span></span><br><span class="line">money / <span class="number">10</span> </span><br><span class="line">price &gt;= <span class="number">100</span> ? <span class="string">'真贵'</span>:<span class="string">'还行'</span></span><br><span class="line">obj.<span class="property">name</span></span><br><span class="line">arr[<span class="number">0</span>]</span><br><span class="line"><span class="title function_">fn</span>()</span><br><span class="line">obj.<span class="title function_">fn</span>()</span><br></pre></td></tr></tbody></table>
@@ -270,7 +270,7 @@
 <h3 id="2-如何访问-和-修改-data中的数据（响应式演示）"><a href="#2-如何访问-和-修改-data中的数据（响应式演示）" class="headerlink" title="2.如何访问 和 修改 data中的数据（响应式演示）"></a>2.如何访问 和 修改 data中的数据（响应式演示）</h3><p>data中的数据, 最终会被添加到实例上</p>
 <p>① 访问数据： “实例.属性名”</p>
 <p>② 修改数据： “实例.属性名”&#x3D; “值”</p>
-<p><img src="/1681888539340.png" alt="68188853934"></p>
+<p><img src="/2024/05/10/Vue2/1681888539340.png" alt="68188853934"></p>
 <h3 id="3-总结"><a href="#3-总结" class="headerlink" title="3.总结"></a>3.总结</h3><ol>
 <li>什么是响应式</li>
 <li>如何访问和修改data中的数据呢</li>
@@ -280,9 +280,9 @@
 <li>极简插件下载（推荐） <a target="_blank" rel="noopener" href="https://chrome.zzzmh.cn/index">https://chrome.zzzmh.cn/index</a></li>
 </ol>
 <p>安装步骤：</p>
-<p><img src="/1681889390406.png" alt="68188939040"></p>
+<p><img src="/2024/05/10/Vue2/1681889390406.png" alt="68188939040"></p>
 <p>安装之后可以F12后看到多一个Vue的调试面板</p>
-<p><img src="/1681889483446.png" alt="68188948344"></p>
+<p><img src="/2024/05/10/Vue2/1681889483446.png" alt="68188948344"></p>
 <h1 id="Vue中的常用指令"><a href="#Vue中的常用指令" class="headerlink" title="Vue中的常用指令"></a>Vue中的常用指令</h1><p><strong>概念：<strong>指令（Directives）是 Vue 提供的带有 <strong>v- 前缀</strong> 的 特殊 标签</strong>属性</strong>。</p>
 <p>为啥要学：提高程序员操作 DOM 的效率。</p>
 <p>vue 中的指令按照不同的用途可以分为如下 6 大类：</p>
@@ -325,7 +325,7 @@
 <li>原理： 切换 display:none 控制显示隐藏</li>
 <li>场景：频繁切换显示隐藏的场景</li>
 </ol>
-<p><img src="/1681891228284.png" alt="68189122828"></p>
+<p><img src="/2024/05/10/Vue2/1681891228284.png" alt="68189122828"></p>
 </li>
 <li><p>v-if</p>
 <ol>
@@ -334,7 +334,7 @@
 <li>原理： 基于条件判断，是否创建 或 移除元素节点</li>
 <li>场景： 要么显示，要么隐藏，不频繁切换的场景</li>
 </ol>
-<p><img src="/1681891237750.png" alt="68189123775"></p>
+<p><img src="/2024/05/10/Vue2/1681891237750.png" alt="68189123775"></p>
 <p>示例代码：</p>
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=<span class="string">"app"</span>&gt;</span><br><span class="line">  <span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box"</span>&gt;</span>我是v-show控制的盒子<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">  <span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box"</span>&gt;</span>我是v-if控制的盒子<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">&lt;/div&gt;</span><br><span class="line">   </span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="keyword">const</span> app = <span class="keyword">new</span> <span class="title class_">Vue</span>({</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="attr">el</span>: <span class="string">'#app'</span>,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="attr">data</span>: {</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="attr">flag</span>: <span class="literal">false</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    }</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  })</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></tbody></table>
 </li>
@@ -426,7 +426,7 @@
 <li>点击登录按钮获取表单中的内容</li>
 <li>点击重置按钮清空表单中的内容</li>
 </ol>
-<p><img src="/1681913125738.png" alt="68191312573"></p>
+<p><img src="/2024/05/10/Vue2/1681913125738.png" alt="68191312573"></p>
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=<span class="string">"app"</span>&gt;</span><br><span class="line">    账户：&lt;input type=<span class="string">"text"</span>&gt; &lt;br&gt;&lt;br&gt;</span><br><span class="line">    密码：&lt;input type=<span class="string">"password"</span>&gt; &lt;br&gt;&lt;br&gt;</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">button</span>&gt;</span>登录<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">button</span>&gt;</span>重置<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">  <span class="language-xml"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line">  <span class="language-xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="keyword">const</span> app = <span class="keyword">new</span> <span class="title class_">Vue</span>({</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="attr">el</span>: <span class="string">'#app'</span>,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="attr">data</span>: {</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        <span class="attr">username</span>: <span class="string">''</span>,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        <span class="attr">password</span>: <span class="string">''</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      },</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    })</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></tbody></table>
 
 <h2 id="指令修饰符"><a href="#指令修饰符" class="headerlink" title="指令修饰符"></a>指令修饰符</h2><h3 id="1-什么是指令修饰符？"><a href="#1-什么是指令修饰符？" class="headerlink" title="1.什么是指令修饰符？"></a>1.什么是指令修饰符？</h3><p>​ 所谓指令修饰符就是通过“.”指明一些指令<strong>后缀</strong> 不同的<strong>后缀</strong>封装了不同的处理操作 —&gt; 简化代码</p>
@@ -518,7 +518,7 @@
 <li>计算属性默认的简写，只能读取访问，不能 “修改”</li>
 <li>如果要 “修改” → 需要写计算属性的完整写法</li>
 </ol>
-<p><img src="/1682041822963.png" alt="68204182296"></p>
+<p><img src="/2024/05/10/Vue2/1682041822963.png" alt="68204182296"></p>
 <p>完整写法代码演示</p>
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line">   姓：<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">v-model</span>=<span class="string">"firstName"</span>&gt;</span> +</span><br><span class="line">   名：<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">v-model</span>=<span class="string">"lastName"</span>&gt;</span> =</span><br><span class="line">   <span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span> </span><br><span class="line">   <span class="tag">&lt;<span class="name">button</span>&gt;</span>改名卡<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">   <span class="keyword">const</span> app = <span class="keyword">new</span> <span class="title class_">Vue</span>({</span></span><br><span class="line"><span class="language-javascript">     <span class="attr">el</span>: <span class="string">'#app'</span>,</span></span><br><span class="line"><span class="language-javascript">     <span class="attr">data</span>: {</span></span><br><span class="line"><span class="language-javascript">		<span class="attr">firstName</span>: <span class="string">'刘'</span>,</span></span><br><span class="line"><span class="language-javascript">       <span class="attr">lastName</span>: <span class="string">'备'</span></span></span><br><span class="line"><span class="language-javascript">     },</span></span><br><span class="line"><span class="language-javascript">     <span class="attr">computed</span>: {</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">     },</span></span><br><span class="line"><span class="language-javascript">     <span class="attr">methods</span>: {</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">     }</span></span><br><span class="line"><span class="language-javascript">   })</span></span><br><span class="line"><span class="language-javascript"> </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></tbody></table>
 
@@ -548,10 +548,10 @@
 <h1 id="Vue声明周期和生命周期的四个阶段"><a href="#Vue声明周期和生命周期的四个阶段" class="headerlink" title="Vue声明周期和生命周期的四个阶段"></a>Vue声明周期和生命周期的四个阶段</h1><p>思考：什么时候可以发送<strong>初始化渲染请求</strong>？(越早越好)什么时候可以开始<strong>操作dom</strong>？(至少得dom渲染出来)</p>
 <p>Vue声明周期：一个Vue实例从<strong>创建</strong>到<strong>销毁</strong>的过程</p>
 <p>生命周期四个阶段：1.创建 2.挂载 3.更新 4.销毁</p>
-<p><img src="/image-20240418171447366.png" alt="image-20240418171447366"></p>
+<p><img src="/2024/05/10/Vue2/image-20240418171447366.png" alt="image-20240418171447366"></p>
 <h1 id="Vue声明周期函数（钩子函数）"><a href="#Vue声明周期函数（钩子函数）" class="headerlink" title="Vue声明周期函数（钩子函数）"></a>Vue声明周期函数（钩子函数）</h1><p>Vue生命周期过程，会自动运行一些函数，被称为【生命周期钩子】→让开发者 在【特定阶段】运行自己的代码</p>
-<p><img src="/image-20240418171711663.png" alt="image-20240418171711663"></p>
-<p><img src="/image-20240418171649423.png" alt="image-20240418171649423"></p>
+<p><img src="/2024/05/10/Vue2/image-20240418171711663.png" alt="image-20240418171711663"></p>
+<p><img src="/2024/05/10/Vue2/image-20240418171649423.png" alt="image-20240418171649423"></p>
 <p>created：发送初始化渲染请求</p>
 <p>mounted：操作dom</p>
 <p>before destory：释放Vue以外的资源（清除定时器，延时器….）</p>
@@ -561,7 +561,7 @@
 <p>1.开箱即用，零配置</p>
 <p>2.内置babel</p>
 <p>3.标准化</p>
-<h2 id="运行流程："><a href="#运行流程：" class="headerlink" title="运行流程："></a>运行流程：</h2><p><img src="/image-20240419091402170.png" alt="image-20240419091402170"></p>
+<h2 id="运行流程："><a href="#运行流程：" class="headerlink" title="运行流程："></a>运行流程：</h2><p><img src="/2024/05/10/Vue2/image-20240419091402170.png" alt="image-20240419091402170"></p>
 <h2 id="组件化"><a href="#组件化" class="headerlink" title="组件化"></a>组件化</h2><ul>
 <li>页面可以拆分成一个个组件，每个组件有着独立的结构、行为、样式</li>
 <li>好处：便于维护，利用复用 → 提升开发效率</li>
@@ -577,30 +577,30 @@
 <h2 id="普通组件的注册使用"><a href="#普通组件的注册使用" class="headerlink" title="普通组件的注册使用"></a>普通组件的注册使用</h2><h3 id="组件注册的两种方式："><a href="#组件注册的两种方式：" class="headerlink" title="组件注册的两种方式："></a>组件注册的两种方式：</h3><ol>
 <li>局部注册：只能在注册的组件中使用<ol>
 <li>创建.vue文件<ul>
-<li><img src="/image-20240419100716370.png" alt="image-20240419100716370"></li>
+<li><img src="/2024/05/10/Vue2/image-20240419100716370.png" alt="image-20240419100716370"></li>
 </ul>
 </li>
 <li>在使用的组件内导入并注册（在App.vue中完成）<ul>
-<li><img src="/image-20240419100739919.png" alt="image-20240419100739919"></li>
+<li><img src="/2024/05/10/Vue2/image-20240419100739919.png" alt="image-20240419100739919"></li>
 </ul>
 </li>
 <li>调用<ul>
-<li><img src="/image-20240419100800332.png" alt="image-20240419100800332"></li>
+<li><img src="/2024/05/10/Vue2/image-20240419100800332.png" alt="image-20240419100800332"></li>
 </ul>
 </li>
 </ol>
 </li>
 <li>全局注册：所有组件都能使用<ol>
 <li>在main.js中导入<ul>
-<li><img src="/image-20240419100548570.png" alt="image-20240419100548570"></li>
+<li><img src="/2024/05/10/Vue2/image-20240419100548570.png" alt="image-20240419100548570"></li>
 </ul>
 </li>
 <li>在main.js进行全局注册<ul>
-<li><img src="/image-20240419100607199.png" alt="image-20240419100607199"></li>
+<li><img src="/2024/05/10/Vue2/image-20240419100607199.png" alt="image-20240419100607199"></li>
 </ul>
 </li>
 <li>去需要用到组件的vue中进行使用即可<ul>
-<li><img src="/image-20240419100645668.png" alt="image-20240419100645668"></li>
+<li><img src="/2024/05/10/Vue2/image-20240419100645668.png" alt="image-20240419100645668"></li>
 </ul>
 </li>
 </ol>
@@ -614,11 +614,11 @@
 <p><strong>原理：</strong></p>
 <ol>
 <li>当前组件内标签都被添加 <code>data-v-hash值</code> 的属性<ul>
-<li><img src="/image-20240419120757751.png" alt="image-20240419120757751"></li>
+<li><img src="/2024/05/10/Vue2/image-20240419120757751.png" alt="image-20240419120757751"></li>
 </ul>
 </li>
 <li>css 选择器都被添加 [data-v-hash值] 的属性选择器<ul>
-<li><img src="/image-20240419120808041.png" alt="image-20240419120808041"></li>
+<li><img src="/2024/05/10/Vue2/image-20240419120808041.png" alt="image-20240419120808041"></li>
 </ul>
 </li>
 </ol>
@@ -634,13 +634,13 @@
 <li>子props接收</li>
 <li>使用</li>
 </ul>
-<p><img src="/image-20240419131754371.png" alt="image-20240419131754371"></p>
+<p><img src="/2024/05/10/Vue2/image-20240419131754371.png" alt="image-20240419131754371"></p>
 <h3 id="子-→-父-emit"><a href="#子-→-父-emit" class="headerlink" title="子 → 父 $emit"></a>子 → 父 $emit</h3><ul>
 <li>子$emit发送消息</li>
 <li>父中给子添加消息监听</li>
 <li>父中实现处理函数</li>
 </ul>
-<p><img src="/image-20240419131827371.png" alt="image-20240419131827371"></p>
+<p><img src="/2024/05/10/Vue2/image-20240419131827371.png" alt="image-20240419131827371"></p>
 <h2 id="props"><a href="#props" class="headerlink" title="props"></a>props</h2><h3 id="Prop定义"><a href="#Prop定义" class="headerlink" title="Prop定义"></a>Prop定义</h3><p>组件上注册一些自定义属性</p>
 <h3 id="Prop作用"><a href="#Prop作用" class="headerlink" title="Prop作用"></a>Prop作用</h3><p>向子组件传递数据</p>
 <p>特点：</p>
@@ -648,7 +648,7 @@
 <li>​ 可以 传递 任意<strong>数量</strong> 的prop</li>
 <li>​ 可以 传递 任意<strong>类型</strong> 的prop</li>
 </ul>
-<p><img src="/image-20240419134855205.png" alt="image-20240419134855205"></p>
+<p><img src="/2024/05/10/Vue2/image-20240419134855205.png" alt="image-20240419134855205"></p>
 <h3 id="prop校验"><a href="#prop校验" class="headerlink" title="prop校验"></a>prop校验</h3><p><strong>思考</strong>：组件的prop 可以乱穿么？ 不可以</p>
 <p><strong>作用</strong>：为组件的prop指定验证要求，不符合要求，控制台就会有错误提示 → 帮助开发者，快速发现错误</p>
 <p><strong>语法</strong>：</p>
@@ -658,7 +658,7 @@
 <li>默认值</li>
 <li>自定义校验</li>
 </ul>
-<p><img src="/image-20240419135923055.png" alt="image-20240419135923055"><br><img src="/image-20240419140715188.png" alt="image-20240419140715188"></p>
+<p><img src="/2024/05/10/Vue2/image-20240419135923055.png" alt="image-20240419135923055"><br><img src="/2024/05/10/Vue2/image-20240419140715188.png" alt="image-20240419140715188"></p>
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">props: {</span><br><span class="line">	w: number</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line">-------------------------------------------</span><br><span class="line">props: {</span><br><span class="line">	w: {</span><br><span class="line">		type: 类型,</span><br><span class="line">		required: true,  // 是否必填</span><br><span class="line">		default:默认值,  //默认值</span><br><span class="line">		validator(value) {</span><br><span class="line">			if(逻辑判断) {</span><br><span class="line">			// 自定义校验逻辑</span><br><span class="line">				return true</span><br><span class="line">			}</span><br><span class="line">		}</span><br><span class="line">	}</span><br><span class="line">}</span><br></pre></td></tr></tbody></table>
 
 <h3 id="prop-data、单向数据流"><a href="#prop-data、单向数据流" class="headerlink" title="prop &amp; data、单向数据流"></a>prop &amp; data、单向数据流</h3><p>共同点：都可以给组件提供数据</p>
@@ -668,20 +668,20 @@
 <li>prop 的数据是外部的 → 不能随便改， 要遵循单向数据流</li>
 </ul>
 <p>单项数据流：父级prop的数据更新，会向下流动，影响子组件。这个数据流动是单项的</p>
-<p><img src="/image-20240419141355768.png" alt="image-20240419141355768"></p>
-<h2 id="非父子通信（拓展）-event-bus-事件总线"><a href="#非父子通信（拓展）-event-bus-事件总线" class="headerlink" title="非父子通信（拓展）-event bus 事件总线"></a>非父子通信（拓展）-event bus 事件总线</h2><p><img src="/image-20240419154933160.png" alt="image-20240419154933160"></p>
+<p><img src="/2024/05/10/Vue2/image-20240419141355768.png" alt="image-20240419141355768"></p>
+<h2 id="非父子通信（拓展）-event-bus-事件总线"><a href="#非父子通信（拓展）-event-bus-事件总线" class="headerlink" title="非父子通信（拓展）-event bus 事件总线"></a>非父子通信（拓展）-event bus 事件总线</h2><p><img src="/2024/05/10/Vue2/image-20240419154933160.png" alt="image-20240419154933160"></p>
 <p><strong>作用</strong>：非父子组件之间，进行简易消息传递。（复杂场景 → Vuex）</p>
 <ol>
 <li>创建一个都能访问到的事件总线（空Vue实例） → utils&#x2F;EventBus.js<ul>
-<li><img src="/image-20240419154832119.png" alt="image-20240419154832119"></li>
+<li><img src="/2024/05/10/Vue2/image-20240419154832119.png" alt="image-20240419154832119"></li>
 </ul>
 </li>
 <li>A组件（接收方），监听Bus实例的事件<ul>
-<li><img src="/image-20240419154858841.png" alt="image-20240419154858841"></li>
+<li><img src="/2024/05/10/Vue2/image-20240419154858841.png" alt="image-20240419154858841"></li>
 </ul>
 </li>
 <li>B组件（发送方），触发Bus实例的事件<ul>
-<li><img src="/image-20240419154924207.png" alt="image-20240419154924207"></li>
+<li><img src="/2024/05/10/Vue2/image-20240419154924207.png" alt="image-20240419154924207"></li>
 </ul>
 </li>
 </ol>
@@ -694,11 +694,11 @@
 
 <h2 id="非父子通信-provide-inject"><a href="#非父子通信-provide-inject" class="headerlink" title="非父子通信-provide &amp; inject"></a>非父子通信-<strong>provide</strong> &amp; <strong>inject</strong></h2><p>**provide &amp; inject的作用：**跨层级共享数据</p>
 <p><strong>父组件： provide 提供数据</strong></p>
-<p><img src="/image-20240420094110639.png" alt="image-20240420094110639"></p>
+<p><img src="/2024/05/10/Vue2/image-20240420094110639.png" alt="image-20240420094110639"></p>
 <p>响应式：当修改数据时 页面会做出响应</p>
 <p>非响应式：当修改数据时，页面不会做出响应</p>
 <p><strong>子&#x2F;孙组件： inject 取值使用</strong></p>
-<p><img src="/image-20240420094226560.png" alt="image-20240420094226560"></p>
+<p><img src="/2024/05/10/Vue2/image-20240420094226560.png" alt="image-20240420094226560"></p>
 <h1 id="v-model原理"><a href="#v-model原理" class="headerlink" title="v-model原理"></a>v-model原理</h1><h3 id="原理："><a href="#原理：" class="headerlink" title="原理："></a>原理：</h3><p>v-model本质上是一个语法糖。例如应用在输入框上，就是value属性 和 input事件 的合写</p>
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">&nbsp; &lt;div id="app" &gt;</span><br><span class="line">&nbsp; &nbsp; &lt;input v-model="msg" type="text"&gt;</span><br><span class="line"></span><br><span class="line">&nbsp; &nbsp; &lt;input :value="msg" @input="msg = $event.target.value" type="text"&gt;</span><br><span class="line">&nbsp; &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br></pre></td></tr></tbody></table>
 
@@ -717,38 +717,38 @@
 <li>父传子：数据 应该时父组件<strong>props</strong>传递 过来的， v-model拆解绑定数据</li>
 <li>子传父：监听输入，子传父传值给父组件修改</li>
 </ul>
-<p><img src="/image-20240420101931245.png" alt="image-20240420101931245"></p>
-<p><img src="/image-20240420101937810.png" alt="image-20240420101937810"></p>
+<p><img src="/2024/05/10/Vue2/image-20240420101931245.png" alt="image-20240420101931245"></p>
+<p><img src="/2024/05/10/Vue2/image-20240420101937810.png" alt="image-20240420101937810"></p>
 <h2 id="2-v-model简化代码"><a href="#2-v-model简化代码" class="headerlink" title="2.v-model简化代码"></a><strong>2.v-model简化代码</strong></h2><p>其实就是凑value和input这两个变量名</p>
 <ul>
 <li>子组件中：props 通过 value 接收，事件触发 input</li>
 <li>父组件中：v-model 给组件直接绑定数据（:value + @input）</li>
 </ul>
-<p><img src="/image-20240420103350723.png" alt="image-20240420103350723"></p>
+<p><img src="/2024/05/10/Vue2/image-20240420103350723.png" alt="image-20240420103350723"></p>
 <h1 id="sycn修饰符"><a href="#sycn修饰符" class="headerlink" title=".sycn修饰符"></a>.sycn修饰符</h1><p>作用：可以实现 <strong>子组件</strong> 与 **父组件数据 ** 的 <strong>双向绑定</strong>，简化代码</p>
 <p>特点：prop属性名，可以<strong>自定义</strong>，非固定为 <strong>value</strong></p>
 <p>场景：封装弹框类的基础组件，<strong>visible 属性</strong>，true显示 false隐藏</p>
 <p>本质：就是 <code>:属性名</code> 和 <code>@update:属性名</code> 合写</p>
-<p><img src="/image-20240420110430553.png" alt="image-20240420110430553"></p>
-<p><img src="/image-20240420110554179.png" alt="image-20240420110554179"></p>
+<p><img src="/2024/05/10/Vue2/image-20240420110430553.png" alt="image-20240420110430553"></p>
+<p><img src="/2024/05/10/Vue2/image-20240420110554179.png" alt="image-20240420110554179"></p>
 <h1 id="ref-和-refs"><a href="#ref-和-refs" class="headerlink" title="ref 和 $refs"></a>ref 和 $refs</h1><p><strong>作用：<strong>利用ref 和 $refs 可以用于</strong>获取 dom 元素</strong> 或<strong>组件实例</strong></p>
 <p>**特点：**查找范围 → 当前组件内（更精确稳定）</p>
 <ul>
 <li>获取dom<ul>
 <li>目标标签 - 添加ref属性<ul>
-<li><img src="/image-20240420113017419.png" alt="image-20240420113017419"></li>
+<li><img src="/2024/05/10/Vue2/image-20240420113017419.png" alt="image-20240420113017419"></li>
 </ul>
 </li>
 <li>恰当时机，通过<code>this.$refs.xxx</code>，获取目标标签<ul>
-<li><img src="/image-20240420113105006.png" alt="image-20240420113105006"></li>
+<li><img src="/2024/05/10/Vue2/image-20240420113105006.png" alt="image-20240420113105006"></li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
 <p><strong>案例1：</strong></p>
-<p>​ <img src="/image-20240420113439198.png" alt="image-20240420113439198"></p>
-<p><img src="/image-20240420113612685.png" alt="image-20240420113612685"></p>
+<p>​ <img src="/2024/05/10/Vue2/image-20240420113439198.png" alt="image-20240420113439198"></p>
+<p><img src="/2024/05/10/Vue2/image-20240420113612685.png" alt="image-20240420113612685"></p>
 <p><strong>案例2：</strong></p>
 <p>App.vue</p>
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div class="app"&gt;</span><br><span class="line">    &lt;h4&gt;父组件 -- &lt;button&gt;获取组件实例&lt;/button&gt;&lt;/h4&gt;</span><br><span class="line">    &lt;BaseForm ref="BaseForm"&gt;&lt;/BaseForm&gt;</span><br><span class="line"></span><br><span class="line">    &lt;button @click="handleGet"&gt;获取数据&lt;/button&gt;</span><br><span class="line">    &lt;button @click="handleReset"&gt;重置数据&lt;/button&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">import BaseForm from './components/BaseForm.vue'</span><br><span class="line">export default {</span><br><span class="line">  components: {</span><br><span class="line">    BaseForm,</span><br><span class="line">  },</span><br><span class="line">  methods: {</span><br><span class="line">    handleGet () {</span><br><span class="line">      console.log(this.$refs.BaseForm.getValues())</span><br><span class="line">    },</span><br><span class="line">    handleReset () {</span><br><span class="line">      this.$refs.BaseForm.resetValues()</span><br><span class="line">    }</span><br><span class="line">  }</span><br><span class="line">}</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></tbody></table>
@@ -758,7 +758,7 @@
 
 <p><strong>效果：</strong></p>
 <p>获取输入框里面的值</p>
-<p><img src="/image-20240420113737083.png" alt="image-20240420113737083"></p>
+<p><img src="/2024/05/10/Vue2/image-20240420113737083.png" alt="image-20240420113737083"></p>
 <h1 id="Vue异步更新-nextTick"><a href="#Vue异步更新-nextTick" class="headerlink" title="Vue异步更新 &amp; $nextTick"></a>Vue异步更新 &amp; $nextTick</h1><h2 id="Vue是异步更新DOM的"><a href="#Vue是异步更新DOM的" class="headerlink" title="Vue是异步更新DOM的"></a><strong>Vue是异步更新DOM的</strong></h2><p>Vue.js是一种用于构建用户界面的渐进式 JavaScript 框架。其中一个非常重要的特性是异步更新。异步更新是指当数据发生变化时，Vue不会立即更新DOM。相反，它会在下一个“tick”或渲染循环中异步执行DOM更新。这种机制可以提高性能，减少不必要的操作。</p>
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">当我们直接修改 Vue 实例的数据时，Vue 会在内部将数据更新操作放入一个异步队列中，而不是立即进行更新。</span><br></pre></td></tr></tbody></table>
 
@@ -775,13 +775,13 @@
 <ul>
 <li><p>在需要绑定的标签上写上自定义的指令</p>
 <ul>
-<li><img src="/image-20240421102351808.png" alt="image-20240421102351808"></li>
+<li><img src="/2024/05/10/Vue2/image-20240421102351808.png" alt="image-20240421102351808"></li>
 </ul>
 </li>
 <li><p>全局注册 - 语法</p>
 <ul>
 <li>在main.js中注册<ul>
-<li><img src="/image-20240421102218477.png" alt="image-20240421102218477"></li>
+<li><img src="/2024/05/10/Vue2/image-20240421102218477.png" alt="image-20240421102218477"></li>
 </ul>
 </li>
 </ul>
@@ -789,7 +789,7 @@
 <li><p>局部注册 - 语法</p>
 <ul>
 <li>在app.vue中注册<ul>
-<li><img src="/image-20240421102316638.png" alt="image-20240421102316638"></li>
+<li><img src="/2024/05/10/Vue2/image-20240421102316638.png" alt="image-20240421102316638"></li>
 </ul>
 </li>
 </ul>
@@ -798,21 +798,21 @@
 <h2 id="自定义指令-指令的值"><a href="#自定义指令-指令的值" class="headerlink" title="自定义指令 - 指令的值"></a>自定义指令 - 指令的值</h2><p>需求：实现一个color指令 - 传入不同的颜色，给标签设置文字颜色</p>
 <ul>
 <li>语法：在绑定指令时，可以通过 “等号” 的形式 为指令绑定 具体的参数值 <code>v-指令名= &quot;指令值&quot;</code><ul>
-<li><img src="/image-20240421104209131.png" alt="image-20240421104209131"></li>
+<li><img src="/2024/05/10/Vue2/image-20240421104209131.png" alt="image-20240421104209131"></li>
 </ul>
 </li>
 <li>而后通过 <code>binding.value</code> 可以拿到指令值，指令值修改会触发update函数</li>
 </ul>
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">注意：inserted函数 是当元素添加到页面中时才会触发，如果已经添加到页面中，再去修改属性值 是不会触发的 这个时候 要用到一个update函数</span><br></pre></td></tr></tbody></table>
 
-<p><img src="/image-20240421104436281.png" alt="image-20240421104436281"></p>
+<p><img src="/2024/05/10/Vue2/image-20240421104436281.png" alt="image-20240421104436281"></p>
 <h2 id="自定义指令-封装v-loading指令"><a href="#自定义指令-封装v-loading指令" class="headerlink" title="自定义指令 - 封装v-loading指令"></a>自定义指令 - 封装v-loading指令</h2><p>效果：当我们去请求数据时，页面可能会空白一段时间，我们想要在空白的这段时间内 让他显示加载的动画</p>
 <ul>
 <li><p>实现步骤</p>
 <ul>
-<li><p><img src="/image-20240421111012155.png" alt="image-20240421111012155"></p>
+<li><p><img src="/2024/05/10/Vue2/image-20240421111012155.png" alt="image-20240421111012155"></p>
 </li>
-<li><p><img src="/image-20240421111145791.png" alt="image-20240421111145791"></p>
+<li><p><img src="/2024/05/10/Vue2/image-20240421111145791.png" alt="image-20240421111145791"></p>
 </li>
 </ul>
 </li>
@@ -821,16 +821,16 @@
 <p><strong>场景</strong>：当组内某一部分结构不确定，想要自定义时。</p>
 <p><strong>需求</strong>：要在页面中显示一个对话框，封装成一个组件</p>
 <p><strong>问题</strong>：组件的内部部分，<strong>不希望写死</strong>，希望能使用的时候<strong>自定义</strong>。怎么办？</p>
-<p><img src="/image-20240421115110618.png" alt="image-20240421115110618"></p>
+<p><img src="/2024/05/10/Vue2/image-20240421115110618.png" alt="image-20240421115110618"></p>
 <p>插槽基本语法：</p>
 <ol>
 <li>组件内需要定制的结构部分，改用占位</li>
 <li>使用组件时，标签内部，传入结构替代slot</li>
 </ol>
 <p>案例：</p>
-<p><img src="/image-20240421115716517.png" alt="image-20240421115716517"></p>
-<p><img src="/image-20240421115722869.png" alt="image-20240421115722869"></p>
-<p><img src="/image-20240421115726763.png" alt="image-20240421115726763"></p>
+<p><img src="/2024/05/10/Vue2/image-20240421115716517.png" alt="image-20240421115716517"></p>
+<p><img src="/2024/05/10/Vue2/image-20240421115722869.png" alt="image-20240421115722869"></p>
+<p><img src="/2024/05/10/Vue2/image-20240421115726763.png" alt="image-20240421115726763"></p>
 <h2 id="插槽-后备插槽"><a href="#插槽-后备插槽" class="headerlink" title="插槽 - 后备插槽"></a>插槽 - 后备插槽</h2><p>插槽后备内容：封装组件时，可以为预留的 <code>&lt;slot&gt;</code> 插槽提供<strong>后备内容</strong>（默认内容）</p>
 <ul>
 <li>语法：在 标签内，放置内容，作为默认显示内容</li>
@@ -845,7 +845,7 @@
 </ul>
 </li>
 </ul>
-<p><img src="/image-20240421120721410.png" alt="image-20240421120721410"></p>
+<p><img src="/2024/05/10/Vue2/image-20240421120721410.png" alt="image-20240421120721410"></p>
 <h2 id="插槽-具名插槽"><a href="#插槽-具名插槽" class="headerlink" title="插槽 - 具名插槽"></a>插槽 - 具名插槽</h2><p><strong>组件内 有多处不确定的结构 怎么办？</strong></p>
 <p><strong>具名插槽</strong></p>
 <ul>
@@ -855,7 +855,7 @@
 </ul>
 </li>
 </ul>
-<p><img src="/image-20240421122052310.png" alt="image-20240421122052310"></p>
+<p><img src="/2024/05/10/Vue2/image-20240421122052310.png" alt="image-20240421122052310"></p>
 <h2 id="插槽-作用域插槽"><a href="#插槽-作用域插槽" class="headerlink" title="插槽 - 作用域插槽"></a>插槽 - 作用域插槽</h2><p>作用域插槽：定义slot插槽的同时，是可以传值的。给插槽上可以绑定数据，将来 使用组件时可以使用</p>
 <p>场景：封装表格组件</p>
 <ol>
@@ -863,21 +863,21 @@
 <li>利用默认插槽，定制操作列</li>
 <li>删除或查看都需要用到<strong>当前项的id</strong>，属于<strong>组件内部的数据</strong>通过<strong>作用域插槽</strong>传值绑定，进而使用</li>
 </ol>
-<p><img src="/image-20240421160300672.png" alt="image-20240421160300672"></p>
-<p><img src="/image-20240421160240117.png" alt="image-20240421160240117"></p>
+<p><img src="/2024/05/10/Vue2/image-20240421160300672.png" alt="image-20240421160300672"></p>
+<p><img src="/2024/05/10/Vue2/image-20240421160240117.png" alt="image-20240421160240117"></p>
 <p><strong>作用域插槽的作用</strong>：可以给插槽上绑定数据，供将来使用组件时使用</p>
 <p><strong>作用域插槽使用步骤？</strong></p>
 <ul>
 <li>给slot标签，以添加属性的方式传值<ul>
-<li><img src="/image-20240421160527128.png" alt="image-20240421160527128"></li>
+<li><img src="/2024/05/10/Vue2/image-20240421160527128.png" alt="image-20240421160527128"></li>
 </ul>
 </li>
 <li>所有属性都会被收集到一个对象中<ul>
-<li><img src="/image-20240421160535688.png" alt="image-20240421160535688"></li>
+<li><img src="/2024/05/10/Vue2/image-20240421160535688.png" alt="image-20240421160535688"></li>
 </ul>
 </li>
 <li>template中，通过 <code>#插槽名= &quot;obj&quot;</code> 接收<ul>
-<li><img src="/image-20240421160545873.png" alt="image-20240421160545873"></li>
+<li><img src="/2024/05/10/Vue2/image-20240421160545873.png" alt="image-20240421160545873"></li>
 </ul>
 </li>
 </ul>
@@ -888,23 +888,23 @@
 <li>5个基础步骤（固定）<ol>
 <li>下载：下载VueRouter模块到工程中<ul>
 <li>vue2 → vueRouter3 → Vuex3 vue4 → vueRouter4 → Vuex4</li>
-<li><img src="/image-20240422111024686.png" alt="image-20240422111024686"></li>
+<li><img src="/2024/05/10/Vue2/image-20240422111024686.png" alt="image-20240422111024686"></li>
 </ul>
 </li>
 <li>引入<ul>
-<li><img src="/image-20240422111041771.png" alt="image-20240422111041771"></li>
+<li><img src="/2024/05/10/Vue2/image-20240422111041771.png" alt="image-20240422111041771"></li>
 </ul>
 </li>
 <li>安装注册<ul>
-<li><img src="/image-20240422111058438.png" alt="image-20240422111058438"></li>
+<li><img src="/2024/05/10/Vue2/image-20240422111058438.png" alt="image-20240422111058438"></li>
 </ul>
 </li>
 <li>创建路由对象<ul>
-<li><img src="/image-20240422111110375.png" alt="image-20240422111110375"></li>
+<li><img src="/2024/05/10/Vue2/image-20240422111110375.png" alt="image-20240422111110375"></li>
 </ul>
 </li>
 <li>注入，将路由对象注入到new Vue实例中，建立关联<ul>
-<li><img src="/image-20240422111133017.png" alt="image-20240422111133017"></li>
+<li><img src="/2024/05/10/Vue2/image-20240422111133017.png" alt="image-20240422111133017"></li>
 </ul>
 </li>
 </ol>
@@ -912,11 +912,11 @@
 <li>2个核心步骤<ol>
 <li>创建需要的组件(放在views目录下)，配置路由规则<ul>
 <li><strong>Find.vue My.vue Friend.vue</strong></li>
-<li><img src="/image-20240422112132161.png" alt="image-20240422112132161"></li>
+<li><img src="/2024/05/10/Vue2/image-20240422112132161.png" alt="image-20240422112132161"></li>
 </ul>
 </li>
 <li>配置导航，配置路由出口（路径匹配的组件显示的位置）<ul>
-<li><img src="/image-20240422112213300.png" alt="image-20240422112213300"></li>
+<li><img src="/2024/05/10/Vue2/image-20240422112213300.png" alt="image-20240422112213300"></li>
 </ul>
 </li>
 </ol>
@@ -938,11 +938,11 @@
 <ol>
 <li>创建router&#x2F;index.js文件<ul>
 <li>将main.js中路由的配置 剪贴到index.js</li>
-<li><img src="/image-20240422143533462.png" alt="image-20240422143533462"></li>
+<li><img src="/2024/05/10/Vue2/image-20240422143533462.png" alt="image-20240422143533462"></li>
 </ul>
 </li>
 <li>在main.js中引入router<ul>
-<li><img src="/image-20240422143436011.png" alt="image-20240422143436011"></li>
+<li><img src="/2024/05/10/Vue2/image-20240422143436011.png" alt="image-20240422143436011"></li>
 </ul>
 </li>
 </ol>
@@ -974,82 +974,82 @@
 <h2 id="声明式导航-跳转传参"><a href="#声明式导航-跳转传参" class="headerlink" title="声明式导航 - 跳转传参"></a>声明式导航 - 跳转传参</h2><ul>
 <li><strong>查询参数查询（多个参数）</strong><ul>
 <li>路由<ul>
-<li><img src="/image-20240422155413600.png" alt="image-20240422155413600"></li>
+<li><img src="/2024/05/10/Vue2/image-20240422155413600.png" alt="image-20240422155413600"></li>
 </ul>
 </li>
 <li>跳转：<code>to=&quot;/path?参数名=值&quot;</code><ul>
-<li><img src="/image-20240422155050008.png" alt="image-20240422155050008"></li>
+<li><img src="/2024/05/10/Vue2/image-20240422155050008.png" alt="image-20240422155050008"></li>
 </ul>
 </li>
 <li>接收：<code>$route.query.参数名</code><ul>
-<li><img src="/image-20240422155142353.png" alt="image-20240422155142353"></li>
+<li><img src="/2024/05/10/Vue2/image-20240422155142353.png" alt="image-20240422155142353"></li>
 </ul>
 </li>
 </ul>
 </li>
 <li><strong>动态参数查询（简洁优雅）</strong><ul>
 <li>路由：<code>/path/:参数名</code><ul>
-<li><img src="/image-20240422155244854.png" alt="image-20240422155244854"></li>
+<li><img src="/2024/05/10/Vue2/image-20240422155244854.png" alt="image-20240422155244854"></li>
 </ul>
 </li>
 <li>跳转：<code>to=&quot;/path/值&quot;</code><ul>
-<li><img src="/image-20240422155200504.png" alt="image-20240422155200504"></li>
+<li><img src="/2024/05/10/Vue2/image-20240422155200504.png" alt="image-20240422155200504"></li>
 </ul>
 </li>
 <li>接收：<code>$route.params.参数名</code><ul>
-<li><img src="/image-20240422155210918.png" alt="image-20240422155210918"></li>
+<li><img src="/2024/05/10/Vue2/image-20240422155210918.png" alt="image-20240422155210918"></li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
 <p>**动态参数查询有一个问题：**当我们不通过传参的方式访问搜索页 而是直接访问搜索页时，会发现 没有任何页面</p>
-<p><img src="/image-20240422155930937.png" alt="image-20240422155930937"></p>
+<p><img src="/2024/05/10/Vue2/image-20240422155930937.png" alt="image-20240422155930937"></p>
 <p>原因：<code>/search/:words</code> 表示，必须要传参数。如果不传参数，也希望匹配，可以加一个可选符 “?”</p>
-<p><img src="/image-20240422160108022.png" alt="image-20240422160108022"></p>
-<p><img src="/image-20240422160120338.png" alt="image-20240422160120338"></p>
+<p><img src="/2024/05/10/Vue2/image-20240422160108022.png" alt="image-20240422160108022"></p>
+<p><img src="/2024/05/10/Vue2/image-20240422160120338.png" alt="image-20240422160120338"></p>
 <h2 id="Vue路由-重定向"><a href="#Vue路由-重定向" class="headerlink" title="Vue路由 - 重定向"></a>Vue路由 - 重定向</h2><p>问题：网页打开，url默认是 &#x2F; 路径，未匹配到组件时，会出现空白</p>
 <p>说明：重定向 → 匹配path后，强制跳转path路径</p>
 <p>语法：{path: 匹配路径, redirect: 重定向到的路径}</p>
-<p><img src="/image-20240422160707625.png" alt="image-20240422160707625"></p>
-<p><img src="/image-20240422160647127.png" alt="image-20240422160647127"></p>
+<p><img src="/2024/05/10/Vue2/image-20240422160707625.png" alt="image-20240422160707625"></p>
+<p><img src="/2024/05/10/Vue2/image-20240422160647127.png" alt="image-20240422160647127"></p>
 <h2 id="Vue路由-404"><a href="#Vue路由-404" class="headerlink" title="Vue路由-404"></a>Vue路由-404</h2><p>作用：当路径找不到匹配时，给个提示页面</p>
 <p>位置：配在路由最后</p>
 <p>语法：<code>path: &quot;*&quot;</code> （任意路径） - 前面不匹配就命中最后这个</p>
-<p><img src="/image-20240422162333727.png" alt="image-20240422162333727"></p>
+<p><img src="/2024/05/10/Vue2/image-20240422162333727.png" alt="image-20240422162333727"></p>
 <h2 id="Vue路由-模式设置"><a href="#Vue路由-模式设置" class="headerlink" title="Vue路由 - 模式设置"></a>Vue路由 - 模式设置</h2><p>问题：路由的路径看起来不自然，有#，能都切成真正路径形式？</p>
 <ul>
 <li>hash路由(默认) 例如：<a target="_blank" rel="noopener" href="http://localhost:8080/#/home">http://localhost:8080/#/home</a></li>
 <li>history路由(常用) 例如：<a target="_blank" rel="noopener" href="http://localhost:8080/home">http://localhost:8080/home</a> (以后上线需要服务器端支持)</li>
 </ul>
-<p><img src="/image-20240422162624077.png" alt="image-20240422162624077"></p>
+<p><img src="/2024/05/10/Vue2/image-20240422162624077.png" alt="image-20240422162624077"></p>
 <h2 id="Vue路由-基本跳转"><a href="#Vue路由-基本跳转" class="headerlink" title="Vue路由 - 基本跳转"></a>Vue路由 - 基本跳转</h2><p>问题：点击按钮跳转如何实现</p>
 <p>两种语法：</p>
 <ul>
 <li><code>path 路径跳转(简单方便)</code> 注意这里是 <code>$router</code> 不是 <code>$route</code><ul>
-<li><img src="/image-20240423153004901.png" alt="image-20240423153004901"></li>
+<li><img src="/2024/05/10/Vue2/image-20240423153004901.png" alt="image-20240423153004901"></li>
 </ul>
 </li>
 <li><code>name 命名路由跳转(适合path超长的场景)</code><ul>
-<li><img src="/image-20240423153406895.png" alt="image-20240423153406895"></li>
-<li><img src="/image-20240423153152450.png" alt="image-20240423153152450"></li>
+<li><img src="/2024/05/10/Vue2/image-20240423153406895.png" alt="image-20240423153406895"></li>
+<li><img src="/2024/05/10/Vue2/image-20240423153152450.png" alt="image-20240423153152450"></li>
 </ul>
 </li>
 </ul>
 <h2 id="Vue路由-两种跳转方式传参"><a href="#Vue路由-两种跳转方式传参" class="headerlink" title="Vue路由 - 两种跳转方式传参"></a>Vue路由 - 两种跳转方式传参</h2><ul>
 <li><code>path 路径跳转带参数</code><ul>
 <li>简写方式<ul>
-<li><img src="/image-20240423160230082.png" alt="image-20240423160230082"></li>
-<li><img src="/image-20240423160238246.png" alt="image-20240423160238246"></li>
+<li><img src="/2024/05/10/Vue2/image-20240423160230082.png" alt="image-20240423160230082"></li>
+<li><img src="/2024/05/10/Vue2/image-20240423160238246.png" alt="image-20240423160238246"></li>
 </ul>
 </li>
 <li>完整写法（适合传参时，使用）<ul>
-<li><img src="/image-20240423160435212.png" alt="image-20240423160435212"></li>
-<li><img src="/image-20240423160442688.png" alt="image-20240423160442688"></li>
+<li><img src="/2024/05/10/Vue2/image-20240423160435212.png" alt="image-20240423160435212"></li>
+<li><img src="/2024/05/10/Vue2/image-20240423160442688.png" alt="image-20240423160442688"></li>
 </ul>
 </li>
 <li><code>name 命名路径跳转带参数</code><ul>
-<li><img src="/image-20240423161131934.png" alt="image-20240423161131934"></li>
+<li><img src="/2024/05/10/Vue2/image-20240423161131934.png" alt="image-20240423161131934"></li>
 <li>对应的如果是params 则是 <code>$route.query.参数名</code></li>
 <li>对应的如果是query 则是 <code>$route.params.参数名</code> 注意：这里的参数名是配置动态路径参数时写的<code>:参数名</code></li>
 </ul>
@@ -1059,23 +1059,23 @@
 </ul>
 <p>总结：</p>
 <ul>
-<li>​ <img src="/image-20240423161645115.png" alt="image-20240423161645115"></li>
-<li><img src="/image-20240423161703948.png" alt="image-20240423161703948"></li>
+<li>​ <img src="/2024/05/10/Vue2/image-20240423161645115.png" alt="image-20240423161645115"></li>
+<li><img src="/2024/05/10/Vue2/image-20240423161703948.png" alt="image-20240423161703948"></li>
 </ul>
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">路径短用path 路径长用name</span><br></pre></td></tr></tbody></table>
 
 <h2 id="Vue路由-子路由（嵌套路由）"><a href="#Vue路由-子路由（嵌套路由）" class="headerlink" title="Vue路由 - 子路由（嵌套路由）"></a>Vue路由 - 子路由（嵌套路由）</h2><ul>
 <li>在children属性中，配置属性<ul>
-<li><img src="/image-20240423195103501.png" alt="image-20240423195103501"></li>
+<li><img src="/2024/05/10/Vue2/image-20240423195103501.png" alt="image-20240423195103501"></li>
 </ul>
 </li>
 <li>配置路由出口<ul>
-<li><img src="/image-20240423194955155.png" alt="image-20240423194955155"></li>
+<li><img src="/2024/05/10/Vue2/image-20240423194955155.png" alt="image-20240423194955155"></li>
 </ul>
 </li>
 </ul>
 <h2 id="面经项目"><a href="#面经项目" class="headerlink" title="面经项目"></a>面经项目</h2><p>参考D:&#x2F;vscode&#x2F;Vue&#x2F;vue-mianJ-projiect文件</p>
-<p><img src="/image-20240423162529145.png" alt="image-20240423162529145"></p>
+<p><img src="/2024/05/10/Vue2/image-20240423162529145.png" alt="image-20240423162529145"></p>
 <h2 id="组件缓存"><a href="#组件缓存" class="headerlink" title="组件缓存"></a>组件缓存</h2><p>当我通过路由跳转到其他页面时，这个页面会被销毁，再次返回的时候会被重新加载 这个时候可以用一个数据缓存</p>
 <ul>
 <li>keep-alive 是什么？<ul>
@@ -1120,12 +1120,12 @@
 </ul>
 </li>
 </ol>
-<h2 id="vuex-的使用-创建仓库"><a href="#vuex-的使用-创建仓库" class="headerlink" title="vuex 的使用 - 创建仓库"></a>vuex 的使用 - 创建仓库</h2><p><img src="/1683212784179.png" alt="68321278417"></p>
+<h2 id="vuex-的使用-创建仓库"><a href="#vuex-的使用-创建仓库" class="headerlink" title="vuex 的使用 - 创建仓库"></a>vuex 的使用 - 创建仓库</h2><p><img src="/2024/05/10/Vue2/1683212784179.png" alt="68321278417"></p>
 <h3 id="1-安装-vuex"><a href="#1-安装-vuex" class="headerlink" title="1.安装 vuex"></a>1.安装 vuex</h3><p>安装vuex与vue-router类似，vuex是一个独立存在的插件，如果脚手架初始化没有选 vuex，就需要额外安装。</p>
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn add vuex@3 或者 npm i vuex@3</span><br></pre></td></tr></tbody></table>
 
 <h3 id="2-新建-store-index-js-专门存放-vuex"><a href="#2-新建-store-index-js-专门存放-vuex" class="headerlink" title="2.新建 store/index.js 专门存放 vuex"></a>2.新建 <code>store/index.js</code> 专门存放 vuex</h3><p>​ 为了维护项目目录的整洁，在src目录下新建一个store目录其下放置一个index.js文件。 (和 <code>router/index.js</code> 类似)</p>
-<p>​ <img src="/1683212805824.png" alt="68321280582"></p>
+<p>​ <img src="/2024/05/10/Vue2/1683212805824.png" alt="68321280582"></p>
 <h3 id="3-创建仓库-store-index-js"><a href="#3-创建仓库-store-index-js" class="headerlink" title="3.创建仓库 store/index.js"></a>3.创建仓库 <code>store/index.js</code></h3><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 导入 vue</span></span><br><span class="line"><span class="keyword">import</span> <span class="title class_">Vue</span> <span class="keyword">from</span> <span class="string">'vue'</span></span><br><span class="line"><span class="comment">// 导入 vuex</span></span><br><span class="line"><span class="keyword">import</span> <span class="title class_">Vuex</span> <span class="keyword">from</span> <span class="string">'vuex'</span></span><br><span class="line"><span class="comment">// vuex也是vue的插件, 需要use一下, 进行插件的安装初始化</span></span><br><span class="line"><span class="title class_">Vue</span>.<span class="title function_">use</span>(<span class="title class_">Vuex</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 创建仓库 store</span></span><br><span class="line"><span class="keyword">const</span> store = <span class="keyword">new</span> <span class="title class_">Vuex</span>.<span class="title class_">Store</span>()</span><br><span class="line"></span><br><span class="line"><span class="comment">// 导出仓库</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> store</span><br></pre></td></tr></tbody></table>
 
 <h3 id="4-在-main-js-中导入挂载到-Vue-实例上"><a href="#4-在-main-js-中导入挂载到-Vue-实例上" class="headerlink" title="4 在 main.js 中导入挂载到 Vue 实例上"></a>4 在 main.js 中导入挂载到 Vue 实例上</h3><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">Vue</span> <span class="keyword">from</span> <span class="string">'vue'</span></span><br><span class="line"><span class="keyword">import</span> <span class="title class_">App</span> <span class="keyword">from</span> <span class="string">'./App.vue'</span></span><br><span class="line"><span class="keyword">import</span> store <span class="keyword">from</span> <span class="string">'./store'</span></span><br><span class="line"></span><br><span class="line"><span class="title class_">Vue</span>.<span class="property">config</span>.<span class="property">productionTip</span> = <span class="literal">false</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">new</span> <span class="title class_">Vue</span>({</span><br><span class="line">  <span class="attr">render</span>: <span class="function"><span class="params">h</span> =&gt;</span> <span class="title function_">h</span>(<span class="title class_">App</span>),</span><br><span class="line">  store</span><br><span class="line">}).$mount(<span class="string">'#app'</span>)</span><br></pre></td></tr></tbody></table>
@@ -1135,7 +1135,7 @@
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">created</span>(<span class="params"></span>){</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>.<span class="property">$store</span>)</span><br><span class="line">}</span><br></pre></td></tr></tbody></table>
 
 <h2 id="核心概念-state状态"><a href="#核心概念-state状态" class="headerlink" title="核心概念 - state状态"></a>核心概念 - state状态</h2><p>目标：明确如何给仓库 <strong>提供</strong> 数据，如何 使用 仓库的数据</p>
-<p><img src="/image-20240424145605209.png" alt="image-20240424145605209"></p>
+<p><img src="/2024/05/10/Vue2/image-20240424145605209.png" alt="image-20240424145605209"></p>
 <p>使用数据：</p>
 <ul>
 <li>通过store直接访问<ul>
@@ -1146,15 +1146,15 @@
 </li>
 <li>通过辅助函数（简化）<ul>
 <li>导入mapState<ul>
-<li><img src="/image-20240424150816193.png" alt="image-20240424150816193"></li>
+<li><img src="/2024/05/10/Vue2/image-20240424150816193.png" alt="image-20240424150816193"></li>
 </ul>
 </li>
 <li>封装到computed属性中<ul>
-<li><img src="/image-20240424150832149.png" alt="image-20240424150832149"></li>
+<li><img src="/2024/05/10/Vue2/image-20240424150832149.png" alt="image-20240424150832149"></li>
 </ul>
 </li>
 <li>直接调用属性名<ul>
-<li><img src="/image-20240424150906678.png" alt="image-20240424150906678"></li>
+<li><img src="/2024/05/10/Vue2/image-20240424150906678.png" alt="image-20240424150906678"></li>
 </ul>
 </li>
 </ul>
@@ -1164,11 +1164,11 @@
 <p>掌握mutations对象，对象中存放修改state的方法</p>
 <ul>
 <li>定义mutations对象，对象中存放修改state的方法<ul>
-<li><img src="/image-20240424152950268.png" alt="image-20240424152950268"></li>
+<li><img src="/2024/05/10/Vue2/image-20240424152950268.png" alt="image-20240424152950268"></li>
 </ul>
 </li>
 <li>组件中提交调用mutations<ul>
-<li><img src="/image-20240424153031490.png" alt="image-20240424153031490"></li>
+<li><img src="/2024/05/10/Vue2/image-20240424153031490.png" alt="image-20240424153031490"></li>
 </ul>
 </li>
 </ul>
@@ -1176,11 +1176,11 @@
 <p>提交mutation是可以传递参数的 <code>this.$store.commit(&#39;xxx&#39;, 参数)</code></p>
 <ul>
 <li>提供mutation 函数 (带参数 - 提交载荷 payload)<ul>
-<li><img src="/image-20240424155414155.png" alt="image-20240424155414155"></li>
+<li><img src="/2024/05/10/Vue2/image-20240424155414155.png" alt="image-20240424155414155"></li>
 </ul>
 </li>
 <li>页面中提交调用 mutation<ul>
-<li><img src="/image-20240424155446162.png" alt="image-20240424155446162"></li>
+<li><img src="/2024/05/10/Vue2/image-20240424155446162.png" alt="image-20240424155446162"></li>
 </ul>
 </li>
 </ul>
@@ -1188,45 +1188,45 @@
 <ul>
 <li>所有mutation函数，第一个参数，都是state</li>
 <li>mutation参数有且只有一个，state除外，如果需要多个参数，包装成一个对象<ul>
-<li><img src="/image-20240424155638070.png" alt="image-20240424155638070"></li>
-<li><img src="/image-20240424155652632.png" alt="image-20240424155652632"></li>
+<li><img src="/2024/05/10/Vue2/image-20240424155638070.png" alt="image-20240424155638070"></li>
+<li><img src="/2024/05/10/Vue2/image-20240424155652632.png" alt="image-20240424155652632"></li>
 </ul>
 </li>
 </ul>
 <h2 id="案例："><a href="#案例：" class="headerlink" title="案例："></a>案例：</h2><p>目标：实时输入，实施更新</p>
-<p><img src="/image-20240424162014664.png" alt="image-20240424162014664"></p>
-<p><img src="/image-20240424162019320.png" alt="image-20240424162019320"></p>
+<p><img src="/2024/05/10/Vue2/image-20240424162014664.png" alt="image-20240424162014664"></p>
+<p><img src="/2024/05/10/Vue2/image-20240424162019320.png" alt="image-20240424162019320"></p>
 <ul>
 <li>输入框内容渲染<ul>
-<li><img src="/image-20240424162131956.png" alt="image-20240424162131956"></li>
+<li><img src="/2024/05/10/Vue2/image-20240424162131956.png" alt="image-20240424162131956"></li>
 </ul>
 </li>
 <li>监听输入获取内容<ul>
-<li><img src="/image-20240424162347473.png" alt="image-20240424162347473"></li>
+<li><img src="/2024/05/10/Vue2/image-20240424162347473.png" alt="image-20240424162347473"></li>
 </ul>
 </li>
 <li>封装mutation处理函数<ul>
-<li><img src="/image-20240424162230980.png" alt="image-20240424162230980"></li>
+<li><img src="/2024/05/10/Vue2/image-20240424162230980.png" alt="image-20240424162230980"></li>
 </ul>
 </li>
 <li>调用传参<ul>
-<li><img src="/image-20240424162354835.png" alt="image-20240424162354835"></li>
+<li><img src="/2024/05/10/Vue2/image-20240424162354835.png" alt="image-20240424162354835"></li>
 </ul>
 </li>
 </ul>
 <h2 id="辅助函数：mapMutations"><a href="#辅助函数：mapMutations" class="headerlink" title="辅助函数：mapMutations"></a>辅助函数：mapMutations</h2><p>mapMutations 和 mapState 很像，它是把位于mutations中的方法提取了出来，映射到组件methods中</p>
 <ul>
 <li>在mutation创建方法<ul>
-<li><img src="/image-20240424165023840.png" alt="image-20240424165023840"></li>
+<li><img src="/2024/05/10/Vue2/image-20240424165023840.png" alt="image-20240424165023840"></li>
 </ul>
 </li>
 <li>导入mapMutation的包 在需要用到的组件中 只需要写左边<ul>
-<li><img src="/image-20240424165445012.png" alt="image-20240424165445012"></li>
-<li><img src="/image-20240424165110169.png" alt="image-20240424165110169"></li>
+<li><img src="/2024/05/10/Vue2/image-20240424165445012.png" alt="image-20240424165445012"></li>
+<li><img src="/2024/05/10/Vue2/image-20240424165110169.png" alt="image-20240424165110169"></li>
 </ul>
 </li>
 <li>直接调用<ul>
-<li><img src="/image-20240425132514363.png" alt="image-20240425132514363"></li>
+<li><img src="/2024/05/10/Vue2/image-20240425132514363.png" alt="image-20240425132514363"></li>
 </ul>
 </li>
 </ul>

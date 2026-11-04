@@ -232,7 +232,7 @@
 <p>=&#x3D;总结一句话：Spring就是一个轻量级的控制反转 （IOC）和面向切面编程 （AOP）的框架！&#x3D;&#x3D;</p>
 <h2 id="1-3-组成"><a href="#1-3-组成" class="headerlink" title="1.3 组成"></a>1.3 组成</h2><p><img src="https://raehp.github.io//watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzI1MDgzNDQ3,size_16,color_FFFFFF,t_70.png" alt="20200524094945335.png (.&#x2F;..&#x2F;..&#x2F;..&#x2F;..&#x2F;Typora笔记&#x2F;Spring5&#x2F;watermark,type\_ZmFuZ3poZW5naGVpdGk,shadow\_10,text\_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzI1MDgzNDQ3,size\_16,color\_FFFFFF,t\_70.png)"></p>
 <h2 id="1-4-拓展"><a href="#1-4-拓展" class="headerlink" title="1.4 拓展"></a>1.4 拓展</h2><p>现代化的 Java开发 ，说白了就是基于Spring开发</p>
-<p><img src="/image-20240529194443896.png" alt="image-20240529194443896"></p>
+<p><img src="/2024/06/01/Spring5/image-20240529194443896.png" alt="image-20240529194443896"></p>
 <ul>
 <li>Spring Boot<ul>
 <li>一个快速开发的脚手架</li>
@@ -272,7 +272,7 @@
 <p>Test类</p>
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">AppTest</span> {</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> {</span><br><span class="line">        <span class="type">UserService</span> <span class="variable">userService</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">UserServiceImpl</span>();</span><br><span class="line">        </span><br><span class="line">        userService.getUser(); <span class="comment">// 每次业务变更，就要去更改业务实现类中的源代码</span></span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table>
 
-<p><img src="/image-20240529204410333.png" alt="image-20240529204410333"></p>
+<p><img src="/2024/06/01/Spring5/image-20240529204410333.png" alt="image-20240529204410333"></p>
 <p>在我们之前的业务中，用户的需求可能会影响我们原来的代码。我们需要根据用户的需求去修改源代码！如果程序代码量十分大，修改一次的成本代价十分昂贵</p>
 <p>我们使用一个set接口实现，已经发生了革命性的变化</p>
 <p>UserServiceImpl</p>
@@ -281,7 +281,7 @@
 <p>Test类</p>
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">AppTest</span> {</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> {</span><br><span class="line">        <span class="type">UserService</span> <span class="variable">userService</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">UserServiceImpl</span>();</span><br><span class="line"></span><br><span class="line">        ((UserServiceImpl) userService).setUserDao(<span class="keyword">new</span> <span class="title class_">UserMySQLImpl</span>());</span><br><span class="line">        userService.getUser();  <span class="comment">// 不需要变更源代码 只需要更改这里的setUserDao的值</span></span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table>
 
-<p><img src="/image-20240529204419740.png" alt="image-20240529204419740"></p>
+<p><img src="/2024/06/01/Spring5/image-20240529204419740.png" alt="image-20240529204419740"></p>
 <ul>
 <li>之前是主动创建对象！控制权在程序员手上</li>
 <li>使用了set注入后，程序不再具有主动性，而是变成了被动的接受对象！</li>
@@ -466,7 +466,7 @@
 <li>执行顺序不同：@Autowired 通过byType的方式实现， @Resource 通过byName的方式实现</li>
 </ul>
 <h1 id="8-使用注解开发"><a href="#8-使用注解开发" class="headerlink" title="8. 使用注解开发"></a>8. 使用注解开发</h1><p>在spring 4之后，要使用注解开发，一定要确认aop包导入了</p>
-<p><img src="/image-20240531143328638.png" alt="image-20240531143328638"></p>
+<p><img src="/2024/06/01/Spring5/image-20240531143328638.png" alt="image-20240531143328638"></p>
 <p>使用注解要导入context 的约束</p>
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=<span class="string">"1.0"</span> encoding=<span class="string">"UTF-8"</span>?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">beans</span> <span class="attr">xmlns</span>=<span class="string">"http://www.springframework.org/schema/beans"</span></span></span><br><span class="line"><span class="tag">       <span class="attr">xmlns:xsi</span>=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span></span></span><br><span class="line"><span class="tag">       <span class="attr">xmlns:context</span>=<span class="string">"http://www.springframework.org/schema/context"</span></span></span><br><span class="line"><span class="tag">       <span class="attr">xsi:schemaLocation</span>=<span class="string">"http://www.springframework.org/schema/beans</span></span></span><br><span class="line"><span class="string"><span class="tag">        http://www.springframework.org/schema/beans/spring-beans.xsd</span></span></span><br><span class="line"><span class="string"><span class="tag">        http://www.springframework.org/schema/context</span></span></span><br><span class="line"><span class="string"><span class="tag">        http://www.springframework.org/schema/context/spring-context.xsd"</span>&gt;</span></span><br><span class="line">        </span><br><span class="line">    <span class="tag">&lt;<span class="name">context:annotation-config</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">beans</span>&gt;</span></span><br></pre></td></tr></tbody></table>
 
@@ -515,7 +515,7 @@
 </ol>
 <h1 id="9-使用Java的方式配置Spring"><a href="#9-使用Java的方式配置Spring" class="headerlink" title="9. 使用Java的方式配置Spring"></a>9. 使用Java的方式配置Spring</h1><p>我们现在要完全不适用Spring的xml配置了，全权交给Java来做！</p>
 <p>JavaConfig 是Spring 的一个子项目，在Spring 4 之后，他成为了一个核心功能！</p>
-<p><img src="/image-20240531152029910.png" alt="image-20240531152029910"></p>
+<p><img src="/2024/06/01/Spring5/image-20240531152029910.png" alt="image-20240531152029910"></p>
 <p>实体类</p>
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> org.raehp.pojo;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.springframework.beans.factory.annotation.Value;</span><br><span class="line"><span class="keyword">import</span> org.springframework.stereotype.Component;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">User</span> {</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">getName</span><span class="params">()</span> {</span><br><span class="line">        <span class="keyword">return</span> name;</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Value("kkkkkk")</span> <span class="comment">//注入属性值</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setName</span><span class="params">(String name)</span> {</span><br><span class="line">        <span class="built_in">this</span>.name = name;</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">toString</span><span class="params">()</span> {</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"User{"</span> +</span><br><span class="line">                <span class="string">"name='"</span> + name + <span class="string">'\''</span> +</span><br><span class="line">                <span class="string">'}'</span>;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table>
 
@@ -532,7 +532,7 @@
 <li>代理角色：代理真实角色，代理真实角色后，我们一般会做一些附属操作</li>
 <li>客户：访问代理对象的人</li>
 </ul>
-<p><img src="/image-20240531171723027.png" alt="image-20240531171723027"></p>
+<p><img src="/2024/06/01/Spring5/image-20240531171723027.png" alt="image-20240531171723027"></p>
 <p>代码步骤</p>
 <ol>
 <li><p>接口</p>
@@ -591,8 +591,8 @@
 <li>一个动态代理类可以代理多个类，只要是实现了同一个接口即可</li>
 </ul>
 <h1 id="11-AOP"><a href="#11-AOP" class="headerlink" title="11. AOP"></a>11. AOP</h1><h2 id="11-1-什么是AOP"><a href="#11-1-什么是AOP" class="headerlink" title="11.1 什么是AOP"></a>11.1 什么是AOP</h2><p>AOP (Aspect Oriented Programming)意为:面向切面编程，通过预编译方式和运行期动态代理实现程序功能的统一维护的一种技术。AOP是OOP的延续，是软件开发中的一个热点，也是Spring框架中的一个重要内容，是函数式编程的一种衍生范型。利用AOP可以对业务逻辑的各个部分进行隔离，从而使得业务逻辑各部分之间的耦合度降低，提高程序的可重用性，同时提高了开发的效率。</p>
-<p><img src="/image-20240601133611121.png" alt="image-20240601133611121"></p>
-<p><img src="/image-20240601133631538.png" alt="image-20240601133631538"></p>
+<p><img src="/2024/06/01/Spring5/image-20240601133611121.png" alt="image-20240601133611121"></p>
+<p><img src="/2024/06/01/Spring5/image-20240601133631538.png" alt="image-20240601133631538"></p>
 <h2 id="11-2-AOP在Spring中的应用"><a href="#11-2-AOP在Spring中的应用" class="headerlink" title="11.2 AOP在Spring中的应用"></a>11.2 AOP在Spring中的应用</h2><p>=&#x3D;提供声明式事务：允许用户自定义切面&#x3D;&#x3D;</p>
 <p>横切关注点:跨越应用程序多个模块的方法或功能。即是，与我们业务逻辑无关的，但是我们需要关注的部分，就是横切关注点。如日志，安全，缓存,事务等等 ..</p>
 <ul>
@@ -603,7 +603,7 @@
 <li>切入点(Pointcut)：切面通知 执行的“地点”的定义。</li>
 <li>连接点(JointPoint)：与切入点匹配的执行点。</li>
 </ul>
-<p><img src="/image-20240601133835027.png" alt="image-20240601133835027"></p>
+<p><img src="/2024/06/01/Spring5/image-20240601133835027.png" alt="image-20240601133835027"></p>
 <h2 id="11-3-使用Spring实现AOP"><a href="#11-3-使用Spring实现AOP" class="headerlink" title="11.3 使用Spring实现AOP"></a>11.3 使用Spring实现AOP</h2><h3 id="11-3-1-方式一：使用spring-的api接口"><a href="#11-3-1-方式一：使用spring-的api接口" class="headerlink" title="11.3.1 方式一：使用spring 的api接口"></a>11.3.1 方式一：使用spring 的api接口</h3><p>导入aop的依赖</p>
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.aspectj&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;aspectjweaver&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;<span class="number">1.9</span><span class="number">.7</span>&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></tbody></table>
 

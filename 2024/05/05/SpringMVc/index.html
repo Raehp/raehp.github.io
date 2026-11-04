@@ -203,7 +203,7 @@
   pageType: 'post'
 }</script><link rel="stylesheet" href="/css/background.css"><meta name="generator" content="Hexo 7.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">29</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">15</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><span class="site-page group"><span> 博文</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> archives</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> categories</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> tags</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><span> 生活</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/photos/"><i class="fa-fw fas fa-images"></i><span> photos</span></a></li><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-film"></i><span> movies</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于笔者</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(/img/3.jpg);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">L1n</span></a><a class="nav-page-title" href="/"><span class="site-name">SpringMVc</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  返回首页</span></span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><span class="site-page group"><span> 博文</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> archives</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> categories</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> tags</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><span> 生活</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/photos/"><i class="fa-fw fas fa-images"></i><span> photos</span></a></li><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-film"></i><span> movies</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于笔者</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">SpringMVc</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-05-05T13:48:39.000Z" title="发表于 2024-05-05 21:48:39">2024-05-05</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-06-30T08:06:31.000Z" title="更新于 2024-06-30 16:06:31">2024-06-30</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Java%E5%BC%80%E5%8F%91%E6%A1%86%E6%9E%B6/">Java开发框架</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><h2 id="SpringMVC概述"><a href="#SpringMVC概述" class="headerlink" title="SpringMVC概述"></a>SpringMVC概述</h2><p>学习SpringMVC我们先来回顾下现在web程序是如何做的，咱们现在web程序大都基于三层架构来实现。</p>
 <p>三层架构</p>
-<p><img src="/1630427303762.png" alt="1630427303762"></p>
+<p><img src="/2024/05/05/SpringMVc/1630427303762.png" alt="1630427303762"></p>
 <ul>
 <li>浏览器发送一个请求给后端服务器，后端服务器现在是使用Servlet来接收请求和数据</li>
 <li>如果所有的处理都交给Servlet来处理的话，所有的东西都耦合在一起，对后期的维护和扩展极为不利</li>
@@ -224,7 +224,7 @@
 </li>
 </ul>
 <p>随着互联网的发展，上面的模式因为是同步调用，性能慢慢的跟不是需求，所以异步调用慢慢的走到了前台，是现在比较流行的一种处理方式。</p>
-<p><img src="/1630427769938.png" alt="1630427769938"></p>
+<p><img src="/2024/05/05/SpringMVc/1630427769938.png" alt="1630427769938"></p>
 <ul>
 <li>因为是异步调用，所以后端不需要返回view视图，将其去除</li>
 <li>前端如果通过异步调用的方式进行交互，后台就需要将返回的数据转换成json格式进行返回</li>
@@ -262,10 +262,10 @@
 <p>6.将SpringMVC设定加载到Tomcat容器中</p>
 <h3 id="需求分析"><a href="#需求分析" class="headerlink" title="需求分析"></a>需求分析</h3><h3 id="案例制作"><a href="#案例制作" class="headerlink" title="案例制作"></a>案例制作</h3><p><strong>步骤1:创建Maven项目</strong></p>
 <p>打开IDEA,创建一个新的web项目</p>
-<p><img src="/1630428920116.png" alt="1630428920116"></p>
+<p><img src="/2024/05/05/SpringMVc/1630428920116.png" alt="1630428920116"></p>
 <p><strong>步骤2:补全目录结构</strong></p>
 <p>因为使用骨架创建的项目结构不完整，需要手动补全</p>
-<p><img src="/1630429288339.png" alt="1630429288339"></p>
+<p><img src="/2024/05/05/SpringMVc/1630429288339.png" alt="1630429288339"></p>
 <p><strong>步骤3:导入jar包</strong></p>
 <p>将pom.xml中多余的内容删除掉，再添加SpringMVC需要的依赖</p>
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span><br><span class="line">&lt;project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"</span><br><span class="line">  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"&gt;</span><br><span class="line">  &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;</span><br><span class="line">  &lt;groupId&gt;com.itheima&lt;/groupId&gt;</span><br><span class="line">  &lt;artifactId&gt;springmvc_01_quickstart&lt;/artifactId&gt;</span><br><span class="line">  &lt;version&gt;1.0-SNAPSHOT&lt;/version&gt;</span><br><span class="line">  &lt;packaging&gt;war&lt;/packaging&gt;</span><br><span class="line"></span><br><span class="line">  &lt;dependencies&gt;</span><br><span class="line">    &lt;dependency&gt;</span><br><span class="line">      &lt;groupId&gt;javax.servlet&lt;/groupId&gt;</span><br><span class="line">      &lt;artifactId&gt;javax.servlet-api&lt;/artifactId&gt;</span><br><span class="line">      &lt;version&gt;3.1.0&lt;/version&gt;</span><br><span class="line">      &lt;scope&gt;provided&lt;/scope&gt;</span><br><span class="line">    &lt;/dependency&gt;</span><br><span class="line">    &lt;dependency&gt;</span><br><span class="line">      &lt;groupId&gt;org.springframework&lt;/groupId&gt;</span><br><span class="line">      &lt;artifactId&gt;spring-webmvc&lt;/artifactId&gt;</span><br><span class="line">      &lt;version&gt;5.2.10.RELEASE&lt;/version&gt;</span><br><span class="line">    &lt;/dependency&gt;</span><br><span class="line">  &lt;/dependencies&gt;</span><br><span class="line"></span><br><span class="line">  &lt;build&gt;</span><br><span class="line">    &lt;plugins&gt;</span><br><span class="line">      &lt;plugin&gt;</span><br><span class="line">        &lt;groupId&gt;org.apache.tomcat.maven&lt;/groupId&gt;</span><br><span class="line">        &lt;artifactId&gt;tomcat7-maven-plugin&lt;/artifactId&gt;</span><br><span class="line">        &lt;version&gt;2.1&lt;/version&gt;</span><br><span class="line">        &lt;configuration&gt;</span><br><span class="line">          &lt;port&gt;80&lt;/port&gt;</span><br><span class="line">          &lt;path&gt;/&lt;/path&gt;</span><br><span class="line">        &lt;/configuration&gt;</span><br><span class="line">      &lt;/plugin&gt;</span><br><span class="line">    &lt;/plugins&gt;</span><br><span class="line">  &lt;/build&gt;</span><br><span class="line">&lt;/project&gt;</span><br><span class="line"></span><br></pre></td></tr></tbody></table>
@@ -288,26 +288,26 @@
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">public class ServletContainersInitConfig extends AbstractDispatcherServletInitializer {</span><br><span class="line">    //加载springmvc配置类</span><br><span class="line">    protected WebApplicationContext createServletApplicationContext() {</span><br><span class="line">        //初始化WebApplicationContext对象</span><br><span class="line">        AnnotationConfigWebApplicationContext ctx = new AnnotationConfigWebApplicationContext();</span><br><span class="line">        //加载指定配置类</span><br><span class="line">        ctx.register(SpringMvcConfig.class);</span><br><span class="line">        return ctx;</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    //设置由springmvc控制器处理的请求映射路径</span><br><span class="line">    protected String[] getServletMappings() {</span><br><span class="line">        return new String[]{"/"};</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    //加载spring配置类</span><br><span class="line">    protected WebApplicationContext createRootApplicationContext() {</span><br><span class="line">        return null;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table>
 
 <p><strong>步骤7:配置Tomcat环境</strong></p>
-<p><img src="/1630430302683.png" alt="1630430302683"></p>
+<p><img src="/2024/05/05/SpringMVc/1630430302683.png" alt="1630430302683"></p>
 <p><strong>步骤8:启动运行项目</strong></p>
-<p><img src="/1630430345246.png" alt="1630430345246"></p>
+<p><img src="/2024/05/05/SpringMVc/1630430345246.png" alt="1630430345246"></p>
 <p><strong>步骤9:浏览器访问</strong></p>
 <p>浏览器输入<code>http://localhost/save</code>进行访问，会报如下错误:</p>
-<p><img src="/1630430401561.png" alt="1630430401561"></p>
+<p><img src="/2024/05/05/SpringMVc/1630430401561.png" alt="1630430401561"></p>
 <p>页面报错的原因是后台没有指定返回的页面，目前只需要关注控制台看<code>user save ...</code>有没有被执行即可。</p>
 <p><strong>步骤10:修改Controller返回值解决上述问题</strong></p>
 <p>前面我们说过现在主要的是前端发送异步请求，后台响应json数据，所以接下来我们把Controller类的save方法进行修改</p>
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">@Controller</span><br><span class="line">public class UserController {</span><br><span class="line">    </span><br><span class="line">    @RequestMapping("/save")</span><br><span class="line">    public String save(){</span><br><span class="line">        System.out.println("user save ...");</span><br><span class="line">        return "{'info':'springmvc'}";</span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"></span><br></pre></td></tr></tbody></table>
 
 <p>再次重启tomcat服务器，然后重新通过浏览器测试访问,会发现还是会报错，这次的错是404</p>
-<p><img src="/1630430658028.png" alt="1630430658028"></p>
+<p><img src="/2024/05/05/SpringMVc/1630430658028.png" alt="1630430658028"></p>
 <p>出错的原因是，如果方法直接返回字符串，springmvc会把字符串当成页面的名称在项目中进行查找返回，因为不存在对应返回值名称的页面，所以会报404错误，找不到资源。</p>
 <p>而我们其实是想要直接返回的是json数据，具体如何修改呢?</p>
 <p><strong>步骤11:设置返回数据为json</strong></p>
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">@Controller</span><br><span class="line">public class UserController {</span><br><span class="line">    </span><br><span class="line">    @RequestMapping("/save")</span><br><span class="line">    @ResponseBody</span><br><span class="line">    public String save(){</span><br><span class="line">        System.out.println("user save ...");</span><br><span class="line">        return "{'info':'springmvc'}";</span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"></span><br></pre></td></tr></tbody></table>
 
 <p>再次重启tomcat服务器，然后重新通过浏览器测试访问，就能看到返回的结果数据</p>
-<p><img src="/1630430835628.png" alt="1630430835628"></p>
+<p><img src="/2024/05/05/SpringMVc/1630430835628.png" alt="1630430835628"></p>
 <p>至此SpringMVC的入门案例就已经完成。</p>
 <p><strong>注意事项</strong></p>
 <ul>
@@ -388,7 +388,7 @@
 </tbody></table>
 <h3 id="bean加载控制"><a href="#bean加载控制" class="headerlink" title="bean加载控制"></a>bean加载控制</h3><h4 id="问题分析"><a href="#问题分析" class="headerlink" title="问题分析"></a>问题分析</h4><p>入门案例的内容已经做完了，在入门案例中我们创建过一个<code>SpringMvcConfig</code>的配置类，再回想前面咱们学习Spring的时候也创建过一个配置类<code>SpringConfig</code>。这两个配置类都需要加载资源，那么它们分别都需要加载哪些内容?</p>
 <p>我们先来看下目前我们的项目目录结构:</p>
-<p><img src="/1630459727575.png" alt="1630459727575"></p>
+<p><img src="/2024/05/05/SpringMVc/1630459727575.png" alt="1630459727575"></p>
 <ul>
 <li>config目录存入的是配置类,写过的配置类有:<ul>
 <li>ServletContainersInitConfig</li>
@@ -413,9 +413,9 @@
 </ul>
 <p>分析清楚谁该管哪些bean以后，接下来要解决的问题是如何让Spring和SpringMVC分开加载各自的内容。</p>
 <p>在SpringMVC的配置类<code>SpringMvcConfig</code>中使用注解<code>@ComponentScan</code>，我们只需要将其扫描范围设置到controller即可，如</p>
-<p><img src="/1630460319004.png" alt="1630460319004"></p>
+<p><img src="/2024/05/05/SpringMVc/1630460319004.png" alt="1630460319004"></p>
 <p>在Spring的配置类<code>SpringConfig</code>中使用注解<code>@ComponentScan</code>,当时扫描的范围中其实是已经包含了controller,如:</p>
-<p><img src="/1630460408159.png" alt="1630460408159"></p>
+<p><img src="/2024/05/05/SpringMVc/1630460408159.png" alt="1630460408159"></p>
 <p>从包结构来看的话，Spring已经多把SpringMVC的controller类也给扫描到，所以针对这个问题该如何解决，就是咱们接下来要学习的内容。</p>
 <p>概括的描述下咱们现在的问题就是因为功能不同，如何避免Spring错误加载到SpringMVC的bean?</p>
 <h4 id="思路分析"><a href="#思路分析" class="headerlink" title="思路分析"></a>思路分析</h4><p>针对上面的问题，解决方案也比较简单，就是:</p>
@@ -441,7 +441,7 @@
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">@Controller</span><br><span class="line">public class UserController {</span><br><span class="line"></span><br><span class="line">    @RequestMapping("/save")</span><br><span class="line">    @ResponseBody</span><br><span class="line">    public String save(){</span><br><span class="line">        System.out.println("user save ...");</span><br><span class="line">        return "{'info':'springmvc'}";</span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line">public interface UserService {</span><br><span class="line">    public void save(User user);</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line">@Service</span><br><span class="line">public class UserServiceImpl implements UserService {</span><br><span class="line">    public void save(User user) {</span><br><span class="line">        System.out.println("user service ...");</span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line">public interface UserDao {</span><br><span class="line">    @Insert("insert into tbl_user(name,age)values(#{name},#{age})")</span><br><span class="line">    public void save(User user);</span><br><span class="line">}</span><br><span class="line">public class User {</span><br><span class="line">    private Integer id;</span><br><span class="line">    private String name;</span><br><span class="line">    private Integer age;</span><br><span class="line">    //setter..getter..toString略</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></li>
 </ul>
 <p>最终创建好的项目结构如下:</p>
-<p><img src="/1630461261820.png" alt="1630461261820"></p>
+<p><img src="/2024/05/05/SpringMVc/1630461261820.png" alt="1630461261820"></p>
 <h4 id="设置bean加载控制"><a href="#设置bean加载控制" class="headerlink" title="设置bean加载控制"></a>设置bean加载控制</h4><p>方式一:修改Spring配置类，设定扫描范围为精准范围。</p>
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">@Configuration</span><br><span class="line">@ComponentScan({"com.itheima.service","comitheima.dao"})</span><br><span class="line">public class SpringConfig {</span><br><span class="line">}</span><br></pre></td></tr></tbody></table>
 
@@ -470,7 +470,7 @@
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">public class App{</span><br><span class="line">    public static void main (String[] args){</span><br><span class="line">        AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(SpringConfig.class);</span><br><span class="line">        System.out.println(ctx.getBean(UserController.class));</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table>
 
 <p>如果被排除了，该方法执行就会报bean未被定义的错误</p>
-<p><img src="/1630462200947.png" alt="1630462200947"></p>
+<p><img src="/2024/05/05/SpringMVc/1630462200947.png" alt="1630462200947"></p>
 <p>注意:测试的时候，需要把SpringMvcConfig配置类上的@ComponentScan注解注释掉，否则不会报错</p>
 <p>出现问题的原因是，</p>
 <ul>
@@ -534,9 +534,9 @@
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Controller</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">UserController</span> {</span><br><span class="line"></span><br><span class="line">    <span class="meta">@RequestMapping("/save")</span></span><br><span class="line">    <span class="meta">@ResponseBody</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">save</span><span class="params">()</span>{</span><br><span class="line">        System.out.println(<span class="string">"user save ..."</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"{'module':'user save'}"</span>;</span><br><span class="line">    }</span><br><span class="line">    </span><br><span class="line">    <span class="meta">@RequestMapping("/delete")</span></span><br><span class="line">    <span class="meta">@ResponseBody</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">save</span><span class="params">()</span>{</span><br><span class="line">        System.out.println(<span class="string">"user delete ..."</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"{'module':'user delete'}"</span>;</span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="meta">@Controller</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">BookController</span> {</span><br><span class="line"></span><br><span class="line">    <span class="meta">@RequestMapping("/save")</span></span><br><span class="line">    <span class="meta">@ResponseBody</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">save</span><span class="params">()</span>{</span><br><span class="line">        System.out.println(<span class="string">"book save ..."</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"{'module':'book save'}"</span>;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></li>
 </ul>
 <p>最终创建好的项目结构如下:</p>
-<p><img src="/1630466431549.png" alt="1630466431549"></p>
+<p><img src="/2024/05/05/SpringMVc/1630466431549.png" alt="1630466431549"></p>
 <p>把环境准备好后，启动Tomcat服务器，后台会报错:</p>
-<p><img src="/1630466555934.png" alt="1630466555934"></p>
+<p><img src="/2024/05/05/SpringMVc/1630466555934.png" alt="1630466555934"></p>
 <p>从错误信息可以看出:</p>
 <ul>
 <li>UserController有一个save方法，访问路径为<code>http://localhost/save</code></li>
@@ -584,38 +584,38 @@
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">public class Address {</span><br><span class="line">    private String province;</span><br><span class="line">    private String city;</span><br><span class="line">    //setter...getter...略</span><br><span class="line">}</span><br><span class="line">public class User {</span><br><span class="line">    private String name;</span><br><span class="line">    private int age;</span><br><span class="line">    //setter...getter...略</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></li>
 </ul>
 <p>最终创建好的项目结构如下:</p>
-<p><img src="/1630467830654.png" alt="1630467830654"></p>
+<p><img src="/2024/05/05/SpringMVc/1630467830654.png" alt="1630467830654"></p>
 <h4 id="参数传递"><a href="#参数传递" class="headerlink" title="参数传递"></a>参数传递</h4><h5 id="GET发送单个参数"><a href="#GET发送单个参数" class="headerlink" title="GET发送单个参数"></a>GET发送单个参数</h5><p>发送请求与参数:</p>
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://localhost/commonParam?name=itcast</span><br></pre></td></tr></tbody></table>
 
-<p><img src="/1630467921300.png" alt="1630467921300"></p>
+<p><img src="/2024/05/05/SpringMVc/1630467921300.png" alt="1630467921300"></p>
 <p>接收参数：</p>
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">@Controller</span><br><span class="line">public class UserController {</span><br><span class="line"></span><br><span class="line">    @RequestMapping("/commonParam")</span><br><span class="line">    @ResponseBody</span><br><span class="line">    public String commonParam(String name){</span><br><span class="line">        System.out.println("普通参数传递 name ==&gt; "+name);</span><br><span class="line">        return "{'module':'commonParam'}";</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table>
 
 <h5 id="GET发送多个参数"><a href="#GET发送多个参数" class="headerlink" title="GET发送多个参数"></a>GET发送多个参数</h5><p>发送请求与参数:</p>
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://localhost/commonParam?name=itcast&amp;age=15</span><br></pre></td></tr></tbody></table>
 
-<p><img src="/1630468045733.png" alt="1630468045733"></p>
+<p><img src="/2024/05/05/SpringMVc/1630468045733.png" alt="1630468045733"></p>
 <p>接收参数：</p>
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Controller</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">UserController</span> {</span><br><span class="line"></span><br><span class="line">    <span class="meta">@RequestMapping("/commonParam")</span></span><br><span class="line">    <span class="meta">@ResponseBody</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">commonParam</span><span class="params">(String name,<span class="type">int</span> age)</span>{</span><br><span class="line">        System.out.println(<span class="string">"普通参数传递 name ==&gt; "</span>+name);</span><br><span class="line">        System.out.println(<span class="string">"普通参数传递 age ==&gt; "</span>+age);</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"{'module':'commonParam'}"</span>;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table>
 
 <h5 id="GET请求中文乱码"><a href="#GET请求中文乱码" class="headerlink" title="GET请求中文乱码"></a>GET请求中文乱码</h5><p>如果我们传递的参数中有中文，你会发现接收到的参数会出现中文乱码问题。</p>
 <p>发送请求:<code>http://localhost/commonParam?name=张三&amp;age=18</code></p>
 <p>控制台:</p>
-<p><img src="/1630480536510.png" alt="1630480536510"></p>
+<p><img src="/2024/05/05/SpringMVc/1630480536510.png" alt="1630480536510"></p>
 <p>出现乱码的原因相信大家都清楚，Tomcat8.5以后的版本已经处理了中文乱码的问题，但是IDEA中的Tomcat插件目前只到Tomcat7，所以需要修改pom.xml来解决GET请求中文乱码问题</p>
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">build</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">plugins</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">plugin</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.tomcat.maven<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>tomcat7-maven-plugin<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.1<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">port</span>&gt;</span>80<span class="tag">&lt;/<span class="name">port</span>&gt;</span><span class="comment">&lt;!--tomcat端口号--&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">path</span>&gt;</span>/<span class="tag">&lt;/<span class="name">path</span>&gt;</span> <span class="comment">&lt;!--虚拟目录--&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">uriEncoding</span>&gt;</span>UTF-8<span class="tag">&lt;/<span class="name">uriEncoding</span>&gt;</span><span class="comment">&lt;!--访问路径编解码字符集--&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">plugin</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">plugins</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">build</span>&gt;</span></span><br></pre></td></tr></tbody></table>
 
 <h5 id="POST发送参数"><a href="#POST发送参数" class="headerlink" title="POST发送参数"></a>POST发送参数</h5><p>发送请求与参数:</p>
-<p><img src="/1630480812809.png" alt="1630480812809">接收参数：</p>
+<p><img src="/2024/05/05/SpringMVc/1630480812809.png" alt="1630480812809">接收参数：</p>
 <p>和GET一致，不用做任何修改</p>
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Controller</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">UserController</span> {</span><br><span class="line"></span><br><span class="line">    <span class="meta">@RequestMapping("/commonParam")</span></span><br><span class="line">    <span class="meta">@ResponseBody</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">commonParam</span><span class="params">(String name,<span class="type">int</span> age)</span>{</span><br><span class="line">        System.out.println(<span class="string">"普通参数传递 name ==&gt; "</span>+name);</span><br><span class="line">        System.out.println(<span class="string">"普通参数传递 age ==&gt; "</span>+age);</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"{'module':'commonParam'}"</span>;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table>
 
 <h5 id="POST请求中文乱码"><a href="#POST请求中文乱码" class="headerlink" title="POST请求中文乱码"></a>POST请求中文乱码</h5><p>发送请求与参数:</p>
-<p><img src="/1630480964421.png" alt="1630480964421"></p>
+<p><img src="/2024/05/05/SpringMVc/1630480964421.png" alt="1630480964421"></p>
 <p>接收参数:</p>
 <p>控制台打印，会发现有中文乱码问题。</p>
-<p><img src="/1630481008109.png" alt="1630481008109"></p>
+<p><img src="/2024/05/05/SpringMVc/1630481008109.png" alt="1630481008109"></p>
 <p>解决方案:配置过滤器</p>
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ServletContainersInitConfig</span> <span class="keyword">extends</span> <span class="title class_">AbstractAnnotationConfigDispatcherServletInitializer</span> {</span><br><span class="line">    <span class="keyword">protected</span> Class&lt;?&gt;[] getRootConfigClasses() {</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Class</span>[<span class="number">0</span>];</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="keyword">protected</span> Class&lt;?&gt;[] getServletConfigClasses() {</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Class</span>[]{SpringMvcConfig.class};</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="keyword">protected</span> String[] getServletMappings() {</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">String</span>[]{<span class="string">"/"</span>};</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="comment">//乱码处理</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">protected</span> Filter[] getServletFilters() {</span><br><span class="line">        <span class="type">CharacterEncodingFilter</span> <span class="variable">filter</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">CharacterEncodingFilter</span>();</span><br><span class="line">        filter.setEncoding(<span class="string">"UTF-8"</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Filter</span>[]{filter};</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table>
 
@@ -632,7 +632,7 @@
 <h4 id="普通参数"><a href="#普通参数" class="headerlink" title="普通参数"></a>普通参数</h4><ul>
 <li>普通参数:url地址传参，地址参数名与形参变量名相同，定义形参即可接收参数。</li>
 </ul>
-<p><img src="/1630481585729.png" alt="1630481585729"></p>
+<p><img src="/2024/05/05/SpringMVc/1630481585729.png" alt="1630481585729"></p>
 <p>如果形参与地址参数名不一致该如何解决?</p>
 <p>发送请求与参数:</p>
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://localhost/commonParamDifferentName?name=张三&amp;age=18</span><br></pre></td></tr></tbody></table>
@@ -641,7 +641,7 @@
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">@RequestMapping("/commonParamDifferentName")</span><br><span class="line">@ResponseBody</span><br><span class="line">public String commonParamDifferentName(String userName , int age){</span><br><span class="line">    System.out.println("普通参数传递 userName ==&gt; "+userName);</span><br><span class="line">    System.out.println("普通参数传递 age ==&gt; "+age);</span><br><span class="line">    return "{'module':'common param different name'}";</span><br><span class="line">}</span><br></pre></td></tr></tbody></table>
 
 <p>因为前端给的是<code>name</code>,后台接收使用的是<code>userName</code>,两个名称对不上，导致接收数据失败:</p>
-<p><img src="/1630481772035.png" alt="1630481772035"></p>
+<p><img src="/2024/05/05/SpringMVc/1630481772035.png" alt="1630481772035"></p>
 <p>解决方案:使用@RequestParam注解</p>
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">@RequestMapping("/commonParamDifferentName")</span><br><span class="line">    @ResponseBody</span><br><span class="line">    public String commonParamDifferentName(@RequestPaam("name") String userName , int age){</span><br><span class="line">        System.out.println("普通参数传递 userName ==&gt; "+userName);</span><br><span class="line">        System.out.println("普通参数传递 age ==&gt; "+age);</span><br><span class="line">        return "{'module':'common param different name'}";</span><br><span class="line">    }</span><br></pre></td></tr></tbody></table>
 
@@ -654,7 +654,7 @@
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">public class User {</span><br><span class="line">    private String name;</span><br><span class="line">    private int age;</span><br><span class="line">    //setter...getter...略</span><br><span class="line">}</span><br></pre></td></tr></tbody></table>
 
 <p>发送请求和参数:</p>
-<p><img src="/1630482186745.png" alt="1630482186745"></p>
+<p><img src="/2024/05/05/SpringMVc/1630482186745.png" alt="1630482186745"></p>
 <p>后台接收参数:</p>
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">//POJO参数：请求参数与形参对象中的属性对应即可完成参数传递</span><br><span class="line">@RequestMapping("/pojoParam")</span><br><span class="line">@ResponseBody</span><br><span class="line">public String pojoParam(User user){</span><br><span class="line">    System.out.println("pojo参数传递 user ==&gt; "+user);</span><br><span class="line">    return "{'module':'pojo param'}";</span><br><span class="line">}</span><br></pre></td></tr></tbody></table>
 
@@ -670,7 +670,7 @@
 <li>嵌套POJO参数：请求参数名与形参对象属性名相同，按照对象层次结构关系即可接收嵌套POJO属性参数</li>
 </ul>
 <p>发送请求和参数:</p>
-<p><img src="/1630482363291.png" alt="1630482363291"></p>
+<p><img src="/2024/05/05/SpringMVc/1630482363291.png" alt="1630482363291"></p>
 <p>后台接收参数:</p>
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">//POJO参数：请求参数与形参对象中的属性对应即可完成参数传递</span><br><span class="line">@RequestMapping("/pojoParam")</span><br><span class="line">@ResponseBody</span><br><span class="line">public String pojoParam(User user){</span><br><span class="line">    System.out.println("pojo参数传递 user ==&gt; "+user);</span><br><span class="line">    return "{'module':'pojo param'}";</span><br><span class="line">}</span><br></pre></td></tr></tbody></table>
 
@@ -681,18 +681,18 @@
 <li>数组参数：请求参数名与形参对象属性名相同且请求参数为多个，定义数组类型即可接收参数</li>
 </ul>
 <p>发送请求和参数:</p>
-<p><img src="/1630482999626.png" alt="1630482999626"></p>
+<p><img src="/2024/05/05/SpringMVc/1630482999626.png" alt="1630482999626"></p>
 <p>后台接收参数:</p>
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">//数组参数：同名请求参数可以直接映射到对应名称的形参数组对象中</span><br><span class="line">  @RequestMapping("/arrayParam")</span><br><span class="line">  @ResponseBody</span><br><span class="line">  public String arrayParam(String[] likes){</span><br><span class="line">      System.out.println("数组参数传递 likes ==&gt; "+ Arrays.toString(likes));</span><br><span class="line">      return "{'module':'array param'}";</span><br><span class="line">  }</span><br></pre></td></tr></tbody></table>
 
 <h4 id="集合类型参数"><a href="#集合类型参数" class="headerlink" title="集合类型参数"></a>集合类型参数</h4><p>数组能接收多个值，那么集合是否也可以实现这个功能呢?</p>
 <p>发送请求和参数:</p>
-<p><img src="/1630484283773.png" alt="1630484283773"></p>
+<p><img src="/2024/05/05/SpringMVc/1630484283773.png" alt="1630484283773"></p>
 <p>后台接收参数:</p>
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">//集合参数：同名请求参数可以使用@RequestParam注解映射到对应名称的集合对象中作为数据</span><br><span class="line">@RequestMapping("/listParam")</span><br><span class="line">@ResponseBody</span><br><span class="line">public String listParam(List&lt;String&gt; likes){</span><br><span class="line">    System.out.println("集合参数传递 likes ==&gt; "+ likes);</span><br><span class="line">    return "{'module':'list param'}";</span><br><span class="line">}</span><br></pre></td></tr></tbody></table>
 
 <p>运行会报错，</p>
-<p><img src="/1630484339065.png" alt="1630484339065"></p>
+<p><img src="/2024/05/05/SpringMVc/1630484339065.png" alt="1630484339065"></p>
 <p>错误的原因是:SpringMVC将List看做是一个POJO对象来处理，将其创建一个对象并准备把前端的数据封装到对象中，但是List是一个接口无法创建对象，所以报错。</p>
 <p>解决方案是:使用<code>@RequestParam</code>注解</p>
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">//集合参数：同名请求参数可以使用@RequestParam注解映射到对应名称的集合对象中作为数据</span><br><span class="line">@RequestMapping("/listParam")</span><br><span class="line">@ResponseBody</span><br><span class="line">public String listParam(@RequestParam List&lt;String&gt; likes){</span><br><span class="line">    System.out.println("集合参数传递 likes ==&gt; "+ likes);</span><br><span class="line">    return "{'module':'list param'}";</span><br><span class="line">}</span><br></pre></td></tr></tbody></table>
@@ -742,7 +742,7 @@
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;com.fasterxml.jackson.core&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;jackson-databind&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;2.9.0&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></tbody></table>
 
 <p><strong>步骤2:PostMan发送JSON数据</strong></p>
-<p><img src="/1630485135061.png" alt="1630485135061"></p>
+<p><img src="/2024/05/05/SpringMVc/1630485135061.png" alt="1630485135061"></p>
 <p><strong>步骤3:开启SpringMVC注解支持</strong></p>
 <p>在SpringMVC的配置类中开启SpringMVC的注解支持，这里面就包含了将JSON转换成对象的功能。</p>
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">@Configuration</span><br><span class="line">@ComponentScan("com.itheima.controller")</span><br><span class="line">//开启json数据类型自动转换</span><br><span class="line">@EnableWebMvc</span><br><span class="line">public class SpringMvcConfig {</span><br><span class="line">}</span><br></pre></td></tr></tbody></table>
@@ -751,35 +751,35 @@
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">//使用@RequestBody注解将外部传递的json数组数据映射到形参的集合对象中作为数据</span><br><span class="line">@RequestMapping("/listParamForJson")</span><br><span class="line">@ResponseBody</span><br><span class="line">public String listParamForJson(@RequestBody List&lt;String&gt; likes){</span><br><span class="line">    System.out.println("list common(json)参数传递 list ==&gt; "+likes);</span><br><span class="line">    return "{'module':'list common for json param'}";</span><br><span class="line">}</span><br></pre></td></tr></tbody></table>
 
 <p><strong>步骤5:启动运行程序</strong></p>
-<p><img src="/1630492624684.png" alt="1630492624684"></p>
+<p><img src="/2024/05/05/SpringMVc/1630492624684.png" alt="1630492624684"></p>
 <p>JSON普通数组的数据就已经传递完成，下面针对JSON对象数据和JSON对象数组的数据该如何传递呢?</p>
 <h4 id="JSON对象数据"><a href="#JSON对象数据" class="headerlink" title="JSON对象数据"></a>JSON对象数据</h4><p>我们会发现，只需要关注请求和数据如何发送?后端数据如何接收?</p>
 <p>请求和数据的发送:</p>
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">{</span><br><span class="line">    "name":"itcast",</span><br><span class="line">    "age":15</span><br><span class="line">}</span><br></pre></td></tr></tbody></table>
 
-<p><img src="/1630493105450.png" alt="1630493105450"></p>
+<p><img src="/2024/05/05/SpringMVc/1630493105450.png" alt="1630493105450"></p>
 <p>后端接收数据：</p>
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">@RequestMapping("/pojoParamForJson")</span><br><span class="line">@ResponseBody</span><br><span class="line">public String pojoParamForJson(@RequestBody User user){</span><br><span class="line">    System.out.println("pojo(json)参数传递 user ==&gt; "+user);</span><br><span class="line">    return "{'module':'pojo for json param'}";</span><br><span class="line">}</span><br></pre></td></tr></tbody></table>
 
 <p>启动程序访问测试</p>
-<p><img src="/1630493233550.png" alt="1630493233550"></p>
+<p><img src="/2024/05/05/SpringMVc/1630493233550.png" alt="1630493233550"></p>
 <p><strong>说明:</strong></p>
 <p>address为null的原因是前端没有传递数据给后端。</p>
 <p>如果想要address也有数据，我们需求修改前端传递的数据内容:</p>
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">{</span><br><span class="line">    "name":"itcast",</span><br><span class="line">    "age":15,</span><br><span class="line">    "address":{</span><br><span class="line">        "province":"beijing",</span><br><span class="line">        "city":"beijing"</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table>
 
 <p>再次发送请求，就能看到address中的数据</p>
-<p><img src="/1630493450694.png" alt="1630493450694"></p>
+<p><img src="/2024/05/05/SpringMVc/1630493450694.png" alt="1630493450694"></p>
 <h4 id="JSON对象数组"><a href="#JSON对象数组" class="headerlink" title="JSON对象数组"></a>JSON对象数组</h4><p>集合中保存多个POJO该如何实现?</p>
 <p>请求和数据的发送:</p>
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line">    {"name":"itcast","age":15},</span><br><span class="line">    {"name":"itheima","age":12}</span><br><span class="line">]</span><br></pre></td></tr></tbody></table>
 
-<p><img src="/1630493501205.png" alt="1630493501205"></p>
+<p><img src="/2024/05/05/SpringMVc/1630493501205.png" alt="1630493501205"></p>
 <p>后端接收数据:</p>
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">@RequestMapping("/listPojoParamForJson")</span><br><span class="line">@ResponseBody</span><br><span class="line">public String listPojoParamForJson(@RequestBody List&lt;User&gt; list){</span><br><span class="line">    System.out.println("list pojo(json)参数传递 list ==&gt; "+list);</span><br><span class="line">    return "{'module':'list pojo for json param'}";</span><br><span class="line">}</span><br></pre></td></tr></tbody></table>
 
 <p>启动程序访问测试</p>
-<p><img src="/1630493561137.png" alt="1630493561137"></p>
+<p><img src="/2024/05/05/SpringMVc/1630493561137.png" alt="1630493561137"></p>
 <p><strong>小结</strong></p>
 <p>SpringMVC接收JSON数据的实现步骤为:</p>
 <p>(1)导入jackson包</p>
@@ -857,9 +857,9 @@
 <p>使用PostMan发送GET请求，并设置date参数</p>
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://localhost/dataParam?date=2088/08/08</span><br></pre></td></tr></tbody></table>
 
-<p><img src="/1630494320917.png" alt="1630494320917"></p>
+<p><img src="/2024/05/05/SpringMVc/1630494320917.png" alt="1630494320917"></p>
 <p><strong>步骤4:查看控制台</strong></p>
-<p><img src="/1630494443738.png" alt="1630494443738"></p>
+<p><img src="/2024/05/05/SpringMVc/1630494443738.png" alt="1630494443738"></p>
 <p>通过打印，我们发现SpringMVC可以接收日期数据类型，并将其打印在控制台。</p>
 <p>这个时候，我们就想如果把日期参数的格式改成其他的，SpringMVC还能处理么?</p>
 <p><strong>步骤5:更换日期格式</strong></p>
@@ -869,7 +869,7 @@
 <p>使用PostMan发送请求，携带两个不同的日期格式，</p>
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://localhost/dataParam?date=2088/08/08&amp;date1=2088-08-08</span><br></pre></td></tr></tbody></table>
 
-<p><img src="/1630494565970.png" alt="1630494565970"></p>
+<p><img src="/2024/05/05/SpringMVc/1630494565970.png" alt="1630494565970"></p>
 <p>发送请求和数据后，页面会报400，控制台会报出一个错误</p>
 <p>Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type ‘java.lang.String’ to required type ‘java.util.Date’; nested exception is org.springframework.core.convert.ConversionFailedException: Failed to convert from type [java.lang.String] to type [java.util.Date] for value ‘2088-08-08’; nested exception is java.lang.IllegalArgumentException]</p>
 <p>从错误信息可以看出，错误的原因是在将<code>2088-08-08</code>转换成日期类型的时候失败了，原因是SpringMVC默认支持的字符串转日期的格式为<code>yyyy/MM/dd</code>,而我们现在传递的不符合其默认格式，SpringMVC就无法进行格式转换，所以报错。</p>
@@ -877,7 +877,7 @@
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">@RequestMapping("/dataParam")</span><br><span class="line">@ResponseBody</span><br><span class="line">public String dataParam(Date date,</span><br><span class="line">                        @DateTimeFormat(pattern="yyyy-MM-dd") Date date1)</span><br><span class="line">    System.out.println("参数传递 date ==&gt; "+date);</span><br><span class="line">    System.out.println("参数传递 date1(yyyy-MM-dd) ==&gt; "+date1);</span><br><span class="line">    return "{'module':'data param'}";</span><br><span class="line">}</span><br></pre></td></tr></tbody></table>
 
 <p>重新启动服务器，重新发送请求测试，SpringMVC就可以正确的进行日期转换了</p>
-<p><img src="/1630495221038.png" alt="1630495221038"></p>
+<p><img src="/2024/05/05/SpringMVc/1630495221038.png" alt="1630495221038"></p>
 <p><strong>步骤6:携带时间的日期</strong></p>
 <p>接下来我们再来发送一个携带时间的日期，看下SpringMVC该如何处理?</p>
 <p>先修改UserController类，添加第三个参数</p>
@@ -886,9 +886,9 @@
 <p>使用PostMan发送请求，携带两个不同的日期格式，</p>
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://localhost/dataParam?date=2088/08/08&amp;date1=2088-08-08&amp;date2=2088/08/08 8:08:08</span><br></pre></td></tr></tbody></table>
 
-<p><img src="/1630495347289.png" alt="1630495347289"></p>
+<p><img src="/2024/05/05/SpringMVc/1630495347289.png" alt="1630495347289"></p>
 <p>重新启动服务器，重新发送请求测试，SpringMVC就可以将日期时间的数据进行转换</p>
-<p><img src="/1630495507353.png" alt="1630495507353"></p>
+<p><img src="/2024/05/05/SpringMVc/1630495507353.png" alt="1630495507353"></p>
 <h4 id="DateTimeFormat"><a href="#DateTimeFormat" class="headerlink" title="@DateTimeFormat"></a>@DateTimeFormat</h4><table>
 <thead>
 <tr>
@@ -933,7 +933,7 @@
 
 <p><strong>注意:Converter所属的包为<code>org.springframework.core.convert.converter</code></strong></p>
 <p>Converter接口的实现类</p>
-<p><img src="/1630496385398.png" alt="1630496385398"></p>
+<p><img src="/2024/05/05/SpringMVc/1630496385398.png" alt="1630496385398"></p>
 <p>框架中有提供很多对应Converter接口的实现类，用来实现不同数据类型之间的转换,如:</p>
 <p>请求参数年龄数据（String→Integer）</p>
 <p>日期格式转换（String → Date）</p>
@@ -973,7 +973,7 @@
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">@Controller</span><br><span class="line">public class UserController {</span><br><span class="line"></span><br><span class="line">    </span><br><span class="line">}</span><br></pre></td></tr></tbody></table></li>
 </ul>
 <p>最终创建好的项目结构如下:</p>
-<p><img src="/1630497314131.png" alt="1630497314131"></p>
+<p><img src="/2024/05/05/SpringMVc/1630497314131.png" alt="1630497314131"></p>
 <h4 id="响应页面-了解"><a href="#响应页面-了解" class="headerlink" title="响应页面[了解]"></a>响应页面[了解]</h4><p><strong>步骤1:设置返回页面</strong></p>
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">@Controller</span><br><span class="line">public class UserController {</span><br><span class="line">    </span><br><span class="line">    @RequestMapping("/toJumpPage")</span><br><span class="line">    //注意</span><br><span class="line">    //1.此处不能添加@ResponseBody,如果加了该注入，会直接将page.jsp当字符串返回前端</span><br><span class="line">    //2.方法需要返回String</span><br><span class="line">    public String toJumpPage(){</span><br><span class="line">        System.out.println("跳转页面");</span><br><span class="line">        return "page.jsp";</span><br><span class="line">    }</span><br><span class="line">    </span><br><span class="line">}</span><br></pre></td></tr></tbody></table>
 
@@ -981,24 +981,24 @@
 <p>此处涉及到页面跳转，所以不适合采用PostMan进行测试，直接打开浏览器，输入</p>
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://localhost/toJumpPage</span><br></pre></td></tr></tbody></table>
 
-<p><img src="/1630497496785.png" alt="1630497496785"></p>
+<p><img src="/2024/05/05/SpringMVc/1630497496785.png" alt="1630497496785"></p>
 <h4 id="返回文本数据-了解"><a href="#返回文本数据-了解" class="headerlink" title="返回文本数据[了解]"></a>返回文本数据[了解]</h4><p><strong>步骤1:设置返回文本内容</strong></p>
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">@Controller</span><br><span class="line">public class UserController {</span><br><span class="line">    </span><br><span class="line">    @RequestMapping("/toText")</span><br><span class="line">    //注意此处该注解就不能省略，如果省略了,会把response text当前页面名称去查找，如果没有回报404错误</span><br><span class="line">    @ResponseBody</span><br><span class="line">    public String toText(){</span><br><span class="line">        System.out.println("返回纯文本数据");</span><br><span class="line">        return "response text";</span><br><span class="line">    }</span><br><span class="line">    </span><br><span class="line">}</span><br></pre></td></tr></tbody></table>
 
 <p><strong>步骤2:启动程序测试</strong></p>
 <p>此处不涉及到页面跳转，因为我们现在发送的是GET请求，可以使用浏览器也可以使用PostMan进行测试，输入地址<code>http://localhost/toText</code>访问</p>
-<p><img src="/1630497741388.png" alt="1630497741388"></p>
+<p><img src="/2024/05/05/SpringMVc/1630497741388.png" alt="1630497741388"></p>
 <h4 id="响应JSON数据"><a href="#响应JSON数据" class="headerlink" title="响应JSON数据"></a>响应JSON数据</h4><p><strong>响应POJO对象</strong></p>
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">@Controller</span><br><span class="line">public class UserController {</span><br><span class="line">    </span><br><span class="line">    @RequestMapping("/toJsonPOJO")</span><br><span class="line">    @ResponseBody</span><br><span class="line">    public User toJsonPOJO(){</span><br><span class="line">        System.out.println("返回json对象数据");</span><br><span class="line">        User user = new User();</span><br><span class="line">        user.setName("itcast");</span><br><span class="line">        user.setAge(15);</span><br><span class="line">        return user;</span><br><span class="line">    }</span><br><span class="line">    </span><br><span class="line">}</span><br></pre></td></tr></tbody></table>
 
 <p>返回值为实体类对象，设置返回值为实体类类型，即可实现返回对应对象的json数据，需要依赖@ResponseBody注解和@EnableWebMvc注解</p>
 <p>重新启动服务器，访问<code>http://localhost/toJsonPOJO</code></p>
-<p><img src="/1630497954896.png" alt="1630497954896"></p>
+<p><img src="/2024/05/05/SpringMVc/1630497954896.png" alt="1630497954896"></p>
 <p><strong>响应POJO集合对象</strong></p>
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">@Controller</span><br><span class="line">public class UserController {</span><br><span class="line">    </span><br><span class="line">    @RequestMapping("/toJsonList")</span><br><span class="line">    @ResponseBody</span><br><span class="line">    public List&lt;User&gt; toJsonList(){</span><br><span class="line">        System.out.println("返回json集合数据");</span><br><span class="line">        User user1 = new User();</span><br><span class="line">        user1.setName("传智播客");</span><br><span class="line">        user1.setAge(15);</span><br><span class="line"></span><br><span class="line">        User user2 = new User();</span><br><span class="line">        user2.setName("黑马程序员");</span><br><span class="line">        user2.setAge(12);</span><br><span class="line"></span><br><span class="line">        List&lt;User&gt; userList = new ArrayList&lt;User&gt;();</span><br><span class="line">        userList.add(user1);</span><br><span class="line">        userList.add(user2);</span><br><span class="line"></span><br><span class="line">        return userList;</span><br><span class="line">    }</span><br><span class="line">    </span><br><span class="line">}</span><br><span class="line"></span><br></pre></td></tr></tbody></table>
 
 <p>重新启动服务器，访问<code>http://localhost/toJsonList</code></p>
-<p><img src="/1630498084047.png" alt="1630498084047"></p>
+<p><img src="/2024/05/05/SpringMVc/1630498084047.png" alt="1630498084047"></p>
 <h4 id="ResponseBody-1"><a href="#ResponseBody-1" class="headerlink" title="@ResponseBody"></a>@ResponseBody</h4><table>
 <thead>
 <tr>
@@ -1180,13 +1180,13 @@
 <h3 id="整合配置"><a href="#整合配置" class="headerlink" title="整合配置"></a>整合配置</h3><p>掌握上述的知识点后，接下来，我们就可以按照上述的步骤一步步的来完成SSM的整合。</p>
 <p><strong>步骤1：创建Maven的web项目</strong></p>
 <p>可以使用Maven的骨架创建</p>
-<p><img src="/1630561266760.png" alt="1630561266760"></p>
+<p><img src="/2024/05/05/SpringMVc/1630561266760.png" alt="1630561266760"></p>
 <p><strong>步骤2:添加依赖</strong></p>
 <p>pom.xml添加SSM所需要的依赖jar包</p>
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span><br><span class="line"></span><br><span class="line">&lt;project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"</span><br><span class="line">  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"&gt;</span><br><span class="line">  &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;</span><br><span class="line"></span><br><span class="line">  &lt;groupId&gt;com.itheima&lt;/groupId&gt;</span><br><span class="line">  &lt;artifactId&gt;springmvc_08_ssm&lt;/artifactId&gt;</span><br><span class="line">  &lt;version&gt;1.0-SNAPSHOT&lt;/version&gt;</span><br><span class="line">  &lt;packaging&gt;war&lt;/packaging&gt;</span><br><span class="line"></span><br><span class="line">  &lt;dependencies&gt;</span><br><span class="line">    &lt;dependency&gt;</span><br><span class="line">      &lt;groupId&gt;org.springframework&lt;/groupId&gt;</span><br><span class="line">      &lt;artifactId&gt;spring-webmvc&lt;/artifactId&gt;</span><br><span class="line">      &lt;version&gt;5.2.10.RELEASE&lt;/version&gt;</span><br><span class="line">    &lt;/dependency&gt;</span><br><span class="line"></span><br><span class="line">    &lt;dependency&gt;</span><br><span class="line">      &lt;groupId&gt;org.springframework&lt;/groupId&gt;</span><br><span class="line">      &lt;artifactId&gt;spring-jdbc&lt;/artifactId&gt;</span><br><span class="line">      &lt;version&gt;5.2.10.RELEASE&lt;/version&gt;</span><br><span class="line">    &lt;/dependency&gt;</span><br><span class="line"></span><br><span class="line">    &lt;dependency&gt;</span><br><span class="line">      &lt;groupId&gt;org.springframework&lt;/groupId&gt;</span><br><span class="line">      &lt;artifactId&gt;spring-test&lt;/artifactId&gt;</span><br><span class="line">      &lt;version&gt;5.2.10.RELEASE&lt;/version&gt;</span><br><span class="line">    &lt;/dependency&gt;</span><br><span class="line"></span><br><span class="line">    &lt;dependency&gt;</span><br><span class="line">      &lt;groupId&gt;org.mybatis&lt;/groupId&gt;</span><br><span class="line">      &lt;artifactId&gt;mybatis&lt;/artifactId&gt;</span><br><span class="line">      &lt;version&gt;3.5.6&lt;/version&gt;</span><br><span class="line">    &lt;/dependency&gt;</span><br><span class="line"></span><br><span class="line">    &lt;dependency&gt;</span><br><span class="line">      &lt;groupId&gt;org.mybatis&lt;/groupId&gt;</span><br><span class="line">      &lt;artifactId&gt;mybatis-spring&lt;/artifactId&gt;</span><br><span class="line">      &lt;version&gt;1.3.0&lt;/version&gt;</span><br><span class="line">    &lt;/dependency&gt;</span><br><span class="line"></span><br><span class="line">    &lt;dependency&gt;</span><br><span class="line">      &lt;groupId&gt;mysql&lt;/groupId&gt;</span><br><span class="line">      &lt;artifactId&gt;mysql-connector-java&lt;/artifactId&gt;</span><br><span class="line">      &lt;version&gt;5.1.47&lt;/version&gt;</span><br><span class="line">    &lt;/dependency&gt;</span><br><span class="line"></span><br><span class="line">    &lt;dependency&gt;</span><br><span class="line">      &lt;groupId&gt;com.alibaba&lt;/groupId&gt;</span><br><span class="line">      &lt;artifactId&gt;druid&lt;/artifactId&gt;</span><br><span class="line">      &lt;version&gt;1.1.16&lt;/version&gt;</span><br><span class="line">    &lt;/dependency&gt;</span><br><span class="line"></span><br><span class="line">    &lt;dependency&gt;</span><br><span class="line">      &lt;groupId&gt;junit&lt;/groupId&gt;</span><br><span class="line">      &lt;artifactId&gt;junit&lt;/artifactId&gt;</span><br><span class="line">      &lt;version&gt;4.12&lt;/version&gt;</span><br><span class="line">      &lt;scope&gt;test&lt;/scope&gt;</span><br><span class="line">    &lt;/dependency&gt;</span><br><span class="line"></span><br><span class="line">    &lt;dependency&gt;</span><br><span class="line">      &lt;groupId&gt;javax.servlet&lt;/groupId&gt;</span><br><span class="line">      &lt;artifactId&gt;javax.servlet-api&lt;/artifactId&gt;</span><br><span class="line">      &lt;version&gt;3.1.0&lt;/version&gt;</span><br><span class="line">      &lt;scope&gt;provided&lt;/scope&gt;</span><br><span class="line">    &lt;/dependency&gt;</span><br><span class="line"></span><br><span class="line">    &lt;dependency&gt;</span><br><span class="line">      &lt;groupId&gt;com.fasterxml.jackson.core&lt;/groupId&gt;</span><br><span class="line">      &lt;artifactId&gt;jackson-databind&lt;/artifactId&gt;</span><br><span class="line">      &lt;version&gt;2.9.0&lt;/version&gt;</span><br><span class="line">    &lt;/dependency&gt;</span><br><span class="line">  &lt;/dependencies&gt;</span><br><span class="line"></span><br><span class="line">  &lt;build&gt;</span><br><span class="line">    &lt;plugins&gt;</span><br><span class="line">      &lt;plugin&gt;</span><br><span class="line">        &lt;groupId&gt;org.apache.tomcat.maven&lt;/groupId&gt;</span><br><span class="line">        &lt;artifactId&gt;tomcat7-maven-plugin&lt;/artifactId&gt;</span><br><span class="line">        &lt;version&gt;2.1&lt;/version&gt;</span><br><span class="line">        &lt;configuration&gt;</span><br><span class="line">          &lt;port&gt;80&lt;/port&gt;</span><br><span class="line">          &lt;path&gt;/&lt;/path&gt;</span><br><span class="line">        &lt;/configuration&gt;</span><br><span class="line">      &lt;/plugin&gt;</span><br><span class="line">    &lt;/plugins&gt;</span><br><span class="line">  &lt;/build&gt;</span><br><span class="line">&lt;/project&gt;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></tbody></table>
 
 <p><strong>步骤3:创建项目包结构</strong></p>
-<p><img src="/1630561591931.png" alt="1630561591931"></p>
+<p><img src="/2024/05/05/SpringMVc/1630561591931.png" alt="1630561591931"></p>
 <ul>
 <li>config目录存放的是相关的配置类</li>
 <li>controller编写的是Controller类</li>
@@ -1247,7 +1247,7 @@
 <li><p>可以不用理会，因为运行是正常的</p>
 </li>
 <li><p>设置错误提示级别</p>
-<p><img src="/1630600227357.png" alt="img"></p>
+<p><img src="/2024/05/05/SpringMVc/1630600227357.png" alt="img"></p>
 </li>
 </ul>
 </li>
@@ -1268,29 +1268,29 @@
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">@RunWith(SpringJUnit4ClassRunner.class)</span><br><span class="line">@ContextConfiguration(classes = SpringConfig.class)</span><br><span class="line">public class BookServiceTest {</span><br><span class="line"></span><br><span class="line">    @Autowired</span><br><span class="line">    private BookService bookService;</span><br><span class="line"></span><br><span class="line">    @Test</span><br><span class="line">    public void testGetById(){</span><br><span class="line">        Book book = bookService.getById(1);</span><br><span class="line">        System.out.println(book);</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    @Test</span><br><span class="line">    public void testGetAll(){</span><br><span class="line">        List&lt;Book&gt; all = bookService.getAll();</span><br><span class="line">        System.out.println(all);</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">}</span><br></pre></td></tr></tbody></table>
 
 <p>根据ID查询，测试的结果为:</p>
-<p><img src="/1630600844191.png" alt="1630600844191"></p>
+<p><img src="/2024/05/05/SpringMVc/1630600844191.png" alt="1630600844191"></p>
 <p>查询所有，测试的结果为:</p>
-<p><img src="/1630600927486.png" alt="1630600927486"></p>
+<p><img src="/2024/05/05/SpringMVc/1630600927486.png" alt="1630600927486"></p>
 <h3 id="PostMan测试"><a href="#PostMan测试" class="headerlink" title="PostMan测试"></a>PostMan测试</h3><h4 id="新增"><a href="#新增" class="headerlink" title="新增"></a>新增</h4><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">http://localhost/books</span><br><span class="line">{</span><br><span class="line">    "type":"类别测试数据",</span><br><span class="line">    "name":"书名测试数据",</span><br><span class="line">    "description":"描述测试数据"</span><br><span class="line">}</span><br></pre></td></tr></tbody></table>
 
-<p><img src="/1630652582425.png" alt="1630652582425"></p>
+<p><img src="/2024/05/05/SpringMVc/1630652582425.png" alt="1630652582425"></p>
 <h4 id="修改"><a href="#修改" class="headerlink" title="修改"></a>修改</h4><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">http://localhost/books</span><br><span class="line">{</span><br><span class="line">    "id":13,</span><br><span class="line">	"type":"类别测试数据",</span><br><span class="line">    "name":"书名测试数据",</span><br><span class="line">    "description":"描述测试数据"</span><br><span class="line">}</span><br></pre></td></tr></tbody></table>
 
-<p><img src="/1630652758221.png" alt="1630652758221"></p>
+<p><img src="/2024/05/05/SpringMVc/1630652758221.png" alt="1630652758221"></p>
 <h4 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h4><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://localhost/books/14</span><br></pre></td></tr></tbody></table>
 
-<p><img src="/1630652796605.png" alt="1630652796605"></p>
+<p><img src="/2024/05/05/SpringMVc/1630652796605.png" alt="1630652796605"></p>
 <h4 id="查询单个"><a href="#查询单个" class="headerlink" title="查询单个"></a>查询单个</h4><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://localhost/books/1</span><br></pre></td></tr></tbody></table>
 
-<p><img src="/1630652837682.png" alt="1630652837682"></p>
+<p><img src="/2024/05/05/SpringMVc/1630652837682.png" alt="1630652837682"></p>
 <h4 id="查询所有"><a href="#查询所有" class="headerlink" title="查询所有"></a>查询所有</h4><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://localhost/books</span><br></pre></td></tr></tbody></table>
 
-<p><img src="/1630652867493.png" alt="1630652867493"></p>
+<p><img src="/2024/05/05/SpringMVc/1630652867493.png" alt="1630652867493"></p>
 <h2 id="全局异常处理"><a href="#全局异常处理" class="headerlink" title="全局异常处理"></a>全局异常处理</h2><h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p>在讲解这一部分知识点之前，我们先来演示个效果，修改BookController类的<code>getById</code>方法</p>
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">@GetMapping("/{id}")</span><br><span class="line">public Result getById(@PathVariable Integer id) {</span><br><span class="line">    //手动添加一个错误信息</span><br><span class="line">    if(id==1){</span><br><span class="line">        int i = 1/0;</span><br><span class="line">    }</span><br><span class="line">    Book book = bookService.getById(id);</span><br><span class="line">    Integer code = book != null ? Code.GET_OK : Code.GET_ERR;</span><br><span class="line">    String msg = book != null ? "" : "数据查询失败，请重试！";</span><br><span class="line">    return new Result(code,book,msg);</span><br><span class="line">}</span><br></pre></td></tr></tbody></table>
 
 <p>重新启动运行项目，使用PostMan发送请求，当传入的id为1，则会出现如下效果：</p>
-<p><img src="/1630656982337.png" alt="1630656982337"></p>
+<p><img src="/2024/05/05/SpringMVc/1630656982337.png" alt="1630656982337"></p>
 <p>前端接收到这个信息后和之前我们约定的格式不一致，这个问题该如何解决?</p>
 <p>在解决问题之前，我们先来看下异常的种类及出现异常的原因:</p>
 <ul>
@@ -1318,7 +1318,7 @@
 <li><p>异常处理器:</p>
 <ul>
 <li><p>集中的、统一的处理项目中出现的异常。</p>
-<p><img src="/1630657791653.png" alt="1630657791653"></p>
+<p><img src="/2024/05/05/SpringMVc/1630657791653.png" alt="1630657791653"></p>
 </li>
 </ul>
 </li>
@@ -1332,7 +1332,7 @@
 </ul>
 <p>内容参考前面的项目或者直接使用前面的项目进行本节内容的学习。</p>
 <p>最终创建好的项目结构如下:</p>
-<p><img src="/1630657972564.png" alt="1630657972564"></p>
+<p><img src="/2024/05/05/SpringMVc/1630657972564.png" alt="1630657972564"></p>
 <h4 id="使用步骤"><a href="#使用步骤" class="headerlink" title="使用步骤"></a>使用步骤</h4><p><strong>步骤1:创建异常处理器类</strong></p>
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">//@RestControllerAdvice用于标识当前类为REST风格对应的异常处理器</span><br><span class="line">@RestControllerAdvice</span><br><span class="line">public class ProjectExceptionAdvice {</span><br><span class="line">    //除了自定义的异常处理器，保留对Exception类型的异常处理，用于处理非预期的异常</span><br><span class="line">    @ExceptionHandler(Exception.class)</span><br><span class="line">    public void doException(Exception ex){</span><br><span class="line">        System.out.println("嘿嘿,异常你哪里跑！")</span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"></span><br></pre></td></tr></tbody></table>
 
@@ -1342,12 +1342,12 @@
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">@GetMapping("/{id}")</span><br><span class="line">public Result getById(@PathVariable Integer id) {</span><br><span class="line">    int i = 1/0;</span><br><span class="line">    Book book = bookService.getById(id);</span><br><span class="line">    Integer code = book != null ? Code.GET_OK : Code.GET_ERR;</span><br><span class="line">    String msg = book != null ? "" : "数据查询失败，请重试！";</span><br><span class="line">    return new Result(code,book,msg);</span><br><span class="line">}</span><br></pre></td></tr></tbody></table>
 
 <p><strong>步骤3:运行程序，测试</strong></p>
-<p><img src="/1630658350945.png" alt="1630658350945"></p>
+<p><img src="/2024/05/05/SpringMVc/1630658350945.png" alt="1630658350945"></p>
 <p>说明异常已经被拦截并执行了<code>doException</code>方法。</p>
 <h5 id="异常处理器类返回结果给前端"><a href="#异常处理器类返回结果给前端" class="headerlink" title="异常处理器类返回结果给前端"></a>异常处理器类返回结果给前端</h5><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">//@RestControllerAdvice用于标识当前类为REST风格对应的异常处理器</span><br><span class="line">@RestControllerAdvice</span><br><span class="line">public class ProjectExceptionAdvice {</span><br><span class="line">    //除了自定义的异常处理器，保留对Exception类型的异常处理，用于处理非预期的异常</span><br><span class="line">    @ExceptionHandler(Exception.class)</span><br><span class="line">    public Result doException(Exception ex){</span><br><span class="line">        System.out.println("嘿嘿,异常你哪里跑！")</span><br><span class="line">        return new Result(666,null,"嘿嘿,异常你哪里跑！");</span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"></span><br></pre></td></tr></tbody></table>
 
 <p>启动运行程序，测试</p>
-<p><img src="/1630658606549.png" alt="1630658606549"></p>
+<p><img src="/2024/05/05/SpringMVc/1630658606549.png" alt="1630658606549"></p>
 <p>至此，就算后台执行的过程中抛出异常，最终也能按照我们和前端约定好的格式返回给前端。</p>
 <h4 id="RestControllerAdvice"><a href="#RestControllerAdvice" class="headerlink" title="@RestControllerAdvice"></a>@RestControllerAdvice</h4><table>
 <thead>
@@ -1370,7 +1370,7 @@
 </tr>
 </tbody></table>
 <p>**说明:**此注解自带@ResponseBody注解与@Component注解，具备对应的功能</p>
-<p><img src="/1630659060451.png" alt="1630659060451"></p>
+<p><img src="/2024/05/05/SpringMVc/1630659060451.png" alt="1630659060451"></p>
 <h4 id="ExceptionHandler"><a href="#ExceptionHandler" class="headerlink" title="@ExceptionHandler"></a>@ExceptionHandler</h4><table>
 <thead>
 <tr>
@@ -1404,14 +1404,14 @@
 <li><p>规范的用户行为产生的异常</p>
 <ul>
 <li><p>用户在页面输入内容的时候未按照指定格式进行数据填写，如在年龄框输入的是字符串</p>
-<p><img src="/1630659599983.png" alt="1630659599983"></p>
+<p><img src="/2024/05/05/SpringMVc/1630659599983.png" alt="1630659599983"></p>
 </li>
 </ul>
 </li>
 <li><p>不规范的用户行为操作产生的异常</p>
 <ul>
 <li><p>如用户故意传递错误数据</p>
-<p><img src="/1630659622958.png" alt="1630659622958"></p>
+<p><img src="/2024/05/05/SpringMVc/1630659622958.png" alt="1630659622958"></p>
 </li>
 </ul>
 </li>
@@ -1428,7 +1428,7 @@
 <li><p>其他异常（Exception）</p>
 <ul>
 <li><p>编程人员未预期到的异常，如:用到的文件不存在</p>
-<p><img src="/1630659690341.png" alt="1630659690341"></p>
+<p><img src="/2024/05/05/SpringMVc/1630659690341.png" alt="1630659690341"></p>
 </li>
 </ul>
 </li>
@@ -1501,15 +1501,15 @@
 <p><strong>步骤4:运行程序</strong></p>
 <p>根据ID查询，</p>
 <p>如果传入的参数为1，会报<code>BusinessException</code></p>
-<p><img src="/1630661162758.png" alt="1630661162758"></p>
+<p><img src="/2024/05/05/SpringMVc/1630661162758.png" alt="1630661162758"></p>
 <p>如果传入的是其他参数，会报<code>SystemException</code></p>
-<p><img src="/1630661192383.png" alt="1630661192383"></p>
+<p><img src="/2024/05/05/SpringMVc/1630661192383.png" alt="1630661192383"></p>
 <p>对于异常我们就已经处理完成了，不管后台哪一层抛出异常，都会以我们与前端约定好的方式进行返回，前端只需要把信息获取到，根据返回的正确与否来展示不同的内容即可。</p>
 <p><strong>小结</strong></p>
 <p>以后项目中的异常处理方式为:</p>
-<p><img src="/1630658821746.png" alt="1630658821746"></p>
+<p><img src="/2024/05/05/SpringMVc/1630658821746.png" alt="1630658821746"></p>
 <h2 id="拦截器"><a href="#拦截器" class="headerlink" title="拦截器"></a>拦截器</h2><h3 id="拦截器概念"><a href="#拦截器概念" class="headerlink" title="拦截器概念"></a>拦截器概念</h3><p>讲解拦截器的概念之前，我们先看一张图:</p>
-<p><img src="/1630676280170.png" alt="1630676280170"></p>
+<p><img src="/2024/05/05/SpringMVc/1630676280170.png" alt="1630676280170"></p>
 <p>(1)浏览器发送一个请求会先到Tomcat的web服务器</p>
 <p>(2)Tomcat服务器接收到请求以后，会去判断请求的是静态资源还是动态资源</p>
 <p>(3)如果是静态资源，会直接到Tomcat的项目部署目录下去直接访问</p>
@@ -1538,7 +1538,7 @@
 <li>归属不同：Filter属于Servlet技术，Interceptor属于SpringMVC技术</li>
 <li>拦截内容不同：Filter对所有访问进行增强，Interceptor仅针对SpringMVC的访问进行增强</li>
 </ul>
-<p><img src="/1630676903190.png" alt="1630676903190"></p>
+<p><img src="/2024/05/05/SpringMVc/1630676903190.png" alt="1630676903190"></p>
 <h3 id="拦截器入门案例"><a href="#拦截器入门案例" class="headerlink" title="拦截器入门案例"></a>拦截器入门案例</h3><h4 id="环境准备-5"><a href="#环境准备-5" class="headerlink" title="环境准备"></a>环境准备</h4><ul>
 <li><p>创建一个Web的Maven项目</p>
 </li>
@@ -1555,7 +1555,7 @@
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">@RestController</span><br><span class="line">@RequestMapping("/books")</span><br><span class="line">public class BookController {</span><br><span class="line"></span><br><span class="line">    @PostMapping</span><br><span class="line">    public String save(@RequestBody Book book){</span><br><span class="line">        System.out.println("book save..." + book);</span><br><span class="line">        return "{'module':'book save'}";</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    @DeleteMapping("/{id}")</span><br><span class="line">    public String delete(@PathVariable Integer id){</span><br><span class="line">        System.out.println("book delete..." + id);</span><br><span class="line">        return "{'module':'book delete'}";</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    @PutMapping</span><br><span class="line">    public String update(@RequestBody Book book){</span><br><span class="line">        System.out.println("book update..."+book);</span><br><span class="line">        return "{'module':'book update'}";</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    @GetMapping("/{id}")</span><br><span class="line">    public String getById(@PathVariable Integer id){</span><br><span class="line">        System.out.println("book getById..."+id);</span><br><span class="line">        return "{'module':'book getById'}";</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    @GetMapping</span><br><span class="line">    public String getAll(){</span><br><span class="line">        System.out.println("book getAll...");</span><br><span class="line">        return "{'module':'book getAll'}";</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></li>
 </ul>
 <p>最终创建好的项目结构如下:</p>
-<p><img src="/1630677370998.png" alt="1630677370998"></p>
+<p><img src="/2024/05/05/SpringMVc/1630677370998.png" alt="1630677370998"></p>
 <h4 id="拦截器开发"><a href="#拦截器开发" class="headerlink" title="拦截器开发"></a>拦截器开发</h4><p><strong>步骤1:创建拦截器类</strong></p>
 <p>让类实现HandlerInterceptor接口，重写接口中的三个方法。</p>
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">@Component</span><br><span class="line">//定义拦截器类，实现HandlerInterceptor接口</span><br><span class="line">//注意当前类必须受Spring容器控制</span><br><span class="line">public class ProjectInterceptor implements HandlerInterceptor {</span><br><span class="line">    @Override</span><br><span class="line">    //原始方法调用前执行的内容</span><br><span class="line">    public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {</span><br><span class="line">        System.out.println("preHandle...");</span><br><span class="line">        return true;</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    //原始方法调用后执行的内容</span><br><span class="line">    public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) throws Exception {</span><br><span class="line">        System.out.println("postHandle...");</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    //原始方法调用完成后执行的内容</span><br><span class="line">    public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex) throws Exception {</span><br><span class="line">        System.out.println("afterCompletion...");</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table>
@@ -1569,7 +1569,7 @@
 
 <p><strong>步骤4:运行程序测试</strong></p>
 <p>使用PostMan发送<code>http://localhost/books</code></p>
-<p><img src="/1630678114224.png" alt="1630678114224"></p>
+<p><img src="/2024/05/05/SpringMVc/1630678114224.png" alt="1630678114224"></p>
 <p>如果发送<code>http://localhost/books/100</code>会发现拦截器没有被执行，原因是拦截器的<code>addPathPatterns</code>方法配置的拦截路径是<code>/books</code>,我们现在发送的是<code>/books/100</code>，所以没有匹配上，因此没有拦截，拦截器就不会执行。</p>
 <p><strong>步骤5:修改拦截器拦截规则</strong></p>
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">@Configuration</span><br><span class="line">public class SpringMvcSupport extends WebMvcConfigurationSupport {</span><br><span class="line">    @Autowired</span><br><span class="line">    private ProjectInterceptor projectInterceptor;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    protected void addResourceHandlers(ResourceHandlerRegistry registry) {</span><br><span class="line">        registry.addResourceHandler("/pages/**").addResourceLocations("/pages/");</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    protected void addInterceptors(InterceptorRegistry registry) {</span><br><span class="line">        //配置拦截器</span><br><span class="line">        registry.addInterceptor(projectInterceptor).addPathPatterns("/books","/books/*" );</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table>
@@ -1581,7 +1581,7 @@
 
 <p>此后咱们就不用再写<code>SpringMvcSupport</code>类了。</p>
 <p>最后我们来看下拦截器的执行流程:</p>
-<p><img src="/1630679464294.png" alt="1630679464294"></p>
+<p><img src="/2024/05/05/SpringMVc/1630679464294.png" alt="1630679464294"></p>
 <p>当有拦截器后，请求会先进入preHandle方法，</p>
 <p>​ 如果方法返回true，则放行继续执行后面的handle[controller的方法]和后面的方法</p>
 <p>​ 如果返回false，则直接跳过后面方法的执行。</p>
@@ -1621,7 +1621,7 @@
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">@Configuration</span><br><span class="line">@ComponentScan({"com.itheima.controller"})</span><br><span class="line">@EnableWebMvc</span><br><span class="line">//实现WebMvcConfigurer接口可以简化开发，但具有一定的侵入性</span><br><span class="line">public class SpringMvcConfig implements WebMvcConfigurer {</span><br><span class="line">    @Autowired</span><br><span class="line">    private ProjectInterceptor projectInterceptor;</span><br><span class="line">    @Autowired</span><br><span class="line">    private ProjectInterceptor2 projectInterceptor2;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public void addInterceptors(InterceptorRegistry registry) {</span><br><span class="line">        //配置多拦截器</span><br><span class="line">        registry.addInterceptor(projectInterceptor).addPathPatterns("/books","/books/*");</span><br><span class="line">        registry.addInterceptor(projectInterceptor2).addPathPatterns("/books","/books/*");</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table>
 
 <p><strong>步骤3:运行程序，观察顺序</strong></p>
-<p><img src="/1630680435269.png" alt="1630680435269"></p>
+<p><img src="/2024/05/05/SpringMVc/1630680435269.png" alt="1630680435269"></p>
 <p>拦截器执行的顺序是和配置顺序有关。就和前面所提到的运维人员进入机房的案例，先进后出。</p>
 <ul>
 <li>当配置多个拦截器时，形成拦截器链</li>
@@ -1629,7 +1629,7 @@
 <li>当拦截器中出现对原始处理器的拦截，后面的拦截器均终止运行</li>
 <li>当拦截器运行中断，仅运行配置在前面的拦截器的afterCompletion操作</li>
 </ul>
-<p><img src="/1630680579735.png" alt="1630680579735"></p>
+<p><img src="/2024/05/05/SpringMVc/1630680579735.png" alt="1630680579735"></p>
 <p>preHandle：与配置顺序相同，必定运行</p>
 <p>postHandle:与配置顺序相反，可能不运行</p>
 <p>afterCompletion:与配置顺序相反，可能不运行。</p>

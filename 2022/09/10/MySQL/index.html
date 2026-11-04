@@ -203,15 +203,15 @@
   pageType: 'post'
 }</script><link rel="stylesheet" href="/css/background.css"><meta name="generator" content="Hexo 7.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">29</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">15</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><span class="site-page group"><span> 博文</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> archives</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> categories</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> tags</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><span> 生活</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/photos/"><i class="fa-fw fas fa-images"></i><span> photos</span></a></li><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-film"></i><span> movies</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于笔者</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(/img/3.jpg);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">L1n</span></a><a class="nav-page-title" href="/"><span class="site-name">MySQL</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  返回首页</span></span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><span class="site-page group"><span> 博文</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> archives</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> categories</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> tags</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><span> 生活</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/photos/"><i class="fa-fw fas fa-images"></i><span> photos</span></a></li><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-film"></i><span> movies</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于笔者</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">MySQL</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-09-10T07:26:42.000Z" title="发表于 2022-09-10 15:26:42">2022-09-10</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-06-30T08:14:06.000Z" title="更新于 2024-06-30 16:14:06">2024-06-30</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在我们讲解SpringBootWeb基础知识(请求响应案例)的时候，我们讲到在web开发中，为了应用程序职责单一，方便维护，我们一般将web应用程序分为三层，即：Controller、Service、Dao 。</p>
 <p>之前我们的案例中，是这样子的请求流程：浏览器发起请求，先请求Controller；Controller接收到请求之后，调用Service进行业务逻辑处理；Service再调用Dao，Dao再解析user.xml中所存储的数据。</p>
-<p><img src="/image-20221205001241294-1715613343039-61.png" alt="image-20221205001241294"></p>
+<p><img src="/2022/09/10/MySQL/image-20221205001241294-1715613343039-61.png" alt="image-20221205001241294"></p>
 <p>xml文件中可以存储数据，但是在企业项目开发中不会使用xml文件存储数据，因为不便管理维护，操作难度大。 在真实的企业开发中呢，都会采用数据库来存储和管理数据，那此时，web开发调用流程图如下所示：</p>
-<p><img src="/image-20221205001346266-1715613343039-62.png" alt="image-20221205001346266"></p>
+<p><img src="/2022/09/10/MySQL/image-20221205001346266-1715613343039-62.png" alt="image-20221205001346266"></p>
 <p>首先来了解一下什么是数据库。</p>
 <ul>
 <li>数据库：英文为 DataBase，简称DB，它是存储和管理数据的仓库。</li>
 </ul>
 <p>像我们日常访问的电商网站京东，企业内部的管理系统OA、ERP、CRM这类的系统，以及大家每天都会刷的头条、抖音类的app，那这些大家所看到的数据，其实都是存储在数据库中的。最终这些数据，只是在浏览器或app中展示出来而已，最终数据的存储和管理都是数据库负责的。</p>
-<p><img src="/image-20221205001501275.png" alt="image-20221205001501275"></p>
+<p><img src="/2022/09/10/MySQL/image-20221205001501275.png" alt="image-20221205001501275"></p>
 <p>数据是存储在数据库中的，那我们要如何来操作数据库以及数据库中所存放的数据呢？</p>
 <p>那这里呢，会涉及到一个软件：数据库管理系统（<strong>D</strong>ata<strong>B</strong>ase <strong>M</strong>anagement <strong>S</strong>ystem，简称DBMS）</p>
 <ul>
@@ -225,10 +225,10 @@
 <blockquote>
 <p>关系型数据库：我们后面会详细讲解，现在大家只需要知道我们学习的数据库属于关系型数据库即可。</p>
 </blockquote>
-<p><img src="/image-20221205095039939-1715613343039-64.png" alt="image-20221205095039939"></p>
+<p><img src="/2022/09/10/MySQL/image-20221205095039939-1715613343039-64.png" alt="image-20221205095039939"></p>
 <p>结论：程序员给数据库管理系统(DBMS)发送SQL语句，再由数据库管理系统操作数据库当中的数据。</p>
 <p>了解了数据库的一些简单概念之后，接下来我们再来介绍下目前主流的数据库，这里截取了排名前十的数据库：</p>
-<p><img src="/image-20221205120408757-1715613343039-65.png" alt="image-20221205120408757"></p>
+<p><img src="/2022/09/10/MySQL/image-20221205120408757-1715613343039-65.png" alt="image-20221205120408757"></p>
 <ul>
 <li>Oracle：大型的收费数据库，Oracle公司产品，价格昂贵。（通常是不差钱的公司会选择使用这个数据库）</li>
 <li>MySQL：开源免费的中小型数据库，后来Sun公司收购了MySQL，而Oracle又收购了Sun公司。目前Oracle推出两个版本的Mysql：社区版(开源免费)、商业版(收费)。</li>
@@ -244,16 +244,16 @@
 <p>结论：只要我们学会了SQL语句，就可以通过SQL语句来操作Mysql，也可以通过SQL语句来操作Oracle或SQL Server</p>
 </blockquote>
 <p>课程内容安排：</p>
-<p><img src="/image-20221205122731402-1715613343039-66.png" alt="image-20221205122731402"></p>
+<p><img src="/2022/09/10/MySQL/image-20221205122731402-1715613343039-66.png" alt="image-20221205122731402"></p>
 <p>以上课程内容拆解为3部分知识点：</p>
-<p><img src="/image-20221205122937131-1715613343039-67.png" alt="image-20221205122937131"></p>
+<p><img src="/2022/09/10/MySQL/image-20221205122937131-1715613343039-67.png" alt="image-20221205122937131"></p>
 <p>接下来我们就先进入到第一天的Mysql概述学习。</p>
 <h2 id="1-MySQL概述"><a href="#1-MySQL概述" class="headerlink" title="1. MySQL概述"></a>1. MySQL概述</h2><h3 id="1-1-数据模型"><a href="#1-1-数据模型" class="headerlink" title="1.1 数据模型"></a>1.1 数据模型</h3><p>介绍完了Mysql数据库的安装配置之后，接下来我们再来聊一聊Mysql当中的数据模型。学完了这一小节之后，我们就能够知道在Mysql数据库当中到底是如何来存储和管理数据的。</p>
 <p>在介绍 Mysql的数据模型之前，需要先了解一个概念：关系型数据库。</p>
 <p><strong>关系型数据库（RDBMS）</strong></p>
 <p>概念：建立在关系模型基础上，由多张相互连接的<strong>二维表</strong>组成的数据库。</p>
 <p>而所谓二维表，指的是由行和列组成的表，如下图：</p>
-<p><img src="/image-20221205145028667-1715613343039-68.png" alt="image-20221205145028667"></p>
+<p><img src="/2022/09/10/MySQL/image-20221205145028667-1715613343039-68.png" alt="image-20221205145028667"></p>
 <p>二维表的优点：</p>
 <ul>
 <li><p>使用表存储数据，格式统一，便于维护</p>
@@ -268,7 +268,7 @@
 <p><strong>2). 数据模型</strong></p>
 <p>介绍完了关系型数据库之后，接下来我们再来看一看在Mysql数据库当中到底是如何来存储数据的，也就是Mysql 的数据模型。</p>
 <p>MySQL是关系型数据库，是基于二维表进行数据存储的，具体的结构图下:</p>
-<p><img src="/image-20220829111741419-1715613343039-69.png" alt="image-20220829111741419"></p>
+<p><img src="/2022/09/10/MySQL/image-20220829111741419-1715613343039-69.png" alt="image-20220829111741419"></p>
 <ul>
 <li>通过MySQL客户端连接数据库管理系统DBMS，然后通过DBMS操作数据库</li>
 <li>使用MySQL客户端，向数据库管理系统发送一条SQL语句，由数据库管理系统根据SQL语句指令去操作数据库中的表结构及数据</li>
@@ -285,11 +285,11 @@
 <h3 id="1-2-SQL简介"><a href="#1-2-SQL简介" class="headerlink" title="1.2 SQL简介"></a>1.2 SQL简介</h3><p>SQL：结构化查询语言。一门操作关系型数据库的编程语言，定义操作所有关系型数据库的统一标准。</p>
 <p>在学习具体的SQL语句之前，先来了解一下SQL语言的语法。</p>
 <h4 id="1-2-1-SQL通用语法"><a href="#1-2-1-SQL通用语法" class="headerlink" title="1.2.1 SQL通用语法"></a>1.2.1 SQL通用语法</h4><p>1、SQL语句可以单行或多行书写，以分号结尾。</p>
-<p><img src="/image-20221205151656214-1715613343039-70.png" alt="image-20221205151656214"></p>
+<p><img src="/2022/09/10/MySQL/image-20221205151656214-1715613343039-70.png" alt="image-20221205151656214"></p>
 <p>2、SQL语句可以使用空格&#x2F;缩进来增强语句的可读性。</p>
-<p><img src="/image-20221205151953441-1715613343039-71.png" alt="image-20221205151953441"></p>
+<p><img src="/2022/09/10/MySQL/image-20221205151953441-1715613343039-71.png" alt="image-20221205151953441"></p>
 <p>3、MySQL数据库的SQL语句不区分大小写。</p>
-<p><img src="/image-20221205152112070-1715613343039-72.png" alt="image-20221205152112070"></p>
+<p><img src="/2022/09/10/MySQL/image-20221205152112070-1715613343039-72.png" alt="image-20221205152112070"></p>
 <p>4、注释：</p>
 <ul>
 <li>单行注释：– 注释内容 或 # 注释内容(MySQL特有)</li>
@@ -328,14 +328,14 @@
 <td>数据控制语言，用来创建数据库用户、控制数据库的访问权限</td>
 </tr>
 </tbody></table>
-<p><img src="/image-20221205152804250-1715613343039-73.png" alt="image-20221205152804250"></p>
+<p><img src="/2022/09/10/MySQL/image-20221205152804250-1715613343039-73.png" alt="image-20221205152804250"></p>
 <h2 id="2-数据库设计-DDL"><a href="#2-数据库设计-DDL" class="headerlink" title="2. 数据库设计-DDL"></a>2. 数据库设计-DDL</h2><p>下面我们就正式的进入到SQL语句的学习，在学习之前先给大家介绍一下我们要开发一个项目，整个开发流程是什么样的，以及在流程当中哪些环节会涉及到数据库。</p>
-<h3 id="2-1-项目开发流程"><a href="#2-1-项目开发流程" class="headerlink" title="2.1 项目开发流程"></a>2.1 项目开发流程</h3><p><img src="/image-20220829112953742.png" alt="image-20220829112953742"></p>
+<h3 id="2-1-项目开发流程"><a href="#2-1-项目开发流程" class="headerlink" title="2.1 项目开发流程"></a>2.1 项目开发流程</h3><p><img src="/2022/09/10/MySQL/image-20220829112953742.png" alt="image-20220829112953742"></p>
 <p>需求文档：</p>
 <ul>
 <li>在我们开发一个项目或者项目当中的某个模块之前，会先会拿到产品经理给我们提供的页面原型及需求文档。</li>
 </ul>
-<p><img src="/image-20221205154101142.png" alt="image-20221205154101142"></p>
+<p><img src="/2022/09/10/MySQL/image-20221205154101142.png" alt="image-20221205154101142"></p>
 <p>设计：</p>
 <ul>
 <li>拿到产品原型和需求文档之后，我们首先要做的不是编码，而是要先进行项目的设计，其中就包括概要设计、详细设计、接口设计、数据库设计等等。</li>
@@ -372,12 +372,12 @@
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show databases;</span><br></pre></td></tr></tbody></table>
 
 <p>命令行中执行效果如下：</p>
-<p><img src="/image-20220829124104154-1715613343039-76.png" alt="image-20220829124104154"></p>
+<p><img src="/2022/09/10/MySQL/image-20220829124104154-1715613343039-76.png" alt="image-20220829124104154"></p>
 <p><strong>查询当前数据库：</strong></p>
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select database();</span><br></pre></td></tr></tbody></table>
 
 <p>命令行中执行效果如果：</p>
-<p><img src="/image-20221205174615074-1715613343039-77.png" alt="image-20221205174615074"></p>
+<p><img src="/2022/09/10/MySQL/image-20221205174615074-1715613343039-77.png" alt="image-20221205174615074"></p>
 <blockquote>
 <p>我们要操作某一个数据库，必须要切换到对应的数据库中。</p>
 <p>通过指令：select database() ，就可以查询到当前所处的数据库</p>
@@ -389,15 +389,15 @@
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">create database itcast;</span><br></pre></td></tr></tbody></table>
 
 <p>命令行执行效果如下：</p>
-<p><img src="/image-20220829124219427-1715613343039-78.png" alt="image-20220829124219427"></p>
+<p><img src="/2022/09/10/MySQL/image-20220829124219427-1715613343039-78.png" alt="image-20220829124219427"></p>
 <p>=&#x3D;注意：在同一个数据库服务器中，不能创建两个名称相同的数据库，否则将会报错。&#x3D;&#x3D;</p>
-<p><img src="/image-20220829124250514-1715613343039-79.png" alt="image-20220829124250514"></p>
+<p><img src="/2022/09/10/MySQL/image-20220829124250514-1715613343039-79.png" alt="image-20220829124250514"></p>
 <ul>
 <li>可以使用if not exists来避免这个问题</li>
 </ul>
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 数据库不存在,则创建该数据库；如果存在则不创建</span></span><br><span class="line"><span class="keyword">create</span> database if <span class="keyword">not</span> extists itcast; </span><br></pre></td></tr></tbody></table>
 
-<p>命令行执行效果如下： <img src="/image-20220829124326741-1715613343039-80.png" alt="image-20220829124326741"></p>
+<p>命令行执行效果如下： <img src="/2022/09/10/MySQL/image-20220829124326741-1715613343039-80.png" alt="image-20220829124326741"></p>
 <h4 id="2-2-3-使用数据库"><a href="#2-2-3-使用数据库" class="headerlink" title="2.2.3 使用数据库"></a>2.2.3 使用数据库</h4><p><strong>语法：</strong></p>
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">use 数据库名 ;</span><br></pre></td></tr></tbody></table>
 
@@ -408,7 +408,7 @@
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">use itcast;</span><br></pre></td></tr></tbody></table>
 
 <p>命令执行效果如下：</p>
-<p><img src="/image-20220829124929708-1715613343039-81.png" alt="image-20220829124929708"></p>
+<p><img src="/2022/09/10/MySQL/image-20220829124929708-1715613343039-81.png" alt="image-20220829124929708"></p>
 <h4 id="2-2-4-删除数据库"><a href="#2-2-4-删除数据库" class="headerlink" title="2.2.4 删除数据库"></a>2.2.4 删除数据库</h4><p><strong>语法：</strong></p>
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">drop database [ if exists ] 数据库名 ;</span><br></pre></td></tr></tbody></table>
 
@@ -420,14 +420,14 @@
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">drop database if exists itcast; -- itcast数据库存在时删除</span><br></pre></td></tr></tbody></table>
 
 <p>命令执行效果如下：</p>
-<p><img src="/image-20220829125006142-1715613343039-82.png" alt="image-20220829125006142"></p>
+<p><img src="/2022/09/10/MySQL/image-20220829125006142-1715613343039-82.png" alt="image-20220829125006142"></p>
 <blockquote>
 <p>说明：上述语法中的database，也可以替换成 schema</p>
 <ul>
 <li>如：create schema db01;</li>
 <li>如：show schemas;</li>
 </ul>
-<p><img src="/image-20221205180608004-1715613343039-83.png" alt="image-20221205180608004"></p>
+<p><img src="/2022/09/10/MySQL/image-20221205180608004-1715613343039-83.png" alt="image-20221205180608004"></p>
 </blockquote>
 <h3 id="2-3-图形化工具"><a href="#2-3-图形化工具" class="headerlink" title="2.3 图形化工具"></a>2.3 图形化工具</h3><h4 id="2-3-1-介绍"><a href="#2-3-1-介绍" class="headerlink" title="2.3.1 介绍"></a>2.3.1 介绍</h4><p>前面我们讲解了DDL中关于数据库操作的SQL语句，在我们编写这些SQL时，都是在命令行当中完成的。大家在练习的时候应该也感受到了，在命令行当中来敲这些SQL语句很不方便，主要的原因有以下 3 点：</p>
 <ol>
@@ -437,7 +437,7 @@
 </ol>
 <p>在项目开发当中，通常为了提高开发效率，都会借助于现成的图形化管理工具来操作数据库。</p>
 <p>目前MySQL主流的图形化界面工具有以下几种：</p>
-<p><img src="/image-20221205184802646-1715613343039-84.png" alt="image-20221205184802646"></p>
+<p><img src="/2022/09/10/MySQL/image-20221205184802646-1715613343039-84.png" alt="image-20221205184802646"></p>
 <p>DataGrip是JetBrains旗下的一款数据库管理工具，是管理和开发MySQL、Oracle、PostgreSQL的理想解决方案。</p>
 <p>官网： <a target="_blank" rel="noopener" href="https://www.jetbrains.com/zh-cn/datagrip/">https://www.jetbrains.com/zh-cn/datagrip/</a></p>
 <h4 id="2-3-2-安装"><a href="#2-3-2-安装" class="headerlink" title="2.3.2 安装"></a>2.3.2 安装</h4><p>安装： 参考资料中提供的《DataGrip安装手册》</p>
@@ -445,29 +445,29 @@
 <p>说明：DataGrip这款工具可以不用安装，因为Jetbrains公司已经将DataGrip这款工具的功能已经集成到了 IDEA当中，所以我们就可以使用IDEA来作为一款图形化界面工具来操作Mysql数据库。</p>
 </blockquote>
 <h4 id="2-3-3-使用"><a href="#2-3-3-使用" class="headerlink" title="2.3.3 使用"></a>2.3.3 使用</h4><h5 id="2-2-3-1-连接数据库"><a href="#2-2-3-1-连接数据库" class="headerlink" title="2.2.3.1 连接数据库"></a>2.2.3.1 连接数据库</h5><p>1、打开IDEA自带的Database</p>
-<p><img src="/image-20221205190929756-1715613343039-85.png" alt="image-20221205190929756"></p>
+<p><img src="/2022/09/10/MySQL/image-20221205190929756-1715613343039-85.png" alt="image-20221205190929756"></p>
 <p>2、配置MySQL</p>
-<p><img src="/image-20221205191143072-1715613343039-86.png" alt="image-20221205191143072"></p>
+<p><img src="/2022/09/10/MySQL/image-20221205191143072-1715613343039-86.png" alt="image-20221205191143072"></p>
 <p>3、输入相关信息</p>
-<p><img src="/image-20221205192606038-1715613343039-87.png" alt="image-20221205192606038"></p>
+<p><img src="/2022/09/10/MySQL/image-20221205192606038-1715613343039-87.png" alt="image-20221205192606038"></p>
 <p>4、下载MySQL连接驱动</p>
-<p><img src="/image-20221205192847190-1715613343039-88.png" alt="image-20221205192847190"></p>
+<p><img src="/2022/09/10/MySQL/image-20221205192847190-1715613343039-88.png" alt="image-20221205192847190"></p>
 <p>5、测试数据库连接</p>
-<p><img src="/image-20221205193304124-1715613343039-89.png" alt="image-20221205193304124"></p>
+<p><img src="/2022/09/10/MySQL/image-20221205193304124-1715613343039-89.png" alt="image-20221205193304124"></p>
 <p>6、保存配置</p>
-<p><img src="/image-20221205193409856-1715613343039-90.png" alt="image-20221205193409856"></p>
+<p><img src="/2022/09/10/MySQL/image-20221205193409856-1715613343039-90.png" alt="image-20221205193409856"></p>
 <p>默认情况下，连接上了MySQL数据库之后， 数据库并没有全部展示出来。 需要选择要展示哪些数据库。具体操作如下：</p>
-<p><img src="/8.gif"></p>
+<p><img src="/2022/09/10/MySQL/8.gif"></p>
 <h5 id="2-2-3-2-操作数据库"><a href="#2-2-3-2-操作数据库" class="headerlink" title="2.2.3.2 操作数据库"></a>2.2.3.2 操作数据库</h5><p><strong>创建数据库：</strong></p>
-<p><img src="/image-20221205195346655-1715613343039-92.png" alt="image-20221205195346655"></p>
-<p><img src="/image-20221205195510716-1715613343039-93.png" alt="image-20221205195510716"></p>
+<p><img src="/2022/09/10/MySQL/image-20221205195346655-1715613343039-92.png" alt="image-20221205195346655"></p>
+<p><img src="/2022/09/10/MySQL/image-20221205195510716-1715613343039-93.png" alt="image-20221205195510716"></p>
 <blockquote>
 <p>有了图形化界面工具后，就可以方便的使用图形化工具：创建数据库，创建表、修改表等DDL操作。</p>
 <p>其实工具底层也是通过DDL语句操作的数据库，只不过这些SQL语句是图形化界面工具帮我们自动完成的。</p>
 </blockquote>
 <p><strong>查看所有数据库：</strong></p>
-<p><img src="/image-20221205195128343-1715613343039-95.png" alt="image-20221205195128343"></p>
-<p><img src="/image-20221205195833439-1715613343039-94.png" alt="image-20221205195833439"></p>
+<p><img src="/2022/09/10/MySQL/image-20221205195128343-1715613343039-95.png" alt="image-20221205195128343"></p>
+<p><img src="/2022/09/10/MySQL/image-20221205195833439-1715613343039-94.png" alt="image-20221205195833439"></p>
 <h3 id="2-3-表操作"><a href="#2-3-表操作" class="headerlink" title="2.3 表操作"></a>2.3 表操作</h3><p>学习完了DDL语句当中关于数据库的操作之后，接下来我们继续学习DDL语句当中关于表结构的操作。</p>
 <p>关于表结构的操作也是包含四个部分：创建表、查询表、修改表、删除表。</p>
 <h4 id="2-3-1-创建"><a href="#2-3-1-创建" class="headerlink" title="2.3.1 创建"></a>2.3.1 创建</h4><h5 id="2-3-1-1-语法"><a href="#2-3-1-1-语法" class="headerlink" title="2.3.1.1 语法"></a>2.3.1.1 语法</h5><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">create table  表名(</span><br><span class="line">	字段1  字段1类型 [约束]  [comment  字段1注释 ],</span><br><span class="line">	字段2  字段2类型 [约束]  [comment  字段2注释 ],</span><br><span class="line">	......</span><br><span class="line">	字段n  字段n类型 [约束]  [comment  字段n注释 ] </span><br><span class="line">) [ comment  表注释 ] ;</span><br></pre></td></tr></tbody></table>
@@ -479,7 +479,7 @@
 <ul>
 <li>对应的结构如下：</li>
 </ul>
-<p><img src="/image-20220829143005524-1715613343039-96.png" alt="image-20220829143005524"></p>
+<p><img src="/2022/09/10/MySQL/image-20220829143005524-1715613343039-96.png" alt="image-20220829143005524"></p>
 <ul>
 <li>建表语句：</li>
 </ul>
@@ -489,11 +489,11 @@
 <p>数据表创建完成，接下来我们还需要测试一下是否可以往这张表结构当中来存储数据。</p>
 </blockquote>
 <p>双击打开tb_user表结构，大家会发现里面没有数据：</p>
-<p><img src="/image-20221205211008929-1715613343039-97.png" alt="image-20221205211008929"></p>
+<p><img src="/2022/09/10/MySQL/image-20221205211008929-1715613343039-97.png" alt="image-20221205211008929"></p>
 <p>添加数据：</p>
-<p><img src="/9-1715613343039-98.gif"></p>
+<p><img src="/2022/09/10/MySQL/9-1715613343039-98.gif"></p>
 <p>此时我们再插入一条数据：</p>
-<p><img src="/image-20221205214447060-1715613343039-99.png" alt="image-20221205214447060"></p>
+<p><img src="/2022/09/10/MySQL/image-20221205214447060-1715613343039-99.png" alt="image-20221205214447060"></p>
 <p>我们之前提到过：id字段是一行数据的唯一标识，不能有重复值。但是现在数据表中有两个相同的id值，这是为什么呢？</p>
 <ul>
 <li>其实我们现在创建表结构的时候， id这个字段我们只加了一个备注信息说明它是一个唯一标识，但是在数据库层面呢，并没有去限制字段存储的数据。所以id这个字段没有起到唯一标识的作用。</li>
@@ -545,7 +545,7 @@
 <ul>
 <li>对应的结构如下：</li>
 </ul>
-<p><img src="/image-20220829143005524-1715613343039-96.png" alt="image-20220829143005524"></p>
+<p><img src="/2022/09/10/MySQL/image-20220829143005524-1715613343039-96.png" alt="image-20220829143005524"></p>
 <blockquote>
 <p>在上述的表结构中:</p>
 <ul>
@@ -567,8 +567,8 @@
 <blockquote>
 <p>数据表创建完成，接下来测试一下表中字段上的约束是否生效</p>
 </blockquote>
-<p><img src="/image-20221205215309011-1715613343039-100.png" alt="image-20221205215309011"></p>
-<p><img src="/image-20221205215632599-1715613343039-101.png" alt="image-20221205215632599"></p>
+<p><img src="/2022/09/10/MySQL/image-20221205215309011-1715613343039-100.png" alt="image-20221205215309011"></p>
+<p><img src="/2022/09/10/MySQL/image-20221205215632599-1715613343039-101.png" alt="image-20221205215632599"></p>
 <p>大家有没有发现一个问题：id字段下存储的值，如果由我们自己来维护会比较麻烦(必须保证值的唯一性)。MySQL数据库为了解决这个问题，给我们提供了一个关键字：auto_increment（自动增长）</p>
 <blockquote>
 <p>主键自增：auto_increment</p>
@@ -580,7 +580,7 @@
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">create table tb_user (</span><br><span class="line">    id int primary key auto_increment comment 'ID,唯一标识', #主键自动增长</span><br><span class="line">    username varchar(20) not null unique comment '用户名',</span><br><span class="line">    name varchar(10) not null comment '姓名',</span><br><span class="line">    age int comment '年龄',</span><br><span class="line">    gender char(1) default '男' comment '性别'</span><br><span class="line">) comment '用户表';</span><br></pre></td></tr></tbody></table>
 
 <p>测试：主键自增</p>
-<p><img src="/10.gif"></p>
+<p><img src="/2022/09/10/MySQL/10.gif"></p>
 <h5 id="2-3-1-3-数据类型"><a href="#2-3-1-3-数据类型" class="headerlink" title="2.3.1.3 数据类型"></a>2.3.1.3 数据类型</h5><p>在上面建表语句中，我们在指定字段的数据类型时，用到了int 、varchar、char，那么在MySQL中除了以上的数据类型，还有哪些常见的数据类型呢？ 接下来,我们就来详细介绍一下MySQL的数据类型。</p>
 <p>MySQL中的数据类型有很多，主要分为三类：数值类型、字符串类型、日期时间类型。</p>
 <p><strong>数值类型</strong></p>
@@ -771,9 +771,9 @@
 <p>暂不考虑所属部门字段</p>
 </blockquote>
 <p>产品原型及需求如下：</p>
-<p><img src="/image-20220829151032029-1715613343039-103.png" alt="image-20220829151032029"></p>
-<p><img src="/image-20220829151228102-1715613343039-104.png"></p>
-<p><img src="/image-20220829151245450-1715613343039-105.png"></p>
+<p><img src="/2022/09/10/MySQL/image-20220829151032029-1715613343039-103.png" alt="image-20220829151032029"></p>
+<p><img src="/2022/09/10/MySQL/image-20220829151228102-1715613343039-104.png"></p>
+<p><img src="/2022/09/10/MySQL/image-20220829151245450-1715613343039-105.png"></p>
 <p><strong>步骤：</strong></p>
 <ol>
 <li><p>阅读产品原型及需求文档，看看里面涉及到哪些字段。</p>
@@ -791,11 +791,11 @@
 <ol>
 <li>在指定操作的数据库上，右键New &#x3D;&#x3D;&gt; Table</li>
 </ol>
-<p><img src="/image-20221205230447721-1715613343039-106.png" alt="image-20221205230447721"></p>
+<p><img src="/2022/09/10/MySQL/image-20221205230447721-1715613343039-106.png" alt="image-20221205230447721"></p>
 <ol start="2">
 <li>编辑表结构的相关信息</li>
 </ol>
-<p><img src="/image-20221205231846161-1715613343039-107.png" alt="image-20221205231846161"></p>
+<p><img src="/2022/09/10/MySQL/image-20221205231846161-1715613343039-107.png" alt="image-20221205231846161"></p>
 <h5 id="2-3-1-5-设计表流程"><a href="#2-3-1-5-设计表流程" class="headerlink" title="2.3.1.5 设计表流程"></a>2.3.1.5 设计表流程</h5><p>通过上面的案例，我们明白了，设计一张表，基本的流程如下：</p>
 <ol>
 <li><p>阅读页面原型及需求文档</p>
@@ -805,7 +805,7 @@
 <li><p>再增加表设计所需要的业务基础字段(id主键、插入时间、修改时间)</p>
 </li>
 </ol>
-<p><img src="/image-20221205232253088-1715613343039-108.png" alt="image-20221205232253088"></p>
+<p><img src="/2022/09/10/MySQL/image-20221205232253088-1715613343039-108.png" alt="image-20221205232253088"></p>
 <blockquote>
 <p>说明：</p>
 <ul>
@@ -821,16 +821,16 @@
 <p><strong>查询当前数据库所有表</strong></p>
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show tables;</span><br></pre></td></tr></tbody></table>
 
-<p><img src="/image-20221205233746548-1715613343039-109.png" alt="image-20221205233746548"></p>
+<p><img src="/2022/09/10/MySQL/image-20221205233746548-1715613343039-109.png" alt="image-20221205233746548"></p>
 <p><strong>查看指定表结构</strong></p>
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">desc 表名 ;#可以查看指定表的字段、字段的类型、是否可以为NULL、是否存在默认值等信息</span><br></pre></td></tr></tbody></table>
 
-<p><img src="/image-20221205234114053.png" alt="image-20221205234114053"></p>
+<p><img src="/2022/09/10/MySQL/image-20221205234114053.png" alt="image-20221205234114053"></p>
 <p><strong>查询指定表的建表语句</strong></p>
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show create table 表名 ;</span><br></pre></td></tr></tbody></table>
 
-<p><img src="/image-20221205234334696-1715613343039-111.png" alt="image-20221205234334696"></p>
-<p><img src="/image-20221205234444906-1715613343039-112.png" alt="image-20221205234444906"></p>
+<p><img src="/2022/09/10/MySQL/image-20221205234334696-1715613343039-111.png" alt="image-20221205234334696"></p>
+<p><img src="/2022/09/10/MySQL/image-20221205234444906-1715613343039-112.png" alt="image-20221205234444906"></p>
 <h4 id="2-3-3-修改"><a href="#2-3-3-修改" class="headerlink" title="2.3.3 修改"></a>2.3.3 修改</h4><blockquote>
 <p>关于表结构的修改操作，工作中一般都是直接基于<strong>图形化界面操作</strong>。</p>
 </blockquote>
@@ -843,8 +843,8 @@
 <blockquote>
 <p>图形化操作：添加字段</p>
 </blockquote>
-<p><img src="/image-20221205235542272-1715613343039-113.png" alt="image-20221205235542272"></p>
-<p><img src="/image-20221205235657807-1715613343039-114.png" alt="image-20221205235657807"></p>
+<p><img src="/2022/09/10/MySQL/image-20221205235542272-1715613343039-113.png" alt="image-20221205235542272"></p>
+<p><img src="/2022/09/10/MySQL/image-20221205235657807-1715613343039-114.png" alt="image-20221205235657807"></p>
 <p><strong>修改数据类型</strong></p>
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter table 表名 modify  字段名  新数据类型(长度);</span><br></pre></td></tr></tbody></table>
 
@@ -859,8 +859,8 @@
 <blockquote>
 <p>图形化操作：修改数据类型和字段名</p>
 </blockquote>
-<p><img src="/image-20221205235950010-1715613343039-115.png" alt="image-20221205235950010"></p>
-<p><img src="/image-20221206000030734-1715613343039-116.png" alt="image-20221206000030734"></p>
+<p><img src="/2022/09/10/MySQL/image-20221205235950010-1715613343039-115.png" alt="image-20221205235950010"></p>
+<p><img src="/2022/09/10/MySQL/image-20221206000030734-1715613343039-116.png" alt="image-20221206000030734"></p>
 <p><strong>删除字段</strong></p>
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> 表名 <span class="keyword">drop</span> 字段名;</span><br></pre></td></tr></tbody></table>
 
@@ -870,7 +870,7 @@
 <blockquote>
 <p>图形化操作：删除字段</p>
 </blockquote>
-<p><img src="/image-20221206000159237-1715613343039-117.png" alt="image-20221206000159237"></p>
+<p><img src="/2022/09/10/MySQL/image-20221206000159237-1715613343039-117.png" alt="image-20221206000159237"></p>
 <p><strong>修改表名</strong></p>
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rename <span class="keyword">table</span> 表名 <span class="keyword">to</span>  新表名;</span><br></pre></td></tr></tbody></table>
 
@@ -880,7 +880,7 @@
 <blockquote>
 <p>图形化操作：修改表名</p>
 </blockquote>
-<p><img src="/image-20221206000636659-1715613343039-118.png" alt="image-20221206000636659"></p>
+<p><img src="/2022/09/10/MySQL/image-20221206000636659-1715613343039-118.png" alt="image-20221206000636659"></p>
 <h4 id="2-3-4-删除"><a href="#2-3-4-删除" class="headerlink" title="2.3.4 删除"></a>2.3.4 删除</h4><blockquote>
 <p>关于表结构的删除操作，工作中一般都是直接基于<strong>图形化界面操作</strong>。</p>
 </blockquote>
@@ -896,7 +896,7 @@
 <blockquote>
 <p>图形化操作：删除表</p>
 </blockquote>
-<p><img src="/image-20221206001026916-1715613343039-119.png" alt="image-20221206001026916"></p>
+<p><img src="/2022/09/10/MySQL/image-20221206001026916-1715613343039-119.png" alt="image-20221206001026916"></p>
 <h2 id="3-数据库操作-DML"><a href="#3-数据库操作-DML" class="headerlink" title="3. 数据库操作-DML"></a>3. 数据库操作-DML</h2><p>DML英文全称是Data Manipulation Language(数据操作语言)，用来对数据库中表的数据记录进行增、删、改操作。</p>
 <ul>
 <li>添加数据（INSERT）</li>
@@ -929,7 +929,7 @@
 <blockquote>
 <p>图形化操作：双击tb_emp表查看数据</p>
 </blockquote>
-<p><img src="/image-20221206002807531-1715613343039-120.png" alt="image-20221206002807531"></p>
+<p><img src="/2022/09/10/MySQL/image-20221206002807531-1715613343039-120.png" alt="image-20221206002807531"></p>
 <p>Insert操作的注意事项：</p>
 <ol>
 <li><p>插入数据时，指定的字段顺序需要与值的顺序是一一对应的。</p>
@@ -948,7 +948,7 @@
 <p>案例2：将tb_emp表的所有员工入职日期更新为’2010-01-01’</p>
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">update</span> tb_emp <span class="keyword">set</span> entrydate<span class="operator">=</span><span class="string">'2010-01-01'</span>,update_time<span class="operator">=</span>now();</span><br></pre></td></tr></tbody></table>
 
-<p><img src="/image-20221206004425527-1715613343039-121.png" alt="image-20221206004425527"></p>
+<p><img src="/2022/09/10/MySQL/image-20221206004425527-1715613343039-121.png" alt="image-20221206004425527"></p>
 <blockquote>
 <p>注意事项:</p>
 <ol>
@@ -976,7 +976,7 @@
 <h2 id="4-数据库操作-DQL"><a href="#4-数据库操作-DQL" class="headerlink" title="4. 数据库操作-DQL"></a>4. 数据库操作-DQL</h2><h3 id="4-1-介绍"><a href="#4-1-介绍" class="headerlink" title="4.1 介绍"></a>4.1 介绍</h3><p>DQL英文全称是Data Query Language(数据查询语言)，用来查询数据库表中的记录。</p>
 <p>查询关键字：SELECT</p>
 <p>查询操作是所有SQL语句当中最为常见，也是最为重要的操作。在一个正常的业务系统中，查询操作的使用频次是要远高于增删改操作的。当我们打开某个网站或APP所看到的展示信息，都是通过从数据库中查询得到的，而在这个查询过程中，还会涉及到条件、排序、分页等操作。</p>
-<p><img src="/image-20220611103943417.png" alt="image-20220611103943417"></p>
+<p><img src="/2022/09/10/MySQL/image-20220611103943417.png" alt="image-20220611103943417"></p>
 <h3 id="4-2-语法"><a href="#4-2-语法" class="headerlink" title="4.2 语法"></a>4.2 语法</h3><p>DQL查询语句，语法结构如下：</p>
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">SELECT</span><br><span class="line">	字段列表</span><br><span class="line">FROM</span><br><span class="line">	表名列表</span><br><span class="line">WHERE</span><br><span class="line">	条件列表</span><br><span class="line">GROUP  BY</span><br><span class="line">	分组字段列表</span><br><span class="line">HAVING</span><br><span class="line">	分组后条件列表</span><br><span class="line">ORDER BY</span><br><span class="line">	排序字段列表</span><br><span class="line">LIMIT</span><br><span class="line">	分页参数</span><br></pre></td></tr></tbody></table>
 
@@ -1008,22 +1008,22 @@
 <p>案例1：查询指定字段 name，entrydate并返回</p>
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select name,entrydate from tb_emp;</span><br></pre></td></tr></tbody></table>
 
-<p><img src="/image-20221206112810199-1715613343039-123.png" alt="image-20221206112810199"></p>
+<p><img src="/2022/09/10/MySQL/image-20221206112810199-1715613343039-123.png" alt="image-20221206112810199"></p>
 <p>案例2：查询返回所有字段</p>
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from tb_emp;</span><br></pre></td></tr></tbody></table>
 
 <blockquote>
 <p><code>*</code>号代表查询所有字段，在实际开发中尽量少用（不直观、影响效率）</p>
 </blockquote>
-<p><img src="/image-20221206113904763-1715613343039-124.png" alt="image-20221206113904763"></p>
+<p><img src="/2022/09/10/MySQL/image-20221206113904763-1715613343039-124.png" alt="image-20221206113904763"></p>
 <p>案例3：查询所有员工的 name,entrydate，并起别名(姓名、入职日期)</p>
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">-- 方式1：</span><br><span class="line">select name AS 姓名, entrydate AS 入职日期 from tb_emp;</span><br><span class="line">-- 方式2： 别名中有特殊字符时，使用''或""包含</span><br><span class="line">select name AS '姓 名', entrydate AS '入职日期' from tb_emp;</span><br><span class="line">-- 方式3：</span><br><span class="line">select name AS "姓名", entrydate AS "入职日期" from tb_emp;</span><br></pre></td></tr></tbody></table>
 
-<p><img src="/image-20221206114752149-1715613343039-125.png" alt="image-20221206114752149"></p>
+<p><img src="/2022/09/10/MySQL/image-20221206114752149-1715613343039-125.png" alt="image-20221206114752149"></p>
 <p>案例4：查询已有的员工关联了哪几种职位(不要重复)</p>
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select distinct job from tb_emp;</span><br></pre></td></tr></tbody></table>
 
-<p><img src="/image-20221206115440117-1715613343039-126.png" alt="image-20221206115440117"></p>
+<p><img src="/2022/09/10/MySQL/image-20221206115440117-1715613343039-126.png" alt="image-20221206115440117"></p>
 <h3 id="4-4-条件查询"><a href="#4-4-条件查询" class="headerlink" title="4.4 条件查询"></a>4.4 条件查询</h3><p><strong>语法：</strong></p>
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span>  字段列表  <span class="keyword">from</span>   表名   <span class="keyword">where</span>   条件列表 ; <span class="comment">-- 条件列表：意味着可以有多个条件</span></span><br></pre></td></tr></tbody></table>
 
@@ -1105,47 +1105,47 @@
 <p>案例1：查询 姓名 为 杨逍 的员工</p>
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">select id, username, password, name, gender, image, job, entrydate, create_time, update_time</span><br><span class="line">from tb_emp</span><br><span class="line">where name = '杨逍'; -- 字符串使用''或""包含</span><br></pre></td></tr></tbody></table>
 
-<p><img src="/image-20221206121255784-1715613343039-127.png" alt="image-20221206121255784"></p>
+<p><img src="/2022/09/10/MySQL/image-20221206121255784-1715613343039-127.png" alt="image-20221206121255784"></p>
 <p>案例2：查询 id小于等于5 的员工信息</p>
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">select id, username, password, name, gender, image, job, entrydate, create_time, update_time</span><br><span class="line">from tb_emp</span><br><span class="line">where id &lt;=5;</span><br></pre></td></tr></tbody></table>
 
-<p><img src="/image-20221206121523712-1715613343039-129.png" alt="image-20221206121523712"></p>
+<p><img src="/2022/09/10/MySQL/image-20221206121523712-1715613343039-129.png" alt="image-20221206121523712"></p>
 <p>案例3：查询 没有分配职位 的员工信息</p>
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">select id, username, password, name, gender, image, job, entrydate, create_time, update_time</span><br><span class="line">from tb_emp</span><br><span class="line">where job is null ;</span><br></pre></td></tr></tbody></table>
 
-<p><img src="/image-20221206121754267-1715613343039-128.png" alt="image-20221206121754267"></p>
+<p><img src="/2022/09/10/MySQL/image-20221206121754267-1715613343039-128.png" alt="image-20221206121754267"></p>
 <blockquote>
 <p>注意：查询为NULL的数据时，不能使用 <code>= null</code></p>
-<p><img src="/image-20221206122036970-1715613343039-131.png" alt="image-20221206122036970"></p>
+<p><img src="/2022/09/10/MySQL/image-20221206122036970-1715613343039-131.png" alt="image-20221206122036970"></p>
 </blockquote>
 <p>案例4：查询 有职位 的员工信息</p>
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">select id, username, password, name, gender, image, job, entrydate, create_time, update_time</span><br><span class="line">from tb_emp</span><br><span class="line">where job is not null ;</span><br></pre></td></tr></tbody></table>
 
-<p><img src="/image-20221206122454101-1715613343039-130.png" alt="image-20221206122454101"></p>
+<p><img src="/2022/09/10/MySQL/image-20221206122454101-1715613343039-130.png" alt="image-20221206122454101"></p>
 <p>案例5：查询 密码不等于 ‘123456’ 的员工信息</p>
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">-- 方式1：</span><br><span class="line">select id, username, password, name, gender, image, job, entrydate, create_time, update_time</span><br><span class="line">from tb_emp</span><br><span class="line">where password &lt;&gt; '123456';</span><br><span class="line">-- 方式2：</span><br><span class="line">select id, username, password, name, gender, image, job, entrydate, create_time, update_time</span><br><span class="line">from tb_emp</span><br><span class="line">where password != '123456';</span><br></pre></td></tr></tbody></table>
 
-<p><img src="/image-20221206122712152-1715613343039-132.png" alt="image-20221206122712152"></p>
+<p><img src="/2022/09/10/MySQL/image-20221206122712152-1715613343039-132.png" alt="image-20221206122712152"></p>
 <p>案例6：查询 入职日期 在 ‘2000-01-01’ (包含) 到 ‘2010-01-01’(包含) 之间的员工信息</p>
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">-- 方式1：</span><br><span class="line">select id, username, password, name, gender, image, job, entrydate, create_time, update_time</span><br><span class="line">from tb_emp</span><br><span class="line">where entrydate&gt;='2000-01-01' and entrydate&lt;='2010-01-01';</span><br><span class="line">-- 方式2： between...and</span><br><span class="line">select id, username, password, name, gender, image, job, entrydate, create_time, update_time</span><br><span class="line">from tb_emp</span><br><span class="line">where entrydate between '2000-01-01' and '2010-01-01';</span><br></pre></td></tr></tbody></table>
 
-<p><img src="/image-20221206125100857-1715613343039-136.png" alt="image-20221206125100857"></p>
+<p><img src="/2022/09/10/MySQL/image-20221206125100857-1715613343039-136.png" alt="image-20221206125100857"></p>
 <p>案例7：查询 入职时间 在 ‘2000-01-01’ (包含) 到 ‘2010-01-01’(包含) 之间 且 性别为女 的员工信息</p>
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">select id, username, password, name, gender, image, job, entrydate, create_time, update_time</span><br><span class="line">from tb_emp</span><br><span class="line">where entrydate between '2000-01-01' and '2010-01-01'</span><br><span class="line">      and gender = 2;</span><br></pre></td></tr></tbody></table>
 
-<p><img src="/image-20221206125356737-1715613343039-133.png" alt="image-20221206125356737"></p>
+<p><img src="/2022/09/10/MySQL/image-20221206125356737-1715613343039-133.png" alt="image-20221206125356737"></p>
 <p>案例8：查询 职位是 2 (讲师), 3 (学工主管), 4 (教研主管) 的员工信息</p>
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">-- 方式1：使用or连接多个条件</span><br><span class="line">select id, username, password, name, gender, image, job, entrydate, create_time, update_time</span><br><span class="line">from tb_emp</span><br><span class="line">where job=2 or job=3 or job=4;</span><br><span class="line">-- 方式2：in关键字</span><br><span class="line">select id, username, password, name, gender, image, job, entrydate, create_time, update_time</span><br><span class="line">from tb_emp</span><br><span class="line">where job in (2,3,4);</span><br></pre></td></tr></tbody></table>
 
-<p><img src="/image-20221206141451342-1715613343039-134.png" alt="image-20221206141451342"></p>
+<p><img src="/2022/09/10/MySQL/image-20221206141451342-1715613343039-134.png" alt="image-20221206141451342"></p>
 <p>案例9：查询 姓名 为两个字的员工信息</p>
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">select id, username, password, name, gender, image, job, entrydate, create_time, update_time</span><br><span class="line">from tb_emp</span><br><span class="line">where name like '__';  # 通配符 "_" 代表任意1个字符</span><br></pre></td></tr></tbody></table>
 
-<p><img src="/image-20221206141937293-1715613343039-135.png" alt="image-20221206141937293"></p>
+<p><img src="/2022/09/10/MySQL/image-20221206141937293-1715613343039-135.png" alt="image-20221206141937293"></p>
 <p>案例10：查询 姓 ‘张’ 的员工信息</p>
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">select id, username, password, name, gender, image, job, entrydate, create_time, update_time</span><br><span class="line">from tb_emp</span><br><span class="line">where name like '张%'; # 通配符 "%" 代表任意个字符（0个 ~ 多个）</span><br></pre></td></tr></tbody></table>
 
-<p><img src="/image-20221206142156154-1715613343039-137.png" alt="image-20221206142156154"></p>
+<p><img src="/2022/09/10/MySQL/image-20221206142156154-1715613343039-137.png" alt="image-20221206142156154"></p>
 <h3 id="4-5-聚合函数"><a href="#4-5-聚合函数" class="headerlink" title="4.5 聚合函数"></a>4.5 聚合函数</h3><p>之前我们做的查询都是横向查询，就是根据条件一行一行的进行判断，而使用聚合函数查询就是纵向查询，它是对一列的值进行计算，然后返回一个结果值。（将一列数据作为一个整体，进行纵向计算）</p>
 <p>语法：</p>
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select  聚合函数(字段列表)  from  表名 ;</span><br></pre></td></tr></tbody></table>
@@ -1198,19 +1198,19 @@
 <p>案例2：统计该企业最早入职的员工</p>
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select min(entrydate) from tb_emp;</span><br></pre></td></tr></tbody></table>
 
-<p><img src="/image-20221206160145339-1715613343039-138.png" alt="image-20221206160145339"></p>
+<p><img src="/2022/09/10/MySQL/image-20221206160145339-1715613343039-138.png" alt="image-20221206160145339"></p>
 <p>案例3：统计该企业最迟入职的员工</p>
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select max(entrydate) from tb_emp;</span><br></pre></td></tr></tbody></table>
 
-<p><img src="/image-20221206160307416-1715613343039-139.png" alt="image-20221206160307416"></p>
+<p><img src="/2022/09/10/MySQL/image-20221206160307416-1715613343039-139.png" alt="image-20221206160307416"></p>
 <p>案例4：统计该企业员工 ID 的平均值</p>
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select avg(id) from tb_emp;</span><br></pre></td></tr></tbody></table>
 
-<p><img src="/image-20221206160416605-1715613343039-140.png" alt="image-20221206160416605"></p>
+<p><img src="/2022/09/10/MySQL/image-20221206160416605-1715613343039-140.png" alt="image-20221206160416605"></p>
 <p>案例5：统计该企业员工的 ID 之和</p>
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select sum(id) from tb_emp;</span><br></pre></td></tr></tbody></table>
 
-<p><img src="/image-20221206160604073-1715613343039-141.png" alt="image-20221206160604073"></p>
+<p><img src="/2022/09/10/MySQL/image-20221206160604073-1715613343039-141.png" alt="image-20221206160604073"></p>
 <h3 id="4-6-分组查询"><a href="#4-6-分组查询" class="headerlink" title="4.6 分组查询"></a>4.6 分组查询</h3><p>分组： 按照某一列或者某几列，把相同的数据进行合并输出。</p>
 <blockquote>
 <p>分组其实就是按列进行分类(指定列下相同的数据归为一类)，然后可以对分类完的数据进行合并计算。</p>
@@ -1222,11 +1222,11 @@
 <p>案例1：根据性别分组 , 统计男性和女性员工的数量</p>
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">select gender, count(*)</span><br><span class="line">from tb_emp</span><br><span class="line">group by gender; -- 按照gender字段进行分组（gender字段下相同的数据归为一组）</span><br></pre></td></tr></tbody></table>
 
-<p><img src="/image-20221206172615000-1715613343039-142.png" alt="image-20221206172615000"></p>
+<p><img src="/2022/09/10/MySQL/image-20221206172615000-1715613343039-142.png" alt="image-20221206172615000"></p>
 <p>案例2：查询入职时间在 ‘2015-01-01’ (包含) 以前的员工 , 并对结果根据职位分组 , 获取员工数量大于等于2的职位</p>
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">select job, count(*)</span><br><span class="line">from tb_emp</span><br><span class="line">where entrydate &lt;= '2015-01-01'   -- 分组前条件</span><br><span class="line">group by job                      -- 按照job字段分组</span><br><span class="line">having count(*) &gt;= 2;             -- 分组后条件</span><br></pre></td></tr></tbody></table>
 
-<p><img src="/image-20221206172431873-1715613343039-143.png"></p>
+<p><img src="/2022/09/10/MySQL/image-20221206172431873-1715613343039-143.png"></p>
 <blockquote>
 <p>注意事项:</p>
 <p>​ • 分组之后，查询的字段一般为聚合函数和分组字段，查询其他字段无任何意义</p>
@@ -1254,42 +1254,42 @@
 <p>案例1：根据入职时间, 对员工进行升序排序</p>
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">select id, username, password, name, gender, image, job, entrydate, create_time, update_time</span><br><span class="line">from tb_emp</span><br><span class="line">order by entrydate ASC; -- 按照entrydate字段下的数据进行升序排序</span><br><span class="line"></span><br><span class="line">select id, username, password, name, gender, image, job, entrydate, create_time, update_time</span><br><span class="line">from tb_emp</span><br><span class="line">order by  entrydate; -- 默认就是ASC（升序）</span><br></pre></td></tr></tbody></table>
 
-<p><img src="/image-20221206175720337-1715613343039-144.png" alt="image-20221206175720337"></p>
+<p><img src="/2022/09/10/MySQL/image-20221206175720337-1715613343039-144.png" alt="image-20221206175720337"></p>
 <blockquote>
 <p>注意事项：如果是升序, 可以不指定排序方式ASC</p>
 </blockquote>
 <p>案例2：根据入职时间，对员工进行降序排序</p>
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">select id, username, password, name, gender, image, job, entrydate, create_time, update_time</span><br><span class="line">from tb_emp</span><br><span class="line">order by entrydate DESC; -- 按照entrydate字段下的数据进行降序排序</span><br></pre></td></tr></tbody></table>
 
-<p><img src="/image-20221206180358367-1715613343039-145.png" alt="image-20221206180358367"></p>
+<p><img src="/2022/09/10/MySQL/image-20221206180358367-1715613343039-145.png" alt="image-20221206180358367"></p>
 <p>案例3：根据入职时间对公司的员工进行升序排序，入职时间相同，再按照更新时间进行降序排序</p>
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">select id, username, password, name, gender, image, job, entrydate, create_time, update_time</span><br><span class="line">from tb_emp</span><br><span class="line">order by entrydate ASC , update_time DESC;</span><br></pre></td></tr></tbody></table>
 
-<p><img src="/image-20221206180824583-1715613343039-146.png" alt="image-20221206180824583"></p>
+<p><img src="/2022/09/10/MySQL/image-20221206180824583-1715613343039-146.png" alt="image-20221206180824583"></p>
 <blockquote>
 <p>注意事项：如果是多字段排序，当第一个字段值相同时，才会根据第二个字段进行排序</p>
 </blockquote>
 <h3 id="4-8-分页查询"><a href="#4-8-分页查询" class="headerlink" title="4.8 分页查询"></a>4.8 分页查询</h3><p>分页操作在业务系统开发时，也是非常常见的一个功能，日常我们在网站中看到的各种各样的分页条，后台也都需要借助于数据库的分页操作。</p>
-<p><img src="/image-20221206183310586.png" alt="image-20221206183310586"></p>
+<p><img src="/2022/09/10/MySQL/image-20221206183310586.png" alt="image-20221206183310586"></p>
 <p>分页查询语法：</p>
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span>  字段列表  <span class="keyword">from</span>   表名  limit  起始索引, 查询记录数 ;</span><br></pre></td></tr></tbody></table>
 
 <p>案例1：从起始索引0开始查询员工数据, 每页展示5条记录</p>
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">select id, username, password, name, gender, image, job, entrydate, create_time, update_time</span><br><span class="line">from tb_emp</span><br><span class="line">limit 0 , 5; -- 从索引0开始，向后取5条记录</span><br></pre></td></tr></tbody></table>
 
-<p><img src="/image-20221206185257834-1715613343040-148.png" alt="image-20221206185257834"></p>
+<p><img src="/2022/09/10/MySQL/image-20221206185257834-1715613343040-148.png" alt="image-20221206185257834"></p>
 <p>案例2：查询 第1页 员工数据, 每页展示5条记录</p>
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">select id, username, password, name, gender, image, job, entrydate, create_time, update_time</span><br><span class="line">from tb_emp</span><br><span class="line">limit 5; -- 如果查询的是第1页数据，起始索引可以省略，直接简写为：limit 条数</span><br></pre></td></tr></tbody></table>
 
-<p><img src="/image-20221206184957410-1715613343040-149.png" alt="image-20221206184957410"></p>
+<p><img src="/2022/09/10/MySQL/image-20221206184957410-1715613343040-149.png" alt="image-20221206184957410"></p>
 <p>案例3：查询 第2页 员工数据, 每页展示5条记录</p>
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">select id, username, password, name, gender, image, job, entrydate, create_time, update_time</span><br><span class="line">from tb_emp</span><br><span class="line">limit 5 , 5; -- 从索引5开始，向后取5条记录</span><br></pre></td></tr></tbody></table>
 
-<p><img src="/image-20221206184602569-1715613343040-150.png" alt="image-20221206184602569"></p>
+<p><img src="/2022/09/10/MySQL/image-20221206184602569-1715613343040-150.png" alt="image-20221206184602569"></p>
 <p>案例4：查询 第3页 员工数据, 每页展示5条记录</p>
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">select id, username, password, name, gender, image, job, entrydate, create_time, update_time</span><br><span class="line">from tb_emp</span><br><span class="line">limit 10 , 5; -- 从索引10开始，向后取5条记录</span><br></pre></td></tr></tbody></table>
 
-<p><img src="/image-20221206184414356-1715613343040-151.png" alt="image-20221206184414356"></p>
+<p><img src="/2022/09/10/MySQL/image-20221206184414356-1715613343040-151.png" alt="image-20221206184414356"></p>
 <blockquote>
 <p>注意事项:</p>
 <ol>
@@ -1303,7 +1303,7 @@
 </blockquote>
 <h3 id="4-9-案例"><a href="#4-9-案例" class="headerlink" title="4.9 案例"></a>4.9 案例</h3><p>DQL的基本语法我们学习结束了，接下来我们就运用所掌握的DQL语句的语法来完成两个案例。</p>
 <h4 id="4-9-1-案例一"><a href="#4-9-1-案例一" class="headerlink" title="4.9.1 案例一"></a>4.9.1 案例一</h4><p>案例：根据需求完成员工管理的条件分页查询</p>
-<p><img src="/image-20221206212240773.png" alt="image-20221206212240773"></p>
+<p><img src="/2022/09/10/MySQL/image-20221206212240773.png" alt="image-20221206212240773"></p>
 <blockquote>
 <p>分析：根据输入的条件，查询第1页数据</p>
 <ol>
@@ -1327,9 +1327,9 @@
 <p>SQL语句代码：</p>
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">-- 根据输入条件查询第1页数据（每页展示10条记录）</span><br><span class="line">-- 输入条件：</span><br><span class="line">   -- 姓名：张 （模糊查询）</span><br><span class="line">   -- 性别：男</span><br><span class="line">   -- 入职时间：2000-01-01 ~ 2015-12-31</span><br><span class="line">-- 分页： 0 , 10</span><br><span class="line">-- 排序： 修改时间  DESC</span><br><span class="line">select id, username, password, name, gender, image, job, entrydate, create_time, update_time</span><br><span class="line">from tb_emp</span><br><span class="line">where name like '张%' and gender = 1 and entrydate between '2000-01-01' and '2015-12-31'</span><br><span class="line">order by update_time desc</span><br><span class="line">limit 0 , 10;</span><br></pre></td></tr></tbody></table>
 
-<p><img src="/image-20221206213235786-1715613343040-153.png" alt="image-20221206213235786"></p>
+<p><img src="/2022/09/10/MySQL/image-20221206213235786-1715613343040-153.png" alt="image-20221206213235786"></p>
 <h4 id="4-9-2-案例二"><a href="#4-9-2-案例二" class="headerlink" title="4.9.2 案例二"></a>4.9.2 案例二</h4><p>案例：根据需求完成员工信息的统计</p>
-<p><img src="/image-20221206210536118-1715613343040-154.png" alt="image-20221206210536118"></p>
+<p><img src="/2022/09/10/MySQL/image-20221206210536118-1715613343040-154.png" alt="image-20221206210536118"></p>
 <blockquote>
 <p>分析：以上信息统计在开发中也叫图形报表(将统计好的数据以可视化的形式展示出来)</p>
 <ul>
@@ -1346,14 +1346,14 @@
 <p>员工性别统计：</p>
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">-- if(条件表达式, true取值 , false取值)</span><br><span class="line">select if(gender=1,'男性员工','女性员工') AS 性别, count(*) AS 人数</span><br><span class="line">from tb_emp</span><br><span class="line">group by gender;</span><br></pre></td></tr></tbody></table>
 
-<p><img src="/image-20221206220908397-1715613343040-155.png" alt="image-20221206220908397"></p>
+<p><img src="/2022/09/10/MySQL/image-20221206220908397-1715613343040-155.png" alt="image-20221206220908397"></p>
 <blockquote>
 <p>if(表达式, tvalue, fvalue) ：当表达式为true时，取值tvalue；当表达式为false时，取值fvalue</p>
 </blockquote>
 <p>员工职位统计：</p>
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">-- case 表达式 when 值1 then 结果1  when 值2  then  结果2 ...  else  result  end</span><br><span class="line">select (case job</span><br><span class="line">             when 1 then '班主任'</span><br><span class="line">             when 2 then '讲师'</span><br><span class="line">             when 3 then '学工主管'</span><br><span class="line">             when 4 then '教研主管'</span><br><span class="line">             else '未分配职位'</span><br><span class="line">        end) AS 职位 ,</span><br><span class="line">       count(*) AS 人数</span><br><span class="line">from tb_emp</span><br><span class="line">group by job;</span><br></pre></td></tr></tbody></table>
 
-<p><img src="/image-20221206221718731-1715613343040-156.png" alt="image-20221206221718731"></p>
+<p><img src="/2022/09/10/MySQL/image-20221206221718731-1715613343040-156.png" alt="image-20221206221718731"></p>
 <blockquote>
 <p>case 表达式 when 值1 then 结果1 [when 值2 then 结果2 …] [else result] end</p>
 </blockquote>
@@ -1370,12 +1370,12 @@
 <h3 id="5-1-一对多"><a href="#5-1-一对多" class="headerlink" title="5.1 一对多"></a>5.1 一对多</h3><h4 id="5-1-1-表设计"><a href="#5-1-1-表设计" class="headerlink" title="5.1.1 表设计"></a>5.1.1 表设计</h4><p>需求：根据页面原型及需求文档 ，完成部门及员工的表结构设计</p>
 <ul>
 <li><p>员工管理页面原型：（前面已完成tb_emp表结构设计）</p>
-<p><img src="/image-20220831195520739-1715613343040-157.png" alt="image-20220831195520739"></p>
+<p><img src="/2022/09/10/MySQL/image-20220831195520739-1715613343040-157.png" alt="image-20220831195520739"></p>
 </li>
 <li><p>部门管理页面原型：</p>
 </li>
 </ul>
-<p><img src="/image-20221206224149094-1709277282877-12-1715613343040-158.png"></p>
+<p><img src="/2022/09/10/MySQL/image-20221206224149094-1709277282877-12-1715613343040-158.png"></p>
 <blockquote>
 <p>经过上述分析，现已明确的部门表结构：</p>
 <ul>
@@ -1387,7 +1387,7 @@
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"># 建议：创建新的数据库（多表设计存放在新数据库下）</span><br><span class="line">create database db03;</span><br><span class="line">use db03;</span><br><span class="line"></span><br><span class="line">-- 部门表</span><br><span class="line">create table tb_dept</span><br><span class="line">(</span><br><span class="line">    id int unsigned primary key auto_increment comment '主键ID',</span><br><span class="line">    name varchar(10) not null unique  comment '部门名称',</span><br><span class="line">    create_time datetime not null comment '创建时间',</span><br><span class="line">    update_time datetime not null comment '修改时间'</span><br><span class="line">) comment '部门表';</span><br></pre></td></tr></tbody></table>
 
 <p>部门表创建好之后，我们还需要再修改下员工表。为什么要修改员工表呢？是因为我们之前设计员工表(单表)的时候，并没有考虑员工的归属部门。</p>
-<p><img src="/image-20221206224642902-1715613343040-159.png" alt="image-20221206224642902"></p>
+<p><img src="/2022/09/10/MySQL/image-20221206224642902-1715613343040-159.png" alt="image-20221206224642902"></p>
 <p>员工表：添加归属部门字段</p>
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">-- 员工表</span><br><span class="line">create table tb_emp</span><br><span class="line">(</span><br><span class="line">    id          int unsigned primary key auto_increment comment 'ID',</span><br><span class="line">    username    varchar(20)      not null unique comment '用户名',</span><br><span class="line">    password    varchar(32) default '123456' comment '密码',</span><br><span class="line">    name        varchar(10)      not null comment '姓名',</span><br><span class="line">    gender      tinyint unsigned not null comment '性别, 说明: 1 男, 2 女',</span><br><span class="line">    image       varchar(300) comment '图像',</span><br><span class="line">    job         tinyint unsigned comment '职位, 说明: 1 班主任,2 讲师, 3 学工主管, 4 教研主管',</span><br><span class="line">    entrydate   date comment '入职时间',</span><br><span class="line">    </span><br><span class="line">    dept_id     int unsigned comment '部门ID', -- 员工的归属部门</span><br><span class="line">    </span><br><span class="line">    create_time datetime         not null comment '创建时间',</span><br><span class="line">    update_time datetime         not null comment '修改时间'</span><br><span class="line">) comment '员工表';</span><br></pre></td></tr></tbody></table>
 
@@ -1395,7 +1395,7 @@
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">-- 部门表测试数据</span><br><span class="line">insert into tb_dept (id, name, create_time, update_time) values</span><br><span class="line">(1,'学工部',now(),now()),</span><br><span class="line">(2,'教研部',now(),now()),</span><br><span class="line">(3,'咨询部',now(),now()),</span><br><span class="line">(4,'就业部',now(),now()),</span><br><span class="line">(5,'人事部',now(),now());</span><br><span class="line"></span><br><span class="line">-- 员工表测试数据</span><br><span class="line">INSERT INTO tb_emp</span><br><span class="line">(id, username, password, name, gender, image, job, entrydate,dept_id, create_time, update_time) VALUES</span><br><span class="line">(1,'jinyong','123456','金庸',1,'1.jpg',4,'2000-01-01',2,now(),now()),</span><br><span class="line">(2,'zhangwuji','123456','张无忌',1,'2.jpg',2,'2015-01-01',2,now(),now()),</span><br><span class="line">(3,'yangxiao','123456','杨逍',1,'3.jpg',2,'2008-05-01',2,now(),now()),</span><br><span class="line">(4,'weiyixiao','123456','韦一笑',1,'4.jpg',2,'2007-01-01',2,now(),now()),</span><br><span class="line">(5,'changyuchun','123456','常遇春',1,'5.jpg',2,'2012-12-05',2,now(),now()),</span><br><span class="line">(6,'xiaozhao','123456','小昭',2,'6.jpg',3,'2013-09-05',1,now(),now()),</span><br><span class="line">(7,'jixiaofu','123456','纪晓芙',2,'7.jpg',1,'2005-08-01',1,now(),now()),</span><br><span class="line">(8,'zhouzhiruo','123456','周芷若',2,'8.jpg',1,'2014-11-09',1,now(),now()),</span><br><span class="line">(9,'dingminjun','123456','丁敏君',2,'9.jpg',1,'2011-03-11',1,now(),now()),</span><br><span class="line">(10,'zhaomin','123456','赵敏',2,'10.jpg',1,'2013-09-05',1,now(),now()),</span><br><span class="line">(11,'luzhangke','123456','鹿杖客',1,'11.jpg',1,'2007-02-01',1,now(),now()),</span><br><span class="line">(12,'hebiweng','123456','鹤笔翁',1,'12.jpg',1,'2008-08-18',1,now(),now()),</span><br><span class="line">(13,'fangdongbai','123456','方东白',1,'13.jpg',2,'2012-11-01',2,now(),now()),</span><br><span class="line">(14,'zhangsanfeng','123456','张三丰',1,'14.jpg',2,'2002-08-01',2,now(),now()),</span><br><span class="line">(15,'yulianzhou','123456','俞莲舟',1,'15.jpg',2,'2011-05-01',2,now(),now()),</span><br><span class="line">(16,'songyuanqiao','123456','宋远桥',1,'16.jpg',2,'2010-01-01',2,now(),now()),</span><br><span class="line">(17,'chenyouliang','123456','陈友谅',1,'17.jpg',NULL,'2015-03-21',NULL,now(),now());</span><br></pre></td></tr></tbody></table>
 
 <p>员工表 - 部门表之间的关系：</p>
-<p><img src="/image-20221206230156403-1715613343040-160.png" alt="image-20221206230156403"></p>
+<p><img src="/2022/09/10/MySQL/image-20221206230156403-1715613343040-160.png" alt="image-20221206230156403"></p>
 <blockquote>
 <p><strong>一对多关系实现：在数据库表中多的一方，添加字段，来关联属于一这方的主键。</strong></p>
 </blockquote>
@@ -1403,9 +1403,9 @@
 <ul>
 <li>表结构创建完毕后，我们看到两张表的数据分别为：</li>
 </ul>
-<p><img src="/image-20220831201844375.png" alt="image-20220831201844375"></p>
+<p><img src="/2022/09/10/MySQL/image-20220831201844375.png" alt="image-20220831201844375"></p>
 <p>现在员工表中有五个员工都归属于1号部门(学工部)，当删除了1号部门后，数据变为：</p>
-<p><img src="/image-20220831202111247-1715613343040-162.png" alt="image-20220831202111247"></p>
+<p><img src="/2022/09/10/MySQL/image-20220831202111247-1715613343040-162.png" alt="image-20220831202111247"></p>
 <p>1号部门被删除了，但是依然还有5个员工是属于1号部门的。 此时：就出现数据的不完整、不一致了。</p>
 <p><strong>问题分析</strong></p>
 <p>目前上述的两张表(员工表、部门表)，在数据库层面，并未建立关联，所以是无法保证数据的一致性和完整性的</p>
@@ -1423,13 +1423,13 @@
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">-- 修改表： 添加外键约束</span><br><span class="line">alter table tb_emp  </span><br><span class="line">add  constraint  fk_dept_id  foreign key (dept_id)  references  tb_dept(id);</span><br></pre></td></tr></tbody></table>
 
 <p>方式2：图形化界面操作</p>
-<p><img src="/image-20221206232750376-1715613343040-163.png" alt="image-20221206232750376"></p>
+<p><img src="/2022/09/10/MySQL/image-20221206232750376-1715613343040-163.png" alt="image-20221206232750376"></p>
 <blockquote>
 <p>当我们添加外键约束时，我们得保证当前数据库表中的数据是完整的。 所以，我们需要将之前删除掉的数据再添加回来。</p>
 </blockquote>
 <blockquote>
 <p>当我们添加了外键之后，再删除ID为1的部门，就会发现，此时数据库报错了，不允许删除。</p>
-<p><img src="/image-20220831205523647-1715613343040-164.png"></p>
+<p><img src="/2022/09/10/MySQL/image-20220831205523647-1715613343040-164.png"></p>
 <p>外键约束（foreign key）：保证了数据的完整性和一致性。</p>
 </blockquote>
 <p><strong>物理外键和逻辑外键</strong></p>
@@ -1458,7 +1458,7 @@
 <h3 id="5-2-一对一"><a href="#5-2-一对一" class="headerlink" title="5.2 一对一"></a>5.2 一对一</h3><p>一对一关系表在实际开发中应用起来比较简单，通常是用来做单表的拆分，也就是将一张大表拆分成两张小表，将大表中的一些基础字段放在一张表当中，将其他的字段放在另外一张表当中，以此来提高数据的操作效率。</p>
 <blockquote>
 <p>一对一的应用场景： 用户表(基本信息+身份信息)</p>
-<p><img src="/image-20221207104508080.png" alt="image-20221207104508080"></p>
+<p><img src="/2022/09/10/MySQL/image-20221207104508080.png" alt="image-20221207104508080"></p>
 <ul>
 <li>基本信息：用户的ID、姓名、性别、手机号、学历</li>
 <li>身份信息：民族、生日、身份证号、身份证签发机关，身份证的有效期(开始时间、结束时间)</li>
@@ -1467,7 +1467,7 @@
 </blockquote>
 <p>那么在数据库层面怎么去体现上述两者之间是一对一的关系呢？</p>
 <p>其实一对一我们可以看成一种特殊的一对多。一对多我们是怎么设计表关系的？是不是在多的一方添加外键。同样我们也可以通过外键来体现一对一之间的关系，我们只需要在任意一方来添加一个外键就可以了。</p>
-<p><img src="/image-20221207105632634.png" alt="image-20221207105632634"></p>
+<p><img src="/2022/09/10/MySQL/image-20221207105632634.png" alt="image-20221207105632634"></p>
 <blockquote>
 <p>一对一 ：在任意一方加入外键，关联另外一方的主键，并且设置外键为唯一的(UNIQUE)</p>
 </blockquote>
@@ -1482,7 +1482,7 @@
 <li><p>实现关系：建立第三张中间表，中间表至少包含两个外键，分别关联两方主键</p>
 </li>
 </ul>
-<p><img src="/image-20221207113341028-1715613343040-167.png" alt="image-20221207113341028"></p>
+<p><img src="/2022/09/10/MySQL/image-20221207113341028-1715613343040-167.png" alt="image-20221207113341028"></p>
 <p>SQL脚本：</p>
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">-- 学生表</span><br><span class="line">create table tb_student(</span><br><span class="line">    id int auto_increment primary key comment '主键ID',</span><br><span class="line">    name varchar(10) comment '姓名',</span><br><span class="line">    no varchar(10) comment '学号'</span><br><span class="line">) comment '学生表';</span><br><span class="line">-- 学生表测试数据</span><br><span class="line">insert into tb_student(name, no) values ('黛绮丝', '2000100101'),('谢逊', '2000100102'),('殷天正', '2000100103'),('韦一笑', '2000100104');</span><br><span class="line"></span><br><span class="line">-- 课程表</span><br><span class="line">create table tb_course(</span><br><span class="line">   id int auto_increment primary key comment '主键ID',</span><br><span class="line">   name varchar(10) comment '课程名称'</span><br><span class="line">) comment '课程表';</span><br><span class="line">-- 课程表测试数据</span><br><span class="line">insert into tb_course (name) values ('Java'), ('PHP'), ('MySQL') , ('Hadoop');</span><br><span class="line"></span><br><span class="line">-- 学生课程表（中间表）</span><br><span class="line">create table tb_student_course(</span><br><span class="line">   id int auto_increment comment '主键' primary key,</span><br><span class="line">   student_id int not null comment '学生ID',</span><br><span class="line">   course_id  int not null comment '课程ID',</span><br><span class="line">   constraint fk_courseid foreign key (course_id) references tb_course (id),</span><br><span class="line">   constraint fk_studentid foreign key (student_id) references tb_student (id)</span><br><span class="line">)comment '学生课程中间表';</span><br><span class="line">-- 学生课程表测试数据</span><br><span class="line">insert into tb_student_course(student_id, course_id) values (1,1),(1,2),(1,3),(2,2),(2,3),(3,4);</span><br></pre></td></tr></tbody></table>
 
@@ -1502,14 +1502,14 @@
 <ul>
 <li>页面原型-分类管理</li>
 </ul>
-<p><img src="/image-20221207114241260-1715613343040-168.png" alt="image-20221207114241260"></p>
+<p><img src="/2022/09/10/MySQL/image-20221207114241260-1715613343040-168.png" alt="image-20221207114241260"></p>
 <blockquote>
 <p>分类的信息：分类名称、分类类型[菜品&#x2F;套餐]、分类排序、分类状态[禁用&#x2F;启用]、分类的操作时间(修改时间)。</p>
 </blockquote>
 <ul>
 <li>页面原型-菜品管理</li>
 </ul>
-<p><img src="/image-20221207114300057-1715613343040-169.png" alt="image-20221207114300057"></p>
+<p><img src="/2022/09/10/MySQL/image-20221207114300057-1715613343040-169.png" alt="image-20221207114300057"></p>
 <blockquote>
 <p>菜品的信息：菜品名称、菜品图片、菜品分类、菜品售价、菜品售卖状态、菜品的操作时间(修改时间)。</p>
 </blockquote>
@@ -1524,7 +1524,7 @@
 <ul>
 <li>页面原型-套餐管理</li>
 </ul>
-<p><img src="/image-20221207114327139-1715613343040-170.png" alt="image-20221207114327139"></p>
+<p><img src="/2022/09/10/MySQL/image-20221207114327139-1715613343040-170.png" alt="image-20221207114327139"></p>
 <blockquote>
 <p>套餐的信息：套餐名称、套餐图片、套餐分类、套餐价格、套餐售卖状态、套餐的操作时间。</p>
 </blockquote>
@@ -1565,14 +1565,14 @@
 </ul>
 </li>
 </ul>
-<p><img src="/image-20220831211756004-1715613343040-171.png"></p>
+<p><img src="/2022/09/10/MySQL/image-20220831211756004-1715613343040-171.png"></p>
 <p><strong>表结构</strong></p>
 <p>分类表：category</p>
 <ul>
 <li>业务字段：分类名称、分类类型、分类排序、分类状态</li>
 <li>基础字段：id(主键)、创建时间、修改时间</li>
 </ul>
-<p><img src="/image-20221207143907853-1715613343040-172.png" alt="image-20221207143907853"></p>
+<p><img src="/2022/09/10/MySQL/image-20221207143907853-1715613343040-172.png" alt="image-20221207143907853"></p>
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">-- 分类表</span><br><span class="line">create table category</span><br><span class="line">(</span><br><span class="line">    id          int unsigned primary key auto_increment comment '主键ID',</span><br><span class="line">    name        varchar(20)      not null unique comment '分类名称',</span><br><span class="line">    type        tinyint unsigned not null comment '类型 1 菜品分类 2 套餐分类',</span><br><span class="line">    sort        tinyint unsigned not null comment '顺序',</span><br><span class="line">    status      tinyint unsigned not null default 0 comment '状态 0 禁用，1 启用',</span><br><span class="line">    create_time datetime         not null comment '创建时间',</span><br><span class="line">    update_time datetime         not null comment '更新时间'</span><br><span class="line">) comment '菜品及套餐分类';</span><br></pre></td></tr></tbody></table>
 
 <p>菜品表：dish</p>
@@ -1580,7 +1580,7 @@
 <li>业务字段：菜品名称、菜品图片、菜品分类、菜品售价、菜品售卖状态</li>
 <li>基础字段：id(主键)、分类的创建时间、分类的修改时间</li>
 </ul>
-<p><img src="/image-20221207144323100-1715613343040-173.png" alt="image-20221207144323100"></p>
+<p><img src="/2022/09/10/MySQL/image-20221207144323100-1715613343040-173.png" alt="image-20221207144323100"></p>
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">-- 菜品表</span><br><span class="line">create table dish</span><br><span class="line">(</span><br><span class="line">    id          int unsigned primary key auto_increment comment '主键ID',</span><br><span class="line">    name        varchar(20)      not null unique comment '菜品名称',</span><br><span class="line">    category_id int unsigned     not null comment '菜品分类ID',   -- 逻辑外键</span><br><span class="line">    price       decimal(8, 2)    not null comment '菜品价格',</span><br><span class="line">    image       varchar(300)     not null comment '菜品图片',</span><br><span class="line">    description varchar(200) comment '描述信息',</span><br><span class="line">    status      tinyint unsigned not null default 0 comment '状态, 0 停售 1 起售',</span><br><span class="line">    create_time datetime         not null comment '创建时间',</span><br><span class="line">    update_time datetime         not null comment '更新时间'</span><br><span class="line">) comment '菜品';</span><br></pre></td></tr></tbody></table>
 
 <p>套餐表：setmeal</p>
@@ -1588,11 +1588,11 @@
 <li>业务字段：套餐名称、套餐图片、套餐分类、套餐价格、套餐售卖状态</li>
 <li>基础字段：id(主键)、分类的创建时间、分类的修改时间</li>
 </ul>
-<p><img src="/image-20221207144723621-1715613343040-174.png" alt="image-20221207144723621"></p>
+<p><img src="/2022/09/10/MySQL/image-20221207144723621-1715613343040-174.png" alt="image-20221207144723621"></p>
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">-- 套餐表</span><br><span class="line">create table setmeal</span><br><span class="line">(</span><br><span class="line">    id          int unsigned primary key auto_increment comment '主键ID',</span><br><span class="line">    name        varchar(20)      not null unique comment '套餐名称',</span><br><span class="line">    category_id int unsigned     not null comment '分类id',       -- 逻辑外键</span><br><span class="line">    price       decimal(8, 2)    not null comment '套餐价格',</span><br><span class="line">    image       varchar(300)     not null comment '图片',</span><br><span class="line">    description varchar(200) comment '描述信息',</span><br><span class="line">    status      tinyint unsigned not null default 0 comment '状态 0:停用 1:启用',</span><br><span class="line">    create_time datetime         not null comment '创建时间',</span><br><span class="line">    update_time datetime         not null comment '更新时间'</span><br><span class="line">) comment '套餐';</span><br></pre></td></tr></tbody></table>
 
 <p>套餐菜品关联表：setmeal_dish</p>
-<p><img src="/image-20221207145016440-1715613343040-175.png" alt="image-20221207145016440"></p>
+<p><img src="/2022/09/10/MySQL/image-20221207145016440-1715613343040-175.png" alt="image-20221207145016440"></p>
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">-- 套餐菜品关联表</span><br><span class="line">create table setmeal_dish</span><br><span class="line">(</span><br><span class="line">    id         int unsigned primary key auto_increment comment '主键ID',</span><br><span class="line">    setmeal_id int unsigned     not null comment '套餐id ',    -- 逻辑外键</span><br><span class="line">    dish_id    int unsigned     not null comment '菜品id',     -- 逻辑外键</span><br><span class="line">    copies     tinyint unsigned not null comment '份数'</span><br><span class="line">) comment '套餐菜品关联表';</span><br></pre></td></tr></tbody></table>
 
 <h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p><strong>1、一对多</strong></p>
@@ -1615,18 +1615,18 @@
 <p>查询用户表和部门表中的数据：</p>
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from  tb_emp , tb_dept;</span><br></pre></td></tr></tbody></table>
 
-<p><img src="/image-20220901093654673-1715613343040-176.png" alt="image-20220901093654673"></p>
+<p><img src="/2022/09/10/MySQL/image-20220901093654673-1715613343040-176.png" alt="image-20220901093654673"></p>
 <p>此时,我们看到查询结果中包含了大量的结果集，总共85条记录，而这其实就是员工表所有的记录(17行)与部门表所有记录(5行)的所有组合情况，这种现象称之为笛卡尔积。</p>
 <p>笛卡尔积：笛卡尔乘积是指在数学中，两个集合(A集合和B集合)的所有组合情况。</p>
-<p><img src="/image-20221207155509696-1715613343040-177.png" alt="image-20221207155509696"></p>
+<p><img src="/2022/09/10/MySQL/image-20221207155509696-1715613343040-177.png" alt="image-20221207155509696"></p>
 <blockquote>
 <p>在多表查询时，需要消除无效的笛卡尔积，只保留表关联部分的数据</p>
 </blockquote>
-<p><img src="/image-20220901093756992-1715613343040-178.png"></p>
+<p><img src="/2022/09/10/MySQL/image-20220901093756992-1715613343040-178.png"></p>
 <p>在SQL语句中，如何去除无效的笛卡尔积呢？只需要给多表查询加上连接查询的条件即可。</p>
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from tb_emp , tb_dept where tb_emp.dept_id = tb_dept.id ;</span><br></pre></td></tr></tbody></table>
 
-<p><img src="/image-20221207164518904-1715613343040-179.png" alt="image-20221207164518904"></p>
+<p><img src="/2022/09/10/MySQL/image-20221207164518904-1715613343040-179.png" alt="image-20221207164518904"></p>
 <blockquote>
 <p>由于id为17的员工，没有dept_id字段值，所以在多表查询时，根据连接查询的条件并没有查询到。</p>
 </blockquote>
@@ -1636,7 +1636,7 @@
 <ul>
 <li>内连接：相当于查询A、B交集部分数据</li>
 </ul>
-<p><img src="/image-20221207165446062-1715613343040-180.png" alt="image-20221207165446062"></p>
+<p><img src="/2022/09/10/MySQL/image-20221207165446062-1715613343040-180.png" alt="image-20221207165446062"></p>
 </li>
 <li><p>外连接</p>
 <ul>
@@ -1674,7 +1674,7 @@
 </ul>
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">select tb_emp.name , tb_dept.name</span><br><span class="line">from tb_emp inner join tb_dept</span><br><span class="line">on tb_emp.dept_id = tb_dept.id;</span><br></pre></td></tr></tbody></table>
 
-<p><img src="/image-20221207173435289-1715613343040-181.png" alt="image-20221207173435289"></p>
+<p><img src="/2022/09/10/MySQL/image-20221207173435289-1715613343040-181.png" alt="image-20221207173435289"></p>
 <p>多表查询时给表起别名：</p>
 <ul>
 <li><p>tableA as 别名1 , tableB as 别名2 ;</p>
@@ -1682,7 +1682,7 @@
 <li><p>tableA 别名1 , tableB 别名2 ;</p>
 </li>
 </ul>
-<p><img src="/image-20221207174234522.png" alt="image-20221207174234522"></p>
+<p><img src="/2022/09/10/MySQL/image-20221207174234522.png" alt="image-20221207174234522"></p>
 <p>使用了别名的多表查询：</p>
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">select emp.name , dept.name</span><br><span class="line">from tb_emp emp inner join tb_dept dept</span><br><span class="line">on emp.dept_id = dept.id;</span><br></pre></td></tr></tbody></table>
 
@@ -1706,11 +1706,11 @@
 <p>案例：查询员工表中所有员工的姓名, 和对应的部门名称</p>
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">-- 左外连接：以left join关键字左边的表为主表，查询主表中所有数据，以及和主表匹配的右边表中的数据</span><br><span class="line">select emp.name , dept.name</span><br><span class="line">from tb_emp AS emp left join tb_dept AS dept </span><br><span class="line">     on emp.dept_id = dept.id;</span><br></pre></td></tr></tbody></table>
 
-<p><img src="/image-20221207181204792-1715613343040-183.png" alt="image-20221207181204792"></p>
+<p><img src="/2022/09/10/MySQL/image-20221207181204792-1715613343040-183.png" alt="image-20221207181204792"></p>
 <p>案例：查询部门表中所有部门的名称, 和对应的员工名称</p>
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">-- 右外连接</span><br><span class="line">select dept.name , emp.name</span><br><span class="line">from tb_emp AS emp right join  tb_dept AS dept</span><br><span class="line">     on emp.dept_id = dept.id;</span><br></pre></td></tr></tbody></table>
 
-<p><img src="/image-20221207181048208-1715613343040-184.png" alt="image-20221207181048208"></p>
+<p><img src="/2022/09/10/MySQL/image-20221207181048208-1715613343040-184.png" alt="image-20221207181048208"></p>
 <blockquote>
 <p>注意事项：</p>
 <p>左外连接和右外连接是可以相互替换的，只需要调整连接查询时SQL语句中表的先后顺序就可以了。而我们在日常开发使用时，更偏向于左外连接。</p>
@@ -1750,7 +1750,7 @@
 </blockquote>
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">-- 1.查询"教研部"部门ID</span><br><span class="line">select id from tb_dept where name = '教研部';    #查询结果：2</span><br><span class="line">-- 2.根据"教研部"部门ID, 查询员工信息</span><br><span class="line">select * from tb_emp where dept_id = 2;</span><br><span class="line"></span><br><span class="line">-- 合并出上两条SQL语句</span><br><span class="line">select * from tb_emp where dept_id = (select id from tb_dept where name = '教研部');</span><br></pre></td></tr></tbody></table>
 
-<p><img src="/image-20221207202215946-1715613343040-185.png" alt="image-20221207202215946"></p>
+<p><img src="/2022/09/10/MySQL/image-20221207202215946-1715613343040-185.png" alt="image-20221207202215946"></p>
 <p>案例2：查询在 “方东白” 入职之后的员工信息</p>
 <blockquote>
 <p>可以将需求分解为两步：</p>
@@ -1761,7 +1761,7 @@
 </blockquote>
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">-- 1.查询"方东白"的入职日期</span><br><span class="line">select entrydate from tb_emp where name = '方东白';     #查询结果：2012-11-01</span><br><span class="line">-- 2.查询指定入职日期之后入职的员工信息</span><br><span class="line">select * from tb_emp where entrydate &gt; '2012-11-01';</span><br><span class="line"></span><br><span class="line">-- 合并以上两条SQL语句</span><br><span class="line">select * from tb_emp where entrydate &gt; (select entrydate from tb_emp where name = '方东白');</span><br></pre></td></tr></tbody></table>
 
-<p><img src="/image-20221207203000445-1715613343040-186.png" alt="image-20221207203000445"></p>
+<p><img src="/2022/09/10/MySQL/image-20221207203000445-1715613343040-186.png" alt="image-20221207203000445"></p>
 <h4 id="6-4-3-列子查询"><a href="#6-4-3-列子查询" class="headerlink" title="6.4.3 列子查询"></a>6.4.3 列子查询</h4><p>子查询返回的结果是一列(可以是多行)，这种子查询称为列子查询。</p>
 <p>常用的操作符：</p>
 <table>
@@ -1790,7 +1790,7 @@
 </blockquote>
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">-- 1.查询"销售部"和"市场部"的部门ID</span><br><span class="line">select id from tb_dept where name = '教研部' or name = '咨询部';    #查询结果：3,2</span><br><span class="line">-- 2.根据部门ID, 查询员工信息</span><br><span class="line">select * from tb_emp where dept_id in (3,2);</span><br><span class="line"></span><br><span class="line">-- 合并以上两条SQL语句</span><br><span class="line">select * from tb_emp where dept_id in (select id from tb_dept where name = '教研部' or name = '咨询部');</span><br></pre></td></tr></tbody></table>
 
-<p><img src="/image-20221207203620472-1715613343040-187.png" alt="image-20221207203620472"></p>
+<p><img src="/2022/09/10/MySQL/image-20221207203620472-1715613343040-187.png" alt="image-20221207203620472"></p>
 <h4 id="6-4-4-行子查询"><a href="#6-4-4-行子查询" class="headerlink" title="6.4.4 行子查询"></a>6.4.4 行子查询</h4><p>子查询返回的结果是一行(可以是多列)，这种子查询称为行子查询。</p>
 <p>常用的操作符：&#x3D; 、&lt;&gt; 、IN 、NOT IN</p>
 <p>案例：查询与”韦一笑”的入职日期及职位都相同的员工信息</p>
@@ -1803,7 +1803,7 @@
 </blockquote>
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">-- 查询"韦一笑"的入职日期 及 职位</span><br><span class="line">select entrydate , job from tb_emp where name = '韦一笑';  #查询结果： 2007-01-01 , 2</span><br><span class="line">-- 查询与"韦一笑"的入职日期及职位相同的员工信息</span><br><span class="line">select * from tb_emp where (entrydate,job) = ('2007-01-01',2);</span><br><span class="line"></span><br><span class="line">-- 合并以上两条SQL语句</span><br><span class="line">select * from tb_emp where (entrydate,job) = (select entrydate , job from tb_emp where name = '韦一笑');</span><br></pre></td></tr></tbody></table>
 
-<p><img src="/image-20221207204452202-1715613343040-188.png" alt="image-20221207204452202"></p>
+<p><img src="/2022/09/10/MySQL/image-20221207204452202-1715613343040-188.png" alt="image-20221207204452202"></p>
 <h4 id="6-4-5-表子查询"><a href="#6-4-5-表子查询" class="headerlink" title="6.4.5 表子查询"></a>6.4.5 表子查询</h4><p>子查询返回的结果是多行多列，常作为临时表，这种子查询称为表子查询。</p>
 <p>案例：查询入职日期是 “2006-01-01” 之后的员工信息 , 及其部门信息</p>
 <blockquote>
@@ -1815,55 +1815,55 @@
 </blockquote>
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">select * from emp where entrydate &gt; '2006-01-01';</span><br><span class="line"></span><br><span class="line">select e.*, d.* from (select * from emp where entrydate &gt; '2006-01-01') e left join dept d on e.dept_id = d.id ;</span><br></pre></td></tr></tbody></table>
 
-<p><img src="/image-20221208142154263-1715613343040-189.png" alt="image-20221208142154263"></p>
+<p><img src="/2022/09/10/MySQL/image-20221208142154263-1715613343040-189.png" alt="image-20221208142154263"></p>
 <h3 id="6-5-案例"><a href="#6-5-案例" class="headerlink" title="6.5 案例"></a>6.5 案例</h3><p>基于之前设计的多表案例的表结构，我们来完成今天的多表查询案例需求。</p>
 <p><strong>准备环境</strong></p>
 <p>将资料中准备好的多表查询的数据准备的SQL脚本导入数据库中。</p>
-<p><img src="/image-20221208143318921-1715613343040-190.png" alt="image-20221208143318921"></p>
+<p><img src="/2022/09/10/MySQL/image-20221208143318921-1715613343040-190.png" alt="image-20221208143318921"></p>
 <ul>
 <li>分类表：category</li>
 <li>菜品表：dish</li>
 <li>套餐表：setmeal</li>
 <li>套餐菜品关系表：setmeal_dish</li>
 </ul>
-<p><img src="/image-20221208143312292-1715613343040-191.png" alt="image-20221208143312292"></p>
+<p><img src="/2022/09/10/MySQL/image-20221208143312292-1715613343040-191.png" alt="image-20221208143312292"></p>
 <p><strong>需求实现</strong></p>
 <ol>
 <li>查询价格低于 10元 的菜品的名称 、价格 及其 菜品的分类名称</li>
 </ol>
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">/*查询技巧：</span><br><span class="line">     明确1：查询需要用到哪些字段</span><br><span class="line">        菜品名称、菜品价格 、 菜品分类名</span><br><span class="line">     明确2：查询的字段分别归属于哪张表</span><br><span class="line">        菜品表：[菜品名称、菜品价格]</span><br><span class="line">        分类表：[分类名]</span><br><span class="line">     明确3：如查多表，建立表与表之间的关联</span><br><span class="line">        菜品表.caategory_id = 分类表.id</span><br><span class="line">     其他：（其他条件、其他要求）</span><br><span class="line">        价格 &lt; 10</span><br><span class="line">*/</span><br><span class="line">select d.name , d.price , c.name</span><br><span class="line">from dish AS d , category AS c</span><br><span class="line">where d.category_id = c.id</span><br><span class="line">      and d.price &lt; 10;</span><br></pre></td></tr></tbody></table>
 
-<p><img src="/image-20221208145036602-1715613343040-192.png" alt="image-20221208145036602"></p>
+<p><img src="/2022/09/10/MySQL/image-20221208145036602-1715613343040-192.png" alt="image-20221208145036602"></p>
 <ol start="2">
 <li>查询所有价格在 10元(含)到50元(含)之间 且 状态为”起售”的菜品名称、价格及其分类名称 (即使菜品没有分类 , 也要将菜品查询出来)</li>
 </ol>
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">select d.name , d.price, c.name</span><br><span class="line">from dish AS d left join category AS c on d.category_id = c.id</span><br><span class="line">where d.price between 10 and 50</span><br><span class="line">      and d.status = 1;</span><br></pre></td></tr></tbody></table>
 
-<p><img src="/image-20221208145432077-1715613343040-193.png" alt="image-20221208145432077"></p>
+<p><img src="/2022/09/10/MySQL/image-20221208145432077-1715613343040-193.png" alt="image-20221208145432077"></p>
 <ol start="3">
 <li>查询每个分类下最贵的菜品, 展示出分类的名称、最贵的菜品的价格</li>
 </ol>
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">select c.name , max(d.price)</span><br><span class="line">from dish AS d , category AS c</span><br><span class="line">where d.category_id = c.id</span><br><span class="line">group by c.name;</span><br></pre></td></tr></tbody></table>
 
-<p><img src="/image-20221208150016895-1715613343040-194.png" alt="image-20221208150016895"></p>
+<p><img src="/2022/09/10/MySQL/image-20221208150016895-1715613343040-194.png" alt="image-20221208150016895"></p>
 <ol start="4">
 <li>查询各个分类下 菜品状态为 “起售” , 并且 该分类下菜品总数量大于等于3 的 分类名称</li>
 </ol>
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">/*查询技巧：</span><br><span class="line">     明确1：查询需要用到哪些字段</span><br><span class="line">        分类名称、菜品总数量</span><br><span class="line">     明确2：查询用到的字段分别归属于哪张表</span><br><span class="line">        分类表：[分类名]</span><br><span class="line">        菜品表：[菜品状态]</span><br><span class="line">     明确3：如查多表，建立表与表之间的关联</span><br><span class="line">        菜品表.caategory_id = 分类表.id</span><br><span class="line">     其他：（其他条件、其他要求）</span><br><span class="line">        条件：菜品状态 = 1 (1表示起售)</span><br><span class="line">        分组：分类名</span><br><span class="line">        分组后条件： 总数量 &gt;= 3</span><br><span class="line">*/</span><br><span class="line">select c.name , count(*)</span><br><span class="line">from dish AS d , category AS c</span><br><span class="line">where d.category_id = c.id</span><br><span class="line">      and d.status = 1 -- 起售状态</span><br><span class="line">group by c.name  -- 按照分类名分组</span><br><span class="line">having count(*)&gt;=3; -- 各组后筛选菜品总数据&gt;=3</span><br></pre></td></tr></tbody></table>
 
-<p><img src="/image-20221208152107502-1715613343040-195.png" alt="image-20221208152107502"></p>
+<p><img src="/2022/09/10/MySQL/image-20221208152107502-1715613343040-195.png" alt="image-20221208152107502"></p>
 <ol start="5">
 <li>查询出 “商务套餐A” 中包含了哪些菜品 （展示出套餐名称、价格, 包含的菜品名称、价格、份数）</li>
 </ol>
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">select s.name, s.price, d.name, d.price, sd.copies</span><br><span class="line">from setmeal AS s , setmeal_dish AS sd , dish AS d</span><br><span class="line">where s.id = sd.setmeal_id and sd.dish_id = d.id</span><br><span class="line">      and s.name='商务套餐A';</span><br></pre></td></tr></tbody></table>
 
-<p><img src="/image-20221208152626138-1715613343040-196.png" alt="image-20221208152626138"></p>
+<p><img src="/2022/09/10/MySQL/image-20221208152626138-1715613343040-196.png" alt="image-20221208152626138"></p>
 <ol start="6">
 <li>查询出低于菜品平均价格的菜品信息 (展示出菜品名称、菜品价格)</li>
 </ol>
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">-- 1.计算菜品平均价格</span><br><span class="line">select avg(price) from dish;    -- 查询结果：37.736842</span><br><span class="line">-- 2.查询出低于菜品平均价格的菜品信息</span><br><span class="line">select * from dish where price &lt; 37.736842;</span><br><span class="line"></span><br><span class="line">-- 合并以上两条SQL语句</span><br><span class="line">select * from dish where price &lt; (select avg(price) from dish);</span><br></pre></td></tr></tbody></table>
 
-<p><img src="/image-20221208153051333.png" alt="image-20221208153051333"></p>
+<p><img src="/2022/09/10/MySQL/image-20221208153051333.png" alt="image-20221208153051333"></p>
 <h2 id="7-事务"><a href="#7-事务" class="headerlink" title="7. 事务"></a>7. 事务</h2><p>场景：学工部整个部门解散了，该部门及部门下的员工都需要删除了。</p>
 <ul>
 <li><p>操作：</p>
@@ -1952,11 +1952,11 @@
 <li>简单来讲，就是使用索引可以提高查询的效率。</li>
 </ul>
 <p>测试没有使用索引的查询：</p>
-<p><img src="/image-20221209115617429-1715613343040-198.png" alt="image-20221209115617429"></p>
+<p><img src="/2022/09/10/MySQL/image-20221209115617429-1715613343040-198.png" alt="image-20221209115617429"></p>
 <p>添加索引后查询：</p>
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">-- 添加索引</span><br><span class="line">create index idx_sku_sn on tb_sku (sn);  #在添加索引时，也需要消耗时间</span><br><span class="line"></span><br><span class="line">-- 查询数据（使用了索引）</span><br><span class="line">select * from tb_sku where sn = '100000003145008';</span><br></pre></td></tr></tbody></table>
 
-<p><img src="/image-20221209120107543-1715613343040-199.png" alt="image-20221209120107543"></p>
+<p><img src="/2022/09/10/MySQL/image-20221209120107543-1715613343040-199.png" alt="image-20221209120107543"></p>
 <p>优点：</p>
 <ol>
 <li>提高数据查询的效率，降低数据库的IO成本。</li>
@@ -1973,15 +1973,15 @@
 <blockquote>
 <p>二叉查找树：左边的子节点比父节点小，右边的子节点比父节点大</p>
 </blockquote>
-<p><img src="/image-20221208174135229-1715613343040-200.png" alt="image-20221208174135229"></p>
+<p><img src="/2022/09/10/MySQL/image-20221208174135229-1715613343040-200.png" alt="image-20221208174135229"></p>
 <blockquote>
 <p>当我们向二叉查找树保存数据时，是按照从大到小(或从小到大)的顺序保存的，此时就会形成一个单向链表，搜索性能会打折扣。</p>
 </blockquote>
-<p><img src="/image-20221208174859866-1715613343040-201.png" alt="image-20221208174859866"></p>
+<p><img src="/2022/09/10/MySQL/image-20221208174859866-1715613343040-201.png" alt="image-20221208174859866"></p>
 <blockquote>
 <p>可以选择平衡二叉树或者是红黑树来解决上述问题。（红黑树也是一棵平衡的二叉树）</p>
 </blockquote>
-<p><img src="/image-20221209100647867-1715613343040-202.png" alt="image-20221209100647867"></p>
+<p><img src="/2022/09/10/MySQL/image-20221209100647867-1715613343040-202.png" alt="image-20221209100647867"></p>
 <blockquote>
 <p>但是在Mysql数据库中并没有使用二叉搜索数或二叉平衡数或红黑树来作为索引的结构。</p>
 </blockquote>
@@ -1991,7 +1991,7 @@
 <p>说明：如果数据结构是红黑树，那么查询1000万条数据，根据计算树的高度大概是23左右，这样确实比之前的方式快了很多，但是如果高并发访问，那么一个用户有可能需要23次磁盘IO，那么100万用户，那么会造成效率极其低下。所以为了减少红黑树的高度，那么就得增加树的宽度，就是不再像红黑树一样每个节点只能保存一个数据，可以引入另外一种数据结构，一个节点可以保存多个数据，这样宽度就会增加从而降低树的高度。这种数据结构例如BTree就满足。</p>
 </blockquote>
 <p>下面我们来看看B+Tree(多路平衡搜索树)结构中如何避免这个问题：</p>
-<p><img src="/image-20221208181315728-1715613343040-203.png" alt="image-20221208181315728"></p>
+<p><img src="/2022/09/10/MySQL/image-20221208181315728-1715613343040-203.png" alt="image-20221208181315728"></p>
 <p>B+Tree结构：</p>
 <ul>
 <li>每一个节点，可以存储多个key（有n个key，就有n个指针）</li>
@@ -2022,10 +2022,10 @@
 <p>案例：为tb_emp表的name字段建立一个索引</p>
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">create index idx_emp_name on tb_emp(name);</span><br></pre></td></tr></tbody></table>
 
-<p><img src="/image-20221209105119159-1715613343040-204.png" alt="image-20221209105119159"></p>
+<p><img src="/2022/09/10/MySQL/image-20221209105119159-1715613343040-204.png" alt="image-20221209105119159"></p>
 <blockquote>
 <p>在创建表时，如果添加了主键和唯一约束，就会默认创建：主键索引、唯一约束</p>
-<p><img src="/image-20221209105846211.png" alt="image-20221209105846211"></p>
+<p><img src="/2022/09/10/MySQL/image-20221209105846211.png" alt="image-20221209105846211"></p>
 </blockquote>
 <p><strong>查看索引</strong></p>
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show  index  from  表名;</span><br></pre></td></tr></tbody></table>
@@ -2033,7 +2033,7 @@
 <p>案例：查询 tb_emp 表的索引信息</p>
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show  index  from  tb_emp;</span><br></pre></td></tr></tbody></table>
 
-<p><img src="/image-20221209110317092-1715613343040-206.png" alt="image-20221209110317092"></p>
+<p><img src="/2022/09/10/MySQL/image-20221209110317092-1715613343040-206.png" alt="image-20221209110317092"></p>
 <p><strong>删除索引</strong></p>
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">drop  index  索引名  on  表名;</span><br></pre></td></tr></tbody></table>
 

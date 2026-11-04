@@ -244,7 +244,7 @@
 </ul>
 </li>
 </ul>
-<p><img src="/image-20240119173941173.png" alt="image-20240119173941173"></p>
+<p><img src="/2022/09/10/Java/image-20240119173941173.png" alt="image-20240119173941173"></p>
 <h4 id="2、switch-是否能作用在-byte-上，是否能作用在-long-上，是否能作用在-String-上"><a href="#2、switch-是否能作用在-byte-上，是否能作用在-long-上，是否能作用在-String-上" class="headerlink" title="2、switch 是否能作用在 byte 上，是否能作用在 long 上，是否能作用在 String 上"></a>2、switch 是否能作用在 byte 上，是否能作用在 long 上，是否能作用在 String 上</h4><p>​ 在 Java 5 以前，switch(expr)中，expr 只能是 byte、short、char、int。从 Java5 开始，Java 中引入了枚举类型，expr 也可以是 enum 类型，从 Java 7 开始，expr 还可以是字符串（String），但是长整型（long）在目前所有的版本中都是不可以的。</p>
 <h3 id="2、编码"><a href="#2、编码" class="headerlink" title="2、编码"></a>2、编码</h3><h4 id="Java语言采用何种编码方案？有何特点？"><a href="#Java语言采用何种编码方案？有何特点？" class="headerlink" title="Java语言采用何种编码方案？有何特点？"></a>Java语言采用何种编码方案？有何特点？</h4><p>Java语言采用Unicode编码标准，Unicode（标准码），它为每个字符制订了一个唯一的数值，因此在任何的语言，平台，程序都可以放心的使用。</p>
 <h3 id="3、注释"><a href="#3、注释" class="headerlink" title="3、注释"></a>3、注释</h3><ul>
@@ -253,7 +253,7 @@
 <li>文档注释<br>格式：&#x2F;** 注释文字 *&#x2F;</li>
 </ul>
 <h3 id="4、访问修饰符"><a href="#4、访问修饰符" class="headerlink" title="4、访问修饰符"></a>4、访问修饰符</h3><p>private : 在同一类内可见。使用对象：变量、方法。 注意：不能修饰类（外部类）<br>default (即缺省，什么也不写，不使用任何关键字）: 在同一包内可见，不使用任何修饰符。使用对象：类、接口、变量、方法。<br>protected : 对同一包内的类和所有子类可见。使用对象：变量、方法。 注意：不能修饰类（外部类）。<br>public : 对所有类可见。使用对象：类、接口、变量、方法</p>
-<p><img src="/image-20240119174842955.png" alt="image-20240119174842955"></p>
+<p><img src="/2022/09/10/Java/image-20240119174842955.png" alt="image-20240119174842955"></p>
 <h3 id="5、运算符"><a href="#5、运算符" class="headerlink" title="5、运算符"></a>5、运算符</h3><h4 id="和-的区别"><a href="#和-的区别" class="headerlink" title="&amp;和&amp;&amp;的区别"></a>&amp;和&amp;&amp;的区别</h4><p>&amp;运算符有两种用法：(1)按位与；(2)逻辑与。</p>
 <p>&amp;&amp;运算符是短路与运算。逻辑与跟短路与的差别是非常巨大的，虽然二者都要求运算符左右两端的布尔值都是true 整个表达式的值才是 true。&amp;&amp;之所以称为短路运算，是因为如果&amp;&amp;左边的表达式的值是 false，右边的表达式会被直接短路掉，不会进行运算。</p>
 <p>注意：逻辑或运算符（|）和短路或运算符（||）的差别也是如此。</p>
@@ -286,8 +286,8 @@
 <li>super（参数）：调用父类中的某一个构造函数（应该为构造函数中的第一条语句）。</li>
 <li>this（参数）：调用本类中另一种形式的构造函数（应该为构造函数中的第一条语句）。</li>
 </ul>
-<h4 id="6-this与super的区别"><a href="#6-this与super的区别" class="headerlink" title="6. this与super的区别"></a>6. this与super的区别</h4><p><img src="/image-20240119180341803.png" alt="image-20240119180341803"></p>
-<h4 id="7-static存在的主要意义"><a href="#7-static存在的主要意义" class="headerlink" title="7. static存在的主要意义"></a>7. static存在的主要意义</h4><p><img src="/image-20240119180404935.png" alt="image-20240119180404935"></p>
+<h4 id="6-this与super的区别"><a href="#6-this与super的区别" class="headerlink" title="6. this与super的区别"></a>6. this与super的区别</h4><p><img src="/2022/09/10/Java/image-20240119180341803.png" alt="image-20240119180341803"></p>
+<h4 id="7-static存在的主要意义"><a href="#7-static存在的主要意义" class="headerlink" title="7. static存在的主要意义"></a>7. static存在的主要意义</h4><p><img src="/2022/09/10/Java/image-20240119180404935.png" alt="image-20240119180404935"></p>
 <h4 id="8-static的独特之处"><a href="#8-static的独特之处" class="headerlink" title="8. static的独特之处"></a>8. static的独特之处</h4><ul>
 <li>被static修饰的变量或者方法是独立于该类的任何对象，也就是说，这些变量和方法不属于任何一个实例对象，而是被类的实例对象所共享。</li>
 </ul>
@@ -363,7 +363,7 @@
 <p>都位于继承的顶端，用于被其他实现或继承</p>
 <p>都包含抽象方法，其子类都必须覆写这些抽象方法</p>
 <p><strong>不同点</strong></p>
-<p><img src="/image-20240119181802331.png" alt="image-20240119181802331"></p>
+<p><img src="/2022/09/10/Java/image-20240119181802331.png" alt="image-20240119181802331"></p>
 <p>接口和抽象类各有优缺点，在接口和抽象类的选择上，必须遵守这样一个原则：</p>
 <ul>
 <li>行为模型应该总是通过接口而不是抽象类定义，所以通常是优先选用接口，尽量少用抽象类。</li>
@@ -489,7 +489,7 @@
 <p><strong>结果：</strong></p>
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a = 20</span><br><span class="line">b = 10</span><br><span class="line">num1 = 10</span><br><span class="line">num2 = 20</span><br></pre></td></tr></tbody></table>
 
-<p><img src="/Snipaste_2024-02-02_15-31-57.jpg"></p>
+<p><img src="/2022/09/10/Java/Snipaste_2024-02-02_15-31-57.jpg"></p>
 <p><strong>通过上面例子，我们已经知道了一个方法不能修改一个基本数据类型的参数，而对象引用作为参数就不一样，请看 例2.</strong></p>
 <p><strong>例2：</strong></p>
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> {</span><br><span class="line">        <span class="type">int</span>[] arr = { <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span> };</span><br><span class="line">        System.out.println(arr[<span class="number">0</span>]);</span><br><span class="line">        change(arr);</span><br><span class="line">        System.out.println(arr[<span class="number">0</span>]);</span><br><span class="line">    }</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">change</span><span class="params">(<span class="type">int</span>[] array)</span> {</span><br><span class="line">        <span class="comment">// 将数组的第一个元素变为0</span></span><br><span class="line">        array[<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">    }</span><br></pre></td></tr></tbody></table>
@@ -497,7 +497,7 @@
 <p><strong>结果：</strong></p>
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1</span><br><span class="line">0</span><br></pre></td></tr></tbody></table>
 
-<p><img src="/Snipaste_2024-02-02_15-33-41.jpg"></p>
+<p><img src="/2022/09/10/Java/Snipaste_2024-02-02_15-33-41.jpg"></p>
 <p><strong>通过 example2 我们已经看到，实现一个改变对象参数状态的方法并不是一件难事。理由很简单，方法得到的是对象引用的拷贝，对象引用及其他的拷贝同时引用同一个对象。</strong></p>
 <p><strong>很多程序设计语言（特别是，C++和Pascal)提供了两种参数传递的方式：值调用和引用调用。有些程序员（甚至本书的作者）认为Java程序设计语言对对象采用的是引用调用，实际上，这种理解是不对的。由于这种误解具有一定的普遍性，所以下面给出一个反例来详细地阐述一下这个问题。</strong></p>
 <p><strong>例3：</strong></p>
@@ -507,9 +507,9 @@
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">x:小李</span><br><span class="line">y:小张</span><br><span class="line">s1:小张</span><br><span class="line">s2:小李</span><br></pre></td></tr></tbody></table>
 
 <p>交换之前：</p>
-<p><img src="/Snipaste_2024-02-02_15-37-29.jpg"></p>
+<p><img src="/2022/09/10/Java/Snipaste_2024-02-02_15-37-29.jpg"></p>
 <p>交换之后：</p>
-<p><img src="/Snipaste_2024-02-02_15-37-35.jpg"></p>
+<p><img src="/2022/09/10/Java/Snipaste_2024-02-02_15-37-35.jpg"></p>
 <p>通过上面两张图可以很清晰的看出： 方法并没有改变存储在变量 s1 和 s2 中的对象引用。swap方法的参数x和y被初始化为两个对象引用的拷贝，这个方法交换的是这两个拷贝</p>
 <h5 id="总结"><a href="#总结" class="headerlink" title="总结"></a><strong>总结</strong></h5><p>Java程序设计语言对对象采用的不是引用调用，实际上，对象引用是按值传递的。</p>
 <p>下面再总结一下Java中方法参数的使用情况：</p>
@@ -944,8 +944,8 @@
 <li><p>InputStream&#x2F;Reader: 所有的输入流的基类，前者是字节输入流，后者是字符输入流。</p>
 </li>
 <li><p>OutputStream&#x2F;Writer: 所有输出流的基类，前者是字节输出流，后者是字符输出流。</p>
-<p><img src="/aaaa.png" alt="aaaa"></p>
-<p><img src="/aaaaaaaaaaaaaaa.png" alt="aaaaaaaaaaaaaaa"></p>
+<p><img src="/2022/09/10/Java/aaaa.png" alt="aaaa"></p>
+<p><img src="/2022/09/10/Java/aaaaaaaaaaaaaaa.png" alt="aaaaaaaaaaaaaaa"></p>
 </li>
 </ul>
 <h3 id="2、Files的常用方法都有哪些？"><a href="#2、Files的常用方法都有哪些？" class="headerlink" title="2、Files的常用方法都有哪些？"></a>2、Files的常用方法都有哪些？</h3><ul>
@@ -999,7 +999,7 @@
 <li>五层协议的体系结构主要包括：应用层、运输层、网络层，数据链路层和物理层。</li>
 <li>OSI七层协议模型主要包括是：应用层（Application）、表示层（Presentation）、会话层（Session）、运输层（Transport）、网络层（Network）、数据链路层（Data Link）、物理层（Physical）。</li>
 </ul>
-<p><img src="/20200316173310511.png" alt="20200316173310511"></p>
+<p><img src="/2022/09/10/Java/20200316173310511.png" alt="20200316173310511"></p>
 <p>注：五层协议的体系结构只是为了介绍网络原理而设计的，实际应用还是 TCP&#x2F;IP 四层体系结构。</p>
 <h3 id="3、TCP-UDP协议"><a href="#3、TCP-UDP协议" class="headerlink" title="3、TCP&#x2F;UDP协议"></a>3、TCP&#x2F;UDP协议</h3><p><strong>UDP协议</strong></p>
 <ul>
@@ -1182,10 +1182,10 @@
 <li><p>三次握手和四次挥手</p>
 </li>
 <li><p>三次握手</p>
-<p><img src="/image1.png" alt="image1">!](.&#x2F;assets&#x2F;image1.png)</p>
+<p><img src="/2022/09/10/Java/image1.png" alt="image1">!](.&#x2F;assets&#x2F;image1.png)</p>
 </li>
 <li><p>四次挥手</p>
-<p><img src="/image2.png" alt="image2">!](.&#x2F;assets&#x2F;image2.png)</p>
+<p><img src="/2022/09/10/Java/image2.png" alt="image2">!](.&#x2F;assets&#x2F;image2.png)</p>
 </li>
 <li><p>示例代码</p>
 </li>
@@ -1245,30 +1245,30 @@
 
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">在需要杀死线程的代码块处调用 线程对象.interrupt()</span><br><span class="line">调用该方法会告知Thread该死亡了，Thread之后怎么办还是看Thread try到中断异常后如何处理的代码块。</span><br><span class="line">就会进入该线程run方法的try catch中断异常，然后怎么做是看程序员在catch异常后的catch块里写的什么操作，一般这个位置拿来释放资源(交代线程后事)，然后return，return即正常结束了run方法，Thread正常自杀。</span><br></pre></td></tr></tbody></table>
 
-<p><img src="/s1-1709083445233-32.png" alt="s1"></p>
-<p><img src="/s2-1709083445234-35.png" alt="s2"></p>
-<p><img src="/s3-1709083445234-33.png" alt="s3"></p>
+<p><img src="/2022/09/10/Java/s1-1709083445233-32.png" alt="s1"></p>
+<p><img src="/2022/09/10/Java/s2-1709083445234-35.png" alt="s2"></p>
+<p><img src="/2022/09/10/Java/s3-1709083445234-33.png" alt="s3"></p>
 <h4 id="4、守护线程"><a href="#4、守护线程" class="headerlink" title="4、守护线程"></a>4、守护线程</h4><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">线程：分为守护线程和用户线程</span><br><span class="line">用户线程：当一个进程不包含任何的存活的用户线程时，进程结束。</span><br><span class="line">守护线程：守护用户线程的，当最后一个用户线程结束时，所有守护线程自动死亡。</span><br><span class="line"></span><br><span class="line">直接创建的线程都是用户线程，若想设置守护线程需要创建Thread对象之后，start之前调用setDaemon方法，实参为true。</span><br><span class="line">主线程输出到5，main方法还要结束，此时子线程又输出了一个6，这是在上一个中断线程的源码的基础上加了一个设置守护线程的方法。</span><br></pre></td></tr></tbody></table>
 
-<p><img src="/a1-1709083445234-34.png" alt="a1"></p>
+<p><img src="/2022/09/10/Java/a1-1709083445234-34.png" alt="a1"></p>
 <h4 id="5、线程安全问题"><a href="#5、线程安全问题" class="headerlink" title="5、线程安全问题"></a>5、线程安全问题</h4><h4 id="1、线程不安全"><a href="#1、线程不安全" class="headerlink" title="1、线程不安全"></a>1、线程不安全</h4><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">举个例子，不能一直空说大汉吃一碗面</span><br><span class="line">卖票，实现Runnable的任务类，类的方法就是对当前票数--，sleep是故意为了让它出线程不安全的问题，演示线程不安全的事，启动三个Thread，共同执行卖票这个任务。</span><br><span class="line"></span><br><span class="line">分析结果：单看逻辑，怎么都不会出现负数。出现负数是因为有可能A线程发现count为1(极端情况)进入while循环，还没进行count--操作，其他两个线程插足(抢到时间片)也通过count&gt;0进入线程，所以后面进行count--，出现了-1   -2</span><br></pre></td></tr></tbody></table>
 
 <h4 id="2、线程安全"><a href="#2、线程安全" class="headerlink" title="2、线程安全"></a>2、线程安全</h4><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">首先明确线程不安全的原因：</span><br><span class="line">	多个线程同时执行，去同时操作一个数据，导致某个数据看到的和在自己使用时数据不一致，因为其看到的和使用的中间间隔代码执行时被其他线程插足了(其他线程进来把数据改了)，所以最终导致运行不符合预期。</span><br><span class="line">	</span><br><span class="line">很简单，就让某个线程在执行 看到的和使用时的数据 之间的代码块时，其他线程不插足，排队执行。</span><br><span class="line">大汉排队吃锅里的食物，每个人看到的和吃到嘴里的 不会有差异。</span><br><span class="line"></span><br><span class="line">关于线程同步，有三种不同的关于让线程排队执行的方式，都是通过上锁，加锁的方式。</span><br></pre></td></tr></tbody></table>
 
 <h5 id="1、实现线程安全1-同步代码块"><a href="#1、实现线程安全1-同步代码块" class="headerlink" title="1、实现线程安全1-同步代码块"></a>1、实现线程安全1-同步代码块</h5><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">可以简单认为，被括住的代码块是排队执行的。</span><br><span class="line">格式</span><br><span class="line">	synchronized(锁对象){</span><br><span class="line">	</span><br><span class="line">	}</span><br><span class="line">	</span><br><span class="line">Java中任何对象都可以作为锁对象存在，可以认为任何对象都可以打锁标记。打锁标记我们不用管，是内存底层的机制。线程会观察锁对象是否打了锁的标记，如果被打了，说明有人正在执行，他就会等，一直等，一直看标记是不是解锁了。某个线程执行完毕后，解锁，其他人抢，抢到就上锁。一般回首掏比较nb，见下图的运行结果，大部分是Thread-0抢到了。</span><br><span class="line">注意：100个线程要上同一把锁才能实现排队的效果。</span><br><span class="line"></span><br><span class="line">下图就是在卖票的例子上加了一个private Object o = new Object()和synchronized  就实现了线程安全。 </span><br><span class="line">卖票的例子   就new了一个Ticket对象(任务)，所以线程用的是一个锁对象o。</span><br></pre></td></tr></tbody></table>
 
-<p><img src="/a2-1709083445234-38.png" alt="a2">!](.&#x2F;assets&#x2F;a2.png)</p>
-<p><img src="/a3-1709083445234-36.png" alt="a3">!](.&#x2F;assets&#x2F;a3.png)</p>
+<p><img src="/2022/09/10/Java/a2-1709083445234-38.png" alt="a2">!](.&#x2F;assets&#x2F;a2.png)</p>
+<p><img src="/2022/09/10/Java/a3-1709083445234-36.png" alt="a3">!](.&#x2F;assets&#x2F;a3.png)</p>
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">所有线程要共用一把锁，线程.start()方法会调用run方法，如果在run方法里new 锁对象，则成了每个线程都有自己独立的锁，就没有线程安全的说法了。如下图，还是会出现-1  -2</span><br></pre></td></tr></tbody></table>
 
-<p><img src="/a4-1709083445234-37.png" alt="a4">!](.&#x2F;assets&#x2F;a4.png)</p>
+<p><img src="/2022/09/10/Java/a4-1709083445234-37.png" alt="a4">!](.&#x2F;assets&#x2F;a4.png)</p>
 <h5 id="2、实现线程安全2-同步方法"><a href="#2、实现线程安全2-同步方法" class="headerlink" title="2、实现线程安全2-同步方法"></a>2、实现线程安全2-同步方法</h5><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">同步代码甚至可以以一行代码为单位进行加锁，但同步方法以方法为单位进行加锁。</span><br><span class="line">格式</span><br><span class="line">	给方法添加synchronized修饰词</span><br><span class="line"></span><br><span class="line">这里的锁就是任务Ticket对象，一个任务多个线程调用，才会安全。</span><br><span class="line">Runnable run = new Ticket();</span><br><span class="line">new Thread(run).start();</span><br><span class="line">new Thread(run).start();</span><br><span class="line">new Thread(run).start();</span><br><span class="line"></span><br><span class="line">同步方法用的是一个this这把锁，要是有多个同步方法，or有个同步代码是传的this为锁对象，则若有一个同步方法在执行，其他同步方法都执行不了(Thread-0上锁之后，其他Thread都不能执行别的同步方法)，都是排队的，因为上的是同一把锁。</span><br></pre></td></tr></tbody></table>
 
-<p><img src="/b1-1709083445234-40.png" alt="b1">!](.&#x2F;assets&#x2F;b1.png)</p>
-<p><img src="/b2-1709083445234-42.png" alt="b2">!](.&#x2F;assets&#x2F;b2.png)</p>
+<p><img src="/2022/09/10/Java/b1-1709083445234-40.png" alt="b1">!](.&#x2F;assets&#x2F;b1.png)</p>
+<p><img src="/2022/09/10/Java/b2-1709083445234-42.png" alt="b2">!](.&#x2F;assets&#x2F;b2.png)</p>
 <h5 id="3、实现线程安全3-Lock锁"><a href="#3、实现线程安全3-Lock锁" class="headerlink" title="3、实现线程安全3-Lock锁"></a>3、实现线程安全3-Lock锁</h5><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">同步代码块和同步方法都属于隐式锁，就是具体是怎么锁的我们不用管，只需把格式写好，它就自己锁，自己开，这就叫隐式锁。</span><br><span class="line">显式锁就是自己创建锁对象，自己上锁，自己解锁。</span><br><span class="line"></span><br><span class="line">在Ticket类里定义一个属性显式锁l</span><br><span class="line">private lock l = new ReentrantLock();</span><br><span class="line">在需要上锁的地方 l.lock()</span><br><span class="line">在需要解锁的地方 l.unlock()</span><br><span class="line"></span><br><span class="line">因为是new一个任务(Ticket)对象 所以用的是同一把显式锁l</span><br><span class="line"></span><br><span class="line">显式锁比隐式锁更好一些，更能体现程序员在控制 锁的概念</span><br><span class="line"></span><br><span class="line">while true里的代码如下，就是法1同步代码块的地方</span><br></pre></td></tr></tbody></table>
 
-<p><img src="/b3-1709083445236-48.png" alt="b3">!](.&#x2F;assets&#x2F;b3.png)</p>
+<p><img src="/2022/09/10/Java/b3-1709083445236-48.png" alt="b3">!](.&#x2F;assets&#x2F;b3.png)</p>
 <h3 id="7、公平锁与非公平锁"><a href="#7、公平锁与非公平锁" class="headerlink" title="7、公平锁与非公平锁"></a>7、公平锁与非公平锁</h3><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">公平锁</span><br><span class="line">	排队 先来先到，A线程先来等，那么解锁之后A线程先执行并上锁</span><br><span class="line">	</span><br><span class="line">非公平锁</span><br><span class="line">	一旦解锁，大家一起抢</span><br><span class="line">	</span><br><span class="line">Java里默认的，上述三种线程安全方法都是非公平锁。</span><br><span class="line"></span><br><span class="line">显式锁l里，fair参数为true，表示是公平锁，构造方法的实参：</span><br><span class="line">private lock l = new ReentrantLock(true)</span><br></pre></td></tr></tbody></table>
 
 <h3 id="8、线程死锁"><a href="#8、线程死锁" class="headerlink" title="8、线程死锁"></a>8、线程死锁</h3><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">死锁  互相等待的一种僵局</span><br><span class="line"></span><br><span class="line">避免的话  在开发时，在任何有锁的方法(点播里的是给方法加synchronized修饰词)里尽量不要编写另一个带锁的方法</span><br></pre></td></tr></tbody></table>
@@ -1281,26 +1281,26 @@
 <p>如果别人没有修改过，那么我现在直接修改共享数据的值.(乐观锁）</p>
 <h3 id="10、生产者与消费者"><a href="#10、生产者与消费者" class="headerlink" title="10、生产者与消费者"></a>10、生产者与消费者</h3><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">食物类，为了让他在做菜时更容易出问题，设置name和taste之间sleep一会，执行设置name后，时间片被占，再次抢占到时间片时回来执行设置taste</span><br></pre></td></tr></tbody></table>
 
-<p><img src="/c1-1709083445235-43.png" alt="c1">!](.&#x2F;assets&#x2F;c1.png)</p>
+<p><img src="/2022/09/10/Java/c1-1709083445235-43.png" alt="c1">!](.&#x2F;assets&#x2F;c1.png)</p>
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">厨师   声明为线程，就做饭。</span><br></pre></td></tr></tbody></table>
 
-<p><img src="/c2-1709083445235-46.png" alt="c2">!](.&#x2F;assets&#x2F;c2.png)</p>
+<p><img src="/2022/09/10/Java/c2-1709083445235-46.png" alt="c2">!](.&#x2F;assets&#x2F;c2.png)</p>
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">服务员，因为厨师的run方法里的set方法sleep了100ms，所以这里也sleep一下。</span><br></pre></td></tr></tbody></table>
 
-<p><img src="/c3-1709083445235-44.png" alt="c3">!](.&#x2F;assets&#x2F;c3.png)</p>
+<p><img src="/2022/09/10/Java/c3-1709083445235-44.png" alt="c3">!](.&#x2F;assets&#x2F;c3.png)</p>
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">main方法</span><br><span class="line">代码里写的是老干妈小米粥香辣味，运行结果是甜辣味。就说明出问题了，厨师刚生产设置了name，sleep 的时候，服务员线程把菜端走了，所以taste没有设置，还是之前的甜辣味。</span><br><span class="line">出现了两个线程进行协作时不协调的问题。</span><br></pre></td></tr></tbody></table>
 
-<p><img src="/c4-1709083445235-45.png" alt="c4">!](.&#x2F;assets&#x2F;c4.png)</p>
+<p><img src="/2022/09/10/Java/c4-1709083445235-45.png" alt="c4">!](.&#x2F;assets&#x2F;c4.png)</p>
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">对于这个问题，多数人认为可以给食物类的get set上锁，给方法加synchronized修饰词，都是用的this锁，所以厨师在做菜的时候，服务员不能端走，但厨师会一直回手掏，会出更大的问题，所以不能解决上述问题。</span><br></pre></td></tr></tbody></table>
 
-<p><img src="/c5-1709083445235-47.png" alt="c5">!](.&#x2F;assets&#x2F;c5.png)</p>
+<p><img src="/2022/09/10/Java/c5-1709083445235-47.png" alt="c5">!](.&#x2F;assets&#x2F;c5.png)</p>
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">解决方案：</span><br><span class="line">	厨师做饭时，服务员睡着，厨师做完饭，叫醒服务员，服务员去上菜然后厨师睡着，服务员上完菜把盘子端回来再把厨师叫醒，服务员睡着...</span><br><span class="line"></span><br><span class="line">可以在上锁后(synchronized)再加以设置标记实现。</span><br><span class="line">给Food类加一个private boolean flag = true</span><br><span class="line">假设true表示可以生产</span><br><span class="line">flag判完设置为FALSE，确保不会连续执行第二次，一次做饭，一次端盘子，notifyAll是唤醒当前处于等待的所有线程，然后自己等待。</span><br></pre></td></tr></tbody></table>
 
-<p><img src="/c6-1709083445236-49.png" alt="c6">!](.&#x2F;assets&#x2F;c6.png)</p>
-<p><img src="/c7-1709083445236-51.png" alt="c7">!](.&#x2F;assets&#x2F;c7.png)</p>
+<p><img src="/2022/09/10/Java/c6-1709083445236-49.png" alt="c6">!](.&#x2F;assets&#x2F;c6.png)</p>
+<p><img src="/2022/09/10/Java/c7-1709083445236-51.png" alt="c7">!](.&#x2F;assets&#x2F;c7.png)</p>
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">运行结果   没有任何问题了</span><br></pre></td></tr></tbody></table>
 
-<p><img src="/c8-1709083445236-50.png" alt="c8">!](.&#x2F;assets&#x2F;c8.png)</p>
+<p><img src="/2022/09/10/Java/c8-1709083445236-50.png" alt="c8">!](.&#x2F;assets&#x2F;c8.png)</p>
 <p>线程的六种状态</p>
 <ul>
 <li>New</li>
@@ -1327,7 +1327,7 @@
 <li>Terminated</li>
 </ul>
 <p>​ 已退出的线程处于此状态</p>
-<p><img src="/q1-1709083445237-52.png" alt="q1">!](.&#x2F;assets&#x2F;q1.png)</p>
+<p><img src="/2022/09/10/Java/q1-1709083445237-52.png" alt="q1">!](.&#x2F;assets&#x2F;q1.png)</p>
 <h3 id="11、线程池"><a href="#11、线程池" class="headerlink" title="11、线程池"></a>11、线程池</h3><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">创建线程-&gt;创建任务-&gt;执行任务-&gt;销毁线程</span><br><span class="line">有时候创建任务和执行任务只占整个过程大概5%的时间，真正花时间的是创建线程和销毁线程。</span><br><span class="line"></span><br><span class="line">如果并发的线程数量很多，并且每个线程都是执行一个时间很短的任务就结束了，这样频繁创建线程就会大大降低 系统的效率，因为频繁创建线程和销毁线程需要时间. 线程池就是一个容纳多个线程的容器，池中的线程可以反复使用，省去了频繁创建线程对象的操作，节省了大量的时间和资源。</span><br><span class="line"></span><br><span class="line">合理设置线程池的长度也很有必要，依次领任务。如果是非定长线程池，见到任务来了没相应闲状态的线程，就会new一个Thread并且线程池长度+1了。既然能自动扩容也有自动清缓存，如果有多个线程一直处于闲，就销毁了。</span><br><span class="line"></span><br><span class="line">Java中自己主动使用线程池的还是少的，后端开发本来就是基于多线程的，已经有池缓存的概念了，不需要额外加线程池了。</span><br></pre></td></tr></tbody></table>
 
 <h5 id="线程池的好处"><a href="#线程池的好处" class="headerlink" title="线程池的好处"></a>线程池的好处</h5><ul>

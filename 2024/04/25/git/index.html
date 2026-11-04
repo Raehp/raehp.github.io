@@ -210,19 +210,19 @@
 </ul>
 </li>
 </ul>
-<p><img src="/image-20240403113135925-1712116181119-1.png" alt="image-20240403113135925"></p>
+<p><img src="/2024/04/25/git/image-20240403113135925-1712116181119-1.png" alt="image-20240403113135925"></p>
 <ul>
 <li>commit：提交，将本地文件和版本信息 保存到本地仓库</li>
 <li>push：推送，将本地仓库文件和版本信息上传到远程仓库</li>
 <li>pull：拉取，将远程仓库文件和版本信息下载到本地仓库</li>
 </ul>
-<h1 id="Git下载与操作"><a href="#Git下载与操作" class="headerlink" title="Git下载与操作"></a>Git下载与操作</h1><p><img src="/image-20240403113332699-1712116181119-2.png" alt="image-20240403113332699"></p>
+<h1 id="Git下载与操作"><a href="#Git下载与操作" class="headerlink" title="Git下载与操作"></a>Git下载与操作</h1><p><img src="/2024/04/25/git/image-20240403113332699-1712116181119-2.png" alt="image-20240403113332699"></p>
 <h1 id="工作区、暂存区、版本库-概念"><a href="#工作区、暂存区、版本库-概念" class="headerlink" title="工作区、暂存区、版本库 概念"></a>工作区、暂存区、版本库 概念</h1><ul>
 <li>版本库：.git隐藏文件夹就是版本库，版本库中 存储了很多配置信息，日志信息和文件版本信息</li>
 <li>工作区：包含.git 文件夹的目录就是 工作区 ，也成为工作目录，主要用于存放开发的代码</li>
 <li>暂存区：.git 文件夹中有很多文件，其中一个index文件就是暂存区，也叫做stage 暂存区是一个临时保存修改文件的地方</li>
 </ul>
-<p><img src="/image-20240403121021210.png" alt="image-20240403121021210"></p>
+<p><img src="/2024/04/25/git/image-20240403121021210.png" alt="image-20240403121021210"></p>
 <h1 id="工作区中文件的状态"><a href="#工作区中文件的状态" class="headerlink" title="工作区中文件的状态"></a>工作区中文件的状态</h1><p><strong>Git工作区中的文件存在两种状态：</strong></p>
 <ul>
 <li>untracked 未跟踪 （未被纳入版本控制）</li>
@@ -238,40 +238,40 @@
 <li><code>git add</code> 将文件的修改加入暂存区</li>
 <li><code>git reset</code> 将暂存区的文件取消暂存 或者 切换到指定版本<ul>
 <li><code>git reset 文件名</code> 将文件取消暂存<ul>
-<li><img src="/image-20240403122357867.png" alt="image-20240403122357867"></li>
+<li><img src="/2024/04/25/git/image-20240403122357867.png" alt="image-20240403122357867"></li>
 </ul>
 </li>
 <li><code>git reset --hard 版本号</code> 切换到指定版本<ul>
-<li><img src="/image-20240403123039124.png" alt="image-20240403123039124"></li>
+<li><img src="/2024/04/25/git/image-20240403123039124.png" alt="image-20240403123039124"></li>
 </ul>
 </li>
 </ul>
 </li>
 <li><code>git commit</code> 将暂存区的文件修改提交到版本库</li>
 <li><code>git log</code> 查看日志<ul>
-<li><img src="/image-20240403123138085.png" alt="image-20240403123138085"></li>
+<li><img src="/2024/04/25/git/image-20240403123138085.png" alt="image-20240403123138085"></li>
 </ul>
 </li>
 </ul>
 <h2 id="远程仓库常见命令"><a href="#远程仓库常见命令" class="headerlink" title="远程仓库常见命令:"></a>远程仓库常见命令:</h2><ul>
 <li><code>git remote</code> <strong>查看远程仓库</strong><ul>
-<li><img src="/image-20240403123729559.png" alt="image-20240403123729559"></li>
+<li><img src="/2024/04/25/git/image-20240403123729559.png" alt="image-20240403123729559"></li>
 </ul>
 </li>
 <li><code>git remote add &lt;shortname 可引用的简写&gt; &lt;url&gt;</code> <strong>添加远程仓库</strong><ul>
-<li><img src="/image-20240403123744362.png" alt="image-20240403123744362"></li>
+<li><img src="/2024/04/25/git/image-20240403123744362.png" alt="image-20240403123744362"></li>
 </ul>
 </li>
 <li><code>git clone [url]</code> <strong>克隆远程仓库</strong><ul>
-<li><img src="/image-20240403123859314.png" alt="image-20240403123859314"></li>
+<li><img src="/2024/04/25/git/image-20240403123859314.png" alt="image-20240403123859314"></li>
 </ul>
 </li>
 <li><code>git push [remote-name(简写的名字)] [brach-name(推送到的位置 分支)]</code> <strong>推送至远程仓库</strong><ul>
-<li><img src="/image-20240403124122805.png" alt="image-20240403124122805"></li>
+<li><img src="/2024/04/25/git/image-20240403124122805.png" alt="image-20240403124122805"></li>
 </ul>
 </li>
 <li><code>git pull [short-name] [branch-name 分支的名字 表示从哪个分支来拉取]</code> 从远程仓库拉取数据 合并到本地仓库<ul>
-<li><img src="/image-20240403133815133.png" alt="image-20240403133815133"></li>
+<li><img src="/2024/04/25/git/image-20240403133815133.png" alt="image-20240403133815133"></li>
 </ul>
 </li>
 </ul>
@@ -302,19 +302,19 @@ git merge b2
 <h2 id="标签操作"><a href="#标签操作" class="headerlink" title="标签操作"></a>标签操作</h2><p>Git中的标签，指的是某个分支某个特定时间点的状态，通过标签，可以很方便的切换到标记时的状态，比较有代表性的是人们会使用这个功能来标记发布结点（v1.0 v1.2）</p>
 <ul>
 <li><code>git tag</code> 列出已有标签<ul>
-<li><img src="/image-20240403141948827.png" alt="image-20240403141948827"></li>
+<li><img src="/2024/04/25/git/image-20240403141948827.png" alt="image-20240403141948827"></li>
 </ul>
 </li>
 <li><code>git tag [name]</code> 创建标签<ul>
-<li><img src="/image-20240403141942391.png" alt="image-20240403141942391"></li>
+<li><img src="/2024/04/25/git/image-20240403141942391.png" alt="image-20240403141942391"></li>
 </ul>
 </li>
 <li><code>git push [shortname] [name]</code> 将标签推送至远程仓库<ul>
-<li><img src="/image-20240403141959742.png" alt="image-20240403141959742"></li>
+<li><img src="/2024/04/25/git/image-20240403141959742.png" alt="image-20240403141959742"></li>
 </ul>
 </li>
 <li><code>git checkout -b [branch] [name]</code> 检出标签 检出标签时需要创建一个新分支来指向某个标签<ul>
-<li><img src="/image-20240425132313132.png" alt="image-20240425132313132"></li>
+<li><img src="/2024/04/25/git/image-20240425132313132.png" alt="image-20240425132313132"></li>
 </ul>
 </li>
 </ul>

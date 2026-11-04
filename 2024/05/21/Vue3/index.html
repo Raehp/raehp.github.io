@@ -210,19 +210,19 @@
 <li>代码量变少</li>
 <li>分散式维护变成集中式维护</li>
 </ol>
-<h2 id="2-Vue3的优势"><a href="#2-Vue3的优势" class="headerlink" title="2. Vue3的优势"></a>2. Vue3的优势</h2><p><img src="/01.png" alt="01"></p>
+<h2 id="2-Vue3的优势"><a href="#2-Vue3的优势" class="headerlink" title="2. Vue3的优势"></a>2. Vue3的优势</h2><p><img src="/2024/05/21/Vue3/01.png" alt="01"></p>
 <h1 id="使用create-vue搭建Vue3项目"><a href="#使用create-vue搭建Vue3项目" class="headerlink" title="使用create-vue搭建Vue3项目"></a>使用create-vue搭建Vue3项目</h1><h2 id="1-认识create-vue"><a href="#1-认识create-vue" class="headerlink" title="1. 认识create-vue"></a>1. 认识create-vue</h2><blockquote>
 <p>create-vue是Vue官方新的脚手架工具，底层切换到了 vite （下一代前端工具链），为开发提供极速响应</p>
 </blockquote>
-<p><img src="/2.png" alt="2"></p>
+<p><img src="/2024/05/21/Vue3/2.png" alt="2"></p>
 <h2 id="2-使用create-vue创建项目"><a href="#2-使用create-vue创建项目" class="headerlink" title="2. 使用create-vue创建项目"></a>2. 使用create-vue创建项目</h2><blockquote>
 <p>前置条件 - 已安装16.0或更高版本的Node.js</p>
 </blockquote>
 <p>执行如下命令，这一指令将会安装并执行 create-vue</p>
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm init vue@latest</span><br></pre></td></tr></tbody></table>
 
-<p><img src="/3.png" alt="3"></p>
-<h1 id="熟悉项目和关键文件"><a href="#熟悉项目和关键文件" class="headerlink" title="熟悉项目和关键文件"></a>熟悉项目和关键文件</h1><p><img src="/4.png" alt="4"></p>
+<p><img src="/2024/05/21/Vue3/3.png" alt="3"></p>
+<h1 id="熟悉项目和关键文件"><a href="#熟悉项目和关键文件" class="headerlink" title="熟悉项目和关键文件"></a>熟悉项目和关键文件</h1><p><img src="/2024/05/21/Vue3/4.png" alt="4"></p>
 <h1 id="组合式API-setup选项"><a href="#组合式API-setup选项" class="headerlink" title="组合式API - setup选项"></a>组合式API - setup选项</h1><h2 id="1-setup选项的写法和执行时机"><a href="#1-setup选项的写法和执行时机" class="headerlink" title="1. setup选项的写法和执行时机"></a>1. setup选项的写法和执行时机</h2><p>写法</p>
 <table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  export default {</span><br><span class="line">    setup(){</span><br><span class="line">      </span><br><span class="line">    },</span><br><span class="line">    beforeCreate(){</span><br><span class="line">      </span><br><span class="line">    }</span><br><span class="line">  }</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></tbody></table>
 
@@ -230,7 +230,7 @@
 <blockquote>
 <p>在beforeCreate钩子之前执行</p>
 </blockquote>
-<p><img src="/5.png" alt="5"></p>
+<p><img src="/2024/05/21/Vue3/5.png" alt="5"></p>
 <h2 id="2-setup中写代码的特点"><a href="#2-setup中写代码的特点" class="headerlink" title="2. setup中写代码的特点"></a>2. setup中写代码的特点</h2><blockquote>
 <p>在setup函数中写的数据和方法需要在末尾以对象的方式return，才能给模版使用</p>
 </blockquote>
